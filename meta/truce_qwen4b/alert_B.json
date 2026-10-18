@@ -1,0 +1,72 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Link the runbook on a line `Runbook: <url>`.",
+   "The whole message must fit on a pager screen: at most 400 characters, counting spaces and line breaks.",
+   "The first line must be `[<SEVERITY>] <service>: <summary>` with the severity in capitals, one of `[CRITICAL]`, `[WARNING]`, `[INFO]`.",
+   "Say how long the condition has held on a line `For: <n>m`, in whole minutes.",
+   "Name the environment on a line `Env: <name>`.",
+   "Give the measurement on a line `Value: <current> (threshold <limit>)`."
+  ],
+  "B": [
+   "The first line must be `Alert <ID> firing on <service>`, for example `Alert ALR-7731 firing on checkout-api`.",
+   "Describe what customers notice on a line that begins with `User impact: `.",
+   "Give the runbook address on its own line in the form `Runbook: <url>`.",
+   "Explain how to acknowledge with the line `Ack: reply ack <alert ID>`, for example `Ack: reply ack ALR-7731`.",
+   "List at least three likely causes as bullets that start with `- ` under a line that reads exactly `Likely causes:`.",
+   "Tell the responder where to start on a line that begins with `First action: `."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "duplicate",
+   "reason": "Both rules require the runbook URL to be included in the output, with A1 specifying it on a line 'Runbook: <url>' and B3 specifying it on its own line 'Runbook: <url>'. The content is identical and serves the same purpose."
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A3 requires the first line to be '[SEVERITY] <service>: <summary>', while B1 requires 'Alert <ID> firing on <service>'. These are structurally different and would conflict in the first line if both are strictly followed. However, they can coexist if the output is arranged in a specific order (e.g., "
+  },
+  {
+   "a": 3,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A4 specifies a duration in minutes ('For: <n>m') as a separate line, while B1 starts with an alert ID and service. These are different pieces of information and could be combined in a structured output, but placing A4 first would break B1's format. However, both can coexist if the order is carefully"
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A5 requires 'Env: <name>' as a line, while B1 starts with 'Alert <ID> firing on <service>'. The environment is not directly part of B1's structure, but could be added after. However, inserting 'Env: <name>' in the first line or early would disrupt B1's required format. Thus, they can coexist only if"
+  },
+  {
+   "a": 5,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A6 requires 'Value: <current> (threshold <limit>)' as a line, while B1 starts with a different format. This measurement data could be included after B1, but inserting it early would break B1's structure. Thus, both can be satisfied only if the measurement is placed in a specific order, making them e"
+  }
+ ],
+ "dropped_from_secondary": [
+  0
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   2
+  ]
+ ],
+ "reconciled": [
+  "Alert <ID> firing on <service> [<SEVERITY>] <service>: <summary> with the severity in capitals, one of [CRITICAL], [WARNING], [INFO]."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

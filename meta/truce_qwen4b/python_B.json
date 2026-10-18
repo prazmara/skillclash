@@ -1,0 +1,103 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+   "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+   "Annotate every parameter and the return value with type hints.",
+   "Reject invalid input by raising `ValueError`.",
+   "Include at least one usage example with a `>>>` prompt in the docstring.",
+   "Reply with one Python code block and nothing outside it."
+  ],
+  "B": [
+   "Start the module with `from __future__ import annotations`.",
+   "Show a doctest-style example that uses `>>>`.",
+   "State the time complexity as `Complexity: O(...)`.",
+   "Export the function by defining `__all__`.",
+   "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+   "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both rules require a docstring example using `>>>` in the documentation, with the example formatted in doctest style."
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A3 requires type hints on parameters and return value, while B1 requires `from __future__ import annotations` to allow type hints in the docstring. These are related but not directly overlapping; however, B1 enables A3, so their satisfaction depends on proper module setup and ordering. Thus, they ar"
+  },
+  {
+   "a": 3,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A4 requires raising `ValueError` for invalid input, while B2 requires a doctest example. The doctest may include invalid input, which would need to be handled by A4. Thus, the example in B2 and the error handling in A4 must coexist, making them entangled."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both rules require a usage example with `>>>` in the docstring, though A5 specifies it as part of the docstring with a `>>>` prompt, and B2 requires a doctest-style example. These are essentially the same requirement in different styles."
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both rules require a usage example with `>>>` in the docstring, with A6 specifying it as part of the docstring and B2 requiring a doctest-style example. This is a direct duplication of the example requirement."
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both require a `>>>` example in the docstring, with A2 in Google style and B2 in doctest style. The example is the same in purpose, so it's a duplication."
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A3 requires type hints, which are enabled by B1's `from __future__ import annotations`. Without B1, A3 would not be valid in Python 3.7+; thus, their satisfaction depends on the module's setup, making them entangled."
+  },
+  {
+   "a": 3,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A4 requires validation and raising `ValueError`, while B2 requires a doctest example that may include invalid inputs. The example must be designed to trigger A4, so the two rules must coexist in a structured way\u2014thus entangled."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both require a `>>>` usage example in the docstring, with A5 specifying it as part of the docstring and B2 requiring a doctest-style example. This is a direct duplication."
+  }
+ ],
+ "dropped_from_secondary": [
+  1,
+  4,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   2
+  ],
+  [
+   1,
+   3
+  ]
+ ],
+ "reconciled": [
+  "Start the module with `from __future__ import annotations`. Annotate every parameter and the return value with type hints.",
+  "Show a doctest-style example that uses `>>>`. Reject invalid input by raising `ValueError`."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "artifact": "on-call alert notification",
+ "example_request": "Write the alert notification: p99 latency of the checkout-api service in prod-eu is 2.4 s, above the 1.5 s threshold, for 10 minutes. Severity: critical. Alert ID ALR-7731. Runbook: https://runbooks.example.com/checkout-latency.",
+ "A": "alert-pager",
+ "B": "alert-chatops"
+}

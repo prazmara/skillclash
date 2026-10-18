@@ -1,0 +1,72 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Give the next steps as a numbered list with at least two steps (`1.`, `2.`).",
+   "Cite the case as `Ticket #<number>`.",
+   "Open with `Dear <full name>,` on the first line.",
+   "Never place a URL inside the body text. Links may appear only on a final line that starts with `Links:`.",
+   "Sign with the agent's name followed by a line that ends with `Support Team`.",
+   "Do not use contractions such as `don't`, `we'll` or `you're`."
+  ],
+  "B": [
+   "Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.",
+   "Invite a response with the exact phrase `reply to this email`.",
+   "Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.",
+   "Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL.",
+   "Open with `Hi <first name>!` on the first line.",
+   "Close with the agent's first name and then a line ending in `Support Team`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "A3 requires opening with 'Dear <full name>,' while B5 requires opening with 'Hi <first name>!' which cannot both appear on the first line."
+  },
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both can be satisfied if the message starts with 'Good news:' or 'Quick update:' followed by a newline and then the numbered list; placing the list first would break B1's requirement to lead with the update phrase."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "contradictory",
+   "reason": "A4 prohibits URLs in the body and allows them only on a final line starting with 'Links:', while B4 requires including the help-center URL, which may not be placed on such a line, making compliance with both impossible unless the URL is moved to the designated final line."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both specify signing with the agent's name and a line ending in 'Support Team', but A5 requires the full agent name and B6 the first name; they can be reconciled by using the first name followed by 'Support Team' if the agent has only one name or by placing both signatures in sequence, but standard "
+  }
+ ],
+ "dropped_from_secondary": [
+  3,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   4,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Quick update: Give the next steps as a numbered list with at least two steps (`1.`, `2.`).",
+  "Sign with the agent's name followed by a line that ends with `Support Team`, ensuring the agent's first name appears at the close before the line ending in `Support Team`. Both the full agent name and first name must be included in sequence to satisfy the formal and friendly closing requirements."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

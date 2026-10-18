@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "B",
+  "rules": {
+    "A": [
+      "The first line of the file must be the parser directive `# syntax=docker/dockerfile:1`.",
+      "Declare `STOPSIGNAL SIGTERM` so that the container shuts down gracefully.",
+      "Declare a `HEALTHCHECK` instruction that probes the service.",
+      "Run the service as a non-root user given by numeric ID, with an instruction such as `USER 10001`.",
+      "Declare the build argument `ARG APP_VERSION=dev` so that the pipeline can stamp the image.",
+      "Set the working directory with `WORKDIR /opt/service`. No other working directory may be used anywhere in the file."
+    ],
+    "B": [
+      "Make the container stop cleanly by adding the instruction `STOPSIGNAL SIGTERM`.",
+      "Use `WORKDIR /srv/app` as the working directory. The file must not set any other working directory.",
+      "Explain each `RUN` instruction with a comment line directly above it that starts with `# step: `.",
+      "Describe the image with a `LABEL` instruction that sets `org.opencontainers.image.description`.",
+      "Put a header comment `# Owner: <team>` at the top of the file.",
+      "Fix the container time zone with `ENV TZ=UTC`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 5,
+      "b": 1,
+      "relation": "contradictory",
+      "reason": "The only working directory in the file cannot be both `WORKDIR /opt/service` and `WORKDIR /srv/app`."
+    },
+    {
+      "a": 1,
+      "b": 0,
+      "relation": "duplicate",
+      "reason": "Both require the instruction `STOPSIGNAL SIGTERM`."
+    },
+    {
+      "a": 0,
+      "b": 4,
+      "relation": "entangled",
+      "reason": "The `# Owner: <team>` header can sit at the top of the file while the first line is `# syntax=docker/dockerfile:1` only if the owner comment is placed on the second line, directly below the directive."
+    }
+  ],
+  "reconciled": [
+    "The first line of the file must be the parser directive `# syntax=docker/dockerfile:1`. Put the header comment `# Owner: <team>` on the second line, directly below the directive and above `FROM`, so that it still sits at the top of the file."
+  ]
+}

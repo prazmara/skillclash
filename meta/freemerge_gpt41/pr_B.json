@@ -1,0 +1,4 @@
+{
+ "method": "freemerge",
+ "compiler": "openai/gpt-4.1"
+}

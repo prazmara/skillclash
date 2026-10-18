@@ -1,0 +1,6 @@
+{
+ "artifact": "SQL query",
+ "example_request": "Write the SQL query: revenue per country for orders created in January 2026, top 20 countries. Table orders(id, country, amount, created_at, deleted_at). Owning team: growth-analytics.",
+ "A": "sql-house-style",
+ "B": "sql-warehouse-conventions"
+}

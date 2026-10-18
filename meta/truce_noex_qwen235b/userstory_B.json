@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Say what the story does not cover on a line that starts with `Out of scope: `.",
+   "The line directly below the title must be `Epic: <epic name>`.",
+   "The first line must be `Story <ticket ID>: <title>`, for example `Story SHOP-88: Save cart for later`.",
+   "Write the acceptance criteria as a checklist of at least two unchecked boxes, each of the form `- [ ] <criterion>`.",
+   "Rate the business value on a line `Value: high`, `Value: medium` or `Value: low`.",
+   "List blocking tickets on a line that starts with `Depends on: `, and write `Depends on: none` when there are none."
+  ],
+  "B": [
+   "Name who the story is for on a line `Persona: <persona>`.",
+   "Put the estimate at the top, right under the title, as `Story points: <n>`.",
+   "Say how success will be measured on a line that starts with `Metric: `.",
+   "Add one test scenario as three lines that start with `Given `, `When ` and `Then `.",
+   "List at least two acceptance criteria as open checkboxes, one per line, written `- [ ] ...`.",
+   "The first line must be a level-1 Markdown heading that holds only the title, for example `# Save cart for later`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "A3 requires the first line to be 'Story <ticket ID>: <title>', while B6 requires the first line to be a level-1 Markdown heading containing only the title. These cannot both be true at the same time."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both A4 and B5 require listing at least two acceptance criteria as unchecked checkboxes, using the same format '- [ ] <criterion>'."
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A2 requires the line directly below the title to be 'Epic: <epic name>', while B2 requires the estimate (Story points) to be placed right under the title. Both cannot occupy the same position unless ordering is carefully coordinated, e.g., one must come before the other in a specific sequence."
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   1,
+   1
+  ]
+ ],
+ "reconciled": [
+  "The line directly below the title must be `Epic: <epic name>`, and the next line must be `Story points: <n>`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

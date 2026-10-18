@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "openai/gpt-4.1",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include a human-readable sentence in the field `message`.",
+   "Include a boolean field `retryable`.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a field `docs` with an `https://` link to the error documentation."
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Explain the error for humans in the `message` field."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "A2 requires the machine-readable code field to be named 'error_code' in snake_case, while B5 requires it to be named 'errorCode' in camelCase. Both cannot be satisfied with a single field."
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "duplicate",
+   "reason": "Both A3 and B6 require a human-readable explanation of the error in the 'message' field."
+  },
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "A1 requires the reply to be exactly one JSON object, while B3 requires a non-empty list in the 'details' field. The list must be properly embedded as a field within the single JSON object to satisfy both."
+  }
+ ],
+ "dropped_from_secondary": [
+  1,
+  2
+ ],
+ "entangled_pairs": [
+  [
+   2,
+   0
+  ]
+ ],
+ "reconciled": [
+  "The reply must be exactly one JSON object and nothing else, so that it parses as JSON, and must include a field `details` that holds a non-empty list of specifics."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

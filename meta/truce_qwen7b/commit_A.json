@@ -1,0 +1,41 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.",
+   "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+   "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.",
+   "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+   "The very last line of the message must be the sign-off `Signed-off-by: <author name>`.",
+   "Explain the motivation in a body line that starts with `Why: `."
+  ],
+  "B": [
+   "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `. Nothing may come before the bracket.",
+   "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+   "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+   "Say how to revert in a line that starts with `Rollback: `.",
+   "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`.",
+   "Name the affected component in a line `Component: <name>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "The subject line in skill A must start with a lowercase type prefix, while skill B requires the subject line to start with a ticket ID. These cannot coexist without conflict."
+  }
+ ],
+ "dropped_from_secondary": [
+  0
+ ],
+ "entangled_pairs": [],
+ "reconciled": [],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "artifact": "daily standup update",
+ "example_request": "Write the standup update for Nora Lindqvist, 2026-03-10, team Payments. Yesterday: finished the refund API pagination (PAY-518). Today: start the ledger export job (PAY-530), expected done 2026-03-12. Blocker: waiting for staging database credentials from the platform team.",
+ "A": "standup-async-thread",
+ "B": "standup-manager-digest"
+}

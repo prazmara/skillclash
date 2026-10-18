@@ -1,0 +1,6 @@
+{
+ "artifact": "REST endpoint documentation entry",
+ "example_request": "Write the documentation entry for the endpoint GET /v1/invoices/{id}: returns one invoice by ID. Requires the scope invoices:read. Path parameter id (string). Returns 200 with the invoice object, 403 if the scope is missing, 404 if the invoice does not exist. Available since API version 1.4.",
+ "A": "apidoc-reference-card",
+ "B": "apidoc-integrator-guide"
+}

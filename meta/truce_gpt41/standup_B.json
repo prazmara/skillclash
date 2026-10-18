@@ -1,0 +1,48 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "openai/gpt-4.1",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.",
+   "List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.",
+   "The first line must be `Standup <YYYY-MM-DD> | <full name>`, for example `Standup 2026-03-10 | Nora Lindqvist`.",
+   "Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you.",
+   "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.",
+   "The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`."
+  ],
+  "B": [
+   "The first line must be `Daily update from <full name>`, for example `Daily update from Nora Lindqvist`.",
+   "Summarize the workload on a line `Items: <n> done, <n> planned`.",
+   "Give the expected finish date of the current task on a line `ETA: <YYYY-MM-DD>`.",
+   "Put blockers on their own line beginning with `Blocked: `. If there are none, the line is `Blocked: none`.",
+   "Collect all ticket IDs on one line `Tickets: <ID>, <ID>`, separated by a comma and a space.",
+   "Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "A3 requires the first line to be 'Standup <YYYY-MM-DD> | <full name>', while B1 requires the first line to be 'Daily update from <full name>'. Both cannot be the first line at the same time."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require reporting blockers on a line starting with 'Blocked: ', and specify to write 'Blocked: none' if there are no blockers."
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  3
+ ],
+ "entangled_pairs": [],
+ "reconciled": [],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

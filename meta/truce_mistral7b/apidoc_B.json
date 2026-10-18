@@ -1,0 +1,57 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "State the required permission on a line `Auth: <scope>`.",
+   "Say whether repeating the call is safe on a line `Idempotent: yes` or `Idempotent: no`.",
+   "Show one example call on a line that starts with `$ curl `.",
+   "The first line must be a level-3 Markdown heading with the method and path in backticks, for example ### `GET /v1/invoices/{id}`.",
+   "Keep the whole entry to at most 90 words.",
+   "State the API version that introduced the endpoint on a line `Since: v<version>`, for example `Since: v1.4`."
+  ],
+  "B": [
+   "The first line must be the method and path alone in plain text with no Markdown, for example `GET /v1/invoices/{id}`.",
+   "Mark the maturity on a line `Stability: stable`, `Stability: beta` or `Stability: deprecated`.",
+   "Name the media type of the response on a line such as `Content-Type: application/json`.",
+   "List the parameters in a Markdown table whose header row is `| Name | In | Type | Description |`.",
+   "Include an example request written as a shell line beginning with `$ curl `.",
+   "Document the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 3,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules require the method and path, but while A4 uses Markdown for formatting, B1 requires plain text. To satisfy both rules, the method and path should be provided in plain text for B1 and wrapped in backticks for A4."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require information about the API version, but while A6 requires the version that introduced the endpoint, B6 requires the version that the endpoint is valid for. To satisfy both rules, the version information should be provided in a way that indicates when the endpoint was introduced and"
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   0,
+   3
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Write the output as follows: ``` ### `GET /v1/invoices/{id}` [Method and path alone in plain text] ``` This way, the first line starts with a level-3 Markdown heading, followed by the method and path in backticks, and ends with a newline. The second line contains only the method and path alone in plain text.",
+  "Write the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`. Indicate the API version that introduced the endpoint on a line `Since: v<version>`, for example `Since: v1.4`. Arrange the output such that both rules are satisfied simultaneously."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

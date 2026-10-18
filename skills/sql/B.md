@@ -1,0 +1,42 @@
+---
+name: sql-warehouse-conventions
+description: Write SQL that follows the data warehouse conventions. Use for any SQL query.
+---
+
+# sql-warehouse-conventions
+
+Warehouse queries are composed from CTEs and must be attributable to an owning team.
+
+## Rules
+
+- Cap the result size: every query needs a `limit` clause.
+- Stage the source rows in a CTE named `base` (`with base as (...)`) and select from it.
+- Filter date ranges with the half-open pattern `>=` start and `<` end. Never use `between` or `<=` for dates.
+- Qualify source tables with the `analytics.` schema.
+- Put a header comment `-- Owner: <team>` at the top of the query.
+- Write all SQL keywords in lowercase (`select`, `from`, `where`, `join`, `group by`, `order by`).
+
+## Example
+
+Request: Write the SQL query: revenue per country for orders created in January 2026, top 20 countries. Table orders(id, country, amount, created_at, deleted_at). Owning team: growth-analytics.
+
+Output:
+
+```
+-- Owner: growth-analytics
+with base as (
+    select
+        o.country,
+        o.amount
+    from analytics.orders as o
+    where o.created_at >= '2026-01-01'
+      and o.created_at < '2026-02-01'
+)
+select
+    country,
+    sum(amount) as revenue
+from base
+group by country
+order by revenue desc
+limit 20
+```

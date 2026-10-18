@@ -1,0 +1,72 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Always exclude soft-deleted rows with the filter `deleted_at IS NULL`.",
+   "Write all SQL keywords in UPPERCASE (`SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `ORDER BY`).",
+   "Give every aggregate an alias that ends in `_cnt`, `_sum` or `_avg`.",
+   "The first line must be a comment that states the purpose: `-- Purpose: <one sentence>`.",
+   "Wrap every monetary or averaged aggregate in `ROUND(..., 2)`.",
+   "Always end the query with a `LIMIT` clause."
+  ],
+  "B": [
+   "Cap the result size: every query needs a `limit` clause.",
+   "Stage the source rows in a CTE named `base` (`with base as (...)`) and select from it.",
+   "Filter date ranges with the half-open pattern `>=` start and `<` end. Never use `between` or `<=` for dates.",
+   "Qualify source tables with the `analytics.` schema.",
+   "Put a header comment `-- Owner: <team>` at the top of the query.",
+   "Write all SQL keywords in lowercase (`select`, `from`, `where`, `join`, `group by`, `order by`)."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "A2 requires SQL keywords to be in UPPERCASE, while B6 requires them to be in lowercase. These cannot both be satisfied simultaneously."
+  },
+  {
+   "a": 5,
+   "b": 0,
+   "relation": "duplicate",
+   "reason": "Both A6 and B1 require the query to end with a LIMIT clause. They enforce the same constraint on result size."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both rules require a comment at the top of the query. To satisfy both, the comments must be ordered: one must come before the other. The most natural way is to place both at the top, with B5's 'Owner' comment first, then A4's 'Purpose' comment, or vice versa, but their coexistence requires careful o"
+  },
+  {
+   "a": 0,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A1 requires filtering out soft-deleted rows, and B2 requires staging data in a CTE named 'base'. To satisfy both, the soft-delete filter must be placed inside the 'base' CTE, not after it. Placing the filter outside the CTE would violate the staging requirement of B2."
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   3,
+   4
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "reconciled": [
+  "-- Owner: <team> -- Purpose: <one sentence>",
+  "with base as (select * from source_table where deleted_at IS NULL) select * from base;"
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

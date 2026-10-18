@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "A",
+  "rules": {
+    "A": [
+      "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.",
+      "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+      "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.",
+      "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+      "The very last line of the message must be the sign-off `Signed-off-by: <author name>`.",
+      "Explain the motivation in a body line that starts with `Why: `."
+    ],
+    "B": [
+      "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `. Nothing may come before the bracket.",
+      "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+      "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+      "Say how to revert in a line that starts with `Rollback: `.",
+      "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`.",
+      "Name the affected component in a line `Component: <name>`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 2,
+      "b": 0,
+      "relation": "contradictory",
+      "reason": "The subject line cannot start with a type prefix with nothing before it and also start with the bracketed ticket ID with nothing before it."
+    },
+    {
+      "a": 3,
+      "b": 1,
+      "relation": "duplicate",
+      "reason": "Both require a line `Tested: yes` or `Tested: no`."
+    },
+    {
+      "a": 4,
+      "b": 4,
+      "relation": "entangled",
+      "reason": "The message can end with a trailer block that contains `Refs: <TICKET-ID>` and still have `Signed-off-by:` as the very last line only if the sign-off is the last line of that trailer block, below `Refs:`."
+    }
+  ],
+  "reconciled": [
+    "Finish the message with a trailer block, set off from the body by a blank line, that contains the line `Refs: <TICKET-ID>` and, directly below it, the sign-off `Signed-off-by: <author name>`. The sign-off must be the very last line of the message, so `Refs:` goes above it and nothing may come after it."
+  ]
+}

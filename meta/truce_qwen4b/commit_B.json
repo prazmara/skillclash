@@ -1,0 +1,88 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.",
+   "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+   "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.",
+   "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+   "The very last line of the message must be the sign-off `Signed-off-by: <author name>`.",
+   "Explain the motivation in a body line that starts with `Why: `."
+  ],
+  "B": [
+   "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `. Nothing may come before the bracket.",
+   "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+   "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+   "Say how to revert in a line that starts with `Rollback: `.",
+   "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`.",
+   "Name the affected component in a line `Component: <name>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "Rule A3 requires the subject line to start with a lowercase type prefix (e.g., `feat:`, `fix:`) and nothing before it, while Rule B1 requires the subject line to start with a ticket ID in square brackets (e.g., `[PAY-311]`), which would violate A3's requirement of no content before the type prefix. "
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules require a test status line (`Risk: low`, `Risk: medium`, `Risk: high` in A2 vs `Tested: yes/no` in B2), but they differ in content and placement. A2 is part of the body and specifies risk level, while B2 is a standalone test status line. They can coexist if the risk is included in the bod"
+  },
+  {
+   "a": 5,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Both rules require a body explanation of the change, but A6 requires a line starting with `Why: ` and a single motivation, while B3 requires a bulleted list with at least two bullets. These can coexist if the `Why:` line is included in the bulleted list or if the list includes a `Why:` bullet, but t"
+  },
+  {
+   "a": 3,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules require a test status line, but A4 specifies `Tested: yes/no` and is part of the body, while B2 requires the same line as a standalone. They can coexist if the test status is placed in a way that satisfies both \u2014 for example, as a separate line \u2014 but the placement and format must be caref"
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A5 requires a sign-off line at the very end (`Signed-off-by: <author name>`), while B5 requires a `Refs: <TICKET-ID>` line at the end. These both require trailing lines, but the order and content conflict unless the sign-off is placed before or after the `Refs` line in a specific way. The order must"
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "A6 requires a `Why:` line in the body, while B6 requires a `Component: <name>` line. These can coexist if the `Component:` line is placed in the body and the `Why:` line is included, but the structure must be arranged to avoid breaking either rule \u2014 for example, by placing `Component:` after the `Wh"
+  }
+ ],
+ "dropped_from_secondary": [
+  2
+ ],
+ "entangled_pairs": [
+  [
+   1,
+   1
+  ],
+  [
+   2,
+   5
+  ],
+  [
+   4,
+   4
+  ]
+ ],
+ "reconciled": [
+  "Record test status as `Tested: yes` or `Tested: no` on its own line. Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+  "- Describe the change in the body as a bulleted list with at least two bullets that start with `- `. - Why: [motivation for the change]",
+  "Finish the message with a trailer block containing the line `Refs: <TICKET-ID>`, and ensure the very last line of the message is the sign-off `Signed-off-by: <author name>`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

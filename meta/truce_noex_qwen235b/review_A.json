@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "The first line must start with a severity tag in square brackets, one of `[blocker]`, `[major]`, `[minor]`, `[nit]`, followed by a short title.",
+   "Propose the change on a line that starts with `Proposed fix: `.",
+   "Give the place in the code on its own line as `Location: <file>:<line>`.",
+   "Give the outcome on a line `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "State every finding as a statement. A question mark may appear only on a final line that starts with `Open question:`.",
+   "Say how sure you are on a line `Confidence: high`, `Confidence: medium` or `Confidence: low`."
+  ],
+  "B": [
+   "Ask the author at least one clarifying question, written as a full sentence that ends with a question mark.",
+   "Classify the comment on a line `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability` or `Category: testing`.",
+   "The first line must be plain text of the form `Review: <title>`, with no tag or bracket before it.",
+   "Name one good thing about the diff on a line that starts with `What works well: `.",
+   "Close your assessment with a separate line that reads `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "Estimate the work needed on a line `Effort: S`, `Effort: M` or `Effort: L`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "contradictory",
+   "reason": "A1 requires the first line to start with a severity tag in square brackets, while B3 requires the first line to be plain text starting with 'Review: <title>'. These two formats cannot coexist on the same first line."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both rules require a final verdict line with the same three possible values: 'approve', 'request changes', or 'comment'."
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "A5 allows a question only on a final line starting with 'Open question:', while B1 requires at least one clarifying question as a full sentence ending with a question mark. To satisfy both, the question must be phrased as a statement ending with a question mark and placed as an 'Open question:' line"
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   0
+  ]
+ ],
+ "reconciled": [
+  "State every finding as a statement. A question mark may appear only on a final line that starts with `Open question:`. Ask the author at least one clarifying question, written as a full sentence that ends with a question mark."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

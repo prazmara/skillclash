@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "A",
+  "rules": {
+    "A": [
+      "Say what the story does not cover on a line that starts with `Out of scope: `.",
+      "The line directly below the title must be `Epic: <epic name>`.",
+      "The first line must be `Story <ticket ID>: <title>`, for example `Story SHOP-88: Save cart for later`.",
+      "Write the acceptance criteria as a checklist of at least two unchecked boxes, each of the form `- [ ] <criterion>`.",
+      "Rate the business value on a line `Value: high`, `Value: medium` or `Value: low`.",
+      "List blocking tickets on a line that starts with `Depends on: `, and write `Depends on: none` when there are none."
+    ],
+    "B": [
+      "Name who the story is for on a line `Persona: <persona>`.",
+      "Put the estimate at the top, right under the title, as `Story points: <n>`.",
+      "Say how success will be measured on a line that starts with `Metric: `.",
+      "Add one test scenario as three lines that start with `Given `, `When ` and `Then `.",
+      "List at least two acceptance criteria as open checkboxes, one per line, written `- [ ] ...`.",
+      "The first line must be a level-1 Markdown heading that holds only the title, for example `# Save cart for later`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 2,
+      "b": 5,
+      "relation": "contradictory",
+      "reason": "The first line cannot be `Story <ticket ID>: <title>` and also a level-1 Markdown heading that holds only the title."
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "relation": "duplicate",
+      "reason": "Both require at least two acceptance criteria written as unchecked boxes `- [ ]`."
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "relation": "entangled",
+      "reason": "The estimate can sit at the top under the title while the line directly below the title is `Epic: <epic name>` only if `Story points: <n>` is placed on the third line, directly below the `Epic:` line."
+    }
+  ],
+  "reconciled": [
+    "The line directly below the title must be `Epic: <epic name>`. Put the estimate at the top as `Story points: <n>` on the third line, directly below the `Epic:` line and above everything else."
+  ]
+}

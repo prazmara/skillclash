@@ -1,0 +1,6 @@
+{
+ "artifact": "user story ticket",
+ "example_request": "Write the user story: shoppers want to save their cart and come back to it later on another device. Ticket SHOP-88. Epic: Checkout. Persona: returning shopper. Estimate: 5 points.",
+ "A": "story-portfolio",
+ "B": "story-sprint-ready"
+}

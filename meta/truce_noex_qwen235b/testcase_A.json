@@ -1,0 +1,83 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Write the steps as a numbered list (`1.`, `2.`, ...) with at most five steps.",
+   "The first line must be the test ID and the title as `<ID>: <title>`, for example `TC-0412: Lockout after five failed logins`.",
+   "State the pass criterion on a line that starts with `Expected result: `.",
+   "Tag the kind of test on a line `Type: functional`, `Type: regression`, `Type: smoke` or `Type: negative`.",
+   "Give the priority on a line `Priority: P1`, `Priority: P2` or `Priority: P3`.",
+   "Describe the starting state on a line that begins with `Preconditions: `."
+  ],
+  "B": [
+   "Say how to restore the system afterwards on a line that starts with `Cleanup: `.",
+   "List the data the tester needs on a line that starts with `Test data: `.",
+   "Link the feature under test on a line `Covers: <feature>`.",
+   "Write the outcome that counts as a pass on its own line beginning with `Expected result: `.",
+   "Include at least three numbered steps that are explicit checks, each starting with the word `Verify`, for example `3. Verify that the error appears.`",
+   "The first line must be `Test case: <title>`. The test ID does not belong in the first line."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "A2 requires the first line to be '<ID>: <title>', while B6 requires the first line to be 'Test case: <title>' without the ID, making it impossible to satisfy both simultaneously."
+  },
+  {
+   "a": 0,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A1 limits steps to at most five and as a numbered list, while B5 requires at least three steps starting with 'Verify'. These can coexist only if the numbered steps are structured to begin with 'Verify' and do not exceed five steps."
+  },
+  {
+   "a": 2,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both A3 and B4 require stating the expected result on a line starting with 'Expected result: '."
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A6 requires stating preconditions, and B2 requires listing test data; while distinct, they both describe setup conditions and must be carefully ordered to avoid redundancy or confusion, especially since test data may overlap with preconditions."
+  },
+  {
+   "a": 3,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Both involve metadata about the test's purpose: A4 specifies test type, B3 links to the feature under test. They can coexist but must be placed in a way that avoids confusion in structure, possibly requiring a specific order or separation."
+  }
+ ],
+ "dropped_from_secondary": [
+  3,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   4
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   3,
+   2
+  ]
+ ],
+ "reconciled": [
+  "Write",
+  "Preconditions: Describe the starting state on a line that begins with `Preconditions: `. Test data: List the data the tester needs on a line that starts with `Test data: `.",
+  "On separate lines, include both `Type: functional`, `Type: regression`, `Type: smoke`, or `Type: negative` to tag the test kind, and `Covers: <feature>` to link the feature under test. Place each label exactly as shown, with no additional text on the same lines."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

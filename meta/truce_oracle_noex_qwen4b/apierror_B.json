@@ -1,0 +1,55 @@
+{
+ "method": "structured",
+ "mode": "oracle",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a boolean field `retryable`.",
+   "Include a field `docs` with an `https://` link to the error documentation.",
+   "Include a human-readable sentence in the field `message`.",
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON."
+  ],
+  "B": [
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Explain the error for humans in the `message` field.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "contradictory"
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "duplicate"
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "{ \"hint\": \"Hint: Check the request parameters and ensure they match the API documentation.\" }"
+ ],
+ "extract_path": null
+}

@@ -1,0 +1,6 @@
+{
+ "artifact": "JSON error response body",
+ "example_request": "Write the JSON error response body for a request that exceeded the rate limit of 100 requests per minute on POST /v1/payments.",
+ "A": "api-errors-internal",
+ "B": "api-errors-public"
+}

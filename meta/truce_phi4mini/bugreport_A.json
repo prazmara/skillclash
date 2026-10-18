@@ -1,0 +1,69 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`.",
+   "Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`.",
+   "The first line must be plain text of the form `Title: <one-line summary>`.",
+   "Contrast the outcome in two lines that start with `Expected: ` and `Actual: `.",
+   "Give the app version and the platform on one line that starts with `Environment: `.",
+   "Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`."
+  ],
+  "B": [
+   "Bug: CSV export is empty when the date filter spans more than 90 days",
+   "Reported by: Ivo Marek",
+   "Regression: unknown",
+   "On the Reports page, exporting with a date filter longer than 90 days downloads an empty file. The console shows `TypeError: rows is undefined`",
+   "Expected: the file contains one row per report entry.",
+   "Actual: the downloaded file is empty.",
+   "Workaround: export two shorter date ranges and merge the files."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules A3 and B1 provide a title or summary, but B1 is more specific to the bug's context."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules A4 and B4 describe the expected and actual outcomes, but B4 provides additional context about the console error."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules A6 and B6 rate the severity of the bug, but B6 provides a specific workaround."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   2,
+   0
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Title: CSV export issue with date filter spanning over 90 days Bug: CSV export is empty when the date filter spans more than 90 days",
+  "To satisfy both rules, ensure that the output clearly contrasts the expected and actual outcomes for each issue, and include the error message from the console in the report for the bug-dev-handoff issue. For example: \"Expected: [describe expected outcome], Actual: [describe actual outcome]. Console Error: TypeError: rows is undefined\" for the bug-dev-handoff issue, and \"Expected: [describe expected outcome], Actual: [describe actual outcome]\" for the bug-triage-form issue.",
+  "\"Rate the severity as `Severity: S1` or `Severity: S2` and confirm that the downloaded file is not empty.\""
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

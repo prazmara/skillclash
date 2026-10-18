@@ -1,0 +1,83 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Give the next steps as a numbered list with at least two steps (`1.`, `2.`)",
+   "Cite the case as `Ticket #<number>`",
+   "Open with `Dear <full name>,` on the first line",
+   "Never place a URL inside the body text",
+   "Sign with the agent's name followed by a line that ends with `Support Team`",
+   "Do not use contractions such as `don't`, `we'll` or `you're`"
+  ],
+  "B": [
+   "Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.",
+   "Invite a response with the exact phrase `reply to this email`.",
+   "Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.",
+   "Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL.",
+   "Open with `Hi <first name>!` on the first line.",
+   "Close with the agent's first name and then a line ending in `Support Team`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules require the main message to be the first sentence, but A1 requires a numbered list while B1 requires a sentence starting with 'Good news:' or 'Quick update:'."
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both rules specify how to address the customer, but A3 uses 'Dear <full name>' while B5 uses 'Hi <first name>!'."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules specify how to sign off, but A5 uses the agent's name followed by 'Support Team' while B6 uses the agent's first name followed by 'Support Team'."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "contradictory",
+   "reason": "Rule A4 forbids including URLs in the body text, while rule B4 requires including the help-center article's URL."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "Rule A6 forbids using contractions, while rule B6 uses the contraction 'Hi'."
+  }
+ ],
+ "dropped_from_secondary": [
+  3,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   4,
+   2
+  ],
+  [
+   5,
+   4
+  ]
+ ],
+ "reconciled": [
+  "Write the main message starting with \"Good news: \" or \"Quick update: \", followed by a colon, and then provide the next steps as a numbered list, starting with \"1.\", followed by a period, and each subsequent step starting with \"2.\", followed by a period. For example: Good news: Your request has been processed successfully! 1. You will receive a confirmation email shortly. 2. If you do not receive the email within 24 hours, please contact our support team.",
+  "Open with \"Dear <first name>, <Full Name>,\" on the first line.",
+  "Write the output as follows: \"Your request has been addressed, [Agent's First Name]. Regards, [Agent's Name] Support Team.\""
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

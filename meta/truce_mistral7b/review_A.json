@@ -1,0 +1,78 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "The first line must start with a severity tag in square brackets, one of `[blocker]`, `[major]`, `[minor]`, `[nit]`, followed by a short title.",
+   "Propose the change on a line that starts with `Proposed fix: `.",
+   "Give the place in the code on its own line as `Location: <file>:<line>`.",
+   "Give the outcome on a line `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "State every finding as a statement. A question mark may appear only on a final line that starts with `Open question:`.",
+   "Say how sure you are on a line `Confidence: high`, `Confidence: medium` or `Confidence: low`."
+  ],
+  "B": [
+   "Ask the author at least one clarifying question, written as a full sentence that ends with a question mark.",
+   "Classify the comment on a line `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability` or `Category: testing`.",
+   "The first line must be plain text of the form `Review: <title>`, with no tag or bracket before it.",
+   "Name one good thing about the diff on a line that starts with `What works well: `.",
+   "Close your assessment with a separate line that reads `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "Estimate the work needed on a line `Effort: S`, `Effort: M` or `Effort: L`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "duplicate",
+   "reason": "Both rules require a title for the review, but while A1 uses a square bracket and a tag, B3 uses plain text."
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules require a statement about the change or improvement in the code, but A2 is more specific (Proposed fix:) and B4 is more general (What works well:). To satisfy both rules, the statement should be placed as a 'What works well:' comment and the proposed fix should be included in the same sta"
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "relation": "duplicate",
+   "reason": "Both rules require a title for the review, but while A1 uses a square bracket and a tag, B3 uses plain text."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both rules require a verdict for the review, but while A4 uses Verdict:, B5 uses a more specific form (Verdict: approve, Verdict: request changes, or Verdict: comment)."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require a statement about the change or improvement in the code, but A5 is more specific (Open question:) and B6 is more general (Effort: S, M, or L). To satisfy both rules, the statement should be placed as an 'Open question:' comment and the effort estimation should be included in the s"
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   1,
+   3
+  ],
+  [
+   4,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Write the output in the following format: ``` Proposed fix: [Your proposed change here] What works well: [Something positive about the current code or diff] ``` Ensure that the proposed fix and the positive comment are separated by a line break for clarity.",
+  "Write responses that follow this format: 1. Each finding should be stated as a declarative sentence. (Use a period at the end.) 2. If applicable, include an estimate of the effort required (S, M, or L) at the end of the finding statement, preceded by \"Effort:\". 3. If there is an open question, start the line with \"Open question:\" and end it with a question mark. Example: \"The code is not properly formatted according to the company's style guide. (Effort: M) Open question: Is it necessary to consult with the team lead about the formatting changes?\""
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

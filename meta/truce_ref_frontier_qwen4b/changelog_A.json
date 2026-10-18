@@ -1,0 +1,57 @@
+{
+ "method": "refined",
+ "src": "truce_qwen4b",
+ "curriculum": "frontier",
+ "executor": "Qwen/Qwen3-4B-Instruct-2507",
+ "chosen": 1,
+ "n_candidates": 2,
+ "pareto_means": [
+  0.6833333333333332,
+  0.7833333333333332
+ ],
+ "history": [
+  {
+   "it": 0,
+   "parent": 0,
+   "before": 2.0999999999999996,
+   "after": 1.9999999999999998,
+   "accepted": false
+  },
+  {
+   "it": 1,
+   "parent": 0,
+   "before": 2.0999999999999996,
+   "after": 2.4000000000000004,
+   "accepted": true
+  },
+  {
+   "it": 2,
+   "parent": 1,
+   "before": 2.4000000000000004,
+   "after": 2.4000000000000004,
+   "accepted": false
+  },
+  {
+   "it": 3,
+   "parent": 1,
+   "before": 2.4000000000000004,
+   "after": 2.4000000000000004,
+   "accepted": false
+  },
+  {
+   "it": 4,
+   "parent": 1,
+   "before": 2.4000000000000004,
+   "after": 2.4000000000000004,
+   "accepted": false
+  },
+  {
+   "it": 5,
+   "parent": 1,
+   "before": 2.4000000000000004,
+   "after": 2.4000000000000004,
+   "accepted": false
+  }
+ ],
+ "rollouts": 48
+}

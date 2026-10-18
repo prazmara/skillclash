@@ -1,0 +1,1001 @@
+{
+ "qwen4b": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: combined with the wrong partner": 7,
+   "entangled pair rule: dropped (should be combined)": 8,
+   "entangled pair rule: handled right": 8,
+   "entangled pair rule: kept (should be combined)": 39,
+   "entangled pair rule: not extracted (should be combined)": 2,
+   "losing contradictory rule: left in the file (combined)": 5,
+   "losing contradictory rule: left in the file (kept)": 5,
+   "losing contradictory rule: left in the file (not extracted)": 1,
+   "losing contradictory rule: removed (right)": 21,
+   "primary's contradictory or shared rule: combined (should be kept)": 14,
+   "primary's contradictory or shared rule: handled right": 49,
+   "primary's contradictory or shared rule: not extracted (should be kept)": 1,
+   "rule that touches nothing: combined (should be kept)": 63,
+   "rule that touches nothing: dropped (should be kept)": 6,
+   "rule that touches nothing: handled right": 123
+  },
+  "executors": {
+   "qwen4b": {
+    "handled right": {
+     "rule_slots": 1440,
+     "followed": 0.8326388888888889,
+     "points_lost": 9.4140625
+    },
+    "wrongly combined": {
+     "rule_slots": 672,
+     "followed": 0.8377976190476191,
+     "points_lost": 4.257812500000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 312,
+     "followed": 0.6378205128205128,
+     "points_lost": 4.414062500000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 136,
+     "followed": 0.35294117647058826,
+     "points_lost": 3.4375000000000004
+    }
+   },
+   "qwen7b": {
+    "handled right": {
+     "rule_slots": 1440,
+     "followed": 0.8243055555555555,
+     "points_lost": 9.882812499999998
+    },
+    "wrongly combined": {
+     "rule_slots": 672,
+     "followed": 0.8348214285714286,
+     "points_lost": 4.335937500000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 312,
+     "followed": 0.6346153846153846,
+     "points_lost": 4.453125000000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 136,
+     "followed": 0.3382352941176471,
+     "points_lost": 3.515625000000001
+    }
+   },
+   "mistral7b": {
+    "handled right": {
+     "rule_slots": 1440,
+     "followed": 0.7909722222222222,
+     "points_lost": 11.7578125
+    },
+    "wrongly combined": {
+     "rule_slots": 672,
+     "followed": 0.7946428571428571,
+     "points_lost": 5.390625000000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 312,
+     "followed": 0.6057692307692307,
+     "points_lost": 4.8046875
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 136,
+     "followed": 0.33088235294117646,
+     "points_lost": 3.5546875000000004
+    }
+   },
+   "llama8b": {
+    "handled right": {
+     "rule_slots": 1440,
+     "followed": 0.8354166666666667,
+     "points_lost": 9.257812500000002
+    },
+    "wrongly combined": {
+     "rule_slots": 672,
+     "followed": 0.8303571428571429,
+     "points_lost": 4.453125000000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 312,
+     "followed": 0.6346153846153846,
+     "points_lost": 4.453125000000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 136,
+     "followed": 0.33088235294117646,
+     "points_lost": 3.5546875000000004
+    }
+   },
+   "phi4mini": {
+    "handled right": {
+     "rule_slots": 1440,
+     "followed": 0.8152777777777778,
+     "points_lost": 10.390625
+    },
+    "wrongly combined": {
+     "rule_slots": 672,
+     "followed": 0.8229166666666666,
+     "points_lost": 4.648437500000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 312,
+     "followed": 0.6282051282051282,
+     "points_lost": 4.531250000000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 136,
+     "followed": 0.3235294117647059,
+     "points_lost": 3.593750000000001
+    }
+   },
+   "qwen235b": {
+    "handled right": {
+     "rule_slots": 1440,
+     "followed": 0.8229166666666666,
+     "points_lost": 9.960937499999998
+    },
+    "wrongly combined": {
+     "rule_slots": 672,
+     "followed": 0.8288690476190477,
+     "points_lost": 4.492187500000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 312,
+     "followed": 0.6955128205128205,
+     "points_lost": 3.710937500000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 136,
+     "followed": 0.34558823529411764,
+     "points_lost": 3.476562500000001
+    }
+   },
+   "gpt41": {
+    "handled right": {
+     "rule_slots": 720,
+     "followed": 0.8597222222222223,
+     "points_lost": 7.890625000000001
+    },
+    "wrongly combined": {
+     "rule_slots": 336,
+     "followed": 0.8422619047619048,
+     "points_lost": 4.140625
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 156,
+     "followed": 0.6602564102564102,
+     "points_lost": 4.140625000000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 68,
+     "followed": 0.27941176470588236,
+     "points_lost": 3.8281250000000004
+    }
+   }
+  }
+ },
+ "qwen7b": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: dropped (should be combined)": 1,
+   "entangled pair rule: kept (should be combined)": 63,
+   "losing contradictory rule: left in the file (kept)": 13,
+   "losing contradictory rule: left in the file (not extracted)": 1,
+   "losing contradictory rule: removed (right)": 18,
+   "primary's contradictory or shared rule: combined (should be kept)": 2,
+   "primary's contradictory or shared rule: handled right": 61,
+   "primary's contradictory or shared rule: not extracted (should be kept)": 1,
+   "rule that touches nothing: dropped (should be kept)": 9,
+   "rule that touches nothing: handled right": 179,
+   "rule that touches nothing: not extracted (should be kept)": 4
+  },
+  "executors": {
+   "qwen7b": {
+    "handled right": {
+     "rule_slots": 1920,
+     "followed": 0.7916666666666666,
+     "points_lost": 15.625
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 504,
+     "followed": 0.748015873015873,
+     "points_lost": 4.9609375
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 120,
+     "followed": 0.13333333333333333,
+     "points_lost": 4.062500000000001
+    },
+    "wrongly combined": {
+     "rule_slots": 16,
+     "followed": 1.0,
+     "points_lost": 0.0
+    }
+   }
+  }
+ },
+ "mistral7b": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: combined with the wrong partner": 15,
+   "entangled pair rule: dropped (should be combined)": 2,
+   "entangled pair rule: handled right": 4,
+   "entangled pair rule: kept (should be combined)": 19,
+   "entangled pair rule: not extracted (should be combined)": 24,
+   "losing contradictory rule: left in the file (combined)": 8,
+   "losing contradictory rule: left in the file (kept)": 4,
+   "losing contradictory rule: left in the file (not extracted)": 15,
+   "losing contradictory rule: removed (right)": 5,
+   "primary's contradictory or shared rule: combined (should be kept)": 19,
+   "primary's contradictory or shared rule: handled right": 18,
+   "primary's contradictory or shared rule: not extracted (should be kept)": 27,
+   "rule that touches nothing: combined (should be kept)": 39,
+   "rule that touches nothing: dropped (should be kept)": 5,
+   "rule that touches nothing: handled right": 76,
+   "rule that touches nothing: not extracted (should be kept)": 72
+  },
+  "executors": {
+   "mistral7b": {
+    "wrongly dropped or not extracted": {
+     "rule_slots": 1040,
+     "followed": 0.5942307692307692,
+     "points_lost": 16.484375
+    },
+    "wrongly combined": {
+     "rule_slots": 584,
+     "followed": 0.6164383561643836,
+     "points_lost": 8.750000000000002
+    },
+    "handled right": {
+     "rule_slots": 784,
+     "followed": 0.7346938775510204,
+     "points_lost": 8.125000000000002
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 152,
+     "followed": 0.7631578947368421,
+     "points_lost": 1.40625
+    }
+   }
+  }
+ },
+ "llama8b": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: combined with the wrong partner": 6,
+   "entangled pair rule: dropped (should be combined)": 1,
+   "entangled pair rule: handled right": 4,
+   "entangled pair rule: kept (should be combined)": 47,
+   "entangled pair rule: not extracted (should be combined)": 6,
+   "losing contradictory rule: left in the file (kept)": 18,
+   "losing contradictory rule: left in the file (not extracted)": 2,
+   "losing contradictory rule: removed (right)": 12,
+   "primary's contradictory or shared rule: combined (should be kept)": 6,
+   "primary's contradictory or shared rule: handled right": 54,
+   "primary's contradictory or shared rule: not extracted (should be kept)": 4,
+   "rule that touches nothing: combined (should be kept)": 33,
+   "rule that touches nothing: dropped (should be kept)": 9,
+   "rule that touches nothing: handled right": 144,
+   "rule that touches nothing: not extracted (should be kept)": 6
+  },
+  "executors": {
+   "qwen4b": {
+    "handled right": {
+     "rule_slots": 1616,
+     "followed": 0.869430693069307,
+     "points_lost": 8.2421875
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 376,
+     "followed": 0.7074468085106383,
+     "points_lost": 4.296875000000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 208,
+     "followed": 0.4807692307692308,
+     "points_lost": 4.21875
+    },
+    "wrongly combined": {
+     "rule_slots": 360,
+     "followed": 0.8055555555555556,
+     "points_lost": 2.7343750000000004
+    }
+   },
+   "llama8b": {
+    "handled right": {
+     "rule_slots": 1616,
+     "followed": 0.8824257425742574,
+     "points_lost": 7.421875000000003
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 376,
+     "followed": 0.6968085106382979,
+     "points_lost": 4.453125000000001
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 208,
+     "followed": 0.46634615384615385,
+     "points_lost": 4.335937500000001
+    },
+    "wrongly combined": {
+     "rule_slots": 360,
+     "followed": 0.8166666666666667,
+     "points_lost": 2.578125000000001
+    }
+   }
+  }
+ },
+ "phi4mini": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: combined with the wrong partner": 10,
+   "entangled pair rule: handled right": 4,
+   "entangled pair rule: kept (should be combined)": 28,
+   "entangled pair rule: not extracted (should be combined)": 22,
+   "losing contradictory rule: left in the file (combined)": 11,
+   "losing contradictory rule: left in the file (kept)": 7,
+   "losing contradictory rule: left in the file (not extracted)": 12,
+   "losing contradictory rule: removed (right)": 2,
+   "primary's contradictory or shared rule: combined (should be kept)": 25,
+   "primary's contradictory or shared rule: handled right": 14,
+   "primary's contradictory or shared rule: not extracted (should be kept)": 25,
+   "rule that touches nothing: combined (should be kept)": 39,
+   "rule that touches nothing: handled right": 81,
+   "rule that touches nothing: not extracted (should be kept)": 72
+  },
+  "executors": {
+   "phi4mini": {
+    "wrongly combined": {
+     "rule_slots": 592,
+     "followed": 0.5625,
+     "points_lost": 10.1171875
+    },
+    "handled right": {
+     "rule_slots": 792,
+     "followed": 0.61489898989899,
+     "points_lost": 11.914062499999998
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 952,
+     "followed": 0.3855042016806723,
+     "points_lost": 22.851562499999975
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 224,
+     "followed": 0.6875,
+     "points_lost": 2.734375000000001
+    }
+   }
+  }
+ },
+ "qwen235b": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: combined with the wrong partner": 6,
+   "entangled pair rule: dropped (should be combined)": 2,
+   "entangled pair rule: handled right": 28,
+   "entangled pair rule: kept (should be combined)": 26,
+   "entangled pair rule: not extracted (should be combined)": 2,
+   "losing contradictory rule: left in the file (combined)": 2,
+   "losing contradictory rule: left in the file (kept)": 4,
+   "losing contradictory rule: left in the file (not extracted)": 1,
+   "losing contradictory rule: removed (right)": 25,
+   "primary's contradictory or shared rule: combined (should be kept)": 4,
+   "primary's contradictory or shared rule: handled right": 58,
+   "primary's contradictory or shared rule: not extracted (should be kept)": 2,
+   "rule that touches nothing: combined (should be kept)": 34,
+   "rule that touches nothing: handled right": 156,
+   "rule that touches nothing: not extracted (should be kept)": 2
+  },
+  "executors": {
+   "qwen4b": {
+    "handled right": {
+     "rule_slots": 1936,
+     "followed": 0.8920454545454546,
+     "points_lost": 8.164062499999998
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 64,
+     "followed": 0.625,
+     "points_lost": 0.9375000000000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 208,
+     "followed": 0.6875,
+     "points_lost": 2.5390625
+    },
+    "wrongly combined": {
+     "rule_slots": 352,
+     "followed": 0.9090909090909091,
+     "points_lost": 1.25
+    }
+   },
+   "llama8b": {
+    "handled right": {
+     "rule_slots": 1936,
+     "followed": 0.8899793388429752,
+     "points_lost": 8.320312499999998
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 64,
+     "followed": 0.625,
+     "points_lost": 0.9375000000000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 208,
+     "followed": 0.6923076923076923,
+     "points_lost": 2.5
+    },
+    "wrongly combined": {
+     "rule_slots": 352,
+     "followed": 0.9034090909090909,
+     "points_lost": 1.3281250000000002
+    }
+   },
+   "qwen235b": {
+    "handled right": {
+     "rule_slots": 1936,
+     "followed": 0.8858471074380165,
+     "points_lost": 8.632812499999998
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 64,
+     "followed": 0.625,
+     "points_lost": 0.9375000000000001
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 208,
+     "followed": 0.6875,
+     "points_lost": 2.5390625
+    },
+    "wrongly combined": {
+     "rule_slots": 352,
+     "followed": 0.9090909090909091,
+     "points_lost": 1.25
+    }
+   }
+  }
+ },
+ "gpt41": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: combined with the wrong partner": 4,
+   "entangled pair rule: dropped (should be combined)": 2,
+   "entangled pair rule: handled right": 36,
+   "entangled pair rule: kept (should be combined)": 22,
+   "losing contradictory rule: left in the file (combined)": 4,
+   "losing contradictory rule: removed (right)": 28,
+   "primary's contradictory or shared rule: combined (should be kept)": 6,
+   "primary's contradictory or shared rule: handled right": 58,
+   "rule that touches nothing: combined (should be kept)": 4,
+   "rule that touches nothing: handled right": 188
+  },
+  "executors": {
+   "qwen4b": {
+    "handled right": {
+     "rule_slots": 2256,
+     "followed": 0.9051418439716312,
+     "points_lost": 8.359374999999993
+    },
+    "wrongly combined": {
+     "rule_slots": 112,
+     "followed": 0.9285714285714286,
+     "points_lost": 0.3125
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 176,
+     "followed": 0.8181818181818182,
+     "points_lost": 1.25
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 16,
+     "followed": 0.0,
+     "points_lost": 0.6250000000000001
+    }
+   },
+   "llama8b": {
+    "handled right": {
+     "rule_slots": 2256,
+     "followed": 0.9055851063829787,
+     "points_lost": 8.320312499999993
+    },
+    "wrongly combined": {
+     "rule_slots": 112,
+     "followed": 0.9285714285714286,
+     "points_lost": 0.3125
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 176,
+     "followed": 0.8295454545454546,
+     "points_lost": 1.171875
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 16,
+     "followed": 0.0,
+     "points_lost": 0.6250000000000001
+    }
+   },
+   "gpt41": {
+    "handled right": {
+     "rule_slots": 1128,
+     "followed": 0.9202127659574468,
+     "points_lost": 7.031249999999997
+    },
+    "wrongly combined": {
+     "rule_slots": 56,
+     "followed": 0.9285714285714286,
+     "points_lost": 0.3125
+    },
+    "entangled rule left unreconciled": {
+     "rule_slots": 88,
+     "followed": 0.8181818181818182,
+     "points_lost": 1.25
+    },
+    "wrongly dropped or not extracted": {
+     "rule_slots": 8,
+     "followed": 0.0,
+     "points_lost": 0.625
+    }
+   }
+  }
+ },
+ "agent": {
+  "files": 32,
+  "counts": {
+   "entangled pair rule: handled right": 64,
+   "losing contradictory rule: removed (right)": 32,
+   "primary's contradictory or shared rule: handled right": 64,
+   "rule that touches nothing: handled right": 192
+  },
+  "executors": {
+   "qwen4b": {
+    "handled right": {
+     "rule_slots": 2560,
+     "followed": 0.983984375,
+     "points_lost": 1.6015625000000002
+    }
+   },
+   "qwen7b": {
+    "handled right": {
+     "rule_slots": 2560,
+     "followed": 0.9671875,
+     "points_lost": 3.28125
+    }
+   },
+   "mistral7b": {
+    "handled right": {
+     "rule_slots": 2560,
+     "followed": 0.96796875,
+     "points_lost": 3.203125000000001
+    }
+   },
+   "llama8b": {
+    "handled right": {
+     "rule_slots": 2560,
+     "followed": 0.985546875,
+     "points_lost": 1.4453125000000004
+    }
+   },
+   "phi4mini": {
+    "handled right": {
+     "rule_slots": 2560,
+     "followed": 0.959375,
+     "points_lost": 4.0625
+    }
+   },
+   "qwen235b": {
+    "handled right": {
+     "rule_slots": 2560,
+     "followed": 0.990234375,
+     "points_lost": 0.9765625
+    }
+   },
+   "gpt41": {
+    "handled right": {
+     "rule_slots": 1280,
+     "followed": 0.99375,
+     "points_lost": 0.625
+    }
+   }
+  }
+ },
+ "file_level": {
+  "qwen4b": {
+   "clean_files": 2,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_qwen4b": "5/32",
+    "freemerge_qwen4b": "3/32"
+   },
+   "executors": {
+    "qwen4b": {
+     "clean": {
+      "files": 2,
+      "structured": 0.9187500000000001,
+      "free_form": 0.8500000000000001,
+      "structured_no_example": 0.9125000000000001,
+      "structured_true_relations": 0.9625
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.7758333333333334,
+      "free_form": 0.7887499999999998,
+      "structured_no_example": 0.7408333333333332,
+      "structured_true_relations": 0.8641666666666666
+     }
+    },
+    "qwen7b": {
+     "clean": {
+      "files": 2,
+      "structured": 0.925,
+      "free_form": 0.85625,
+      "structured_no_example": 0.9624999999999999,
+      "structured_true_relations": 0.98125
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.7683333333333333,
+      "free_form": 0.7808333333333333,
+      "structured_no_example": 0.6808333333333334,
+      "structured_true_relations": 0.8533333333333332
+     }
+    },
+    "mistral7b": {
+     "clean": {
+      "files": 2,
+      "structured": 0.9125000000000001,
+      "free_form": 0.8500000000000001,
+      "structured_no_example": 0.7374999999999999,
+      "structured_true_relations": 0.975
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.7337500000000001,
+      "free_form": 0.7604166666666665,
+      "structured_no_example": 0.6974999999999999,
+      "structured_true_relations": 0.8324999999999999
+     }
+    },
+    "llama8b": {
+     "clean": {
+      "files": 2,
+      "structured": 0.9187500000000001,
+      "free_form": 0.84375,
+      "structured_no_example": 0.9875,
+      "structured_true_relations": 0.9875
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.77375,
+      "free_form": 0.7941666666666666,
+      "structured_no_example": 0.7579166666666668,
+      "structured_true_relations": 0.8566666666666666
+     }
+    },
+    "phi4mini": {
+     "clean": {
+      "files": 2,
+      "structured": 0.9125000000000001,
+      "free_form": 0.84375,
+      "structured_no_example": 0.74375,
+      "structured_true_relations": 0.96875
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.7587500000000001,
+      "free_form": 0.7675000000000001,
+      "structured_no_example": 0.5925,
+      "structured_true_relations": 0.8416666666666667
+     }
+    },
+    "qwen235b": {
+     "clean": {
+      "files": 2,
+      "structured": 0.9625,
+      "free_form": 0.90625,
+      "structured_no_example": 0.98125,
+      "structured_true_relations": 0.96875
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.7716666666666666,
+      "free_form": 0.8016666666666665,
+      "structured_no_example": 0.84,
+      "structured_true_relations": 0.8679166666666664
+     }
+    },
+    "gpt41": {
+     "clean": {
+      "files": 2,
+      "structured": 0.9624999999999999,
+      "free_form": 0.9125,
+      "structured_no_example": 1.0,
+      "structured_true_relations": 0.9875
+     },
+     "with an error": {
+      "files": 30,
+      "structured": 0.7891666666666666,
+      "free_form": 0.8099999999999999,
+      "structured_no_example": 0.8333333333333334,
+      "structured_true_relations": 0.8874999999999998
+     }
+    }
+   }
+  },
+  "qwen7b": {
+   "clean_files": 0,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_qwen7b": "3/32",
+    "freemerge_qwen7b": "2/32"
+   },
+   "executors": {
+    "qwen7b": {
+     "with an error": {
+      "files": 32,
+      "structured": 0.753515625,
+      "free_form": 0.7503906250000001,
+      "structured_no_example": 0.740234375,
+      "structured_true_relations": null
+     }
+    }
+   }
+  },
+  "mistral7b": {
+   "clean_files": 0,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_mistral7b": "0/32",
+    "freemerge_mistral7b": "2/32"
+   },
+   "executors": {
+    "mistral7b": {
+     "with an error": {
+      "files": 32,
+      "structured": 0.65234375,
+      "free_form": 0.801953125,
+      "structured_no_example": 0.640234375,
+      "structured_true_relations": null
+     }
+    }
+   }
+  },
+  "llama8b": {
+   "clean_files": 0,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_llama8b": "4/32",
+    "freemerge_llama8b": "6/32"
+   },
+   "executors": {
+    "qwen4b": {
+     "with an error": {
+      "files": 32,
+      "structured": 0.8050781250000001,
+      "free_form": 0.86953125,
+      "structured_no_example": 0.770703125,
+      "structured_true_relations": null
+     }
+    },
+    "llama8b": {
+     "with an error": {
+      "files": 32,
+      "structured": 0.812109375,
+      "free_form": 0.8687500000000001,
+      "structured_no_example": 0.76484375,
+      "structured_true_relations": null
+     }
+    }
+   }
+  },
+  "phi4mini": {
+   "clean_files": 0,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_phi4mini": "2/32",
+    "freemerge_phi4mini": "0/32"
+   },
+   "executors": {
+    "phi4mini": {
+     "with an error": {
+      "files": 32,
+      "structured": 0.523828125,
+      "free_form": 0.7113281250000001,
+      "structured_no_example": 0.461328125,
+      "structured_true_relations": null
+     }
+    }
+   }
+  },
+  "qwen235b": {
+   "clean_files": 6,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_qwen235b": "10/32",
+    "freemerge_qwen235b": "15/32"
+   },
+   "executors": {
+    "qwen4b": {
+     "clean": {
+      "files": 6,
+      "structured": 0.9666666666666667,
+      "free_form": 0.9562499999999999,
+      "structured_no_example": 0.9583333333333334,
+      "structured_true_relations": 0.9666666666666667
+     },
+     "with an error": {
+      "files": 26,
+      "structured": 0.8490384615384616,
+      "free_form": 0.9350961538461539,
+      "structured_no_example": 0.7663461538461539,
+      "structured_true_relations": 0.8990384615384615
+     }
+    },
+    "llama8b": {
+     "clean": {
+      "files": 6,
+      "structured": 0.9666666666666667,
+      "free_form": 0.9479166666666666,
+      "structured_no_example": 0.8979166666666666,
+      "structured_true_relations": 0.9625
+     },
+     "with an error": {
+      "files": 26,
+      "structured": 0.8466346153846155,
+      "free_form": 0.9322115384615384,
+      "structured_no_example": 0.7663461538461539,
+      "structured_true_relations": 0.901923076923077
+     }
+    },
+    "qwen235b": {
+     "clean": {
+      "files": 6,
+      "structured": 0.9645833333333335,
+      "free_form": 0.9562499999999999,
+      "structured_no_example": 0.9708333333333333,
+      "structured_true_relations": 0.9625
+     },
+     "with an error": {
+      "files": 26,
+      "structured": 0.8437500000000001,
+      "free_form": 0.9403846153846153,
+      "structured_no_example": 0.8778846153846155,
+      "structured_true_relations": 0.8937499999999999
+     }
+    }
+   }
+  },
+  "gpt41": {
+   "clean_files": 14,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_gpt41": "17/32",
+    "freemerge_gpt41": "17/32"
+   },
+   "executors": {
+    "qwen4b": {
+     "clean": {
+      "files": 14,
+      "structured": 0.9258928571428571,
+      "free_form": 0.9544642857142858,
+      "structured_no_example": 0.88125,
+      "structured_true_relations": 0.9339285714285716
+     },
+     "with an error": {
+      "files": 18,
+      "structured": 0.8701388888888889,
+      "free_form": 0.9020833333333333,
+      "structured_no_example": 0.85,
+      "structured_true_relations": 0.9243055555555557
+     }
+    },
+    "llama8b": {
+     "clean": {
+      "files": 14,
+      "structured": 0.9428571428571428,
+      "free_form": 0.9580357142857142,
+      "structured_no_example": 0.8892857142857142,
+      "structured_true_relations": 0.9446428571428571
+     },
+     "with an error": {
+      "files": 18,
+      "structured": 0.8590277777777778,
+      "free_form": 0.90625,
+      "structured_no_example": 0.78125,
+      "structured_true_relations": 0.9194444444444445
+     }
+    },
+    "gpt41": {
+     "clean": {
+      "files": 14,
+      "structured": 0.9428571428571428,
+      "free_form": 0.955357142857143,
+      "structured_no_example": 0.9464285714285713,
+      "structured_true_relations": 0.9428571428571428
+     },
+     "with an error": {
+      "files": 18,
+      "structured": 0.8805555555555555,
+      "free_form": 0.9402777777777777,
+      "structured_no_example": 0.8736111111111111,
+      "structured_true_relations": 0.9361111111111112
+     }
+    }
+   }
+  },
+  "agent": {
+   "clean_files": 32,
+   "files": 32,
+   "examples_meeting_every_achievable_rule": {
+    "truce_agent": "30/32",
+    "freemerge_agent": "28/32"
+   },
+   "executors": {
+    "qwen4b": {
+     "clean": {
+      "files": 32,
+      "structured": 0.9839843749999999,
+      "free_form": 0.97734375,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    },
+    "qwen7b": {
+     "clean": {
+      "files": 32,
+      "structured": 0.9671875,
+      "free_form": 0.963671875,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    },
+    "mistral7b": {
+     "clean": {
+      "files": 32,
+      "structured": 0.96796875,
+      "free_form": 0.950390625,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    },
+    "llama8b": {
+     "clean": {
+      "files": 32,
+      "structured": 0.985546875,
+      "free_form": 0.98046875,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    },
+    "phi4mini": {
+     "clean": {
+      "files": 32,
+      "structured": 0.959375,
+      "free_form": 0.9539062500000001,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    },
+    "qwen235b": {
+     "clean": {
+      "files": 32,
+      "structured": 0.990234375,
+      "free_form": 0.9769531250000001,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    },
+    "gpt41": {
+     "clean": {
+      "files": 32,
+      "structured": 0.99375,
+      "free_form": 0.9859375000000001,
+      "structured_no_example": null,
+      "structured_true_relations": null
+     }
+    }
+   }
+  }
+ }
+}

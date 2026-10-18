@@ -1,0 +1,71 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Group changes under at least two of the headings `### Added`, `### Changed`, `### Fixed`.",
+   "Flag incompatible changes with the exact marker `BREAKING:`.",
+   "Reference issues in parentheses as `(#<number>)`.",
+   "Bullets describe the change only. No bullet may contain an @handle.",
+   "The first line must be the version heading `## [<version>] - <YYYY-MM-DD>`, for example `## [2.3.0] - 2026-03-02`.",
+   "Bullets are fragments: no bullet may end with a period."
+  ],
+  "B": [
+   "The first line must be the title `# Release <version> (<Month D, YYYY>)`, for example `# Release 2.3.0 (March 2, 2026)`.",
+   "Open with a one-sentence summary on a line that starts with `Highlights: `.",
+   "Credit every contributor by @handle.",
+   "Mark incompatible changes with `BREAKING:` exactly.",
+   "Tell users what to do on a line that starts with `Upgrade: `.",
+   "Put the name of each new feature in bold with `**`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 4,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules specify the first line of the output but with different formats: A5 requires a version heading with square brackets and ISO date format, while B1 requires a title with a spelled-out date. To satisfy both, the output must be split into two sections where one skill's content comes first, th"
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require marking incompatible changes with the exact marker 'BREAKING:'."
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "A3 requires referencing issues as (#number), which may appear alongside contributor credits, but B3 requires crediting contributors by @handle. If issue references and handles appear together (e.g., in a bullet), it could violate A4, which forbids @handles in bullets. Thus, issue references and cont"
+  },
+  {
+   "a": 3,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "A4 prohibits any bullet from containing an @handle, but B3 requires crediting every contributor by @handle. Therefore, contributor credits cannot appear in bullet lists (such as under changelog headings), and must be placed outside bullets\u2014e.g., in a dedicated section\u2014to satisfy both rules."
+  }
+ ],
+ "dropped_from_secondary": [
+  3
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   0
+  ],
+  [
+   2,
+   2
+  ]
+ ],
+ "reconciled": [
+  "The first line must be the title `",
+  "Credit every contributor by @handle and reference issues in parentheses as `(#<number>)`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

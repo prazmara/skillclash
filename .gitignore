@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+runs/*/cache.jsonl
+runs/*/steer_acts.npz
+*.aux
+*.log
+*.out
+*.blg

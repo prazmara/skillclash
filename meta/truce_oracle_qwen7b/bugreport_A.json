@@ -1,0 +1,55 @@
+{
+ "method": "structured",
+ "mode": "oracle",
+ "compiler": "/content/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "The first line must be plain text of the form `Title: <one-line summary>`.",
+   "Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`.",
+   "Give the app version and the platform on one line that starts with `Environment: `.",
+   "Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`.",
+   "Contrast the outcome in two lines that start with `Expected: ` and `Actual: `.",
+   "Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`."
+  ],
+  "B": [
+   "The first line must be a level-2 Markdown heading of the form `## Bug: <summary>`.",
+   "Say whether this worked before on a line `Regression: yes`, `Regression: no` or `Regression: unknown`.",
+   "Offer a way around the bug on a line that starts with `Workaround: `, and write `Workaround: none` if there is none.",
+   "Name the person who found the bug on a line `Reported by: <full name>`.",
+   "Describe what should happen and what happens instead on two separate lines, `Expected: ...` and `Actual: ...`.",
+   "Quote the exact error message inside backticks so that developers can search for it."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "contradictory"
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "duplicate"
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Keep the description free of code formatting and quote the exact error message inside backticks on a final line that starts with `Error text:`."
+ ],
+ "extract_path": null
+}

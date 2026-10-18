@@ -1,0 +1,66 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`",
+   "Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`",
+   "The first line must be plain text of the form `Title: <one-line summary>`",
+   "Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`"
+  ],
+  "B": [
+   "The first line must be a level-2 Markdown heading of the form `## Bug: <summary>`.",
+   "Name the person who found the bug on a line `Reported by: <full name>`.",
+   "Say whether this worked before on a line `Regression: yes`, `Regression: no` or `Regression: unknown`.",
+   "Describe what should happen and what happens instead on two separate lines, `Expected: ...` and `Actual: ...`.",
+   "Offer a way around the bug on a line that starts with `Workaround: `, and write `Workaround: none` if there is none.",
+   "Quote the exact error message inside backticks so that developers can search for it."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require the description to be free of code formatting, but B6 specifically asks for error messages to be quoted inside backticks. To satisfy both rules, the error message should be quoted but the rest of the description should not contain backticks."
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules require a one-line summary, but they use different formats: A3 uses `Title: <one-line summary>` and B1 uses `## Bug: <summary>`. To satisfy both rules, the summary can be placed inside the Markdown heading as a subtitle."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules require a description of the issue, but A4 rates the severity and B4 describes what should happen and what happens instead. To satisfy both rules, the severity can be included in the description, for example: `Expected: ... (Severity: S1)`, `Actual: ...`."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   0,
+   5
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   3,
+   3
+  ]
+ ],
+ "reconciled": [
+  "Write the output with the error message quoted and enclosed in backticks if it appears, and ensure the description is free of code formatting, except for the final line that starts with `Error text:`.",
+  "Write the output as follows: ``` ## Bug: <one-line summary> ``` This line should be a level-2 Markdown heading and also serve as the one-line summary for the bug triage form.",
+  "Write the output in the following format: ``` Severity: [Severity Level] Expected: [Describe the expected behavior] Actual: [Describe the current behavior] ``` Replace `[Severity Level]` with S1, S2, S3, or S4, and replace `[Describe the expected behavior]` and `[Describe the current behavior]` with appropriate descriptions. This format will satisfy both rules from `bug-triage-form` and `bug-dev-handoff`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

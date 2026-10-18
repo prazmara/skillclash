@@ -1,0 +1,305 @@
+model qwen4b: 16 jobs, 1152 diagnosis records
+rules valid / total by relation: {'excl': {'valid': 88, 'total': 96}, 'sh': {'valid': 27, 'total': 32}, 'ent': {'valid': 23, 'total': 32}, 'con': {'valid': 30, 'total': 32}}
+
+=== TABLE 1 (all rules): share of a skill's own rules satisfied (%), mean over jobs [95% CI]
+rule group                  no skill          skill alone    + unrelated skill     + clashing skill                 change
+all own rules    12.3 [  7.7,  17.4]  97.3 [ 95.3,  98.9]  98.0 [ 96.5,  99.3]  60.8 [ 58.7,  63.4]   -36.5 [-39.0, -33.6]
+satisfiable      13.3 [  8.1,  18.8]  96.8 [ 94.5,  98.8]  97.7 [ 95.9,  99.2]  63.1 [ 60.6,  66.2]   -33.7 [-36.7, -30.2]
+exclusive         8.7 [  2.9,  16.5]  96.9 [ 93.9,  99.3]  97.2 [ 94.3,  99.5]  53.4 [ 50.3,  58.1]   -43.5 [-47.5, -38.0]
+shared           14.8 [  2.3,  32.0]  96.9 [ 91.8, 100.0]  98.0 [ 94.7, 100.0]  99.2 [ 98.0, 100.0]     2.3 [ -0.8,   7.4]
+entangled        25.4 [ 14.8,  36.3]  96.5 [ 91.0, 100.0]  98.8 [ 97.5, 100.0]  56.1 [ 52.0,  61.1]   -40.4 [-46.7, -33.2]
+contradictory     7.4 [  0.0,  16.8]  99.6 [ 98.8, 100.0]  99.8 [ 99.4, 100.0]  49.4 [ 48.8,  50.0]   -50.2 [-50.8, -49.6]
+
+=== TABLE 1 (valid rules only): share of a skill's own rules satisfied (%), mean over jobs [95% CI]
+rule group                  no skill          skill alone    + unrelated skill     + clashing skill                 change
+all own rules     2.5 [  1.3,   3.8]  98.3 [ 96.1,  99.8]  98.6 [ 96.9,  99.9]  60.0 [ 57.5,  62.5]   -38.3 [-41.3, -35.4]
+satisfiable       2.9 [  1.4,   4.5]  98.0 [ 95.4,  99.8]  98.4 [ 96.4,  99.9]  62.2 [ 59.2,  65.3]   -35.8 [-39.3, -32.5]
+exclusive         2.2 [  0.6,   4.1]  97.9 [ 95.1, 100.0]  97.9 [ 95.1, 100.0]  52.7 [ 50.3,  56.2]   -45.1 [-48.6, -40.3]
+shared            3.6 [  0.0,   8.0]  99.1 [ 97.8, 100.0]  99.6 [ 98.9, 100.0]  99.1 [ 97.8, 100.0]     0.0 [ -1.3,   1.3]
+entangled         5.5 [  0.4,  12.9]  96.9 [ 90.6, 100.0]  99.2 [ 98.0, 100.0]  53.7 [ 38.9,  68.8]   -43.2 [-57.0, -29.7]
+contradictory     1.2 [  0.0,   3.5]  99.6 [ 98.8, 100.0]  99.8 [ 99.4, 100.0]  50.4 [ 42.8,  59.0]   -49.2 [-56.8, -40.6]
+
+=== TAKEOVER when both skills are loaded (exclusive rules; % of outputs)
+  one skill fully, the other not at all   78.1 [ 62.1,  91.4]
+  both skills fully                        0.4 [  0.0,   1.2]
+  correlation of the two skills' exclusive-rule compliance: -0.87
+  contradiction: first-listed wins  60.2 [ 49.6,  71.1], second-listed wins  38.7 [ 27.7,  49.6]
+  entangled pair both satisfied: loaded together  12.5 [  3.9,  22.7], each alone (product)  93.0 [ 82.0, 100.0]
+  requests with a takeover in both load orders: 88; same skill wins both orders  75.0 [ 53.6,  92.6], first-listed wins both  16.2 [  1.9,  34.9], second-listed wins both   8.8 [  0.0,  25.3]
+  share of takeovers won by the first-listed skill  60.3 [ 47.4,  73.0]
+  pooled over outputs: same skill wins both orders 73.9, first-listed share of takeovers 58.0 of 200
+  takeover on valid exclusive rules only  81.6 [ 66.4,  93.4]
+  takeover per job: commit 100, changelog 100, standup 100, bugreport 100, apidoc 100, alert 100, apierror 94, review 94, userstory 94, testcase 88, pr 81, dockerfile 81, support 50, incident 38, python 31, sql 0
+
+=== TABLE 2: what triggers the takeover (exclusive rules, %)
+skills shown                                                        alone          both loaded             takeover           both fully
+full skills (with examples)                           96.9 [ 93.9,  99.3]  53.4 [ 50.3,  58.1]  78.1 [ 62.1,  91.4]   0.4 [  0.0,   1.2]   both fully if no interference  86.7 [ 73.4,  96.9], observed minus that -86.3 [-96.9, -73.0]
+examples removed                                      92.8 [ 88.9,  96.5]  63.5 [ 56.2,  71.2]  33.6 [ 19.5,  49.2]  16.0 [  6.6,  27.4]   both fully if no interference  62.5 [ 42.2,  81.2], observed minus that -46.5 [-69.5, -21.5]
+examples and contradiction removed                    93.8 [ 89.7,  97.4]  68.8 [ 60.3,  77.4]  25.4 [ 13.3,  39.8]  26.2 [ 13.7,  39.8]   both fully if no interference  68.8 [ 50.0,  85.9], observed minus that -42.6 [-59.4, -25.4]
+examples, contradiction and entangled rule removed    92.4 [ 88.3,  96.6]  70.8 [ 61.5,  80.2]  23.0 [  9.4,  39.1]  30.5 [ 15.2,  47.7]   both fully if no interference  63.3 [ 43.0,  82.8], observed minus that -32.8 [-50.8, -16.4]
+
+=== ONLY ONE SKILL HAS ITS EXAMPLE (both loaded; exclusive rules, %)
+  first-listed skill takes over, example on it minus example on the other skill (paired by job):  14.5 [  3.1,  25.8] (+9/-1)
+  example skill listed first   takeover  54.3 [ 33.2,  75.0]; example skill takes over  21.5 [ 10.9,  32.8], other skill  32.8 [ 19.1,  46.5]; exclusive rules met: example skill  50.3 [ 39.7,  60.7], other  66.8 [ 57.3,  76.8]; example skill's share of takeovers 39.6
+  example skill listed second  takeover  68.0 [ 50.4,  84.4]; example skill takes over  60.9 [ 43.0,  78.1], other skill   7.0 [  0.8,  14.8]; exclusive rules met: example skill  83.3 [ 72.0,  93.2], other  24.3 [ 12.8,  36.1]; example skill's share of takeovers 89.7
+  both orders                  takeover  61.1 [ 44.1,  77.5]; example skill takes over  41.2 [ 29.5,  52.3], other skill  19.9 [ 12.9,  27.0]; exclusive rules met: example skill  66.8 [ 59.5,  73.7], other  45.6 [ 38.7,  52.8]; example skill's share of takeovers 67.4
+
+=== SKILLS IN THE USER TURN (all own rules, %)
+  alone  98.0 [ 96.5,  99.2]; with the same-job skill  61.7 [ 59.3,  64.4]; change -36.3 [-38.9, -33.4]; takeover  74.2 [ 57.4,  89.1]; both fully   2.0 [  0.0,   4.3]
+
+=== SAMPLING (temperature 0.7, 3 seeds): same request, both skills loaded
+  seeds disagree on the winner, same load order        9.0 [  4.7,  14.8]
+  winner differs across seeds or load orders          46.1 [ 28.1,  64.8]
+  takeover rate under sampling                        77.5 [ 62.0,  90.9]
+  opposite winners (A in one sample, B in another), same load order     3.1 [  0.8,   5.9]
+  opposite winners across seeds or load orders                          21.1 [  6.2,  38.3]
+
+=== TABLE 3 (all rules): treatments, % satisfied, mean over jobs [95% CI]
+condition                      jobs                  MSS          primary own       secondary excl       entangled both      precedence kept    all MSS rules met             takeover
+truce_agent                      16  98.4 [ 97.0,  99.5]  98.8 [ 97.6,  99.7]  97.4 [ 95.1,  99.3]  98.4 [ 95.3, 100.0] 100.0 [100.0, 100.0]  86.7 [ 75.8,  95.7]   0.0 [  0.0,   0.0]
+freemerge_agent                  16  97.7 [ 96.6,  98.8]  98.5 [ 97.5,  99.4]  98.2 [ 96.4,  99.6]  90.2 [ 80.5,  98.4] 100.0 [100.0, 100.0]  78.5 [ 67.6,  89.1]   0.0 [  0.0,   0.0]
+freemerge_qwen235b               16  93.9 [ 91.5,  96.2]  94.4 [ 91.9,  96.7]  97.5 [ 95.1,  99.5]  65.6 [ 46.1,  83.6]  93.4 [ 84.0, 100.0]  51.2 [ 34.8,  67.6]   0.0 [  0.0,   0.0]
+jointex_QP                       16  93.9 [ 90.5,  96.9]  93.2 [ 88.7,  96.9]  95.1 [ 88.4,  99.3]  90.6 [ 82.8,  97.3]  83.2 [ 71.1,  93.8]  62.1 [ 48.0,  76.6]   6.2 [  0.0,  14.8]
+jointex_avg                      16  92.9 [ 89.5,  96.1]  91.3 [ 86.7,  95.1]  95.6 [ 91.5,  98.9]  89.6 [ 81.6,  96.5]  78.1 [ 69.1,  86.9]  60.4 [ 47.3,  73.4]   6.2 [  0.4,  14.6]
+truce_oracle_gpt41               16  92.9 [ 88.2,  96.5]  93.8 [ 89.3,  97.3]  93.9 [ 88.0,  98.4]  72.7 [ 57.8,  86.3] 100.0 [100.0, 100.0]  55.9 [ 39.1,  72.7]   0.0 [  0.0,   0.0]
+freemerge_gpt41                  16  92.5 [ 88.8,  96.1]  94.1 [ 90.7,  97.2]  95.3 [ 91.4,  98.7]  59.0 [ 39.8,  77.7]  96.1 [ 89.1, 100.0]  53.1 [ 32.0,  73.8]   1.2 [  0.0,   3.5]
+union_ref_frontier_qwen4b        16  92.4 [ 88.8,  95.5]  93.2 [ 90.3,  96.0]  94.7 [ 88.4,  99.3]  59.8 [ 39.8,  78.9]  93.8 [ 84.4, 100.0]  47.3 [ 28.9,  65.6]   0.8 [  0.0,   2.0]
+jointex_PQ                       16  92.0 [ 88.0,  95.7]  89.4 [ 83.6,  94.6]  96.1 [ 91.9,  99.2]  88.7 [ 80.5,  96.1]  73.0 [ 60.5,  85.2]  58.6 [ 44.5,  72.7]   6.2 [  0.0,  14.1]
+truce_oracle_qwen235b            16  91.2 [ 85.1,  95.7]  91.1 [ 85.4,  95.6]  94.1 [ 87.2,  98.7]  61.3 [ 42.2,  79.3]  96.9 [ 90.6, 100.0]  51.2 [ 32.4,  69.2]   0.0 [  0.0,   0.0]
+unionagentex                     16  90.9 [ 87.3,  94.3]  92.3 [ 88.2,  96.2]  90.2 [ 82.8,  96.2]  79.7 [ 65.2,  92.6]  72.3 [ 56.2,  87.5]  49.2 [ 35.2,  62.9]   5.9 [  0.0,  12.5]
+truce_gpt41                      16  89.5 [ 80.9,  95.5]  90.4 [ 81.7,  96.0]  90.5 [ 81.1,  97.4]  58.6 [ 38.3,  78.1]  96.9 [ 90.6, 100.0]  45.3 [ 27.0,  64.5]   0.0 [  0.0,   0.0]
+truceagent_noex                  16  89.1 [ 84.1,  93.4]  88.7 [ 83.8,  93.4]  88.5 [ 81.5,  94.9]  87.9 [ 73.0,  98.8]  95.7 [ 89.1,  99.6]  43.8 [ 27.7,  59.8]   1.6 [  0.0,   3.9]
+truce_ref_random_qwen4b          16  88.4 [ 81.2,  94.1]  89.9 [ 83.4,  94.9]  86.6 [ 77.1,  94.8]  67.2 [ 48.4,  84.4]  90.6 [ 81.2, 100.0]  43.0 [ 25.0,  60.9]   0.0 [  0.0,   0.0]
+truce_ref_frontier_qwen4b        16  88.2 [ 81.6,  93.3]  88.3 [ 81.8,  93.4]  88.2 [ 78.8,  95.8]  69.5 [ 52.3,  85.2]  84.4 [ 71.9,  93.8]  40.2 [ 21.9,  59.0]   0.0 [  0.0,   0.0]
+truce_oracle_noex_qwen4b         16  87.5 [ 82.9,  91.8]  88.5 [ 84.0,  92.9]  92.3 [ 86.6,  97.3]  53.5 [ 34.8,  72.3]  96.5 [ 90.2, 100.0]  27.3 [ 12.9,  42.6]   0.8 [  0.0,   2.3]
+truce_qwen235b                   16  87.1 [ 80.4,  92.5]  85.9 [ 77.8,  92.1]  89.6 [ 82.7,  95.4]  54.3 [ 34.4,  73.0]  84.4 [ 65.6, 100.0]  32.4 [ 15.2,  51.6]   0.0 [  0.0,   0.0]
+truce_oracle_qwen4b              16  87.0 [ 82.3,  91.6]  86.2 [ 80.8,  91.3]  93.9 [ 88.4,  98.6]  49.6 [ 30.5,  68.8]  96.9 [ 90.6, 100.0]  24.6 [  8.6,  42.6]   0.0 [  0.0,   0.0]
+freemerge_llama8b                16  87.0 [ 83.2,  90.7]  85.7 [ 82.0,  89.6]  93.2 [ 87.9,  97.8]  43.4 [ 23.8,  63.3]  68.4 [ 52.7,  81.2]  22.3 [  8.2,  39.1]   0.0 [  0.0,   0.0]
+truce_noex_gpt41                 16  86.4 [ 81.7,  90.6]  86.0 [ 81.6,  90.2]  88.8 [ 82.7,  94.3]  57.8 [ 39.1,  76.6]  93.8 [ 84.4, 100.0]  25.4 [ 13.7,  37.9]   2.0 [  0.0,   5.5]
+unionwex_gpt41                   16  84.9 [ 77.3,  90.1]  83.9 [ 76.0,  89.3]  89.1 [ 79.8,  96.0]  56.6 [ 37.1,  75.4]  66.0 [ 49.2,  81.6]  24.6 [ 12.9,  37.1]   2.3 [  0.0,   6.2]
+unionwex_qwen235b                16  82.7 [ 77.1,  87.3]  80.5 [ 73.4,  86.3]  85.2 [ 76.7,  92.6]  56.2 [ 36.7,  74.6]  60.5 [ 43.0,  77.0]  16.8 [  6.2,  29.3]   6.2 [  0.0,  15.6]
+unionwex_llama8b                 16  81.5 [ 76.7,  85.9]  80.7 [ 75.9,  85.2]  85.8 [ 77.6,  92.8]  43.8 [ 27.0,  60.2]  50.0 [ 31.2,  68.8]  11.7 [  3.1,  21.9]   4.7 [  0.0,  10.9]
+truce_llama8b                    16  80.5 [ 74.3,  86.0]  78.8 [ 72.8,  84.4]  84.8 [ 72.9,  94.4]  45.7 [ 28.9,  62.9]  46.9 [ 28.1,  65.6]  10.5 [  2.0,  20.3]   2.7 [  0.0,   8.2]
+truce_noex_qwen235b              16  80.2 [ 71.2,  87.8]  78.1 [ 67.6,  86.2]  87.4 [ 78.6,  94.8]  48.0 [ 28.1,  67.2]  82.8 [ 64.8,  97.3]  25.4 [ 10.9,  41.8]   4.7 [  0.0,  11.7]
+freemerge_qwen4b                 16  79.3 [ 73.8,  84.6]  90.3 [ 82.2,  96.1]  66.3 [ 49.0,  81.9]  32.8 [ 16.8,  50.4]  83.6 [ 68.0,  96.1]  10.2 [  1.2,  19.9]  27.3 [ 11.7,  45.3]
+union_prec                       16  78.6 [ 72.7,  83.9]  78.3 [ 74.4,  81.9]  79.4 [ 65.8,  90.6]  55.1 [ 34.4,  75.4]  38.3 [ 24.6,  52.3]   7.4 [  1.2,  15.2]  15.6 [  3.1,  31.2]
+unionfile                        16  78.6 [ 72.7,  83.9]  78.3 [ 74.4,  81.9]  79.4 [ 65.8,  90.6]  55.1 [ 34.4,  75.4]  38.3 [ 24.6,  52.3]   7.4 [  1.2,  15.2]  15.6 [  3.1,  31.2]
+truce_qwen4b                     16  78.5 [ 72.3,  84.5]  80.2 [ 74.3,  85.4]  78.1 [ 69.1,  86.6]  41.4 [ 21.1,  62.5]  75.0 [ 56.2,  90.6]  15.6 [  3.1,  31.2]   0.0 [  0.0,   0.0]
+unionwex_qwen4b                  16  77.6 [ 71.6,  83.5]  77.0 [ 71.4,  82.2]  79.9 [ 69.8,  89.3]  44.5 [ 25.0,  65.2]  58.6 [ 39.8,  77.3]  10.2 [  2.3,  19.5]   3.1 [  0.0,   9.0]
+union_noex_both                  16  77.1 [ 70.2,  83.4]  76.3 [ 70.2,  81.7]  79.3 [ 69.9,  88.0]  56.2 [ 37.1,  75.0]  49.2 [ 48.4,  49.8]  13.3 [  5.9,  21.7]  13.3 [  5.1,  22.3]
+truce_noex_llama8b               16  77.1 [ 72.5,  81.4]  75.1 [ 70.4,  79.7]  82.0 [ 71.6,  91.0]  45.7 [ 28.9,  62.9]  43.4 [ 21.9,  64.8]   2.3 [  0.0,   5.9]   3.9 [  0.0,   9.4]
+unionwex_qwen7b                  16  76.6 [ 71.6,  81.1]  73.9 [ 68.6,  79.2]  81.8 [ 74.1,  88.5]  44.1 [ 24.2,  64.8]  46.9 [ 28.1,  65.6]   6.2 [  0.0,  14.8]   3.9 [  0.0,  11.7]
+truce_noex_qwen4b                16  75.2 [ 67.3,  82.2]  76.7 [ 68.8,  83.5]  75.8 [ 66.8,  83.7]  46.1 [ 25.8,  67.2]  72.7 [ 54.7,  88.3]  12.9 [  2.3,  27.7]   0.4 [  0.0,   1.2]
+unionwex_mistral7b               16  74.5 [ 67.7,  80.4]  72.5 [ 65.7,  78.3]  78.9 [ 69.5,  87.6]  51.6 [ 32.8,  70.3]  33.6 [ 19.9,  48.0]   4.7 [  0.0,  12.5]   0.0 [  0.0,   0.0]
+union_noex                       16  73.8 [ 67.4,  79.5]  67.3 [ 59.6,  73.6]  85.3 [ 73.6,  94.4]  56.2 [ 37.1,  75.0]  15.6 [  3.5,  31.2]   2.3 [  0.0,   5.1]  13.3 [  5.1,  22.3]
+strong_QP                        16  70.7 [ 64.6,  76.2]  62.2 [ 51.6,  71.9]  88.7 [ 79.3,  96.1]  19.9 [  7.0,  35.9]  25.0 [ 13.7,  35.9]   4.7 [  0.0,  12.5]  32.0 [ 16.8,  48.8]
+strong_avg                       16  69.5 [ 65.0,  73.7]  78.5 [ 73.2,  83.2]  58.1 [ 50.9,  65.3]  18.6 [  6.4,  34.0]  60.4 [ 55.3,  65.6]   3.7 [  0.4,   8.0]  45.9 [ 32.8,  60.2]
+unionex_both                     16  69.0 [ 63.9,  74.2]  70.0 [ 65.8,  74.3]  69.1 [ 61.8,  76.4]  26.2 [ 11.3,  43.4]  49.8 [ 49.4,  50.0]   4.7 [  1.0,   9.4]  41.8 [ 25.4,  59.0]
+strong_PQ                        16  68.2 [ 64.4,  72.4]  94.7 [ 92.1,  97.0]  27.6 [ 16.3,  40.0]  17.2 [  5.1,  32.4]  95.7 [ 88.7, 100.0]   2.7 [  0.0,   6.2]  59.8 [ 44.1,  74.6]
+unionex                          16  66.0 [ 61.0,  71.2]  54.4 [ 46.5,  61.8]  84.8 [ 75.0,  93.0]  26.2 [ 11.3,  43.4]  19.5 [  7.8,  32.0]   3.5 [  0.0,   9.4]  41.8 [ 25.4,  59.0]
+noex_two_files                   16  64.7 [ 59.7,  69.6]  65.6 [ 61.4,  69.8]  63.5 [ 56.2,  71.2]  28.5 [ 12.5,  46.9]  47.3 [ 44.3,  49.4]   1.2 [  0.0,   3.1]  33.6 [ 19.5,  49.2]
+prec_QP                          16  62.1 [ 59.8,  64.8]  88.9 [ 81.7,  95.3]  19.7 [  9.0,  31.2]  12.5 [  3.1,  23.4]  88.7 [ 78.1,  96.9]   0.0 [  0.0,   0.0]  73.0 [ 53.5,  90.2]
+prec_avg                         16  62.1 [ 60.3,  64.3]  92.6 [ 88.4,  96.5]  14.6 [  7.0,  23.0]  10.4 [  4.5,  16.8]  93.2 [ 86.3,  98.4]   0.0 [  0.0,   0.0]  73.8 [ 57.2,  88.7]
+onefile_full_both                16  62.1 [ 58.1,  66.5]  64.2 [ 60.9,  67.9]  58.5 [ 53.3,  64.3]  20.3 [  7.8,  35.5]  50.0 [ 50.0,  50.0]   3.1 [  0.0,   7.4]  71.1 [ 54.3,  86.7]
+prec_PQ                          16  62.1 [ 60.3,  64.3]  96.4 [ 93.9,  98.4]   9.6 [  3.9,  16.4]   8.2 [  2.0,  16.0]  97.7 [ 93.0, 100.0]   0.0 [  0.0,   0.0]  74.6 [ 59.0,  88.7]
+checklist_PQ                     16  61.7 [ 59.5,  64.1]  95.4 [ 90.0,  98.8]  10.3 [  3.0,  18.9]  10.2 [  2.3,  18.8]  92.6 [ 83.6,  99.2]   0.0 [  0.0,   0.0]  79.3 [ 63.3,  93.0]
+onefile_full                     16  61.7 [ 57.5,  66.5]  60.2 [ 49.8,  71.0]  62.9 [ 48.3,  77.1]  20.3 [  7.8,  35.5]  46.1 [ 30.1,  62.5]   5.9 [  0.0,  14.8]  71.1 [ 54.3,  86.7]
+only_primary                     16  60.0 [ 58.9,  61.6]  97.3 [ 95.3,  98.9]   2.7 [  0.4,   5.5]   5.1 [  0.4,  12.1]  99.6 [ 98.8, 100.0]   0.0 [  0.0,   0.0]  86.7 [ 75.8,  96.1]
+concat_PQ                        16  59.2 [ 56.6,  62.3]  68.0 [ 59.4,  76.9]  45.1 [ 33.6,  56.5]  12.5 [  3.9,  22.7]  60.2 [ 49.6,  71.1]   0.0 [  0.0,   0.0]  78.1 [ 62.1,  91.4]
+concat_avg                       16  58.1 [ 55.7,  61.2]  60.8 [ 58.7,  63.4]  53.4 [ 50.3,  58.1]  12.5 [  3.9,  22.7]  49.4 [ 48.8,  50.0]   0.2 [  0.0,   0.6]  78.1 [ 62.1,  91.4]
+concat_QP                        16  57.0 [ 54.3,  60.3]  53.6 [ 44.1,  62.7]  61.7 [ 51.3,  72.1]  12.5 [  3.9,  22.7]  38.7 [ 27.7,  49.6]   0.4 [  0.0,   1.2]  78.1 [ 62.1,  91.4]
+seqrev                           16  53.3 [ 50.5,  56.7]  26.0 [ 19.9,  33.3]  94.1 [ 88.9,  98.4]   6.2 [  1.2,  13.3]   0.0 [  0.0,   0.0]   0.0 [  0.0,   0.0]  75.0 [ 56.2,  91.8]
+
+=== TABLE 3 (valid rules only): treatments, % satisfied, mean over jobs [95% CI]
+condition                      jobs                  MSS          primary own       secondary excl       entangled both      precedence kept    all MSS rules met             takeover
+truce_agent                      16  98.4 [ 96.8,  99.6]  98.7 [ 97.2,  99.8]  97.3 [ 94.7,  99.5]  98.4 [ 95.3, 100.0] 100.0 [100.0, 100.0]  89.5 [ 78.5,  98.4]   0.0 [  0.0,   0.0]
+freemerge_agent                  16  98.2 [ 96.9,  99.4]  98.7 [ 97.1,  99.9]  98.6 [ 97.0, 100.0]  90.2 [ 80.5,  98.4] 100.0 [100.0, 100.0]  85.9 [ 75.8,  94.9]   0.0 [  0.0,   0.0]
+freemerge_qwen235b               16  96.5 [ 93.9,  98.5]  96.7 [ 93.9,  99.0]  97.8 [ 95.3,  99.6]  65.6 [ 46.1,  83.6]  93.4 [ 84.0, 100.0]  79.7 [ 67.6,  91.0]   0.0 [  0.0,   0.0]
+freemerge_gpt41                  16  94.7 [ 91.3,  97.8]  95.6 [ 92.6,  98.3]  96.0 [ 92.4,  99.1]  59.0 [ 39.8,  77.7]  96.1 [ 89.1, 100.0]  73.0 [ 55.5,  89.1]   1.2 [  0.0,   3.5]
+jointex_QP                       16  93.9 [ 89.9,  97.4]  93.3 [ 88.6,  97.3]  95.0 [ 88.0,  99.5]  90.6 [ 82.8,  97.3]  83.2 [ 71.1,  93.8]  69.1 [ 53.1,  85.2]   6.2 [  0.0,  14.8]
+truce_oracle_gpt41               16  93.6 [ 88.5,  97.5]  94.1 [ 89.3,  98.0]  92.9 [ 85.3,  98.6]  72.7 [ 57.8,  86.3] 100.0 [100.0, 100.0]  70.7 [ 55.1,  85.2]   0.0 [  0.0,   0.0]
+union_ref_frontier_qwen4b        16  93.5 [ 89.3,  97.0]  94.2 [ 91.3,  97.1]  94.9 [ 89.0,  99.3]  59.8 [ 39.8,  78.9]  93.8 [ 84.4, 100.0]  61.7 [ 43.0,  79.3]   0.8 [  0.0,   2.0]
+jointex_avg                      16  92.7 [ 88.5,  96.3]  90.9 [ 86.2,  95.0]  95.5 [ 91.2,  99.1]  89.6 [ 81.6,  96.5]  78.1 [ 69.1,  86.9]  66.8 [ 52.7,  80.5]   6.2 [  0.4,  14.6]
+truce_oracle_qwen235b            16  91.9 [ 84.9,  97.1]  91.0 [ 83.7,  96.8]  94.2 [ 87.2,  98.9]  61.3 [ 42.2,  79.3]  96.9 [ 90.6, 100.0]  65.2 [ 46.5,  83.6]   0.0 [  0.0,   0.0]
+jointex_PQ                       16  91.5 [ 86.8,  95.8]  88.6 [ 82.3,  94.4]  96.1 [ 91.7,  99.5]  88.7 [ 80.5,  96.1]  73.0 [ 60.5,  85.2]  64.5 [ 49.6,  78.5]   6.2 [  0.0,  14.1]
+unionagentex                     16  91.2 [ 86.9,  95.1]  92.1 [ 87.5,  96.3]  91.0 [ 83.3,  97.0]  79.7 [ 65.2,  92.6]  72.3 [ 56.2,  87.5]  57.0 [ 40.2,  72.7]   5.9 [  0.0,  12.5]
+truce_gpt41                      16  90.2 [ 80.6,  96.6]  90.7 [ 81.4,  97.0]  88.5 [ 74.9,  97.4]  58.6 [ 38.3,  78.1]  96.9 [ 90.6, 100.0]  58.6 [ 38.3,  78.1]   0.0 [  0.0,   0.0]
+truceagent_noex                  16  89.3 [ 83.3,  94.3]  89.3 [ 84.3,  94.0]  88.5 [ 81.2,  95.1]  87.9 [ 73.0,  98.8]  95.7 [ 89.1,  99.6]  50.4 [ 32.8,  67.6]   1.6 [  0.0,   3.9]
+truce_ref_frontier_qwen4b        16  89.2 [ 83.1,  94.2]  90.1 [ 84.8,  94.6]  88.3 [ 78.8,  95.8]  69.5 [ 52.3,  85.2]  84.4 [ 71.9,  93.8]  52.7 [ 35.5,  69.9]   0.0 [  0.0,   0.0]
+freemerge_llama8b                16  89.0 [ 83.8,  93.8]  88.1 [ 83.6,  92.7]  92.6 [ 87.0,  97.4]  43.4 [ 23.8,  63.3]  68.4 [ 52.7,  81.2]  46.5 [ 27.0,  66.4]   0.0 [  0.0,   0.0]
+truce_ref_random_qwen4b          16  89.0 [ 82.3,  94.8]  91.2 [ 85.7,  95.9]  86.2 [ 76.4,  94.8]  67.2 [ 48.4,  84.4]  90.6 [ 81.2, 100.0]  51.6 [ 31.2,  71.1]   0.0 [  0.0,   0.0]
+truce_qwen235b                   16  88.1 [ 81.0,  93.8]  86.4 [ 78.2,  92.9]  90.1 [ 82.9,  96.1]  54.3 [ 34.4,  73.0]  84.4 [ 65.6, 100.0]  40.6 [ 21.9,  59.4]   0.0 [  0.0,   0.0]
+truce_oracle_noex_qwen4b         16  88.0 [ 82.2,  93.3]  89.5 [ 84.0,  94.6]  92.3 [ 86.7,  97.3]  53.5 [ 34.8,  72.3]  96.5 [ 90.2, 100.0]  41.0 [ 21.5,  60.9]   0.8 [  0.0,   2.3]
+truce_oracle_qwen4b              16  87.0 [ 81.0,  92.6]  86.4 [ 80.1,  92.3]  93.2 [ 86.7,  98.4]  49.6 [ 30.5,  68.8]  96.9 [ 90.6, 100.0]  38.3 [ 17.2,  60.2]   0.0 [  0.0,   0.0]
+truce_noex_gpt41                 16  86.9 [ 81.9,  91.3]  86.5 [ 81.8,  91.1]  89.3 [ 84.0,  94.4]  57.8 [ 39.1,  76.6]  93.8 [ 84.4, 100.0]  34.4 [ 19.5,  50.4]   2.0 [  0.0,   5.5]
+unionwex_gpt41                   16  84.9 [ 76.2,  90.9]  83.6 [ 75.2,  89.7]  87.2 [ 73.7,  96.0]  56.6 [ 37.1,  75.4]  66.0 [ 49.2,  81.6]  32.8 [ 18.0,  49.2]   2.3 [  0.0,   6.2]
+unionwex_qwen235b                16  82.6 [ 76.5,  87.9]  80.9 [ 73.3,  87.5]  85.5 [ 77.0,  93.2]  56.2 [ 36.7,  74.6]  60.5 [ 43.0,  77.0]  25.4 [  9.8,  42.2]   6.2 [  0.0,  15.6]
+freemerge_qwen4b                 16  81.8 [ 75.8,  87.5]  92.7 [ 85.3,  97.9]  66.6 [ 49.0,  82.7]  32.8 [ 16.8,  50.4]  83.6 [ 68.0,  96.1]  30.5 [ 15.2,  47.3]  27.3 [ 11.7,  45.3]
+unionwex_llama8b                 16  80.9 [ 74.7,  86.5]  79.4 [ 73.2,  85.4]  85.1 [ 76.6,  92.5]  43.8 [ 27.0,  60.2]  50.0 [ 31.2,  68.8]  18.4 [  5.5,  34.0]   4.7 [  0.0,  10.9]
+truce_llama8b                    16  80.0 [ 72.8,  86.3]  77.3 [ 70.7,  83.6]  84.7 [ 73.7,  94.0]  45.7 [ 28.9,  62.9]  46.9 [ 28.1,  65.6]  15.6 [  5.5,  26.6]   2.7 [  0.0,   8.2]
+truce_noex_qwen235b              16  79.4 [ 69.9,  87.7]  77.0 [ 65.0,  86.2]  86.8 [ 77.5,  94.7]  48.0 [ 28.1,  67.2]  82.8 [ 64.8,  97.3]  28.1 [ 12.1,  45.7]   4.7 [  0.0,  11.7]
+truce_qwen4b                     16  78.4 [ 72.4,  84.5]  81.0 [ 76.1,  86.0]  74.6 [ 64.7,  84.4]  41.4 [ 21.1,  62.5]  75.0 [ 56.2,  90.6]  20.3 [  5.9,  37.5]   0.0 [  0.0,   0.0]
+union_prec                       16  78.4 [ 72.3,  84.0]  78.3 [ 74.4,  82.1]  79.1 [ 65.6,  90.3]  55.1 [ 34.4,  75.4]  38.3 [ 24.6,  52.3]  14.1 [  5.5,  23.8]  15.6 [  3.1,  31.2]
+unionfile                        16  78.4 [ 72.3,  84.0]  78.3 [ 74.4,  82.1]  79.1 [ 65.6,  90.3]  55.1 [ 34.4,  75.4]  38.3 [ 24.6,  52.3]  14.1 [  5.5,  23.8]  15.6 [  3.1,  31.2]
+union_noex_both                  16  77.2 [ 70.1,  83.7]  75.8 [ 69.4,  81.6]  78.9 [ 69.5,  87.7]  56.2 [ 37.1,  75.0]  49.2 [ 48.4,  49.8]  19.3 [  9.8,  29.9]  13.3 [  5.1,  22.3]
+unionwex_qwen4b                  16  77.1 [ 70.7,  83.6]  77.5 [ 71.5,  83.0]  76.6 [ 66.1,  87.0]  44.5 [ 25.0,  65.2]  58.6 [ 39.8,  77.3]  15.2 [  5.1,  27.0]   3.1 [  0.0,   9.0]
+unionwex_qwen7b                  16  76.8 [ 70.6,  82.5]  74.1 [ 68.2,  80.1]  83.5 [ 74.2,  91.3]  44.1 [ 24.2,  64.8]  46.9 [ 28.1,  65.6]  16.0 [  4.3,  30.1]   3.9 [  0.0,  11.7]
+truce_noex_llama8b               16  76.5 [ 71.1,  81.6]  74.6 [ 69.7,  79.3]  82.0 [ 72.5,  90.5]  45.7 [ 28.9,  62.9]  43.4 [ 21.9,  64.8]   5.5 [  0.4,  12.9]   3.9 [  0.0,   9.4]
+truce_noex_qwen4b                16  75.2 [ 67.8,  82.3]  76.8 [ 69.3,  83.6]  73.9 [ 64.5,  82.6]  46.1 [ 25.8,  67.2]  72.7 [ 54.7,  88.3]  17.2 [  5.1,  32.4]   0.4 [  0.0,   1.2]
+union_noex                       16  73.5 [ 67.0,  79.5]  65.4 [ 56.5,  72.5]  85.1 [ 73.4,  94.3]  56.2 [ 37.1,  75.0]  15.6 [  3.5,  31.2]   5.5 [  0.8,  12.9]  13.3 [  5.1,  22.3]
+unionwex_mistral7b               16  72.9 [ 64.3,  80.1]  69.4 [ 60.7,  76.9]  78.2 [ 67.8,  87.6]  51.6 [ 32.8,  70.3]  33.6 [ 19.9,  48.0]   7.8 [  0.0,  17.2]   0.0 [  0.0,   0.0]
+strong_QP                        16  71.7 [ 65.8,  77.1]  62.4 [ 52.4,  71.7]  89.5 [ 79.8,  96.9]  19.9 [  7.0,  35.9]  25.0 [ 13.7,  35.9]   5.9 [  0.0,  13.3]  32.0 [ 16.8,  48.8]
+strong_avg                       16  70.4 [ 66.0,  74.8]  79.1 [ 74.2,  83.5]  57.8 [ 50.9,  64.6]  18.6 [  6.4,  34.0]  60.4 [ 55.3,  65.6]   6.8 [  2.0,  12.7]  45.9 [ 32.8,  60.2]
+unionex_both                     16  70.1 [ 65.3,  74.9]  69.9 [ 66.1,  73.8]  69.2 [ 62.2,  76.3]  26.2 [ 11.3,  43.4]  49.8 [ 49.4,  50.0]   7.8 [  2.3,  14.6]  41.8 [ 25.4,  59.0]
+strong_PQ                        16  69.2 [ 65.0,  73.8]  95.7 [ 92.8,  98.1]  26.2 [ 14.8,  38.5]  17.2 [  5.1,  32.4]  95.7 [ 88.7, 100.0]   7.8 [  1.6,  16.0]  59.8 [ 44.1,  74.6]
+unionex                          16  66.8 [ 62.3,  71.4]  52.6 [ 44.6,  60.3]  85.6 [ 75.7,  94.0]  26.2 [ 11.3,  43.4]  19.5 [  7.8,  32.0]   3.9 [  0.0,  10.5]  41.8 [ 25.4,  59.0]
+noex_two_files                   16  63.0 [ 57.6,  68.5]  63.8 [ 59.4,  68.1]  62.4 [ 55.4,  69.9]  28.5 [ 12.5,  46.9]  47.3 [ 44.3,  49.4]   3.3 [  0.4,   7.2]  33.6 [ 19.5,  49.2]
+onefile_full_both                16  62.5 [ 57.7,  67.6]  63.4 [ 59.6,  67.5]  58.7 [ 53.7,  64.1]  20.3 [  7.8,  35.5]  50.0 [ 50.0,  50.0]   3.1 [  0.0,   7.4]  71.1 [ 54.3,  86.7]
+onefile_full                     16  62.2 [ 57.2,  68.2]  58.5 [ 47.7,  69.8]  63.7 [ 48.8,  78.3]  20.3 [  7.8,  35.5]  46.1 [ 30.1,  62.5]   5.9 [  0.0,  14.8]  71.1 [ 54.3,  86.7]
+prec_PQ                          16  62.1 [ 60.0,  64.4]  96.8 [ 94.2,  99.0]   7.8 [  2.7,  13.7]   8.2 [  2.0,  16.0]  97.7 [ 93.0, 100.0]   0.0 [  0.0,   0.0]  74.6 [ 59.0,  88.7]
+checklist_PQ                     16  61.9 [ 59.5,  64.1]  95.5 [ 90.6,  98.7]   8.3 [  1.8,  16.3]  10.2 [  2.3,  18.8]  92.6 [ 83.6,  99.2]   0.0 [  0.0,   0.0]  79.3 [ 63.3,  93.0]
+prec_avg                         16  61.6 [ 59.7,  63.6]  93.1 [ 88.7,  97.0]  12.9 [  6.3,  20.1]  10.4 [  4.5,  16.8]  93.2 [ 86.3,  98.4]   0.0 [  0.0,   0.0]  73.8 [ 57.2,  88.7]
+prec_QP                          16  61.2 [ 58.4,  64.1]  89.3 [ 81.8,  96.2]  18.0 [  8.3,  28.4]  12.5 [  3.1,  23.4]  88.7 [ 78.1,  96.9]   0.0 [  0.0,   0.0]  73.0 [ 53.5,  90.2]
+only_primary                     16  60.5 [ 58.5,  62.7]  98.3 [ 96.1,  99.8]   1.7 [  0.0,   3.6]   5.1 [  0.4,  12.1]  99.6 [ 98.8, 100.0]   0.0 [  0.0,   0.0]  86.7 [ 75.8,  96.1]
+concat_PQ                        16  59.1 [ 55.0,  63.3]  67.5 [ 58.5,  76.8]  43.4 [ 31.7,  55.0]  12.5 [  3.9,  22.7]  60.2 [ 49.6,  71.1]   0.0 [  0.0,   0.0]  78.1 [ 62.1,  91.4]
+concat_avg                       16  57.8 [ 54.0,  61.8]  60.0 [ 57.5,  62.5]  52.7 [ 50.3,  56.2]  12.5 [  3.9,  22.7]  49.4 [ 48.8,  50.0]   0.2 [  0.0,   0.6]  78.1 [ 62.1,  91.4]
+concat_QP                        16  56.6 [ 52.8,  60.7]  52.4 [ 43.5,  61.2]  62.0 [ 51.3,  73.0]  12.5 [  3.9,  22.7]  38.7 [ 27.7,  49.6]   0.4 [  0.0,   1.2]  78.1 [ 62.1,  91.4]
+seqrev                           16  52.9 [ 50.0,  56.3]  25.3 [ 18.4,  32.7]  94.3 [ 88.3,  99.2]   6.2 [  1.2,  13.3]   0.0 [  0.0,   0.0]   0.0 [  0.0,   0.0]  75.0 [ 56.2,  91.8]
+
+=== PAIRED DIFFERENCE in MSS fidelity (points) per job, against three references
+  checklist_PQ                    vs precedence instruction:  -0.4 [ -1.6,   0.8] (5/16)  vs raw co-loading:   3.6 [  1.6,   5.6] (13/16)  vs keep only primary:   1.8 [ -0.2,   3.8] (10/16)
+  freemerge_agent                 vs precedence instruction:  35.6 [ 32.9,  37.9] (16/16)  vs raw co-loading:  39.6 [ 36.3,  42.3] (16/16)  vs keep only primary:  37.8 [ 36.2,  39.2] (16/16)
+  freemerge_gpt41                 vs precedence instruction:  30.4 [ 26.5,  34.2] (16/16)  vs raw co-loading:  34.4 [ 30.4,  38.2] (16/16)  vs keep only primary:  32.5 [ 29.2,  35.8] (16/16)
+  freemerge_llama8b               vs precedence instruction:  24.9 [ 21.1,  28.7] (16/16)  vs raw co-loading:  28.8 [ 25.1,  32.5] (16/16)  vs keep only primary:  27.0 [ 23.6,  30.4] (16/16)
+  freemerge_qwen235b              vs precedence instruction:  31.8 [ 29.1,  34.5] (16/16)  vs raw co-loading:  35.8 [ 32.8,  38.7] (16/16)  vs keep only primary:  33.9 [ 31.6,  36.3] (16/16)
+  freemerge_qwen4b                vs precedence instruction:  17.2 [ 11.8,  22.5] (15/16)  vs raw co-loading:  21.2 [ 15.7,  26.5] (16/16)  vs keep only primary:  19.3 [ 13.9,  24.5] (15/16)
+  jointex_PQ                      vs precedence instruction:  29.9 [ 25.8,  33.9] (16/16)  vs raw co-loading:  33.9 [ 29.8,  38.0] (16/16)  vs keep only primary:  32.1 [ 28.4,  35.5] (16/16)
+  jointex_QP                      vs precedence instruction:  31.8 [ 28.1,  35.3] (16/16)  vs raw co-loading:  35.8 [ 31.9,  39.5] (16/16)  vs keep only primary:  33.9 [ 30.5,  37.1] (16/16)
+  jointex_avg                     vs precedence instruction:  30.9 [ 27.1,  34.5] (16/16)  vs raw co-loading:  34.8 [ 31.0,  38.6] (16/16)  vs keep only primary:  33.0 [ 29.6,  36.2] (16/16)
+  onefile_full                    vs precedence instruction:  -0.4 [ -3.7,   3.4] (4/16)  vs raw co-loading:   3.6 [  0.4,   7.1] (8/16)  vs keep only primary:   1.7 [ -1.8,   5.5] (7/16)
+  onefile_full_both               vs precedence instruction:  -0.0 [ -2.6,   3.0] (6/16)  vs raw co-loading:   4.0 [  1.5,   6.8] (9/16)  vs keep only primary:   2.1 [ -1.2,   5.7] (6/16)
+  seqrev                          vs precedence instruction:  -8.8 [-10.6,  -6.1] (1/16)  vs raw co-loading:  -4.8 [ -7.0,  -1.8] (2/16)  vs keep only primary:  -6.6 [ -9.1,  -3.4] (2/16)
+  strong_PQ                       vs precedence instruction:   6.2 [  2.7,   9.9] (12/16)  vs raw co-loading:  10.1 [  6.5,  14.0] (15/16)  vs keep only primary:   8.3 [  4.4,  12.6] (14/16)
+  strong_QP                       vs precedence instruction:   8.6 [  3.1,  13.8] (12/16)  vs raw co-loading:  12.6 [  7.4,  17.5] (13/16)  vs keep only primary:  10.7 [  5.1,  16.0] (12/16)
+  truce_agent                     vs precedence instruction:  36.3 [ 33.4,  38.8] (16/16)  vs raw co-loading:  40.3 [ 36.8,  43.0] (16/16)  vs keep only primary:  38.4 [ 36.6,  40.1] (16/16)
+  truce_gpt41                     vs precedence instruction:  27.4 [ 17.7,  34.2] (15/16)  vs raw co-loading:  31.3 [ 21.2,  38.6] (15/16)  vs keep only primary:  29.5 [ 19.6,  36.2] (15/16)
+  truce_llama8b                   vs precedence instruction:  18.4 [ 12.3,  23.9] (14/16)  vs raw co-loading:  22.4 [ 16.3,  28.0] (14/16)  vs keep only primary:  20.5 [ 14.5,  26.0] (14/16)
+  truce_noex_gpt41                vs precedence instruction:  24.3 [ 19.6,  28.8] (16/16)  vs raw co-loading:  28.3 [ 23.2,  33.0] (16/16)  vs keep only primary:  26.4 [ 21.7,  30.8] (16/16)
+  truce_noex_llama8b              vs precedence instruction:  15.0 [ 10.7,  19.0] (15/16)  vs raw co-loading:  19.0 [ 14.7,  23.1] (16/16)  vs keep only primary:  17.1 [ 12.5,  21.6] (15/16)
+  truce_noex_qwen235b             vs precedence instruction:  18.1 [  9.2,  25.7] (13/16)  vs raw co-loading:  22.1 [ 13.2,  29.8] (14/16)  vs keep only primary:  20.3 [ 11.3,  27.7] (14/16)
+  truce_noex_qwen4b               vs precedence instruction:  13.1 [  5.7,  19.8] (15/16)  vs raw co-loading:  17.1 [  9.8,  23.7] (15/16)  vs keep only primary:  15.2 [  7.2,  22.5] (15/16)
+  truce_oracle_gpt41              vs precedence instruction:  30.8 [ 24.9,  35.5] (15/16)  vs raw co-loading:  34.7 [ 28.4,  40.0] (15/16)  vs keep only primary:  32.9 [ 26.8,  37.3] (15/16)
+  truce_oracle_noex_qwen4b        vs precedence instruction:  25.4 [ 19.7,  30.3] (15/16)  vs raw co-loading:  29.4 [ 23.2,  34.5] (15/16)  vs keep only primary:  27.5 [ 23.1,  31.6] (16/16)
+  truce_oracle_qwen235b           vs precedence instruction:  29.1 [ 22.9,  34.4] (15/16)  vs raw co-loading:  33.1 [ 26.9,  38.4] (16/16)  vs keep only primary:  31.2 [ 25.4,  35.8] (15/16)
+  truce_oracle_qwen4b             vs precedence instruction:  24.9 [ 19.3,  30.1] (15/16)  vs raw co-loading:  28.9 [ 22.7,  34.4] (15/16)  vs keep only primary:  27.1 [ 22.5,  31.6] (16/16)
+  truce_qwen235b                  vs precedence instruction:  25.0 [ 18.3,  30.7] (15/16)  vs raw co-loading:  29.0 [ 22.3,  34.9] (15/16)  vs keep only primary:  27.1 [ 20.7,  32.6] (15/16)
+  truce_qwen4b                    vs precedence instruction:  16.4 [ 10.8,  21.8] (15/16)  vs raw co-loading:  20.4 [ 15.0,  25.6] (15/16)  vs keep only primary:  18.5 [ 12.3,  24.5] (15/16)
+  truce_ref_frontier_qwen4b       vs precedence instruction:  26.1 [ 20.0,  31.0] (15/16)  vs raw co-loading:  30.1 [ 23.9,  35.2] (15/16)  vs keep only primary:  28.2 [ 21.6,  33.2] (15/16)
+  truce_ref_random_qwen4b         vs precedence instruction:  26.3 [ 19.8,  31.6] (15/16)  vs raw co-loading:  30.3 [ 23.6,  35.9] (15/16)  vs keep only primary:  28.4 [ 21.3,  34.1] (15/16)
+  truceagent_noex                 vs precedence instruction:  27.0 [ 22.1,  31.5] (16/16)  vs raw co-loading:  31.0 [ 26.0,  35.5] (16/16)  vs keep only primary:  29.1 [ 24.2,  33.4] (16/16)
+  union_noex                      vs precedence instruction:  11.7 [  6.0,  17.1] (14/16)  vs raw co-loading:  15.7 [  9.9,  21.1] (15/16)  vs keep only primary:  13.8 [  7.7,  19.4] (14/16)
+  union_noex_both                 vs precedence instruction:  15.1 [  8.7,  21.1] (14/16)  vs raw co-loading:  19.0 [ 12.6,  25.2] (14/16)  vs keep only primary:  17.2 [ 10.4,  23.3] (14/16)
+  union_prec                      vs precedence instruction:  16.5 [ 11.5,  21.2] (14/16)  vs raw co-loading:  20.5 [ 15.5,  25.3] (15/16)  vs keep only primary:  18.6 [ 13.1,  23.7] (15/16)
+  union_ref_frontier_qwen4b       vs precedence instruction:  30.3 [ 27.2,  33.3] (16/16)  vs raw co-loading:  34.3 [ 30.8,  37.6] (16/16)  vs keep only primary:  32.5 [ 29.0,  35.5] (16/16)
+  unionagentex                    vs precedence instruction:  28.8 [ 24.9,  32.5] (16/16)  vs raw co-loading:  32.8 [ 29.1,  36.4] (16/16)  vs keep only primary:  31.0 [ 27.4,  34.3] (16/16)
+  unionex                         vs precedence instruction:   3.9 [ -0.5,   8.5] (10/16)  vs raw co-loading:   7.9 [  3.4,  12.3] (13/16)  vs keep only primary:   6.0 [  1.4,  10.7] (11/16)
+  unionex_both                    vs precedence instruction:   6.9 [  2.5,  11.4] (10/16)  vs raw co-loading:  10.9 [  6.4,  15.4] (13/16)  vs keep only primary:   9.0 [  4.3,  13.8] (12/16)
+  unionfile                       vs precedence instruction:  16.5 [ 11.5,  21.2] (14/16)  vs raw co-loading:  20.5 [ 15.5,  25.3] (15/16)  vs keep only primary:  18.6 [ 13.1,  23.7] (15/16)
+  unionwex_gpt41                  vs precedence instruction:  22.8 [ 14.3,  28.6] (15/16)  vs raw co-loading:  26.8 [ 17.8,  32.9] (15/16)  vs keep only primary:  24.9 [ 16.1,  30.7] (15/16)
+  unionwex_llama8b                vs precedence instruction:  19.4 [ 14.6,  24.0] (15/16)  vs raw co-loading:  23.4 [ 18.5,  28.2] (16/16)  vs keep only primary:  21.6 [ 17.0,  25.9] (16/16)
+  unionwex_mistral7b              vs precedence instruction:  12.4 [  6.2,  17.9] (14/16)  vs raw co-loading:  16.3 [  9.9,  22.1] (14/16)  vs keep only primary:  14.5 [  8.0,  20.1] (14/16)
+  unionwex_qwen235b               vs precedence instruction:  20.6 [ 15.2,  25.3] (15/16)  vs raw co-loading:  24.6 [ 19.2,  29.3] (15/16)  vs keep only primary:  22.8 [ 17.5,  27.1] (15/16)
+  unionwex_qwen4b                 vs precedence instruction:  15.5 [ 10.2,  20.7] (15/16)  vs raw co-loading:  19.5 [ 14.3,  24.6] (15/16)  vs keep only primary:  17.7 [ 11.8,  23.4] (15/16)
+  unionwex_qwen7b                 vs precedence instruction:  14.5 [  9.2,  19.3] (13/16)  vs raw co-loading:  18.5 [ 13.0,  23.3] (15/16)  vs keep only primary:  16.6 [ 11.9,  20.9] (14/16)
+
+=== HEAD TO HEAD (first minus second, points, paired over jobs)
+  truce_agent - freemerge_agent                         MSS:   0.7 [ -0.3,   1.7] (+6/-2)  all MSS rules met:   8.2 [ -1.2,  18.4] (+6/-2)  entangled both:   8.2 [  1.2,  17.2] (+4/-0)
+  truce_agent - union_prec                              MSS:  19.8 [ 14.7,  25.5] (+16/-0)  all MSS rules met:  79.3 [ 67.6,  90.2] (+16/-0)  entangled both:  43.4 [ 23.4,  64.1] (+12/-0)
+  freemerge_agent - union_prec                          MSS:  19.1 [ 14.1,  24.8] (+16/-0)  all MSS rules met:  71.1 [ 60.5,  82.0] (+16/-0)  entangled both:  35.2 [ 18.0,  53.5] (+12/-0)
+  truce_qwen4b - freemerge_qwen4b                       MSS:  -0.8 [ -6.7,   5.1] (+6/-8)  all MSS rules met:   5.5 [-10.2,  24.2] (+3/-4)  entangled both:   8.6 [ -7.0,  24.6] (+5/-4)
+  truce_qwen4b - union_prec                             MSS:  -0.1 [ -5.1,   5.0] (+8/-8)  all MSS rules met:   8.2 [ -7.8,  26.2] (+4/-4)  entangled both: -13.7 [-32.4,   4.3] (+3/-8)
+  truce_ref_frontier_qwen4b - truce_qwen4b              MSS:   9.7 [  6.2,  13.2] (+13/-0)  all MSS rules met:  24.6 [  9.0,  42.2] (+7/-0)  entangled both:  28.1 [ 12.5,  45.7] (+8/-0)
+  truce_ref_random_qwen4b - truce_qwen4b                MSS:   9.9 [  5.7,  14.3] (+11/-0)  all MSS rules met:  27.3 [ 13.3,  43.0] (+8/-0)  entangled both:  25.8 [ 12.5,  41.0] (+8/-0)
+  truce_ref_frontier_qwen4b - truce_ref_random_qwen4b   MSS:  -0.2 [ -2.1,   1.6] (+4/-4)  all MSS rules met:  -2.7 [-18.8,  12.9] (+3/-4)  entangled both:   2.3 [ -7.8,  12.5] (+2/-2)
+  truce_oracle_qwen4b - truce_qwen4b                    MSS:   8.6 [  0.8,  16.6] (+11/-4)  all MSS rules met:   9.0 [-10.6,  30.9] (+5/-3)  entangled both:   8.2 [-18.0,  35.2] (+6/-5)
+  truce_qwen4b - truce_noex_qwen4b                      MSS:   3.3 [  0.9,   6.1] (+10/-3)  all MSS rules met:   2.7 [  0.0,   6.2] (+3/-0)  entangled both:  -4.7 [-10.2,   0.0] (+2/-5)
+  truce_llama8b - freemerge_llama8b                     MSS:  -6.4 [-11.0,  -2.1] (+4/-10)  all MSS rules met: -11.7 [-25.8,   2.0] (+2/-6)  entangled both:   2.3 [-24.2,  28.5] (+6/-5)
+  union_prec - prec_PQ                                  MSS:  16.5 [ 11.4,  21.3] (+14/-1)  all MSS rules met:   7.4 [  1.2,  15.2] (+5/-0)  entangled both:  46.9 [ 27.3,  66.4] (+12/-0)
+  strong_PQ - prec_PQ                                   MSS:   6.2 [  3.1,   9.6] (+12/-0)  all MSS rules met:   2.7 [  0.0,   6.2] (+3/-0)  entangled both:   9.0 [  0.8,  22.7] (+4/-0)
+  union_prec - strong_PQ                                MSS:  10.4 [  3.8,  16.7] (+11/-5)  all MSS rules met:   4.7 [ -2.0,  12.9] (+3/-1)  entangled both:  37.9 [ 19.5,  56.6] (+10/-0)
+  union_prec - checklist_PQ                             MSS:  16.9 [ 12.0,  21.5] (+14/-1)  all MSS rules met:   7.4 [  1.2,  15.2] (+5/-0)  entangled both:  44.9 [ 26.2,  64.1] (+12/-0)
+  union_noex_both - noex_two_files                      MSS:  12.5 [  7.8,  17.5] (+15/-1)  all MSS rules met:  12.1 [  5.1,  20.1] (+11/-0)  entangled both:  27.7 [ 14.1,  43.0] (+11/-2)
+  union_prec - union_noex_both                          MSS:   1.4 [ -2.0,   5.1] (+7/-9)  all MSS rules met:  -5.9 [-12.1,  -0.6] (+2/-8)  entangled both:  -1.2 [-11.3,   8.6] (+5/-5)
+  union_ref_frontier_qwen4b - unionfile                 MSS:  13.8 [ 10.4,  17.5] (+16/-0)  all MSS rules met:  39.8 [ 24.2,  55.1] (+11/-0)  entangled both:   4.7 [ -3.5,  14.5] (+6/-5)
+  union_prec - prec_avg                                 MSS:  16.5 [ 11.5,  21.2] (+14/-1)  all MSS rules met:   7.4 [  1.2,  15.2] (+5/-0)  entangled both:  44.7 [ 26.8,  62.9] (+12/-0)
+  union_prec - strong_avg                               MSS:   9.1 [  3.3,  14.9] (+11/-5)  all MSS rules met:   3.7 [ -1.0,  10.2] (+4/-2)  entangled both:  36.5 [ 18.9,  54.7] (+11/-0)
+  strong_PQ - checklist_PQ                              MSS:   6.5 [  3.0,  10.2] (+11/-4)  all MSS rules met:   2.7 [  0.0,   6.2] (+3/-0)  entangled both:   7.0 [ -6.2,  23.0] (+4/-2)
+  strong_PQ - strong_QP                                 MSS:  -2.4 [ -7.4,   2.5] (+8/-8)  all MSS rules met:  -2.0 [ -9.4,   3.5] (+2/-2)  entangled both:  -2.7 [ -8.6,   2.7] (+2/-5)
+  strong_avg - concat_avg                               MSS:  11.3 [  7.6,  15.1] (+16/-0)  all MSS rules met:   3.5 [  0.4,   7.4] (+4/-0)  entangled both:   6.1 [ -8.0,  22.1] (+7/-3)
+  prec_avg - concat_avg                                 MSS:   4.0 [  2.9,   5.1] (+15/-1)  all MSS rules met:  -0.2 [ -0.6,   0.0] (+0/-1)  entangled both:  -2.1 [ -8.4,   3.9] (+3/-5)
+  checklist_PQ - concat_PQ                              MSS:   2.5 [  0.6,   4.6] (+11/-3)  all MSS rules met:   0.0 [  0.0,   0.0] (+0/-0)  entangled both:  -2.3 [-10.5,   5.9] (+2/-4)
+  truce_oracle_qwen4b - freemerge_qwen4b                MSS:   7.8 [  0.9,  14.8] (+10/-5)  all MSS rules met:  14.5 [ -4.7,  35.5] (+5/-3)  entangled both:  16.8 [ -3.5,  37.5] (+8/-4)
+  truce_ref_frontier_qwen4b - freemerge_llama8b         MSS:   1.2 [ -6.2,   6.9] (+12/-4)  all MSS rules met:  18.0 [ -5.5,  39.8] (+9/-3)  entangled both:  26.2 [ 11.7,  41.4] (+8/-1)
+  truce_ref_random_qwen4b - freemerge_llama8b           MSS:   1.4 [ -6.6,   8.1] (+12/-4)  all MSS rules met:  20.7 [ -5.5,  43.8] (+10/-3)  entangled both:  23.8 [  2.3,  44.9] (+8/-2)
+  union_ref_frontier_qwen4b - union_prec                MSS:  13.8 [ 10.4,  17.5] (+16/-0)  all MSS rules met:  39.8 [ 24.2,  55.1] (+11/-0)  entangled both:   4.7 [ -3.5,  14.5] (+6/-5)
+  truce_ref_frontier_qwen4b - union_ref_frontier_qwen4b  MSS:  -4.3 [ -9.6,  -0.1] (+5/-9)  all MSS rules met:  -7.0 [-22.7,   7.8] (+4/-6)  entangled both:   9.8 [ -3.5,  23.0] (+6/-3)
+  freemerge_llama8b - union_prec                        MSS:   8.4 [  3.0,  14.1] (+10/-2)  all MSS rules met:  14.8 [ -0.8,  32.0] (+6/-2)  entangled both: -11.7 [-33.6,  12.1] (+4/-8)
+  freemerge_agent - freemerge_llama8b                   MSS:  10.8 [  7.5,  14.2] (+14/-0)  all MSS rules met:  56.2 [ 40.6,  71.5] (+14/-0)  entangled both:  46.9 [ 25.4,  66.8] (+12/-1)
+  truce_qwen235b - freemerge_qwen235b                   MSS:  -6.8 [-12.8,  -1.4] (+4/-12)  all MSS rules met: -18.8 [-39.8,   3.5] (+3/-9)  entangled both: -11.3 [-33.2,  10.9] (+3/-7)
+  truce_qwen235b - union_prec                           MSS:   8.5 [ -0.1,  16.2] (+12/-4)  all MSS rules met:  25.0 [  4.7,  46.5] (+8/-4)  entangled both:  -0.8 [-23.8,  21.5] (+7/-7)
+  freemerge_qwen235b - union_prec                       MSS:  15.3 [ 10.0,  21.1] (+15/-0)  all MSS rules met:  43.8 [ 28.9,  59.4] (+14/-0)  entangled both:  10.5 [ -9.8,  31.6] (+7/-4)
+  truce_agent - freemerge_qwen235b                      MSS:   4.5 [  2.5,   6.6] (+12/-1)  all MSS rules met:  35.5 [ 20.3,  52.0] (+12/-1)  entangled both:  32.8 [ 15.2,  51.6] (+8/-0)
+  freemerge_qwen235b - strong_avg                       MSS:  24.5 [ 20.2,  28.9] (+16/-0)  all MSS rules met:  47.5 [ 31.2,  64.3] (+14/-0)  entangled both:  47.1 [ 28.3,  65.8] (+12/-1)
+  truce_qwen235b - strong_avg                           MSS:  17.7 [  9.6,  25.1] (+13/-3)  all MSS rules met:  28.7 [  9.4,  49.2] (+8/-3)  entangled both:  35.7 [ 12.1,  58.4] (+10/-3)
+  truce_oracle_qwen235b - truce_qwen235b                MSS:   4.1 [  1.4,   7.1] (+9/-4)  all MSS rules met:  18.8 [  2.7,  37.1] (+5/-3)  entangled both:   7.0 [ -7.4,  23.4] (+4/-4)
+  truce_oracle_qwen235b - freemerge_qwen235b            MSS:  -2.7 [ -8.0,   1.9] (+6/-8)  all MSS rules met:   0.0 [-23.8,  23.0] (+6/-6)  entangled both:  -4.3 [-29.7,  19.5] (+6/-6)
+  truce_qwen235b - truce_noex_qwen235b                  MSS:   6.9 [ -0.3,  14.7] (+11/-4)  all MSS rules met:   7.0 [ -6.2,  21.5] (+5/-3)  entangled both:   6.2 [ -5.5,  18.0] (+6/-4)
+  truce_gpt41 - freemerge_gpt41                         MSS:  -3.0 [-13.0,   4.0] (+8/-6)  all MSS rules met:  -7.8 [-33.6,  17.2] (+5/-5)  entangled both:  -0.4 [-23.8,  22.3] (+6/-4)
+  truce_gpt41 - union_prec                              MSS:  10.9 [ -0.5,  19.6] (+15/-1)  all MSS rules met:  37.9 [ 16.4,  59.8] (+11/-2)  entangled both:   3.5 [-21.5,  28.5] (+8/-5)
+  freemerge_gpt41 - union_prec                          MSS:  13.9 [  8.6,  19.7] (+15/-1)  all MSS rules met:  45.7 [ 27.0,  64.8] (+13/-0)  entangled both:   3.9 [-18.4,  27.7] (+5/-7)
+  truce_agent - freemerge_gpt41                         MSS:   5.9 [  2.9,   9.3] (+10/-0)  all MSS rules met:  33.6 [ 17.2,  52.0] (+10/-0)  entangled both:  39.5 [ 21.1,  58.6] (+10/-0)
+  freemerge_gpt41 - strong_avg                          MSS:  23.0 [ 18.6,  27.3] (+16/-0)  all MSS rules met:  49.4 [ 28.7,  70.5] (+13/-0)  entangled both:  40.4 [ 21.7,  60.2] (+11/-0)
+  truce_gpt41 - strong_avg                              MSS:  20.0 [  9.3,  28.4] (+15/-1)  all MSS rules met:  41.6 [ 21.5,  62.1] (+11/-2)  entangled both:  40.0 [ 16.0,  62.9] (+12/-1)
+  truce_oracle_gpt41 - truce_gpt41                      MSS:   3.4 [  0.2,   7.8] (+9/-2)  all MSS rules met:  10.5 [  2.7,  19.5] (+8/-1)  entangled both:  14.1 [  4.7,  24.6] (+6/-0)
+  truce_oracle_gpt41 - freemerge_gpt41                  MSS:   0.4 [ -6.3,   5.9] (+9/-5)  all MSS rules met:   2.7 [-23.4,  27.0] (+9/-5)  entangled both:  13.7 [ -6.6,  33.6] (+8/-4)
+  truce_gpt41 - truce_noex_gpt41                        MSS:   3.1 [ -6.5,   9.9] (+11/-5)  all MSS rules met:  19.9 [  0.0,  40.6] (+9/-4)  entangled both:   0.8 [-18.0,  20.7] (+6/-4)
+  truce_llama8b - union_prec                            MSS:   1.9 [ -4.8,   8.2] (+9/-7)  all MSS rules met:   3.1 [ -9.4,  16.0] (+5/-4)  entangled both:  -9.4 [-31.2,  14.1] (+6/-8)
+  truce_agent - freemerge_llama8b                       MSS:  11.4 [  8.2,  14.9] (+15/-0)  all MSS rules met:  64.5 [ 48.8,  79.3] (+15/-0)  entangled both:  55.1 [ 35.5,  73.8] (+12/-0)
+  freemerge_llama8b - strong_avg                        MSS:  17.5 [ 13.1,  21.8] (+16/-0)  all MSS rules met:  18.6 [  4.7,  35.4] (+6/-3)  entangled both:  24.8 [  4.5,  46.1] (+8/-3)
+  truce_llama8b - strong_avg                            MSS:  11.1 [  5.6,  16.8] (+12/-3)  all MSS rules met:   6.8 [ -3.3,  18.4] (+4/-4)  entangled both:  27.1 [  4.1,  50.0] (+12/-2)
+  truce_llama8b - truce_noex_llama8b                    MSS:   3.4 [  0.0,   7.0] (+9/-7)  all MSS rules met:   8.2 [ -1.6,  19.1] (+5/-3)  entangled both:   0.0 [-14.8,  16.0] (+6/-7)
+  freemerge_qwen4b - union_prec                         MSS:   0.7 [ -6.0,   6.4] (+9/-6)  all MSS rules met:   2.7 [ -7.0,  12.9] (+5/-3)  entangled both: -22.3 [-43.0,  -2.0] (+3/-9)
+  truce_agent - freemerge_qwen4b                        MSS:  19.1 [ 14.1,  24.6] (+16/-0)  all MSS rules met:  76.6 [ 64.8,  88.3] (+16/-0)  entangled both:  65.6 [ 48.4,  81.2] (+14/-0)
+  freemerge_qwen4b - strong_avg                         MSS:   9.8 [  4.3,  15.2] (+12/-4)  all MSS rules met:   6.4 [ -1.8,  16.2] (+4/-3)  entangled both:  14.3 [  2.0,  27.3] (+7/-3)
+  truce_qwen4b - strong_avg                             MSS:   9.0 [  1.4,  16.3] (+13/-3)  all MSS rules met:  11.9 [ -1.0,  27.9] (+4/-3)  entangled both:  22.9 [  4.3,  42.6] (+7/-4)
+  truce_agent - strong_avg                              MSS:  28.9 [ 24.5,  33.5] (+16/-0)  all MSS rules met:  83.0 [ 70.9,  93.6] (+16/-0)  entangled both:  79.9 [ 64.1,  93.0] (+15/-0)
+  freemerge_agent - strong_avg                          MSS:  28.3 [ 23.7,  32.9] (+16/-0)  all MSS rules met:  74.8 [ 63.1,  86.1] (+16/-0)  entangled both:  71.7 [ 55.3,  86.1] (+15/-0)
+  union_prec - concat_avg                               MSS:  20.5 [ 15.5,  25.3] (+15/-1)  all MSS rules met:   7.2 [  1.2,  14.8] (+5/-0)  entangled both:  42.6 [ 23.8,  62.5] (+12/-0)
+  truce_agent - concat_avg                              MSS:  40.3 [ 36.8,  43.0] (+16/-0)  all MSS rules met:  86.5 [ 75.8,  95.7] (+16/-0)  entangled both:  85.9 [ 74.6,  95.7] (+16/-0)
+  onefile_full_both - concat_avg                        MSS:   4.0 [  1.5,   6.8] (+9/-3)  all MSS rules met:   2.9 [  0.0,   7.0] (+3/-0)  entangled both:   7.8 [ -0.4,  17.6] (+4/-3)
+  unionex_both - onefile_full_both                      MSS:   6.9 [  3.3,  10.9] (+13/-2)  all MSS rules met:   1.6 [  0.4,   2.9] (+5/-0)  entangled both:   5.9 [ -0.8,  14.8] (+6/-1)
+  union_noex_both - unionex_both                        MSS:   8.1 [  1.3,  15.4] (+11/-5)  all MSS rules met:   8.6 [  2.7,  15.8] (+11/-1)  entangled both:  30.1 [ 17.2,  44.5] (+14/-0)
+  noex_two_files - concat_avg                           MSS:   6.6 [  2.5,  10.8] (+14/-2)  all MSS rules met:   1.0 [ -0.4,   2.9] (+2/-1)  entangled both:  16.0 [ -0.8,  34.0] (+8/-3)
+  unionex_both - concat_avg                             MSS:  10.9 [  6.4,  15.4] (+13/-2)  all MSS rules met:   4.5 [  1.0,   9.0] (+6/-0)  entangled both:  13.7 [  2.3,  27.3] (+6/-1)
+  truce_agent - truceagent_noex                         MSS:   9.3 [  5.5,  14.0] (+15/-0)  all MSS rules met:  43.0 [ 29.3,  57.8] (+15/-0)  entangled both:  10.5 [  1.2,  25.0] (+5/-0)
+  unionagentex - union_prec                             MSS:  12.3 [  7.2,  17.9] (+15/-1)  all MSS rules met:  41.8 [ 28.5,  55.1] (+15/-0)  entangled both:  24.6 [  6.2,  43.8] (+11/-1)
+  truce_agent - unionagentex                            MSS:   7.5 [  4.3,  11.0] (+14/-1)  all MSS rules met:  37.5 [ 23.8,  52.0] (+14/-0)  entangled both:  18.8 [  6.2,  32.8] (+6/-0)
+  truceagent_noex - union_prec                          MSS:  10.5 [  6.1,  15.4] (+16/-0)  all MSS rules met:  36.3 [ 21.9,  51.6] (+12/-1)  entangled both:  32.8 [ 15.6,  52.0] (+11/-0)
+  union_noex_both - onefile_full_both                   MSS:  15.1 [  8.3,  22.0] (+13/-3)  all MSS rules met:  10.2 [  4.3,  17.4] (+11/-0)  entangled both:  35.9 [ 20.7,  52.7] (+14/-0)
+  jointex_avg - concat_avg                              MSS:  34.8 [ 31.0,  38.6] (+16/-0)  all MSS rules met:  60.2 [ 47.1,  73.2] (+15/-0)  entangled both:  77.1 [ 65.6,  88.1] (+16/-0)
+  jointex_avg - noex_two_files                          MSS:  28.3 [ 22.3,  34.0] (+16/-0)  all MSS rules met:  59.2 [ 46.1,  72.3] (+15/-0)  entangled both:  61.1 [ 44.5,  76.2] (+14/-0)
+  unionagentex - jointex_avg                            MSS:  -2.0 [ -5.5,   1.0] (+6/-9)  all MSS rules met: -11.1 [-27.1,   3.7] (+6/-7)  entangled both: -10.0 [-19.3,  -2.1] (+2/-6)
+  unionwex_qwen4b - union_prec                          MSS:  -1.0 [ -5.2,   3.5] (+7/-8)  all MSS rules met:   2.7 [ -7.0,  13.3] (+4/-4)  entangled both: -10.5 [-28.9,   6.7] (+3/-8)
+  unionwex_qwen7b - union_prec                          MSS:  -2.0 [ -6.8,   2.4] (+8/-7)  all MSS rules met:  -1.2 [-10.9,   9.0] (+2/-4)  entangled both: -10.9 [-35.5,  12.9] (+5/-5)
+  unionwex_mistral7b - union_prec                       MSS:  -4.1 [ -9.0,   0.5] (+5/-10)  all MSS rules met:  -2.7 [ -9.8,   3.1] (+2/-4)  entangled both:  -3.5 [-19.9,  12.1] (+5/-5)
+  unionwex_llama8b - union_prec                         MSS:   2.9 [ -2.4,   8.7] (+8/-8)  all MSS rules met:   4.3 [ -8.6,  17.6] (+4/-3)  entangled both: -11.3 [-32.0,  10.2] (+5/-8)
+  unionwex_qwen235b - union_prec                        MSS:   4.1 [ -2.9,  10.0] (+12/-4)  all MSS rules met:   9.4 [ -3.1,  22.7] (+5/-4)  entangled both:   1.2 [-21.1,  22.3] (+9/-5)
+  unionwex_gpt41 - union_prec                           MSS:   6.3 [ -4.0,  14.1] (+12/-2)  all MSS rules met:  17.2 [  3.5,  31.6] (+9/-2)  entangled both:   1.6 [-19.5,  22.7] (+7/-6)
+  truce_qwen4b - unionwex_qwen4b                        MSS:   0.9 [ -1.8,   3.4] (+9/-6)  all MSS rules met:   5.5 [ -2.7,  14.8] (+4/-1)  entangled both:  -3.1 [ -7.8,   0.0] (+1/-4)
+  truce_llama8b - unionwex_llama8b                      MSS:  -1.0 [ -3.8,   1.8] (+7/-6)  all MSS rules met:  -1.2 [ -9.4,   5.1] (+3/-3)  entangled both:   2.0 [ -1.2,   5.5] (+5/-2)
+  truce_qwen235b - unionwex_qwen235b                    MSS:   4.4 [  1.8,   7.3] (+11/-3)  all MSS rules met:  15.6 [  5.1,  27.0] (+6/-2)  entangled both:  -2.0 [ -9.8,   5.9] (+1/-3)
+  truce_gpt41 - unionwex_gpt41                          MSS:   4.6 [  2.1,   7.1] (+11/-3)  all MSS rules met:  20.7 [  8.2,  34.4] (+8/-2)  entangled both:   2.0 [ -5.1,   9.0] (+3/-1)
+
+=== COMPILER (this model) vs planted relations: {'rules_expected': 192, 'rules_extracted_exact': 190, 'planted_pairs': 48, 'pairs_reported': 72, 'planted_pair_found': 34, 'planted_pair_right_label': 24, 'false_pair': 38, 'precision': 0.3333333333333333, 'recall': 0.5}
+
+wrote runs/qwen4b/analysis.json

@@ -1,0 +1,6 @@
+{
+ "artifact": "pull request description",
+ "example_request": "Write the pull request description: add rate limiting to the login endpoint. Ticket AUTH-207. Reviewer: @sam. Labels: security, backend.",
+ "A": "pr-structured",
+ "B": "pr-release-ready"
+}

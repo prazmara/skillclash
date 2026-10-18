@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "A",
+  "rules": {
+    "A": [
+      "Group changes under at least two of the headings `### Added`, `### Changed`, `### Fixed`.",
+      "Flag incompatible changes with the exact marker `BREAKING:`.",
+      "Reference issues in parentheses as `(#<number>)`.",
+      "Bullets describe the change only. No bullet may contain an @handle.",
+      "The first line must be the version heading `## [<version>] - <YYYY-MM-DD>`, for example `## [2.3.0] - 2026-03-02`.",
+      "Bullets are fragments: no bullet may end with a period."
+    ],
+    "B": [
+      "The first line must be the title `# Release <version> (<Month D, YYYY>)`, for example `# Release 2.3.0 (March 2, 2026)`.",
+      "Open with a one-sentence summary on a line that starts with `Highlights: `.",
+      "Credit every contributor by @handle.",
+      "Mark incompatible changes with `BREAKING:` exactly.",
+      "Tell users what to do on a line that starts with `Upgrade: `.",
+      "Put the name of each new feature in bold with `**`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 4,
+      "b": 0,
+      "relation": "contradictory",
+      "reason": "The first line cannot be both the heading `## [<version>] - <YYYY-MM-DD>` and the title `# Release <version> (<Month D, YYYY>)`."
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "relation": "duplicate",
+      "reason": "Both require incompatible changes to carry the exact marker `BREAKING:`."
+    },
+    {
+      "a": 3,
+      "b": 2,
+      "relation": "entangled",
+      "reason": "Every contributor can be credited by @handle while no bullet contains an @handle only if the credits are placed on a line that is not a bullet, unlike the example of B."
+    }
+  ],
+  "reconciled": [
+    "Credit every contributor by @handle on one separate line that is not a bullet, starts with `Contributors: ` and comes after the last bullet, for example `Contributors: @dana, @lee`. Bullets describe the change only, and no bullet may contain an @handle."
+  ]
+}

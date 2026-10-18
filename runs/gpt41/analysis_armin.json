@@ -1,0 +1,3789 @@
+{
+ "model": "gpt41",
+ "n_jobs": 16,
+ "n_diag": 576,
+ "valid_rules": {
+  "excl": {
+   "valid": 90,
+   "total": 96
+  },
+  "sh": {
+   "valid": 28,
+   "total": 32
+  },
+  "ent": {
+   "valid": 25,
+   "total": 32
+  },
+  "con": {
+   "valid": 29,
+   "total": 32
+  }
+ },
+ "diagnosis": {
+  "all": {
+   "all own rules": {
+    "no_skill": {
+     "mean": 0.11328125,
+     "lo": 0.06770833333333333,
+     "hi": 0.16796875,
+     "n": 16
+    },
+    "alone": {
+     "mean": 0.9934895833333333,
+     "lo": 0.9856770833333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 0.9934895833333333,
+     "lo": 0.9856770833333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.6145833333333334,
+     "lo": 0.5950520833333333,
+     "hi": 0.63671875,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.37890625,
+     "lo": -0.3997395833333333,
+     "hi": -0.35546874999999994,
+     "n": 16
+    }
+   },
+   "exclusive": {
+    "no_skill": {
+     "mean": 0.06770833333333333,
+     "lo": 0.023437499999999997,
+     "hi": 0.12499999999999999,
+     "n": 16
+    },
+    "alone": {
+     "mean": 0.9921875,
+     "lo": 0.9791666666666667,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 0.9921875,
+     "lo": 0.9791666666666667,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.5611979166666666,
+     "lo": 0.5208333333333333,
+     "hi": 0.6041666666666666,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.43098958333333337,
+     "lo": -0.47395833333333337,
+     "hi": -0.3828125,
+     "n": 16
+    }
+   },
+   "shared": {
+    "no_skill": {
+     "mean": 0.140625,
+     "lo": 0.0,
+     "hi": 0.3125,
+     "n": 16
+    },
+    "alone": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    }
+   },
+   "entangled": {
+    "no_skill": {
+     "mean": 0.25,
+     "lo": 0.140625,
+     "hi": 0.3515625,
+     "n": 16
+    },
+    "alone": {
+     "mean": 0.984375,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 0.984375,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.5234375,
+     "lo": 0.484375,
+     "hi": 0.56640625,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.4609375,
+     "lo": -0.50390625,
+     "hi": -0.4140625,
+     "n": 16
+    }
+   },
+   "contradictory": {
+    "no_skill": {
+     "mean": 0.0859375,
+     "lo": 0.0,
+     "hi": 0.1796875,
+     "n": 16
+    },
+    "alone": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.48046875,
+     "lo": 0.4609375,
+     "hi": 0.49609375,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.51953125,
+     "lo": -0.5390625,
+     "hi": -0.50390625,
+     "n": 16
+    }
+   }
+  },
+  "valid": {
+   "all own rules": {
+    "no_skill": {
+     "mean": 0.019791666666666666,
+     "lo": 0.007552083333333334,
+     "hi": 0.03411458333333334,
+     "n": 16
+    },
+    "alone": {
+     "mean": 0.990625,
+     "lo": 0.9786458333333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 0.990625,
+     "lo": 0.9776041666666667,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.6031249999999999,
+     "lo": 0.5805989583333333,
+     "hi": 0.6287760416666666,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.38749999999999996,
+     "lo": -0.410546875,
+     "hi": -0.3631510416666667,
+     "n": 16
+    }
+   },
+   "exclusive": {
+    "no_skill": {
+     "mean": 0.010416666666666666,
+     "lo": 0.0026041666666666665,
+     "hi": 0.020833333333333332,
+     "n": 16
+    },
+    "alone": {
+     "mean": 0.9895833333333333,
+     "lo": 0.9713541666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 0.9895833333333333,
+     "lo": 0.9713541666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.5455729166666666,
+     "lo": 0.5104166666666666,
+     "hi": 0.5833333333333333,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.4440104166666667,
+     "lo": -0.48177083333333337,
+     "hi": -0.3997070312500005,
+     "n": 16
+    }
+   },
+   "shared": {
+    "no_skill": {
+     "mean": 0.03571428571428571,
+     "lo": 0.0,
+     "hi": 0.10714285714285714,
+     "n": 14
+    },
+    "alone": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 14
+    },
+    "with_unrelated": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 14
+    },
+    "with_clashing": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 14
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 14
+    },
+    "delta_clashing": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 14
+    }
+   },
+   "entangled": {
+    "no_skill": {
+     "mean": 0.046875,
+     "lo": 0.0,
+     "hi": 0.109375,
+     "n": 16
+    },
+    "alone": {
+     "mean": 0.984375,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 0.984375,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.54296875,
+     "lo": 0.43359375,
+     "hi": 0.6524414062499986,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.44140625,
+     "lo": -0.55078125,
+     "hi": -0.33203125,
+     "n": 16
+    }
+   },
+   "contradictory": {
+    "no_skill": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "alone": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_unrelated": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "with_clashing": {
+     "mean": 0.48828125,
+     "lo": 0.40625,
+     "hi": 0.5625,
+     "n": 16
+    },
+    "delta_unrelated": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "delta_clashing": {
+     "mean": -0.51171875,
+     "lo": -0.59765625,
+     "hi": -0.43359375,
+     "n": 16
+    }
+   }
+  }
+ },
+ "takeover": {
+  "one_skill_fully_other_not_at_all": {
+   "mean": 0.765625,
+   "lo": 0.6015625,
+   "hi": 0.8984375,
+   "n": 16
+  },
+  "both_fully": {
+   "mean": 0.078125,
+   "lo": 0.0234375,
+   "hi": 0.140625,
+   "n": 16
+  },
+  "corr_exclA_exclB": -0.794595618070009
+ },
+ "contradiction": {
+  "first_listed_wins": {
+   "mean": 0.7265625,
+   "lo": 0.59375,
+   "hi": 0.8515625,
+   "n": 16
+  },
+  "second_listed_wins": {
+   "mean": 0.234375,
+   "lo": 0.109375,
+   "hi": 0.359375,
+   "n": 16
+  },
+  "neither": {
+   "mean": 0.0390625,
+   "lo": 0.0078125,
+   "hi": 0.078125,
+   "n": 16
+  }
+ },
+ "entangled_joint": {
+  "both_loaded": {
+   "mean": 0.0703125,
+   "lo": 0.0078125,
+   "hi": 0.1484375,
+   "n": 16
+  },
+  "product_of_singles": {
+   "mean": 0.96875,
+   "lo": 0.90625,
+   "hi": 1.0,
+   "n": 16
+  }
+ },
+ "treatments": {
+  "all": {
+   "checklist_PQ": {
+    "MSS": {
+     "mean": 0.63359375,
+     "lo": 0.60546875,
+     "hi": 0.671875,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9934895833333334,
+     "lo": 0.984375,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.08072916666666667,
+     "lo": 0.005208333333333333,
+     "hi": 0.20052083333333334,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.125,
+     "lo": 0.03125,
+     "hi": 0.234375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.84375,
+     "lo": 0.6875,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6,
+     "pr": 0.6,
+     "sql": 0.8625,
+     "incident": 0.7,
+     "python": 0.6875,
+     "support": 0.6749999999999999,
+     "changelog": 0.6,
+     "apierror": 0.6,
+     "review": 0.6,
+     "testcase": 0.625,
+     "standup": 0.6,
+     "bugreport": 0.6,
+     "dockerfile": 0.6,
+     "apidoc": 0.5874999999999999,
+     "alert": 0.6,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "concat_PQ": {
+    "MSS": {
+     "mean": 0.6140625,
+     "lo": 0.5867187500000001,
+     "hi": 0.6437499999999999,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.7942708333333333,
+     "lo": 0.6888020833333333,
+     "hi": 0.8958333333333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.34375,
+     "lo": 0.19791666666666666,
+     "hi": 0.49479166666666663,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.0703125,
+     "lo": 0.0078125,
+     "hi": 0.1484375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.7265625,
+     "lo": 0.59375,
+     "hi": 0.8517578124999972,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.015625,
+     "lo": 0.0,
+     "hi": 0.046875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.765625,
+     "lo": 0.6015625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.65,
+     "pr": 0.6125,
+     "sql": 0.7,
+     "incident": 0.6499999999999999,
+     "python": 0.5249999999999999,
+     "support": 0.6625,
+     "changelog": 0.55,
+     "apierror": 0.55,
+     "review": 0.6,
+     "testcase": 0.5874999999999999,
+     "standup": 0.55,
+     "bugreport": 0.6,
+     "dockerfile": 0.75,
+     "apidoc": 0.6125,
+     "alert": 0.6,
+     "userstory": 0.625
+    },
+    "n_jobs": 16
+   },
+   "concat_QP": {
+    "MSS": {
+     "mean": 0.56484375,
+     "lo": 0.5359375,
+     "hi": 0.5953125,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.43489583333333337,
+     "lo": 0.3255208333333333,
+     "hi": 0.55078125,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.7786458333333333,
+     "lo": 0.65625,
+     "hi": 0.8984375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.0703125,
+     "lo": 0.0078125,
+     "hi": 0.1484375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.234375,
+     "lo": 0.109375,
+     "hi": 0.359375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.765625,
+     "lo": 0.6015625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6625000000000001,
+     "pr": 0.6499999999999999,
+     "sql": 0.6375,
+     "incident": 0.6499999999999999,
+     "python": 0.5249999999999999,
+     "support": 0.5625,
+     "changelog": 0.55,
+     "apierror": 0.55,
+     "review": 0.5,
+     "testcase": 0.4875,
+     "standup": 0.55,
+     "bugreport": 0.5,
+     "dockerfile": 0.65,
+     "apidoc": 0.5125,
+     "alert": 0.5,
+     "userstory": 0.55
+    },
+    "n_jobs": 16
+   },
+   "freemerge_agent": {
+    "MSS": {
+     "mean": 0.9859375,
+     "lo": 0.97578125,
+     "hi": 0.9953125,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9921875,
+     "lo": 0.984375,
+     "hi": 0.9986979166666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9921875,
+     "lo": 0.9791666666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.921875,
+     "lo": 0.828125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.859375,
+     "lo": 0.7578125,
+     "hi": 0.953125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.95,
+     "incident": 1.0,
+     "python": 0.9624999999999999,
+     "support": 0.9875,
+     "changelog": 1.0,
+     "apierror": 1.0,
+     "review": 1.0,
+     "testcase": 0.975,
+     "standup": 0.95,
+     "bugreport": 1.0,
+     "dockerfile": 1.0,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 0.95
+    },
+    "n_jobs": 16
+   },
+   "freemerge_gpt41": {
+    "MSS": {
+     "mean": 0.9468750000000001,
+     "lo": 0.92109375,
+     "hi": 0.971875,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9609375,
+     "lo": 0.9322916666666666,
+     "hi": 0.9856770833333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9921875,
+     "lo": 0.9791666666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.59375,
+     "lo": 0.3984375,
+     "hi": 0.78125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.5703125,
+     "lo": 0.3671875,
+     "hi": 0.765625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.9,
+     "incident": 0.9875,
+     "python": 0.925,
+     "support": 0.9375,
+     "changelog": 0.8500000000000001,
+     "apierror": 0.9,
+     "review": 1.0,
+     "testcase": 0.9375,
+     "standup": 1.0,
+     "bugreport": 1.0,
+     "dockerfile": 1.0,
+     "apidoc": 0.9125000000000001,
+     "alert": 0.8500000000000001,
+     "userstory": 0.95
+    },
+    "n_jobs": 16
+   },
+   "freemerge_qwen4b": {
+    "MSS": {
+     "mean": 0.81640625,
+     "lo": 0.75390625,
+     "hi": 0.87265625,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9388020833333334,
+     "lo": 0.875,
+     "hi": 0.9830729166666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.6822916666666666,
+     "lo": 0.48697916666666663,
+     "hi": 0.8489583333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.375,
+     "lo": 0.2109375,
+     "hi": 0.546875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.84375,
+     "lo": 0.6875,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.1640625,
+     "lo": 0.0703125,
+     "hi": 0.265625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.2734375,
+     "lo": 0.09375,
+     "hi": 0.46875,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.95,
+     "pr": 0.925,
+     "sql": 0.8,
+     "incident": 0.925,
+     "python": 0.8875,
+     "support": 0.6499999999999999,
+     "changelog": 0.7125,
+     "apierror": 0.95,
+     "review": 0.6,
+     "testcase": 0.775,
+     "standup": 0.6125,
+     "bugreport": 0.7625,
+     "dockerfile": 0.95,
+     "apidoc": 0.9125000000000001,
+     "alert": 0.75,
+     "userstory": 0.9
+    },
+    "n_jobs": 16
+   },
+   "only_primary": {
+    "MSS": {
+     "mean": 0.609375,
+     "lo": 0.5992187499999999,
+     "hi": 0.62265625,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9934895833333334,
+     "lo": 0.9856770833333334,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.020833333333333332,
+     "lo": 0.0,
+     "hi": 0.04947916666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.0546875,
+     "lo": 0.0,
+     "hi": 0.1328125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.921875,
+     "lo": 0.828125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6,
+     "pr": 0.6,
+     "sql": 0.5874999999999999,
+     "incident": 0.6875,
+     "python": 0.625,
+     "support": 0.6499999999999999,
+     "changelog": 0.6,
+     "apierror": 0.6,
+     "review": 0.6,
+     "testcase": 0.6,
+     "standup": 0.6,
+     "bugreport": 0.6,
+     "dockerfile": 0.6,
+     "apidoc": 0.6,
+     "alert": 0.6,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "prec_PQ": {
+    "MSS": {
+     "mean": 0.62890625,
+     "lo": 0.6085937499999999,
+     "hi": 0.653125,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9934895833333334,
+     "lo": 0.9856770833333334,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.0703125,
+     "lo": 0.013020833333333332,
+     "hi": 0.1484375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.109375,
+     "lo": 0.0234375,
+     "hi": 0.2109375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.84375,
+     "lo": 0.6796875,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6,
+     "pr": 0.6125,
+     "sql": 0.7375,
+     "incident": 0.7,
+     "python": 0.7,
+     "support": 0.6625,
+     "changelog": 0.6,
+     "apierror": 0.6,
+     "review": 0.6,
+     "testcase": 0.5874999999999999,
+     "standup": 0.6,
+     "bugreport": 0.6,
+     "dockerfile": 0.6625,
+     "apidoc": 0.6,
+     "alert": 0.6,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "prec_QP": {
+    "MSS": {
+     "mean": 0.62265625,
+     "lo": 0.6,
+     "hi": 0.64765625,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.921875,
+     "lo": 0.8502604166666667,
+     "hi": 0.9817708333333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.15625,
+     "lo": 0.057291666666666664,
+     "hi": 0.2734375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.109375,
+     "lo": 0.03125,
+     "hi": 0.203125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.9140625,
+     "lo": 0.8203125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.8046875,
+     "lo": 0.6171875,
+     "hi": 0.953125,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6,
+     "pr": 0.6375,
+     "sql": 0.6875,
+     "incident": 0.6499999999999999,
+     "python": 0.7375,
+     "support": 0.7,
+     "changelog": 0.55,
+     "apierror": 0.6,
+     "review": 0.6,
+     "testcase": 0.575,
+     "standup": 0.6,
+     "bugreport": 0.6499999999999999,
+     "dockerfile": 0.6,
+     "apidoc": 0.6125,
+     "alert": 0.5625,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "seqrev": {
+    "MSS": {
+     "mean": 0.6734375,
+     "lo": 0.6234375,
+     "hi": 0.7242187499999999,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.48046875,
+     "lo": 0.3919270833333333,
+     "hi": 0.5716145833333333,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.984375,
+     "lo": 0.9583333333333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.1875,
+     "lo": 0.078125,
+     "hi": 0.3203125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.375,
+     "lo": 0.2265625,
+     "hi": 0.53125,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6125,
+     "pr": 0.675,
+     "sql": 0.75,
+     "incident": 0.8875,
+     "python": 0.65,
+     "support": 0.6625000000000001,
+     "changelog": 0.575,
+     "apierror": 0.6875,
+     "review": 0.725,
+     "testcase": 0.5,
+     "standup": 0.65,
+     "bugreport": 0.575,
+     "dockerfile": 0.8125,
+     "apidoc": 0.7000000000000001,
+     "alert": 0.8,
+     "userstory": 0.5125
+    },
+    "n_jobs": 16
+   },
+   "strong_PQ": {
+    "MSS": {
+     "mean": 0.890625,
+     "lo": 0.8609179687499999,
+     "hi": 0.9203125000000001,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.90234375,
+     "lo": 0.8645833333333333,
+     "hi": 0.9401041666666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.953125,
+     "lo": 0.895703125,
+     "hi": 0.9947916666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.3125,
+     "lo": 0.1171875,
+     "hi": 0.53125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.796875,
+     "lo": 0.6484375,
+     "hi": 0.921875,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.203125,
+     "lo": 0.0625,
+     "hi": 0.375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.95,
+     "pr": 0.8375,
+     "sql": 0.8,
+     "incident": 1.0,
+     "python": 0.9,
+     "support": 0.825,
+     "changelog": 0.775,
+     "apierror": 0.8500000000000001,
+     "review": 0.9,
+     "testcase": 0.9,
+     "standup": 0.9,
+     "bugreport": 0.9,
+     "dockerfile": 1.0,
+     "apidoc": 0.9,
+     "alert": 0.9,
+     "userstory": 0.9125000000000001
+    },
+    "n_jobs": 16
+   },
+   "strong_QP": {
+    "MSS": {
+     "mean": 0.88046875,
+     "lo": 0.8453125,
+     "hi": 0.91328125,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8919270833333333,
+     "lo": 0.8424479166666667,
+     "hi": 0.9388020833333333,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9583333333333333,
+     "lo": 0.90625,
+     "hi": 0.9947916666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.3359375,
+     "lo": 0.15625,
+     "hi": 0.5236328124999972,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.65625,
+     "lo": 0.453125,
+     "hi": 0.8515625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.2109375,
+     "lo": 0.09375,
+     "hi": 0.359375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 0.9125000000000001,
+     "sql": 0.9,
+     "incident": 0.9,
+     "python": 0.95,
+     "support": 0.85,
+     "changelog": 0.7124999999999999,
+     "apierror": 0.8,
+     "review": 0.8500000000000001,
+     "testcase": 0.9375,
+     "standup": 0.8875,
+     "bugreport": 0.8500000000000001,
+     "dockerfile": 0.95,
+     "apidoc": 0.8875,
+     "alert": 0.8,
+     "userstory": 0.9
+    },
+    "n_jobs": 16
+   },
+   "truce_agent": {
+    "MSS": {
+     "mean": 0.99375,
+     "lo": 0.9859375,
+     "hi": 1.0,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9947916666666667,
+     "lo": 0.98828125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9921875,
+     "lo": 0.9791666666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.984375,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.9375,
+     "lo": 0.859375,
+     "hi": 1.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.95,
+     "incident": 1.0,
+     "python": 0.975,
+     "support": 1.0,
+     "changelog": 1.0,
+     "apierror": 1.0,
+     "review": 1.0,
+     "testcase": 0.975,
+     "standup": 1.0,
+     "bugreport": 1.0,
+     "dockerfile": 1.0,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_gpt41": {
+    "MSS": {
+     "mean": 0.9078125,
+     "lo": 0.821875,
+     "hi": 0.9671875,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9140625,
+     "lo": 0.8268229166666667,
+     "hi": 0.9700520833333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9244791666666666,
+     "lo": 0.828125,
+     "hi": 0.9895833333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.625,
+     "lo": 0.421875,
+     "hi": 0.8125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.53125,
+     "lo": 0.328125,
+     "hi": 0.734375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 0.975,
+     "sql": 0.9,
+     "incident": 0.35,
+     "python": 0.975,
+     "support": 1.0,
+     "changelog": 0.8,
+     "apierror": 0.9,
+     "review": 0.95,
+     "testcase": 0.975,
+     "standup": 0.95,
+     "bugreport": 1.0,
+     "dockerfile": 0.8500000000000001,
+     "apidoc": 1.0,
+     "alert": 0.9,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_noex_gpt41": {
+    "MSS": {
+     "mean": 0.90546875,
+     "lo": 0.81484375,
+     "hi": 0.96640625,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9140625,
+     "lo": 0.8268229166666667,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9244791666666666,
+     "lo": 0.828125,
+     "hi": 0.9895833333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.65625,
+     "lo": 0.4609375,
+     "hi": 0.8359375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.5390625,
+     "lo": 0.34375,
+     "hi": 0.7265625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.9,
+     "incident": 0.3125,
+     "python": 0.975,
+     "support": 0.9624999999999999,
+     "changelog": 0.7875000000000001,
+     "apierror": 0.9,
+     "review": 0.9625,
+     "testcase": 0.95,
+     "standup": 0.9625,
+     "bugreport": 1.0,
+     "dockerfile": 0.8500000000000001,
+     "apidoc": 1.0,
+     "alert": 0.925,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_noex_qwen4b": {
+    "MSS": {
+     "mean": 0.84375,
+     "lo": 0.79765625,
+     "hi": 0.88828125,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.87109375,
+     "lo": 0.8190104166666667,
+     "hi": 0.91796875,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.8359375,
+     "lo": 0.7760416666666666,
+     "hi": 0.8958333333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.5,
+     "lo": 0.3203125,
+     "hi": 0.6796875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.75,
+     "lo": 0.5625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.1875,
+     "lo": 0.0625,
+     "hi": 0.34375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.9,
+     "pr": 0.9625,
+     "sql": 0.9,
+     "incident": 0.7125,
+     "python": 0.8375,
+     "support": 0.8375,
+     "changelog": 0.75,
+     "apierror": 0.95,
+     "review": 0.8875,
+     "testcase": 0.65,
+     "standup": 0.8,
+     "bugreport": 0.75,
+     "dockerfile": 0.7875000000000001,
+     "apidoc": 1.0,
+     "alert": 0.925,
+     "userstory": 0.8500000000000001
+    },
+    "n_jobs": 16
+   },
+   "truce_oracle_gpt41": {
+    "MSS": {
+     "mean": 0.9390624999999999,
+     "lo": 0.890625,
+     "hi": 0.97578125,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9440104166666667,
+     "lo": 0.8971354166666667,
+     "hi": 0.98046875,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9557291666666666,
+     "lo": 0.9036458333333333,
+     "hi": 0.9947916666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.7578125,
+     "lo": 0.6015625,
+     "hi": 0.890625,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.6328125,
+     "lo": 0.4375,
+     "hi": 0.8046875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 0.9875,
+     "sql": 0.9,
+     "incident": 0.65,
+     "python": 0.975,
+     "support": 1.0,
+     "changelog": 0.95,
+     "apierror": 0.95,
+     "review": 1.0,
+     "testcase": 0.975,
+     "standup": 0.9,
+     "bugreport": 1.0,
+     "dockerfile": 0.8375000000000001,
+     "apidoc": 1.0,
+     "alert": 0.9,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_oracle_noex_qwen4b": {
+    "MSS": {
+     "mean": 0.9375,
+     "lo": 0.9085937500000001,
+     "hi": 0.9640625,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.94921875,
+     "lo": 0.91015625,
+     "hi": 0.9817708333333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.96875,
+     "lo": 0.9270833333333333,
+     "hi": 0.9947916666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.65625,
+     "lo": 0.4765625,
+     "hi": 0.8203125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.9921875,
+     "lo": 0.9765625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.515625,
+     "lo": 0.3359375,
+     "hi": 0.6953125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 0.9625,
+     "sql": 0.8500000000000001,
+     "incident": 0.95,
+     "python": 0.925,
+     "support": 1.0,
+     "changelog": 0.8375,
+     "apierror": 0.95,
+     "review": 0.9,
+     "testcase": 0.8875,
+     "standup": 0.9875,
+     "bugreport": 1.0,
+     "dockerfile": 0.8375000000000001,
+     "apidoc": 1.0,
+     "alert": 0.9624999999999999,
+     "userstory": 0.95
+    },
+    "n_jobs": 16
+   },
+   "truce_oracle_qwen4b": {
+    "MSS": {
+     "mean": 0.89375,
+     "lo": 0.85625,
+     "hi": 0.9296875,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.890625,
+     "lo": 0.8489583333333334,
+     "hi": 0.9309895833333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9583333333333333,
+     "lo": 0.921875,
+     "hi": 0.9895833333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.4921875,
+     "lo": 0.296875,
+     "hi": 0.6875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.3046875,
+     "lo": 0.125,
+     "hi": 0.4921875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.85,
+     "pr": 0.95,
+     "sql": 0.7375,
+     "incident": 0.95,
+     "python": 0.9125,
+     "support": 0.9,
+     "changelog": 0.775,
+     "apierror": 0.9,
+     "review": 0.8500000000000001,
+     "testcase": 0.925,
+     "standup": 1.0,
+     "bugreport": 1.0,
+     "dockerfile": 0.8125,
+     "apidoc": 0.9875,
+     "alert": 0.9,
+     "userstory": 0.8500000000000001
+    },
+    "n_jobs": 16
+   },
+   "truce_qwen4b": {
+    "MSS": {
+     "mean": 0.8,
+     "lo": 0.7375,
+     "hi": 0.859375,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.82421875,
+     "lo": 0.76171875,
+     "hi": 0.8763020833333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.7994791666666666,
+     "lo": 0.7239583333333333,
+     "hi": 0.8723958333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.4375,
+     "lo": 0.21875,
+     "hi": 0.65625,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.75,
+     "lo": 0.5625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.1484375,
+     "lo": 0.03125,
+     "hi": 0.3046875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.8500000000000001,
+     "pr": 1.0,
+     "sql": 0.9,
+     "incident": 0.8500000000000001,
+     "python": 0.7625,
+     "support": 0.7,
+     "changelog": 0.75,
+     "apierror": 0.95,
+     "review": 0.8250000000000001,
+     "testcase": 0.7,
+     "standup": 0.6625000000000001,
+     "bugreport": 0.75,
+     "dockerfile": 0.8875,
+     "apidoc": 0.9625,
+     "alert": 0.5,
+     "userstory": 0.75
+    },
+    "n_jobs": 16
+   },
+   "truce_ref_frontier_qwen4b": {
+    "MSS": {
+     "mean": 0.8875000000000001,
+     "lo": 0.821875,
+     "hi": 0.9375195312499998,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8880208333333334,
+     "lo": 0.8229166666666667,
+     "hi": 0.9361979166666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.8932291666666666,
+     "lo": 0.8072916666666666,
+     "hi": 0.9635416666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.71875,
+     "lo": 0.5390625,
+     "hi": 0.875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.84375,
+     "lo": 0.71875,
+     "hi": 0.9375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.4140625,
+     "lo": 0.234375,
+     "hi": 0.6015625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.9,
+     "pr": 1.0,
+     "sql": 0.9,
+     "incident": 1.0,
+     "python": 0.9125,
+     "support": 0.9,
+     "changelog": 0.8,
+     "apierror": 0.95,
+     "review": 1.0,
+     "testcase": 0.9125,
+     "standup": 0.8,
+     "bugreport": 0.8,
+     "dockerfile": 0.9375,
+     "apidoc": 0.9875,
+     "alert": 0.5,
+     "userstory": 0.9
+    },
+    "n_jobs": 16
+   },
+   "union_noex": {
+    "MSS": {
+     "mean": 0.828125,
+     "lo": 0.79765625,
+     "hi": 0.8562500000000001,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.7825520833333333,
+     "lo": 0.75,
+     "hi": 0.8138020833333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9244791666666666,
+     "lo": 0.8515625,
+     "hi": 0.9817708333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.6015625,
+     "lo": 0.4140625,
+     "hi": 0.7890625,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.0859375,
+     "lo": 0.015625,
+     "hi": 0.1796875,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0390625,
+     "lo": 0.0,
+     "hi": 0.109375,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.9,
+     "pr": 0.8250000000000001,
+     "sql": 0.8,
+     "incident": 0.8125,
+     "python": 0.875,
+     "support": 0.8500000000000001,
+     "changelog": 0.75,
+     "apierror": 0.8,
+     "review": 0.9,
+     "testcase": 0.8500000000000001,
+     "standup": 0.8375,
+     "bugreport": 0.9,
+     "dockerfile": 0.6875,
+     "apidoc": 0.9,
+     "alert": 0.8125,
+     "userstory": 0.75
+    },
+    "n_jobs": 16
+   },
+   "union_prec": {
+    "MSS": {
+     "mean": 0.8968750000000001,
+     "lo": 0.86953125,
+     "hi": 0.92265625,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8932291666666666,
+     "lo": 0.8580729166666667,
+     "hi": 0.9244791666666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9192708333333333,
+     "lo": 0.84375,
+     "hi": 0.9791666666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.6796875,
+     "lo": 0.5234375,
+     "hi": 0.828125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.6953125,
+     "lo": 0.5234375,
+     "hi": 0.8515625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.3046875,
+     "lo": 0.1875,
+     "hi": 0.421875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.046875,
+     "lo": 0.0,
+     "hi": 0.125,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.95,
+     "pr": 0.9125000000000001,
+     "sql": 0.8125,
+     "incident": 0.9,
+     "python": 0.925,
+     "support": 0.95,
+     "changelog": 0.8,
+     "apierror": 0.925,
+     "review": 0.9375,
+     "testcase": 0.975,
+     "standup": 0.8875,
+     "bugreport": 0.9,
+     "dockerfile": 0.7875000000000001,
+     "apidoc": 0.9375,
+     "alert": 0.9,
+     "userstory": 0.85
+    },
+    "n_jobs": 16
+   }
+  },
+  "valid": {
+   "checklist_PQ": {
+    "MSS": {
+     "mean": 0.6232824900793651,
+     "lo": 0.6025975012400793,
+     "hi": 0.6510608878968254,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9893229166666666,
+     "lo": 0.9721354166666667,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.06640625,
+     "lo": 0.0,
+     "hi": 0.17317708333333334,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.125,
+     "lo": 0.03125,
+     "hi": 0.21875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.84375,
+     "lo": 0.6875,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.5777777777777777,
+     "pr": 0.6111111111111112,
+     "sql": 0.7916666666666667,
+     "incident": 0.6875,
+     "python": 0.6527777777777778,
+     "support": 0.59375,
+     "changelog": 0.5982142857142857,
+     "apierror": 0.6111111111111112,
+     "review": 0.6,
+     "testcase": 0.6388888888888888,
+     "standup": 0.6,
+     "bugreport": 0.6111111111111112,
+     "dockerfile": 0.6,
+     "apidoc": 0.5874999999999999,
+     "alert": 0.6111111111111112,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "concat_PQ": {
+    "MSS": {
+     "mean": 0.6020306299603174,
+     "lo": 0.5734559461805555,
+     "hi": 0.6311859033978174,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.7932291666666667,
+     "lo": 0.6898437500000001,
+     "hi": 0.8955729166666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.3255208333333333,
+     "lo": 0.19010416666666666,
+     "hi": 0.47395833333333326,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.0703125,
+     "lo": 0.0078125,
+     "hi": 0.1484375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.7265625,
+     "lo": 0.59375,
+     "hi": 0.859375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0234375,
+     "lo": 0.0,
+     "hi": 0.0625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.765625,
+     "lo": 0.6015625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.6777777777777778,
+     "pr": 0.625,
+     "sql": 0.613095238095238,
+     "incident": 0.5625,
+     "python": 0.4722222222222222,
+     "support": 0.578125,
+     "changelog": 0.5357142857142857,
+     "apierror": 0.6111111111111112,
+     "review": 0.6,
+     "testcase": 0.5972222222222222,
+     "standup": 0.55,
+     "bugreport": 0.6111111111111112,
+     "dockerfile": 0.75,
+     "apidoc": 0.6125,
+     "alert": 0.6111111111111112,
+     "userstory": 0.625
+    },
+    "n_jobs": 16
+   },
+   "concat_QP": {
+    "MSS": {
+     "mean": 0.5507657490079365,
+     "lo": 0.5183989800347223,
+     "hi": 0.5859505208333333,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.4130208333333333,
+     "lo": 0.2901041666666667,
+     "hi": 0.5408919270833332,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.765625,
+     "lo": 0.6328125,
+     "hi": 0.890625,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.0703125,
+     "lo": 0.0078125,
+     "hi": 0.1484375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.234375,
+     "lo": 0.109375,
+     "hi": 0.359375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.765625,
+     "lo": 0.6015625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.7027777777777777,
+     "pr": 0.6666666666666666,
+     "sql": 0.5595238095238095,
+     "incident": 0.5625,
+     "python": 0.4722222222222222,
+     "support": 0.453125,
+     "changelog": 0.5357142857142857,
+     "apierror": 0.6111111111111112,
+     "review": 0.5,
+     "testcase": 0.4861111111111111,
+     "standup": 0.55,
+     "bugreport": 0.5,
+     "dockerfile": 0.65,
+     "apidoc": 0.5125,
+     "alert": 0.5,
+     "userstory": 0.55
+    },
+    "n_jobs": 16
+   },
+   "freemerge_agent": {
+    "MSS": {
+     "mean": 0.9835968501984127,
+     "lo": 0.970857669890873,
+     "hi": 0.9944688585069443,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9886718750000001,
+     "lo": 0.9759114583333333,
+     "hi": 0.998046875,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9895833333333333,
+     "lo": 0.9739583333333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.921875,
+     "lo": 0.828125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.859375,
+     "lo": 0.7578125,
+     "hi": 0.953125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.9226190476190477,
+     "incident": 1.0,
+     "python": 0.9583333333333333,
+     "support": 0.984375,
+     "changelog": 1.0,
+     "apierror": 1.0,
+     "review": 1.0,
+     "testcase": 0.9722222222222222,
+     "standup": 0.95,
+     "bugreport": 1.0,
+     "dockerfile": 1.0,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 0.95
+    },
+    "n_jobs": 16
+   },
+   "freemerge_gpt41": {
+    "MSS": {
+     "mean": 0.9529947916666667,
+     "lo": 0.9219456070188493,
+     "hi": 0.9796012369791667,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9615885416666666,
+     "lo": 0.925908203125,
+     "hi": 0.9875032552083334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9895833333333333,
+     "lo": 0.9713541666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.59375,
+     "lo": 0.3984375,
+     "hi": 0.78125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.671875,
+     "lo": 0.4998046875000002,
+     "hi": 0.8359375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.8511904761904763,
+     "incident": 0.984375,
+     "python": 0.9583333333333333,
+     "support": 0.921875,
+     "changelog": 0.7946428571428572,
+     "apierror": 1.0,
+     "review": 1.0,
+     "testcase": 0.9305555555555556,
+     "standup": 1.0,
+     "bugreport": 1.0,
+     "dockerfile": 1.0,
+     "apidoc": 0.9125000000000001,
+     "alert": 0.9444444444444444,
+     "userstory": 0.95
+    },
+    "n_jobs": 16
+   },
+   "freemerge_qwen4b": {
+    "MSS": {
+     "mean": 0.8357142857142857,
+     "lo": 0.7670501612103174,
+     "hi": 0.8998273189484127,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9579427083333333,
+     "lo": 0.9124772135416667,
+     "hi": 0.9908854166666666,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.6848958333333333,
+     "lo": 0.4921875,
+     "hi": 0.859375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.375,
+     "lo": 0.21875,
+     "hi": 0.546875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.84375,
+     "lo": 0.6875,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.3359375,
+     "lo": 0.1875,
+     "hi": 0.5,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.2734375,
+     "lo": 0.09375,
+     "hi": 0.46875,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.95,
+     "pr": 0.9444444444444444,
+     "sql": 0.7797619047619048,
+     "incident": 1.0,
+     "python": 0.9166666666666666,
+     "support": 0.5625,
+     "changelog": 0.8125,
+     "apierror": 1.0,
+     "review": 0.6,
+     "testcase": 0.8055555555555556,
+     "standup": 0.6125,
+     "bugreport": 0.7916666666666667,
+     "dockerfile": 0.95,
+     "apidoc": 0.9125000000000001,
+     "alert": 0.8333333333333333,
+     "userstory": 0.9
+    },
+    "n_jobs": 16
+   },
+   "only_primary": {
+    "MSS": {
+     "mean": 0.599928695436508,
+     "lo": 0.5813275049603175,
+     "hi": 0.6166232638888889,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.990625,
+     "lo": 0.9786458333333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.0546875,
+     "lo": 0.0,
+     "hi": 0.140625,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.921875,
+     "lo": 0.828125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.5777777777777777,
+     "pr": 0.6111111111111112,
+     "sql": 0.494047619047619,
+     "incident": 0.671875,
+     "python": 0.6388888888888888,
+     "support": 0.5625,
+     "changelog": 0.5982142857142857,
+     "apierror": 0.6111111111111112,
+     "review": 0.6,
+     "testcase": 0.6111111111111112,
+     "standup": 0.6,
+     "bugreport": 0.6111111111111112,
+     "dockerfile": 0.6,
+     "apidoc": 0.6,
+     "alert": 0.6111111111111112,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "prec_PQ": {
+    "MSS": {
+     "mean": 0.6122364831349206,
+     "lo": 0.5984156436011905,
+     "hi": 0.628732638888889,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.990625,
+     "lo": 0.9786458333333333,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.04557291666666667,
+     "lo": 0.005208333333333333,
+     "hi": 0.09635416666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.109375,
+     "lo": 0.0234375,
+     "hi": 0.2109375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.84375,
+     "lo": 0.6875,
+     "hi": 0.96875,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.5777777777777777,
+     "pr": 0.6111111111111112,
+     "sql": 0.5833333333333333,
+     "incident": 0.6875,
+     "python": 0.6666666666666667,
+     "support": 0.578125,
+     "changelog": 0.5982142857142857,
+     "apierror": 0.6111111111111112,
+     "review": 0.6,
+     "testcase": 0.5972222222222222,
+     "standup": 0.6,
+     "bugreport": 0.6111111111111112,
+     "dockerfile": 0.6625,
+     "apidoc": 0.6,
+     "alert": 0.6111111111111112,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "prec_QP": {
+    "MSS": {
+     "mean": 0.5946180555555556,
+     "lo": 0.5754960317460318,
+     "hi": 0.6159105282738094,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9158854166666667,
+     "lo": 0.8401041666666668,
+     "hi": 0.9802083333333333,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.13411458333333331,
+     "lo": 0.04427083333333333,
+     "hi": 0.23307291666666663,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.109375,
+     "lo": 0.03125,
+     "hi": 0.203125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.9140625,
+     "lo": 0.8203125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.8046875,
+     "lo": 0.6171875,
+     "hi": 0.953125,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.5777777777777777,
+     "pr": 0.6111111111111112,
+     "sql": 0.5476190476190477,
+     "incident": 0.5625,
+     "python": 0.7083333333333333,
+     "support": 0.625,
+     "changelog": 0.5357142857142857,
+     "apierror": 0.6111111111111112,
+     "review": 0.6,
+     "testcase": 0.5833333333333334,
+     "standup": 0.6,
+     "bugreport": 0.6111111111111112,
+     "dockerfile": 0.6,
+     "apidoc": 0.6125,
+     "alert": 0.5277777777777778,
+     "userstory": 0.6
+    },
+    "n_jobs": 16
+   },
+   "seqrev": {
+    "MSS": {
+     "mean": 0.6770368303571428,
+     "lo": 0.6267693607390873,
+     "hi": 0.7319108847966269,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.483203125,
+     "lo": 0.39752604166666666,
+     "hi": 0.5723990885416667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9817708333333333,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.1875,
+     "lo": 0.078125,
+     "hi": 0.3203125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.375,
+     "lo": 0.2265625,
+     "hi": 0.53125,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.648611111111111,
+     "pr": 0.6944444444444444,
+     "sql": 0.6964285714285714,
+     "incident": 0.859375,
+     "python": 0.6388888888888888,
+     "support": 0.578125,
+     "changelog": 0.6361607142857143,
+     "apierror": 0.7083333333333333,
+     "review": 0.725,
+     "testcase": 0.5,
+     "standup": 0.65,
+     "bugreport": 0.5833333333333334,
+     "dockerfile": 0.8125,
+     "apidoc": 0.7000000000000001,
+     "alert": 0.8888888888888888,
+     "userstory": 0.5125
+    },
+    "n_jobs": 16
+   },
+   "strong_PQ": {
+    "MSS": {
+     "mean": 0.9004774305555556,
+     "lo": 0.8602425905257937,
+     "hi": 0.9380087425595237,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.915625,
+     "lo": 0.8723958333333334,
+     "hi": 0.9549674479166664,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9453125,
+     "lo": 0.8802083333333333,
+     "hi": 0.9921875,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.3125,
+     "lo": 0.1171875,
+     "hi": 0.5236328124999972,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.796875,
+     "lo": 0.6484375,
+     "hi": 0.9296875,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.328125,
+     "lo": 0.140625,
+     "hi": 0.5390625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 0.9027777777777777,
+     "sql": 0.7678571428571428,
+     "incident": 1.0,
+     "python": 0.8888888888888888,
+     "support": 0.78125,
+     "changelog": 0.7321428571428572,
+     "apierror": 0.9444444444444444,
+     "review": 0.9,
+     "testcase": 0.8888888888888888,
+     "standup": 0.9,
+     "bugreport": 0.8888888888888888,
+     "dockerfile": 1.0,
+     "apidoc": 0.9,
+     "alert": 1.0,
+     "userstory": 0.9125000000000001
+    },
+    "n_jobs": 16
+   },
+   "strong_QP": {
+    "MSS": {
+     "mean": 0.8865668402777778,
+     "lo": 0.8484271918402778,
+     "hi": 0.9212673611111111,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8981770833333333,
+     "lo": 0.8505208333333334,
+     "hi": 0.9411523437499999,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9505208333333333,
+     "lo": 0.8958333333333333,
+     "hi": 0.9921875,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.3359375,
+     "lo": 0.1640625,
+     "hi": 0.5234375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.65625,
+     "lo": 0.4453125,
+     "hi": 0.84375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.265625,
+     "lo": 0.109375,
+     "hi": 0.4375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.8511904761904763,
+     "incident": 0.875,
+     "python": 0.9444444444444444,
+     "support": 0.8125,
+     "changelog": 0.6852678571428572,
+     "apierror": 0.8888888888888888,
+     "review": 0.8500000000000001,
+     "testcase": 0.9305555555555556,
+     "standup": 0.8875,
+     "bugreport": 0.8333333333333333,
+     "dockerfile": 0.95,
+     "apidoc": 0.8875,
+     "alert": 0.8888888888888888,
+     "userstory": 0.9
+    },
+    "n_jobs": 16
+   },
+   "truce_agent": {
+    "MSS": {
+     "mean": 0.9916914682539683,
+     "lo": 0.9802827380952381,
+     "hi": 1.0,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9919270833333333,
+     "lo": 0.9799479166666667,
+     "hi": 1.0,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9895833333333333,
+     "lo": 0.9713541666666666,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.984375,
+     "lo": 0.953125,
+     "hi": 1.0,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.9375,
+     "lo": 0.859375,
+     "hi": 1.0,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.9226190476190477,
+     "incident": 1.0,
+     "python": 0.9722222222222222,
+     "support": 1.0,
+     "changelog": 1.0,
+     "apierror": 1.0,
+     "review": 1.0,
+     "testcase": 0.9722222222222222,
+     "standup": 1.0,
+     "bugreport": 1.0,
+     "dockerfile": 1.0,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_gpt41": {
+    "MSS": {
+     "mean": 0.9092261904761905,
+     "lo": 0.8061216517857143,
+     "hi": 0.9734424603174602,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9143229166666668,
+     "lo": 0.8166666666666667,
+     "hi": 0.9791666666666667,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.8958333333333333,
+     "lo": 0.7578125,
+     "hi": 0.984375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.625,
+     "lo": 0.421875,
+     "hi": 0.8125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.640625,
+     "lo": 0.453125,
+     "hi": 0.828125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.8392857142857143,
+     "incident": 0.25,
+     "python": 0.9722222222222222,
+     "support": 1.0,
+     "changelog": 0.875,
+     "apierror": 0.8888888888888888,
+     "review": 0.95,
+     "testcase": 0.9722222222222222,
+     "standup": 0.95,
+     "bugreport": 1.0,
+     "dockerfile": 0.8500000000000001,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_noex_gpt41": {
+    "MSS": {
+     "mean": 0.9022166418650794,
+     "lo": 0.7931615048363095,
+     "hi": 0.9694087921626984,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9102864583333333,
+     "lo": 0.8147135416666667,
+     "hi": 0.973828125,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.8958333333333333,
+     "lo": 0.7578125,
+     "hi": 0.984375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.65625,
+     "lo": 0.4609375,
+     "hi": 0.8359375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.6171875,
+     "lo": 0.4296875,
+     "hi": 0.7890625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.8392857142857143,
+     "incident": 0.203125,
+     "python": 0.9722222222222222,
+     "support": 0.953125,
+     "changelog": 0.859375,
+     "apierror": 0.8888888888888888,
+     "review": 0.9625,
+     "testcase": 0.9444444444444444,
+     "standup": 0.9625,
+     "bugreport": 1.0,
+     "dockerfile": 0.8500000000000001,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_noex_qwen4b": {
+    "MSS": {
+     "mean": 0.8419642857142857,
+     "lo": 0.7902339099702381,
+     "hi": 0.8928469122023809,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8661458333333334,
+     "lo": 0.8109375000000001,
+     "hi": 0.91953125,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.8177083333333333,
+     "lo": 0.7473958333333333,
+     "hi": 0.8854166666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.5,
+     "lo": 0.3203125,
+     "hi": 0.6875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.75,
+     "lo": 0.5625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.2421875,
+     "lo": 0.08574218750000018,
+     "hi": 0.4296875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0078125,
+     "lo": 0.0,
+     "hi": 0.0234375,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.8944444444444444,
+     "pr": 0.9722222222222222,
+     "sql": 0.8392857142857143,
+     "incident": 0.703125,
+     "python": 0.875,
+     "support": 0.796875,
+     "changelog": 0.7321428571428572,
+     "apierror": 0.9444444444444444,
+     "review": 0.8875,
+     "testcase": 0.6111111111111112,
+     "standup": 0.8,
+     "bugreport": 0.7777777777777778,
+     "dockerfile": 0.7875000000000001,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 0.8500000000000001
+    },
+    "n_jobs": 16
+   },
+   "truce_oracle_gpt41": {
+    "MSS": {
+     "mean": 0.9392609126984127,
+     "lo": 0.8875248015873016,
+     "hi": 0.9801215277777777,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9432291666666667,
+     "lo": 0.8940104166666667,
+     "hi": 0.984375,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9427083333333333,
+     "lo": 0.8697916666666666,
+     "hi": 0.9947916666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.7578125,
+     "lo": 0.609375,
+     "hi": 0.8984375,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.734375,
+     "lo": 0.578125,
+     "hi": 0.875,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.8392857142857143,
+     "incident": 0.625,
+     "python": 0.9722222222222222,
+     "support": 1.0,
+     "changelog": 0.9375,
+     "apierror": 0.9444444444444444,
+     "review": 1.0,
+     "testcase": 0.9722222222222222,
+     "standup": 0.9,
+     "bugreport": 1.0,
+     "dockerfile": 0.8375000000000001,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 1.0
+    },
+    "n_jobs": 16
+   },
+   "truce_oracle_noex_qwen4b": {
+    "MSS": {
+     "mean": 0.9397569444444445,
+     "lo": 0.9035949900793651,
+     "hi": 0.9722222222222222,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9528645833333333,
+     "lo": 0.9140559895833333,
+     "hi": 0.9841145833333333,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9713541666666666,
+     "lo": 0.9296875,
+     "hi": 1.0,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.65625,
+     "lo": 0.4765625,
+     "hi": 0.8203125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.9921875,
+     "lo": 0.9765625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.625,
+     "lo": 0.4296875,
+     "hi": 0.8125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 1.0,
+     "sql": 0.7678571428571428,
+     "incident": 1.0,
+     "python": 0.9166666666666666,
+     "support": 1.0,
+     "changelog": 0.8571428571428572,
+     "apierror": 0.9444444444444444,
+     "review": 0.9,
+     "testcase": 0.875,
+     "standup": 0.9875,
+     "bugreport": 1.0,
+     "dockerfile": 0.8375000000000001,
+     "apidoc": 1.0,
+     "alert": 1.0,
+     "userstory": 0.95
+    },
+    "n_jobs": 16
+   },
+   "truce_oracle_qwen4b": {
+    "MSS": {
+     "mean": 0.8889384920634921,
+     "lo": 0.8426959325396826,
+     "hi": 0.9308159722222222,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8895833333333334,
+     "lo": 0.8427083333333334,
+     "hi": 0.9346354166666666,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9505208333333333,
+     "lo": 0.90625,
+     "hi": 0.9869791666666666,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.4921875,
+     "lo": 0.296875,
+     "hi": 0.6875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.96875,
+     "lo": 0.90625,
+     "hi": 1.0,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.3671875,
+     "lo": 0.1796875,
+     "hi": 0.5625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.85,
+     "pr": 0.9444444444444444,
+     "sql": 0.6755952380952381,
+     "incident": 0.9375,
+     "python": 0.9027777777777777,
+     "support": 0.875,
+     "changelog": 0.7321428571428572,
+     "apierror": 0.8888888888888888,
+     "review": 0.8500000000000001,
+     "testcase": 0.9166666666666666,
+     "standup": 1.0,
+     "bugreport": 1.0,
+     "dockerfile": 0.8125,
+     "apidoc": 0.9875,
+     "alert": 1.0,
+     "userstory": 0.8500000000000001
+    },
+    "n_jobs": 16
+   },
+   "truce_qwen4b": {
+    "MSS": {
+     "mean": 0.7927083333333333,
+     "lo": 0.7300062003968254,
+     "hi": 0.8543030753968255,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8122395833333333,
+     "lo": 0.7479101562499999,
+     "hi": 0.86953125,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.7864583333333333,
+     "lo": 0.7083333333333333,
+     "hi": 0.8645833333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.4375,
+     "lo": 0.21875,
+     "hi": 0.6640625,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.75,
+     "lo": 0.5625,
+     "hi": 0.90625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.1953125,
+     "lo": 0.0625,
+     "hi": 0.359375,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.8388888888888889,
+     "pr": 1.0,
+     "sql": 0.9226190476190477,
+     "incident": 0.8125,
+     "python": 0.7916666666666666,
+     "support": 0.625,
+     "changelog": 0.6607142857142857,
+     "apierror": 0.9444444444444444,
+     "review": 0.8250000000000001,
+     "testcase": 0.6666666666666667,
+     "standup": 0.6625000000000001,
+     "bugreport": 0.7777777777777778,
+     "dockerfile": 0.8875,
+     "apidoc": 0.9625,
+     "alert": 0.5555555555555556,
+     "userstory": 0.75
+    },
+    "n_jobs": 16
+   },
+   "truce_ref_frontier_qwen4b": {
+    "MSS": {
+     "mean": 0.8867559523809523,
+     "lo": 0.8253968253968255,
+     "hi": 0.9362475198412699,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.8825520833333333,
+     "lo": 0.828125,
+     "hi": 0.9304752604166666,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.8854166666666666,
+     "lo": 0.796875,
+     "hi": 0.9583333333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.71875,
+     "lo": 0.5390625,
+     "hi": 0.875,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.84375,
+     "lo": 0.71875,
+     "hi": 0.9375,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.4609375,
+     "lo": 0.2890625,
+     "hi": 0.640625,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.8944444444444444,
+     "pr": 1.0,
+     "sql": 0.9226190476190477,
+     "incident": 1.0,
+     "python": 0.9027777777777777,
+     "support": 0.875,
+     "changelog": 0.7321428571428572,
+     "apierror": 0.9444444444444444,
+     "review": 1.0,
+     "testcase": 0.9027777777777777,
+     "standup": 0.8,
+     "bugreport": 0.8333333333333333,
+     "dockerfile": 0.9375,
+     "apidoc": 0.9875,
+     "alert": 0.5555555555555556,
+     "userstory": 0.9
+    },
+    "n_jobs": 16
+   },
+   "union_noex": {
+    "MSS": {
+     "mean": 0.8357483878968253,
+     "lo": 0.7988464936755952,
+     "hi": 0.869832046750992,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.7828124999999999,
+     "lo": 0.7393229166666667,
+     "hi": 0.8226562500000001,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9322916666666666,
+     "lo": 0.8593098958333334,
+     "hi": 0.9895833333333333,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.6015625,
+     "lo": 0.4140625,
+     "hi": 0.78125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.0859375,
+     "lo": 0.015625,
+     "hi": 0.171875,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.0546875,
+     "lo": 0.0078125,
+     "hi": 0.125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.0390625,
+     "lo": 0.0,
+     "hi": 0.109375,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 0.95,
+     "pr": 0.8888888888888888,
+     "sql": 0.7678571428571428,
+     "incident": 0.890625,
+     "python": 0.861111111111111,
+     "support": 0.8125,
+     "changelog": 0.7232142857142857,
+     "apierror": 0.7777777777777778,
+     "review": 0.9,
+     "testcase": 0.8333333333333333,
+     "standup": 0.8375,
+     "bugreport": 0.8888888888888888,
+     "dockerfile": 0.6875,
+     "apidoc": 0.9,
+     "alert": 0.9027777777777777,
+     "userstory": 0.75
+    },
+    "n_jobs": 16
+   },
+   "union_prec": {
+    "MSS": {
+     "mean": 0.9081225198412699,
+     "lo": 0.8701376488095238,
+     "hi": 0.9427966889880952,
+     "n": 16
+    },
+    "primary own": {
+     "mean": 0.9005208333333334,
+     "lo": 0.8489583333333333,
+     "hi": 0.9442708333333334,
+     "n": 16
+    },
+    "secondary excl": {
+     "mean": 0.9270833333333333,
+     "lo": 0.8515625,
+     "hi": 0.984375,
+     "n": 16
+    },
+    "entangled both": {
+     "mean": 0.6796875,
+     "lo": 0.5234375,
+     "hi": 0.828125,
+     "n": 16
+    },
+    "precedence kept": {
+     "mean": 0.6953125,
+     "lo": 0.5234375,
+     "hi": 0.8515625,
+     "n": 16
+    },
+    "all MSS rules met": {
+     "mean": 0.46875,
+     "lo": 0.3125,
+     "hi": 0.6328125,
+     "n": 16
+    },
+    "takeover": {
+     "mean": 0.046875,
+     "lo": 0.0,
+     "hi": 0.125,
+     "n": 16
+    },
+    "_perjob_MSS": {
+     "commit": 1.0,
+     "pr": 0.9444444444444444,
+     "sql": 0.7678571428571428,
+     "incident": 1.0,
+     "python": 0.9166666666666666,
+     "support": 0.9375,
+     "changelog": 0.7857142857142857,
+     "apierror": 0.9166666666666666,
+     "review": 0.9375,
+     "testcase": 0.9722222222222222,
+     "standup": 0.8875,
+     "bugreport": 0.8888888888888888,
+     "dockerfile": 0.7875000000000001,
+     "apidoc": 0.9375,
+     "alert": 1.0,
+     "userstory": 0.85
+    },
+    "n_jobs": 16
+   }
+  }
+ },
+ "paired": {
+  "checklist_PQ": {
+   "precedence instruction": {
+    "mean": 0.0078125,
+    "lo": -0.009765625,
+    "hi": 0.031640625000000006,
+    "n": 16,
+    "better_in": 5
+   },
+   "raw co-loading": {
+    "mean": 0.044140624999999975,
+    "lo": 0.010546874999999949,
+    "hi": 0.077734375,
+    "n": 16,
+    "better_in": 13
+   },
+   "keep only primary": {
+    "mean": 0.024218750000000004,
+    "lo": 0.0015624999999999944,
+    "hi": 0.06250000000000003,
+    "n": 16,
+    "better_in": 5
+   }
+  },
+  "freemerge_agent": {
+   "precedence instruction": {
+    "mean": 0.36015625,
+    "lo": 0.33203125,
+    "hi": 0.38476562500000006,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.396484375,
+    "lo": 0.36795898437499996,
+    "hi": 0.421875,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.3765625,
+    "lo": 0.36171875,
+    "hi": 0.38984375000000004,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "freemerge_gpt41": {
+   "precedence instruction": {
+    "mean": 0.32109375000000007,
+    "lo": 0.28710937500000006,
+    "hi": 0.35157226562499994,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.357421875,
+    "lo": 0.328515625,
+    "hi": 0.38671875,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.3375,
+    "lo": 0.3109375000000001,
+    "hi": 0.3640625,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "freemerge_qwen4b": {
+   "precedence instruction": {
+    "mean": 0.19062500000000002,
+    "lo": 0.12812500000000002,
+    "hi": 0.24883789062499992,
+    "n": 16,
+    "better_in": 14
+   },
+   "raw co-loading": {
+    "mean": 0.22695312499999998,
+    "lo": 0.171875,
+    "hi": 0.27890625,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.20703125000000003,
+    "lo": 0.14531250000000004,
+    "hi": 0.26406250000000003,
+    "n": 16,
+    "better_in": 14
+   }
+  },
+  "seqrev": {
+   "precedence instruction": {
+    "mean": 0.04765625000000003,
+    "lo": 0.0015625000000000291,
+    "hi": 0.09609375000000002,
+    "n": 16,
+    "better_in": 10
+   },
+   "raw co-loading": {
+    "mean": 0.083984375,
+    "lo": 0.039453125000000006,
+    "hi": 0.12890625,
+    "n": 16,
+    "better_in": 13
+   },
+   "keep only primary": {
+    "mean": 0.06406250000000004,
+    "lo": 0.016406250000000032,
+    "hi": 0.11093750000000005,
+    "n": 16,
+    "better_in": 12
+   }
+  },
+  "strong_PQ": {
+   "precedence instruction": {
+    "mean": 0.26484375000000004,
+    "lo": 0.22499023437500004,
+    "hi": 0.300390625,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.301171875,
+    "lo": 0.2671875,
+    "hi": 0.33242187500000003,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.28125,
+    "lo": 0.2523437500000001,
+    "hi": 0.30859375000000006,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "strong_QP": {
+   "precedence instruction": {
+    "mean": 0.25468750000000007,
+    "lo": 0.22187500000000007,
+    "hi": 0.28906250000000006,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.291015625,
+    "lo": 0.26015625,
+    "hi": 0.32265625000000003,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.27109375,
+    "lo": 0.23593750000000005,
+    "hi": 0.30390625000000004,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "truce_agent": {
+   "precedence instruction": {
+    "mean": 0.36796875,
+    "lo": 0.339453125,
+    "hi": 0.39179687500000004,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.404296875,
+    "lo": 0.37578124999999996,
+    "hi": 0.43046874999999996,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.384375,
+    "lo": 0.37109375,
+    "hi": 0.39531250000000007,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "truce_gpt41": {
+   "precedence instruction": {
+    "mean": 0.28203125,
+    "lo": 0.186328125,
+    "hi": 0.34843750000000007,
+    "n": 16,
+    "better_in": 15
+   },
+   "raw co-loading": {
+    "mean": 0.318359375,
+    "lo": 0.21679687500000003,
+    "hi": 0.390234375,
+    "n": 16,
+    "better_in": 15
+   },
+   "keep only primary": {
+    "mean": 0.2984375,
+    "lo": 0.20000000000000004,
+    "hi": 0.3609375,
+    "n": 16,
+    "better_in": 15
+   }
+  },
+  "truce_noex_gpt41": {
+   "precedence instruction": {
+    "mean": 0.2796875,
+    "lo": 0.1765625,
+    "hi": 0.347265625,
+    "n": 16,
+    "better_in": 15
+   },
+   "raw co-loading": {
+    "mean": 0.316015625,
+    "lo": 0.20820312500000002,
+    "hi": 0.38984375,
+    "n": 16,
+    "better_in": 15
+   },
+   "keep only primary": {
+    "mean": 0.29609375000000004,
+    "lo": 0.19296875000000002,
+    "hi": 0.3609375,
+    "n": 16,
+    "better_in": 15
+   }
+  },
+  "truce_noex_qwen4b": {
+   "precedence instruction": {
+    "mean": 0.21796875000000004,
+    "lo": 0.16796875000000008,
+    "hi": 0.269140625,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.254296875,
+    "lo": 0.20351562500000003,
+    "hi": 0.305859375,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.23437500000000006,
+    "lo": 0.18125000000000008,
+    "hi": 0.28515625000000006,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "truce_oracle_gpt41": {
+   "precedence instruction": {
+    "mean": 0.31328125000000007,
+    "lo": 0.25546875,
+    "hi": 0.361328125,
+    "n": 16,
+    "better_in": 15
+   },
+   "raw co-loading": {
+    "mean": 0.349609375,
+    "lo": 0.2828125,
+    "hi": 0.40312499999999996,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.3296875,
+    "lo": 0.27109375,
+    "hi": 0.37031250000000004,
+    "n": 16,
+    "better_in": 15
+   }
+  },
+  "truce_oracle_noex_qwen4b": {
+   "precedence instruction": {
+    "mean": 0.31171875000000004,
+    "lo": 0.27382812500000003,
+    "hi": 0.3468847656249999,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.34804687500000003,
+    "lo": 0.304296875,
+    "hi": 0.38671875,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.32812500000000006,
+    "lo": 0.30000000000000004,
+    "hi": 0.35546875000000006,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "truce_oracle_qwen4b": {
+   "precedence instruction": {
+    "mean": 0.26796875000000003,
+    "lo": 0.22031250000000005,
+    "hi": 0.31093750000000003,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.304296875,
+    "lo": 0.24765625000000005,
+    "hi": 0.354296875,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.28437500000000004,
+    "lo": 0.24843750000000003,
+    "hi": 0.31953125000000004,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "truce_qwen4b": {
+   "precedence instruction": {
+    "mean": 0.17421875000000003,
+    "lo": 0.11406250000000004,
+    "hi": 0.23593750000000002,
+    "n": 16,
+    "better_in": 15
+   },
+   "raw co-loading": {
+    "mean": 0.21054687500000002,
+    "lo": 0.154296875,
+    "hi": 0.26484375000000004,
+    "n": 16,
+    "better_in": 15
+   },
+   "keep only primary": {
+    "mean": 0.19062500000000004,
+    "lo": 0.12578125000000004,
+    "hi": 0.25234375000000003,
+    "n": 16,
+    "better_in": 15
+   }
+  },
+  "truce_ref_frontier_qwen4b": {
+   "precedence instruction": {
+    "mean": 0.26171875,
+    "lo": 0.2,
+    "hi": 0.3121191406249999,
+    "n": 16,
+    "better_in": 15
+   },
+   "raw co-loading": {
+    "mean": 0.29804687500000004,
+    "lo": 0.237109375,
+    "hi": 0.34843749999999996,
+    "n": 16,
+    "better_in": 15
+   },
+   "keep only primary": {
+    "mean": 0.27812500000000007,
+    "lo": 0.21328125000000003,
+    "hi": 0.32890625,
+    "n": 16,
+    "better_in": 15
+   }
+  },
+  "union_noex": {
+   "precedence instruction": {
+    "mean": 0.20234375000000004,
+    "lo": 0.16679687500000007,
+    "hi": 0.23750000000000004,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.238671875,
+    "lo": 0.18984375000000003,
+    "hi": 0.283203125,
+    "n": 16,
+    "better_in": 15
+   },
+   "keep only primary": {
+    "mean": 0.21875000000000006,
+    "lo": 0.18750000000000006,
+    "hi": 0.24921875000000004,
+    "n": 16,
+    "better_in": 16
+   }
+  },
+  "union_prec": {
+   "precedence instruction": {
+    "mean": 0.27109375,
+    "lo": 0.23359375000000007,
+    "hi": 0.30546875000000007,
+    "n": 16,
+    "better_in": 16
+   },
+   "raw co-loading": {
+    "mean": 0.307421875,
+    "lo": 0.26093750000000004,
+    "hi": 0.34921874999999997,
+    "n": 16,
+    "better_in": 16
+   },
+   "keep only primary": {
+    "mean": 0.28750000000000003,
+    "lo": 0.2593750000000001,
+    "hi": 0.31328125000000007,
+    "n": 16,
+    "better_in": 16
+   }
+  }
+ },
+ "compiler": {
+  "rules_expected": 192,
+  "rules_extracted_exact": 192,
+  "planted_pairs": 48,
+  "pairs_reported": 52,
+  "planted_pair_found": 43,
+  "planted_pair_right_label": 39,
+  "false_pair": 9,
+  "precision": 0.75,
+  "recall": 0.8125
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Describe user impact on a line that starts with `Impact: `.",
+   "Use at most five bullet points in the whole report.",
+   "Write every time as 24-hour `HH:MM UTC`, for example `09:14 UTC`.",
+   "State the length of the incident on a line `Duration: <n> min`.",
+   "Give the current state on a line `Status: resolved`, `Status: monitoring` or `Status: investigating`.",
+   "The first line must be `SEV<n>: <title>`, for example `SEV2: Checkout API returned 500 errors`."
+  ],
+  "B": [
+   "Write impersonally. Never use the words `we`, `our`, `us` or `I`.",
+   "The first line must be `Incident <ID> - <title>`, for example `Incident INC-2291 - Checkout API returned 500 errors`.",
+   "Say how the problem was noticed on a line that starts with `Detection: `.",
+   "Report how long the incident lasted as `Duration: <n> min` on its own line.",
+   "End with a line `Action items:` followed by at least three bullets, each naming an owner as `(owner: <team>)`.",
+   "Name the cause on a line that starts with `Root cause: `."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Skill A requires describing user impact, which may implicitly involve team actions, while skill B forbids using first-person pronouns. The impact must be described impersonally to satisfy both rules."
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Reporting times in 24-hour format is neutral, but any surrounding narrative must avoid first-person language. The time reporting itself is not affected, but its context must be written impersonally, constraining how time-related updates are framed."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require stating the incident duration in the same format on its own line."
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Status updates like 'resolved' or 'investigating' could imply team agency if phrased actively. To comply with B1, the status must be stated passively or impersonally, limiting phrasing choices."
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "contradictory",
+   "reason": "A6 requires the first line to start with 'SEV<n>: <title>', while B2 requires the first line to be 'Incident <ID> - <title>'. These formats cannot both occupy the first line unless merged, which neither rule allows."
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A2 limits the entire report to at most five bullet points, but B5 requires at least three action items (bullets). This leaves at most two bullets for any other content, tightly constraining how the report can be structured."
+  },
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Both may require separate bullet points or lines, but with a strict bullet limit from A2, including both impact and detection details must be done concisely to stay within the five-bullet limit."
+  },
+  {
+   "a": 0,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both A1 (impact) and B6 (root cause) may require distinct content lines, but with limited bullet points allowed by A2, non-bullet lines must be used efficiently to include both without exceeding structural constraints."
+  }
+ ],
+ "dropped_from_secondary": [
+  3,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   4,
+   1
+  ]
+ ],
+ "reconciled": [
+  "Write impersonally, avoiding the words `we`, `our`, `us`, and `I`. Begin a line with `Impact: ` to describe user impact.",
+  "Use at most five bullet points in the whole report, with the final line being `Action items:` followed by at least three bullets, each naming an owner as `(owner: <team>)`. Ensure all action items are included within the five-bullet limit."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

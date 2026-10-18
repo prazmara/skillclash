@@ -1,0 +1,54 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include a human-readable sentence in the field `message`.",
+   "Include a boolean field `retryable`.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a field `docs` with an `https://` link to the error documentation."
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Explain the error for humans in the `message` field."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "Rule A2 requires the field name to be in snake_case ('error_code'), while Rule B5 requires it to be in camelCase ('errorCode'). These cannot coexist in the same output."
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require a human-readable message, but Rule A3 specifies the field name as 'message' in snake_case, while Rule B6 uses 'message' in camelCase. To satisfy both, the field name would need to be adjusted, which might affect the overall structure of the output."
+  }
+ ],
+ "dropped_from_secondary": [
+  1
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   2
+  ]
+ ],
+ "reconciled": [
+  "In the `message` field, provide a human-readable explanation of the error for both public and internal use."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

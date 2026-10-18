@@ -1,0 +1,5 @@
+{
+ "method": "union",
+ "precedence": true,
+ "compiler": "none (code only)"
+}

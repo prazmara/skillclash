@@ -1,0 +1,41 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Write the steps as a numbered list (`1.`, `2.`, ...) with at most five steps.",
+   "The first line must be the test ID and the title as `<ID>: <title>`, for example `TC-0412: Lockout after five failed logins`.",
+   "State the pass criterion on a line that starts with `Expected result: `.",
+   "Tag the kind of test on a line `Type: functional`, `Type: regression`, `Type: smoke` or `Type: negative`.",
+   "Give the priority on a line `Priority: P1`, `Priority: P2` or `Priority: P3`.",
+   "Describe the starting state on a line that begins with `Preconditions: `."
+  ],
+  "B": [
+   "Say how to restore the system afterwards on a line that starts with `Cleanup: `.",
+   "List the data the tester needs on a line that starts with `Test data: `.",
+   "Link the feature under test on a line `Covers: <feature>`.",
+   "Write the outcome that counts as a pass on its own line beginning with `Expected result: `.",
+   "Include at least three numbered steps that are explicit checks, each starting with the word `Verify`, for example `3. Verify that the error appears.`",
+   "The first line must be `Test case: <title>`. The test ID does not belong in the first line."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "The 'Expected result:' line in A3 is meant to describe the expected outcome of the test, while 'Cleanup:' in B1 describes actions to take after the test to restore the system. These cannot be combined into a single line without losing their distinct meanings."
+  }
+ ],
+ "dropped_from_secondary": [
+  2
+ ],
+ "entangled_pairs": [],
+ "reconciled": [],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

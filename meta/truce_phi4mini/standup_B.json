@@ -1,0 +1,78 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.",
+   "List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.",
+   "The first line must be `Standup <YYYY-MM-DD> | <full name>`, for example `Standup 2026-03-10 | Nora Lindqvist`.",
+   "Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you.",
+   "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.",
+   "The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`."
+  ],
+  "B": [
+   "Daily update from <full name>",
+   "Items: <n> done, <n> planned",
+   "ETA: <YYYY-MM-DD>",
+   "Tickets: <ID>, <ID>",
+   "Need help from: <person or team>"
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules require a date and a full name, but they are used in different contexts."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules involve reporting blockers, but they are used in different contexts."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both rules involve listing items that are done or need help, but they are used in different contexts."
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules involve reporting the status of work, but they are used in different contexts."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   0,
+   2
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   1,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Standup <YYYY-MM-DD> | <full name> with a daily update from <full name>.",
+  "\"Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you, ensuring that each ticket ID is listed on a separate line.\"",
+  "To satisfy both rules, list the finished work as bullets starting with `- ` under a line that reads exactly `Done:`. Ensure that the bullets are presented immediately after the `Done:` line.",
+  "Combine the output into a single line with the format: \"<n> done, <n> planned #standup #<team>\", ensuring the team name is in lowercase."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

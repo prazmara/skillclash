@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "State the required permission on a line `Auth: <scope>`.",
+   "Say whether repeating the call is safe on a line `Idempotent: yes` or `Idempotent: no`.",
+   "Show one example call on a line that starts with `$ curl `.",
+   "The first line must be a level-3 Markdown heading with the method and path in backticks, for example ### `GET /v1/invoices/{id}`.",
+   "Keep the whole entry to at most 90 words.",
+   "State the API version that introduced the endpoint on a line `Since: v<version>`, for example `Since: v1.4`."
+  ],
+  "B": [
+   "The first line must be the method and path alone in plain text with no Markdown, for example `GET /v1/invoices/{id}`.",
+   "Mark the maturity on a line `Stability: stable`, `Stability: beta` or `Stability: deprecated`.",
+   "Name the media type of the response on a line such as `Content-Type: application/json`.",
+   "List the parameters in a Markdown table whose header row is `| Name | In | Type | Description |`.",
+   "Include an example request written as a shell line beginning with `$ curl `.",
+   "Document the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 3,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "Rule A4 requires a level-3 Markdown heading with the method and path in backticks, while Rule B1 requires plain text method and path with no Markdown. These cannot coexist in the same output without violating formatting requirements."
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both rules require an example curl call starting with $ curl. They ask for the same content, just in different contexts and formats."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Rule A5 limits the whole entry to 90 words, while Rule B6 requires a list of response statuses. These can coexist only if the response status bullets are included within the 90-word limit, requiring careful placement and brevity."
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   4
+  ]
+ ],
+ "reconciled": [
+  "Document the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`. Keep the whole entry to at most 90 words."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

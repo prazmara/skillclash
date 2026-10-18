@@ -1,0 +1,985 @@
+{
+ "commit": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.",
+     "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+     "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.",
+     "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+     "The very last line of the message must be the sign-off `Signed-off-by: <author name>`.",
+     "Explain the motivation in a body line that starts with `Why: `."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.\",\n  \"Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.\",\n  \"Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.\",\n  \"State whether the change was tested with a line `Tested: yes` or `Tested: no`.\",\n  \"The very last line of the message must be the sign-off `Signed-off-by: <author name>`.\",\n  \"Explain the motivation in a body line that starts with `Why: `.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `. Nothing may come before the bracket.",
+     "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+     "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+     "Say how to revert in a line that starts with `Rollback: `.",
+     "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`.",
+     "Name the affected component in a line `Component: <name>`."
+    ],
+    "path": "fallback",
+    "raw": "[\n  \"Start the subject line with the ticket ID in square brackets, for example [PAY-311] . Nothing may come before the bracket.\",\n  \"Record test status as Tested: yes or Tested: no on its own line.\",\n  \"Describe the change in the body as a bulleted list with at least two bullets that start with - .\",\n  \"Say how to revert in a line that starts with Rollback:.\",\n  \"Finish the message with a trailer block that contains the line Refs: <TICKET-ID>.\",\n  \"Name the affected component in a line Component: <name>\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "Rule A3 requires the subject line to start with a lowercase type prefix (e.g., `feat:`, `fix:`) and nothing before it, while Rule B1 requires the subject line to start with a ticket ID in square brackets (e.g., `[PAY-311]`), which would violate A3's requirement of no content before the type prefix. "
+    },
+    {
+     "a": 1,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "Both rules require a test status line (`Risk: low`, `Risk: medium`, `Risk: high` in A2 vs `Tested: yes/no` in B2), but they differ in content and placement. A2 is part of the body and specifies risk level, while B2 is a standalone test status line. They can coexist if the risk is included in the bod"
+    },
+    {
+     "a": 5,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "Both rules require a body explanation of the change, but A6 requires a line starting with `Why: ` and a single motivation, while B3 requires a bulleted list with at least two bullets. These can coexist if the `Why:` line is included in the bulleted list or if the list includes a `Why:` bullet, but t"
+    },
+    {
+     "a": 3,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "Both rules require a test status line, but A4 specifies `Tested: yes/no` and is part of the body, while B2 requires the same line as a standalone. They can coexist if the test status is placed in a way that satisfies both \u2014 for example, as a separate line \u2014 but the placement and format must be caref"
+    },
+    {
+     "a": 4,
+     "b": 4,
+     "relation": "entangled",
+     "reason": "A5 requires a sign-off line at the very end (`Signed-off-by: <author name>`), while B5 requires a `Refs: <TICKET-ID>` line at the end. These both require trailing lines, but the order and content conflict unless the sign-off is placed before or after the `Refs` line in a specific way. The order must"
+    },
+    {
+     "a": 5,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "A6 requires a `Why:` line in the body, while B6 requires a `Component: <name>` line. These can coexist if the `Component:` line is placed in the body and the `Why:` line is included, but the structure must be arranged to avoid breaking either rule \u2014 for example, by placing `Component:` after the `Wh"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A3 requires the subject line to start with a lowercase type prefix (e.g., `feat:`, `fix:`) and nothing before it, while Rule B1 requires the subject line to start with a ticket ID in square brackets (e.g., `[PAY-311]`), which would violate A3's requirement of no content before the type prefix. These cannot both be satisfied in a single subject line.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules require a test status line (`Risk: low`, `Risk: medium`, `Risk: high` in A2 vs `Tested: yes/no` in B2), but they differ in content and placement. A2 is part of the body and specifies risk level, while B2 is a standalone test status line. They can coexist if the risk is included in the body and test status is explicitly stated, but the structure must be carefully arranged to avoid conflict with other rules.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules require a body explanation of the change, but A6 requires a line starting with `Why: ` and a single motivation, while B3 requires a bulleted list with at least two bullets. These can coexist if the `Why:` line is included in the bulleted list or if the list includes a `Why:` bullet, but the format must be adjusted to satisfy both \u2014 this requires specific arrangement and is not trivial.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules require a test status line, but A4 specifies `Tested: yes/no` and is part of the body, while B2 requires the same line as a standalone. They can coexist if the test status is placed in a way that satisfies both \u2014 for example, as a separate line \u2014 but the placement and format must be carefully managed to avoid violating A4's body structure.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B3\",\n    \"relation\": \"independent\",\n    \"reason\": \"A1 is about breaking changes and is not related to the description of changes in B3, which is a bulleted list. No interaction.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B5\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A5 requires a sign-off line at the very end (`Signed-off-by: <author name>`), while B5 requires a `Refs: <TICKET-ID>` line at the end. These both require trailing lines, but the order and content conflict unless the sign-off is placed before or after the `Refs` line in a specific way. The order must be carefully managed to satisfy both rules without breaking either.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A6 requires a `Why:` line in the body, while B6 requires a `Component: <name>` line. These can coexist if the `Component:` line is placed in the body and the `Why:` line is included, but the structure must be arranged to avoid breaking either rule \u2014 for example, by placing `Component:` after the `Why:` line or in a separate section. This requires specific ordering.\"\n  }\n]"
+  }
+ },
+ "pr": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Under Testing, list at least two checklist items written as `- [ ]` or `- [x]`.",
+     "Include a section with the exact heading `## Testing`.",
+     "Give the tracker ticket on its own line as `Ticket: <ID>`.",
+     "Include a section with the exact heading `## Summary`.",
+     "The first line must be a level-1 Markdown heading with the title, starting with `# `.",
+     "Keep the whole description to at most 120 words."
+    ],
+    "path": "fallback",
+    "raw": "[\n  \"Under Testing, list at least two checklist items written as - [ ] or - [x].\",\n  \"Include a section with the exact heading ## Testing.\",\n  \"Give the tracker ticket on its own line as Ticket: <ID>.\",\n  \"Include a section with the exact heading ## Summary.\",\n  \"The first line must be a level-1 Markdown heading with the title, starting with # .\",\n  \"Keep the whole description to at most 120 words.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "List labels on a line `Labels: ` followed by lowercase labels separated by a comma and a space.",
+     "Put the ticket on a separate line in the form `Ticket: <ID>`.",
+     "Name the reviewers on a line `Reviewers: @handle`.",
+     "The first line must be plain text of the form `PR: <title>`. Do not use a Markdown heading for the title.",
+     "Include a section with the exact heading `## Rollback`.",
+     "Include a `## Risks` section with at least two bullet points that start with `- `."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"List labels on a line `Labels: ` followed by lowercase labels separated by a comma and a space.\",\n  \"Put the ticket on a separate line in the form `Ticket: <ID>`.\",\n  \"Name the reviewers on a line `Reviewers: @handle`.\",\n  \"The first line must be plain text of the form `PR: <title>`. Do not use a Markdown heading for the title.\",\n  \"Include a section with the exact heading `## Rollback`.\",\n  \"Include a `## Risks` section with at least two bullet points that start with `- `.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 1,
+     "relation": "duplicate",
+     "reason": "Both rules require the ticket to be listed on a separate line in the format 'Ticket: <ID>'."
+    },
+    {
+     "a": 3,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "Both rules involve a section or line about reviewers, but A4 is a summary section while B3 specifies a reviewer line. The placement of reviewer information must be carefully arranged to satisfy both without conflicting with the structure of the summary or the required headings."
+    },
+    {
+     "a": 1,
+     "b": 4,
+     "relation": "entangled",
+     "reason": "A2 requires a '## Testing' section, while B5 requires a '## Rollback' section. Both are required headings, but their placement in the document must be coordinated to avoid structural conflicts or missing sections in the final output."
+    },
+    {
+     "a": 4,
+     "b": 3,
+     "relation": "contradictory",
+     "reason": "A5 requires a level-1 Markdown heading with the title, while B4 requires plain text 'PR: <title>' as the first line. These conflict in formatting and structure."
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B2\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require the ticket to be listed on a separate line in the format 'Ticket: <ID>'.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules involve a section or line about reviewers, but A4 is a summary section while B3 specifies a reviewer line. The placement of reviewer information must be carefully arranged to satisfy both without conflicting with the structure of the summary or the required headings.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B5\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A2 requires a '## Testing' section, while B5 requires a '## Rollback' section. Both are required headings, but their placement in the document must be coordinated to avoid structural conflicts or missing sections in the final output.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B1\",\n    \"relation\": \"independent\",\n    \"reason\": \"A6 limits word count, B1 specifies labels. These are unrelated in content or structure.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B6\",\n    \"relation\": \"independent\",\n    \"reason\": \"A1 requires checklist items in testing, B6 requires risks in rollback. No overlap in content or structure.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B4\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"A5 requires a level-1 Markdown heading with the title, while B4 requires plain text 'PR: <title>' as the first line. These conflict in formatting and structure.\"\n  }\n]"
+  }
+ },
+ "sql": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Always exclude soft-deleted rows with the filter `deleted_at IS NULL`.",
+     "Write all SQL keywords in UPPERCASE (`SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `ORDER BY`).",
+     "Give every aggregate an alias that ends in `_cnt`, `_sum` or `_avg`.",
+     "The first line must be a comment that states the purpose: `-- Purpose: <one sentence>`.",
+     "Wrap every monetary or averaged aggregate in `ROUND(..., 2)`.",
+     "Always end the query with a `LIMIT` clause."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Always exclude soft-deleted rows with the filter `deleted_at IS NULL`.\",\n  \"Write all SQL keywords in UPPERCASE (`SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `ORDER BY`).\",\n  \"Give every aggregate an alias that ends in `_cnt`, `_sum` or `_avg`.\",\n  \"The first line must be a comment that states the purpose: `-- Purpose: <one sentence>`.\",\n  \"Wrap every monetary or averaged aggregate in `ROUND(..., 2)`.\",\n  \"Always end the query with a `LIMIT` clause.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Cap the result size: every query needs a `limit` clause.",
+     "Stage the source rows in a CTE named `base` (`with base as (...)`) and select from it.",
+     "Filter date ranges with the half-open pattern `>=` start and `<` end. Never use `between` or `<=` for dates.",
+     "Qualify source tables with the `analytics.` schema.",
+     "Put a header comment `-- Owner: <team>` at the top of the query.",
+     "Write all SQL keywords in lowercase (`select`, `from`, `where`, `join`, `group by`, `order by`)"
+    ],
+    "path": "llm",
+    "raw": "[\n\"Cap the result size: every query needs a `limit` clause.\",\n\"Stage the source rows in a CTE named `base` (`with base as (...)`) and select from it.\",\n\"Filter date ranges with the half-open pattern `>=` start and `<` end. Never use `between` or `<=` for dates.\",\n\"Qualify source tables with the `analytics.` schema.\",\n\"Put a header comment `-- Owner: <team>` at the top of the query.\",\n\"Write all SQL keywords in lowercase (`select`, `from`, `where`, `join`, `group by`, `order by`)\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 1,
+     "b": 5,
+     "relation": "contradictory",
+     "reason": "Rule A2 requires all SQL keywords to be in UPPERCASE, while Rule B6 requires them to be in lowercase. These are mutually exclusive and cannot both be satisfied in the same query."
+    },
+    {
+     "a": 0,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "Rule A1 excludes soft-deleted rows with `deleted_at IS NULL`, while Rule B3 requires date filtering with a half-open pattern. These can coexist if the `deleted_at` condition is applied within a date range filter, but the placement and interaction require careful structuring (e.g., combining `deleted"
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A3 requires aggregates to have aliases ending in `_cnt`, `_sum`, or `_avg`, while Rule B1 requires a `LIMIT` clause. These are compatible if the `LIMIT` is added at the end and aggregates are properly aliased. However, the presence of the `LIMIT` must be placed after the aggregation and within "
+    },
+    {
+     "a": 4,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A5 requires monetary or averaged aggregates to be wrapped in `ROUND(..., 2)`, while Rule B1 requires a `LIMIT` clause. These can coexist, but the `ROUND` must be applied to relevant aggregates and the `LIMIT` must appear at the end. The placement of `ROUND` and `LIMIT` must be carefully ordered"
+    },
+    {
+     "a": 5,
+     "b": 0,
+     "relation": "duplicate",
+     "reason": "Both rules require a `LIMIT` clause. Rule A6 mandates a `LIMIT` at the end, and Rule B1 mandates a `limit` clause (presumably at the end). This is a duplicate requirement."
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A2\",\n    \"b\": \"B6\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A2 requires all SQL keywords to be in UPPERCASE, while Rule B6 requires them to be in lowercase. These are mutually exclusive and cannot both be satisfied in the same query.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A1 excludes soft-deleted rows with `deleted_at IS NULL`, while Rule B3 requires date filtering with a half-open pattern. These can coexist if the `deleted_at` condition is applied within a date range filter, but the placement and interaction require careful structuring (e.g., combining `deleted_at IS NULL` with date bounds) to satisfy both without breaking either rule.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A3 requires aggregates to have aliases ending in `_cnt`, `_sum`, or `_avg`, while Rule B1 requires a `LIMIT` clause. These are compatible if the `LIMIT` is added at the end and aggregates are properly aliased. However, the presence of the `LIMIT` must be placed after the aggregation and within the final select, which affects the structure and requires specific ordering to avoid breaking A3's aliasing convention.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B5\",\n    \"relation\": \"independent\",\n    \"reason\": \"A4 requires a purpose comment, B5 requires an owner comment. These are distinct metadata requirements and do not interact in execution or structure.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A5 requires monetary or averaged aggregates to be wrapped in `ROUND(..., 2)`, while Rule B1 requires a `LIMIT` clause. These can coexist, but the `ROUND` must be applied to relevant aggregates and the `LIMIT` must appear at the end. The placement of `ROUND` and `LIMIT` must be carefully ordered to avoid breaking either rule's structure.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B1\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require a `LIMIT` clause. Rule A6 mandates a `LIMIT` at the end, and Rule B1 mandates a `limit` clause (presumably at the end). This is a duplicate requirement.\"\n  }\n]"
+  }
+ },
+ "incident": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Describe user impact on a line that starts with `Impact: `.",
+     "Use at most five bullet points in the whole report.",
+     "Write every time as 24-hour `HH:MM UTC`, for example `09:14 UTC`.",
+     "State the length of the incident on a line `Duration: <n> min`.",
+     "Give the current state on a line `Status: resolved`, `Status: monitoring` or `Status: investigating`.",
+     "The first line must be `SEV<n>: <title>`, for example `SEV2: Checkout API returned 500 errors`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Describe user impact on a line that starts with `Impact: `.\",\n  \"Use at most five bullet points in the whole report.\",\n  \"Write every time as 24-hour `HH:MM UTC`, for example `09:14 UTC`.\",\n  \"State the length of the incident on a line `Duration: <n> min`.\",\n  \"Give the current state on a line `Status: resolved`, `Status: monitoring` or `Status: investigating`.\",\n  \"The first line must be `SEV<n>: <title>`, for example `SEV2: Checkout API returned 500 errors`.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Write impersonally. Never use the words `we`, `our`, `us` or `I`.",
+     "The first line must be `Incident <ID> - <title>`, for example `Incident INC-2291 - Checkout API returned 500 errors`.",
+     "Say how the problem was noticed on a line that starts with `Detection: `.",
+     "Report how long the incident lasted as `Duration: <n> min` on its own line.",
+     "End with a line `Action items:` followed by at least three bullets, each naming an owner as `(owner: <team>)`.",
+     "Name the cause on a line that starts with `Root cause: `."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Write impersonally. Never use the words `we`, `our`, `us` or `I`.\",\n  \"The first line must be `Incident <ID> - <title>`, for example `Incident INC-2291 - Checkout API returned 500 errors`.\",\n  \"Say how the problem was noticed on a line that starts with `Detection: `.\",\n  \"Report how long the incident lasted as `Duration: <n> min` on its own line.\",\n  \"End with a line `Action items:` followed by at least three bullets, each naming an owner as `(owner: <team>)`.\",\n  \"Name the cause on a line that starts with `Root cause: `.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "Rule A3 requires a time in 24-hour format (e.g., `09:14 UTC`) to be written in the report, while Rule B1 requires a title-based line starting with `Incident <ID> - <title>` and does not specify any time format. However, the presence of a time in A3 would conflict with B1's impersonal, title-only fir"
+    },
+    {
+     "a": 3,
+     "b": 3,
+     "relation": "duplicate",
+     "reason": "Both rules require reporting the duration of the incident in minutes as `Duration: <n> min`. This is the same information requested in both skills, with identical formatting, making it a duplicate."
+    },
+    {
+     "a": 4,
+     "b": 4,
+     "relation": "entangled",
+     "reason": "Both rules require a status line, but A5 specifies the status as `resolved`, `monitoring`, or `investigating`, while B5 requires action items at the end. A5's status must appear in the output, and B5's action items must follow. If A5's status is placed at the end (as in B5), it would break A5's rule"
+    },
+    {
+     "a": 0,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "A1 requires a user impact description starting with `Impact: `, while B6 requires a root cause starting with `Root cause: `. Both are descriptive and must appear in the output, but they differ in content and placement. If both are included, their order and positioning must be carefully managed to av"
+    },
+    {
+     "a": 1,
+     "b": 4,
+     "relation": "entangled",
+     "reason": "A2 limits the total number of bullet points to five, while B5 requires at least three action items. If the action items are included in the bullet list, they must not exceed the five-bullet limit. However, B5 requires at least three, and A2 caps at five, so the total bullet count must be between thr"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A3 requires a time in 24-hour format (e.g., `09:14 UTC`) to be written in the report, while Rule B1 requires a title-based line starting with `Incident <ID> - <title>` and does not specify any time format. However, the presence of a time in A3 would conflict with B1's impersonal, title-only first line unless the time is embedded in the title, which is not specified. Since A3 mandates a specific time format in the output and B1 does not allow or specify a time, and the time must appear in the output, this creates a contradiction in structure and content placement.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B4\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require reporting the duration of the incident in minutes as `Duration: <n> min`. This is the same information requested in both skills, with identical formatting, making it a duplicate.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B5\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules require a status line, but A5 specifies the status as `resolved`, `monitoring`, or `investigating`, while B5 requires action items at the end. A5's status must appear in the output, and B5's action items must follow. If A5's status is placed at the end (as in B5), it would break A5's rule of being a standalone status line. However, if A5's status is placed earlier, it may conflict with B5's required structure. Thus, the placement of the status line is entangled with the action items structure, requiring a specific ordering to satisfy both.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A1 requires a user impact description starting with `Impact: `, while B6 requires a root cause starting with `Root cause: `. Both are descriptive and must appear in the output, but they differ in content and placement. If both are included, their order and positioning must be carefully managed to avoid violating either rule. A1 focuses on user impact, B6 on root cause. Placing one before the other affects the flow and may violate implicit expectations. Thus, their coexistence is entangled due to required placement and content type.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B5\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A2 limits the total number of bullet points to five, while B5 requires at least three action items. If the action items are included in the bullet list, they must not exceed the five-bullet limit. However, B5 requires at least three, and A2 caps at five, so the total bullet count must be between three and five. This creates a dependency on how many bullets are used and where they are placed. Thus, the bullet point count is entangled between the two rules.\"\n  }\n]"
+  }
+ },
+ "python": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+     "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+     "Annotate every parameter and the return value with type hints.",
+     "Reject invalid input by raising `ValueError`.",
+     "Include at least one usage example with a `>>>` prompt in the docstring.",
+     "Reply with one Python code block and nothing outside it."
+    ],
+    "path": "fallback",
+    "raw": "[\n\"Name the function with a verb prefix: get_, compute_, build_, parse_, validate_, find_, count_, format_ or to_.\",\n\"Write the docstring in Google style with Args: and Returns: sections. Never use underlined section headers.\",\n\"Annotate every parameter and the return value with type hints.\",\n\"Reject invalid input by raising ValueError.\",\n\"Include at least one usage example with a >>> prompt in the docstring.\",\n\"Reply with one Python code block and nothing outside it.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Start the module with `from __future__ import annotations`.",
+     "Show a doctest-style example that uses `>>>`.",
+     "State the time complexity as `Complexity: O(...)`.",
+     "Export the function by defining `__all__`.",
+     "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+     "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+    ],
+    "path": "llm",
+    "raw": "[\n\"Start the module with `from __future__ import annotations`.\",\n\"Show a doctest-style example that uses `>>>`.\",\n\"State the time complexity as `Complexity: O(...)`.\",\n\"Export the function by defining `__all__`.\",\n\"Mark each non-obvious step with a comment that starts with `# NOTE:`.\",\n\"Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 1,
+     "b": 1,
+     "relation": "duplicate",
+     "reason": "Both rules require a docstring example using `>>>` in the documentation, with the example formatted in doctest style."
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "A3 requires type hints on parameters and return value, while B1 requires `from __future__ import annotations` to allow type hints in the docstring. These are related but not directly overlapping; however, B1 enables A3, so their satisfaction depends on proper module setup and ordering. Thus, they ar"
+    },
+    {
+     "a": 3,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "A4 requires raising `ValueError` for invalid input, while B2 requires a doctest example. The doctest may include invalid input, which would need to be handled by A4. Thus, the example in B2 and the error handling in A4 must coexist, making them entangled."
+    },
+    {
+     "a": 4,
+     "b": 1,
+     "relation": "duplicate",
+     "reason": "Both rules require a usage example with `>>>` in the docstring, though A5 specifies it as part of the docstring with a `>>>` prompt, and B2 requires a doctest-style example. These are essentially the same requirement in different styles."
+    },
+    {
+     "a": 5,
+     "b": 1,
+     "relation": "duplicate",
+     "reason": "Both rules require a usage example with `>>>` in the docstring, with A6 specifying it as part of the docstring and B2 requiring a doctest-style example. This is a direct duplication of the example requirement."
+    },
+    {
+     "a": 1,
+     "b": 1,
+     "relation": "duplicate",
+     "reason": "Both require a `>>>` example in the docstring, with A2 in Google style and B2 in doctest style. The example is the same in purpose, so it's a duplication."
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "A3 requires type hints, which are enabled by B1's `from __future__ import annotations`. Without B1, A3 would not be valid in Python 3.7+; thus, their satisfaction depends on the module's setup, making them entangled."
+    },
+    {
+     "a": 3,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "A4 requires validation and raising `ValueError`, while B2 requires a doctest example that may include invalid inputs. The example must be designed to trigger A4, so the two rules must coexist in a structured way\u2014thus entangled."
+    },
+    {
+     "a": 4,
+     "b": 1,
+     "relation": "duplicate",
+     "reason": "Both require a `>>>` usage example in the docstring, with A5 specifying it as part of the docstring and B2 requiring a doctest-style example. This is a direct duplication."
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A2\",\n    \"b\": \"B2\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require a docstring example using `>>>` in the documentation, with the example formatted in doctest style.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A3 requires type hints on parameters and return value, while B1 requires `from __future__ import annotations` to allow type hints in the docstring. These are related but not directly overlapping; however, B1 enables A3, so their satisfaction depends on proper module setup and ordering. Thus, they are entangled in the output structure.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A4 requires raising `ValueError` for invalid input, while B2 requires a doctest example. The doctest may include invalid input, which would need to be handled by A4. Thus, the example in B2 and the error handling in A4 must coexist, making them entangled.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B2\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require a usage example with `>>>` in the docstring, though A5 specifies it as part of the docstring with a `>>>` prompt, and B2 requires a doctest-style example. These are essentially the same requirement in different styles.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B2\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require a usage example with `>>>` in the docstring, with A6 specifying it as part of the docstring and B2 requiring a doctest-style example. This is a direct duplication of the example requirement.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B1\",\n    \"relation\": \"independent\",\n    \"reason\": \"A1 specifies naming convention with verb prefixes, while B1 requires a future import for annotations. These are unrelated in content or structure.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B2\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both require a `>>>` example in the docstring, with A2 in Google style and B2 in doctest style. The example is the same in purpose, so it's a duplication.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A3 requires type hints, which are enabled by B1's `from __future__ import annotations`. Without B1, A3 would not be valid in Python 3.7+; thus, their satisfaction depends on the module's setup, making them entangled.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A4 requires validation and raising `ValueError`, while B2 requires a doctest example that may include invalid inputs. The example must be designed to trigger A4, so the two rules must coexist in a structured way\u2014thus entangled.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B2\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both require a `>>>` usage example in the docstring, with A5 specifying it as part of the docstring and B2 requiring a doctest-style example. This is a direct duplication.\"\n  }\n]"
+  }
+ },
+ "support": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Give the next steps as a numbered list with at least two steps (`1.`, `2.`).",
+     "Cite the case as `Ticket #<number>`.",
+     "Open with `Dear <full name>,` on the first line.",
+     "Never place a URL inside the body text. Links may appear only on a final line that starts with `Links:`.",
+     "Sign with the agent's name followed by a line that ends with `Support Team`.",
+     "Do not use contractions such as `don't`, `we'll` or `you're`."
+    ],
+    "path": "fallback",
+    "raw": "[\n  \"Give the next steps as a numbered list with at least two steps (\\\"1.\\\", \\\"2.\\\").\",\n  \"Cite the case as \\\"Ticket #<number>\\\".\",\n  \"Open with \\\"Dear <full name>,\\\" on the first line.\",\n  \"Never place a URL inside the body text. Links may appear only on a final line that starts with \\\"Links:\\\".\",\n  \"Sign with the agent's name followed by a line that ends with \\\"Support Team\\\".\",\n  \"Do not use contractions such as \\\"don't\\\", \\\"we'll\\\" or \\\"you're\\\".\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.",
+     "Invite a response with the exact phrase `reply to this email`.",
+     "Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.",
+     "Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL.",
+     "Open with `Hi <first name>!` on the first line.",
+     "Close with the agent's first name and then a line ending in `Support Team`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.\",\n  \"Invite a response with the exact phrase `reply to this email`.\",\n  \"Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.\",\n  \"Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL.\",\n  \"Open with `Hi <first name>!` on the first line.\",\n  \"Close with the agent's first name and then a line ending in `Support Team`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 4,
+     "relation": "contradictory",
+     "reason": "Rule A3 requires opening with 'Dear <full name>,', while Rule B5 requires opening with 'Hi <first name>!'. These are incompatible openings that cannot coexist in the same email."
+    },
+    {
+     "a": 0,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A1 requires a numbered list of at least two steps, while Rule B1 starts with a positive message. The steps from A1 could be included after the positive message in B1, but only if the structure is carefully ordered to avoid breaking the flow. This requires a specific arrangement to satisfy both "
+    },
+    {
+     "a": 1,
+     "b": 3,
+     "relation": "entangled",
+     "reason": "Rule A2 cites a case as 'Ticket #<number>', while Rule B4 includes a URL to a help-center article. Both require referencing a support reference, but in different formats. They can coexist if the ticket number is mentioned in the body and the URL is placed at the end, but only if the URL is not embed"
+    },
+    {
+     "a": 3,
+     "b": 3,
+     "relation": "contradictory",
+     "reason": "Rule A4 prohibits placing URLs in the body text, allowing only a final line starting with 'Links:'. Rule B4 requires including a URL in the body as part of the help-center reference. These rules conflict directly on URL placement."
+    },
+    {
+     "a": 4,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "Rule A5 requires signing with the agent's name followed by 'Support Team', while Rule B6 closes with the agent's first name followed by 'Support Team'. The names differ in form (full vs. first), and the closing structure must be adjusted to match. This can be satisfied only if the agent's full name "
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B5\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A3 requires opening with 'Dear <full name>,', while Rule B5 requires opening with 'Hi <first name>!'. These are incompatible openings that cannot coexist in the same email.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A1 requires a numbered list of at least two steps, while Rule B1 starts with a positive message. The steps from A1 could be included after the positive message in B1, but only if the structure is carefully ordered to avoid breaking the flow. This requires a specific arrangement to satisfy both rules without contradiction.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B4\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A2 cites a case as 'Ticket #<number>', while Rule B4 includes a URL to a help-center article. Both require referencing a support reference, but in different formats. They can coexist if the ticket number is mentioned in the body and the URL is placed at the end, but only if the URL is not embedded in the body text (which A4 forbids). Thus, the placement and format must be carefully managed to satisfy both.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B4\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A4 prohibits placing URLs in the body text, allowing only a final line starting with 'Links:'. Rule B4 requires including a URL in the body as part of the help-center reference. These rules conflict directly on URL placement.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A5 requires signing with the agent's name followed by 'Support Team', while Rule B6 closes with the agent's first name followed by 'Support Team'. The names differ in form (full vs. first), and the closing structure must be adjusted to match. This can be satisfied only if the agent's full name is used in A5 and the first name is used in B6, implying a specific naming convention that must be aligned\u2014thus entangled.\"\n  }\n]"
+  }
+ },
+ "changelog": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Group changes under at least two of the headings `### Added`, `### Changed`, `### Fixed`.",
+     "Flag incompatible changes with the exact marker `BREAKING:`.",
+     "Reference issues in parentheses as `(#<number>)`.",
+     "Bullets describe the change only. No bullet may contain an @handle.",
+     "The first line must be the version heading `## [<version>] - <YYYY-MM-DD>`, for example `## [2.3.0] - 2026-03-02`.",
+     "Bullets are fragments: no bullet may end with a period."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Group changes under at least two of the headings `### Added`, `### Changed`, `### Fixed`.\",\n  \"Flag incompatible changes with the exact marker `BREAKING:`.\",\n  \"Reference issues in parentheses as `(#<number>)`.\",\n  \"Bullets describe the change only. No bullet may contain an @handle.\",\n  \"The first line must be the version heading `## [<version>] - <YYYY-MM-DD>`, for example `## [2.3.0] - 2026-03-02`.\",\n  \"Bullets are fragments: no bullet may end with a period.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "The first line must be the title `# Release <version> (<Month D, YYYY>)`, for example `# Release 2.3.0 (March 2, 2026)`.",
+     "Open with a one-sentence summary on a line that starts with `Highlights: `.",
+     "Credit every contributor by @handle.",
+     "Mark incompatible changes with `BREAKING:` exactly.",
+     "Tell users what to do on a line that starts with `Upgrade: `.",
+     "Put the name of each new feature in bold with `**`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The first line must be the title `# Release <version> (<Month D, YYYY>)`, for example `# Release 2.3.0 (March 2, 2026)`.\",\n  \"Open with a one-sentence summary on a line that starts with `Highlights: `.\",\n  \"Credit every contributor by @handle.\",\n  \"Mark incompatible changes with `BREAKING:` exactly.\",\n  \"Tell users what to do on a line that starts with `Upgrade: `.\",\n  \"Put the name of each new feature in bold with `**`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 1,
+     "b": 3,
+     "relation": "duplicate",
+     "reason": "Both rules require incompatible changes to be marked with 'BREAKING:' exactly."
+    },
+    {
+     "a": 2,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "Skill A requires issue references in parentheses like (#<number>), while Skill B requires contributor credits with @handle. These are different elements and must be placed in different contexts; combining them without clear separation or conflict would require a specific arrangement where both are i"
+    },
+    {
+     "a": 4,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "Skill A requires the version heading to be `## [<version>] - <YYYY-MM-DD>`, while Skill B requires `# Release <version> (<Month D, YYYY>)`. These are fundamentally different formats and cannot coexist in the same document without violating one rule or the other."
+    },
+    {
+     "a": 5,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "Skill A requires bullet fragments without periods, while Skill B requires new features to be in bold with **. These are formatting constraints that must be satisfied simultaneously, but only if the feature descriptions are properly formatted and placed within the bullet or feature list, requiring a "
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A2\",\n    \"b\": \"B4\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require incompatible changes to be marked with 'BREAKING:' exactly.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Skill A requires issue references in parentheses like (#<number>), while Skill B requires contributor credits with @handle. These are different elements and must be placed in different contexts; combining them without clear separation or conflict would require a specific arrangement where both are included, but their placement and format are incompatible in a single output structure.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Skill A requires the version heading to be `## [<version>] - <YYYY-MM-DD>`, while Skill B requires `# Release <version> (<Month D, YYYY>)`. These are fundamentally different formats and cannot coexist in the same document without violating one rule or the other.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Skill A requires bullet fragments without periods, while Skill B requires new features to be in bold with **. These are formatting constraints that must be satisfied simultaneously, but only if the feature descriptions are properly formatted and placed within the bullet or feature list, requiring a specific arrangement where bold formatting is applied to feature names without breaking bullet fragment rules.\"\n  }\n]"
+  }
+ },
+ "apierror": {
+  "extract": {
+   "A": {
+    "rules": [
+     "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+     "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+     "Include a human-readable sentence in the field `message`.",
+     "Include a boolean field `retryable`.",
+     "Include the HTTP status as an integer in the field `status`.",
+     "Include a field `docs` with an `https://` link to the error documentation."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The reply must be exactly one JSON object and nothing else, so that it parses as JSON.\",\n  \"Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.\",\n  \"Include a human-readable sentence in the field `message`.\",\n  \"Include a boolean field `retryable`.\",\n  \"Include the HTTP status as an integer in the field `status`.\",\n  \"Include a field `docs` with an `https://` link to the error documentation.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+     "Include a field `severity` with the value `low`, `medium` or `high`.",
+     "Include a field `details` that holds a non-empty list of specifics.",
+     "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+     "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+     "Explain the error for humans in the `message` field."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.\",\n  \"Include a field `severity` with the value `low`, `medium` or `high`.\",\n  \"Include a field `details` that holds a non-empty list of specifics.\",\n  \"Add a developer hint that starts with `Hint:` and says how to fix the request.\",\n  \"Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.\",\n  \"Explain the error for humans in the `message` field.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 1,
+     "b": 4,
+     "relation": "contradictory",
+     "reason": "Rule A2 requires the field to be named `error_code` in snake_case, while Rule B5 requires the field to be named `errorCode` in camelCase. These are different names and cases, making it impossible to satisfy both rules in a single output."
+    },
+    {
+     "a": 2,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "Both rules require a human-readable message, but A3 specifies it must be a sentence in the `message` field with a specific format, while B6 requires a human-explained error in the `message` field. They can coexist if the message content is shared, but the placement and structure must be carefully al"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A2\",\n    \"b\": \"B5\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A2 requires the field to be named `error_code` in snake_case, while Rule B5 requires the field to be named `errorCode` in camelCase. These are different names and cases, making it impossible to satisfy both rules in a single output.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules require a human-readable message, but A3 specifies it must be a sentence in the `message` field with a specific format, while B6 requires a human-explained error in the `message` field. They can coexist if the message content is shared, but the placement and structure must be carefully aligned to avoid conflict in the output format.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B2\",\n    \"relation\": \"independent\",\n    \"reason\": \"A4 specifies a boolean `retryable` field, while B2 specifies a `severity` field. These are different fields with different purposes and no overlap in requirements.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B1\",\n    \"relation\": \"independent\",\n    \"reason\": \"A5 requires an HTTP status code in the `status` field, while B1 requires a timestamp in `timestamp`. These are distinct fields with different data types and purposes.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B1\",\n    \"relation\": \"independent\",\n    \"reason\": \"A6 requires a documentation link in `docs`, while B1 requires a timestamp in `timestamp`. These are unrelated fields with different content types.\"\n  }\n]"
+  }
+ },
+ "review": {
+  "extract": {
+   "A": {
+    "rules": [
+     "The first line must start with a severity tag in square brackets, one of `[blocker]`, `[major]`, `[minor]`, `[nit]`, followed by a short title.",
+     "Propose the change on a line that starts with `Proposed fix: `.",
+     "Give the place in the code on its own line as `Location: <file>:<line>`.",
+     "Give the outcome on a line `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+     "State every finding as a statement. A question mark may appear only on a final line that starts with `Open question:`.",
+     "Say how sure you are on a line `Confidence: high`, `Confidence: medium` or `Confidence: low`."
+    ],
+    "path": "fallback",
+    "raw": "[\n  \"The first line must start with a severity tag in square brackets, one of [blocker], [major], [minor], [nit], followed by a short title.\",\n  \"Propose the change on a line that starts with Proposed fix: \",\n  \"Give the place in the code on its own line as Location: <file>:<line>.\",\n  \"Give the outcome on a line Verdict: approve, Verdict: request changes or Verdict: comment.\",\n  \"State every finding as a statement. A question mark may appear only on a final line that starts with Open question:.\",\n  \"Say how sure you are on a line Confidence: high, Confidence: medium or Confidence: low.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Ask the author at least one clarifying question, written as a full sentence that ends with a question mark.",
+     "Classify the comment on a line `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability` or `Category: testing`.",
+     "The first line must be plain text of the form `Review: <title>`, with no tag or bracket before it.",
+     "Name one good thing about the diff on a line that starts with `What works well: `.",
+     "Close your assessment with a separate line that reads `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+     "Estimate the work needed on a line `Effort: S`, `Effort: M` or `Effort: L`."
+    ],
+    "path": "llm",
+    "raw": "[\n\"Ask the author at least one clarifying question, written as a full sentence that ends with a question mark.\",\n\"Classify the comment on a line `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability` or `Category: testing`.\",\n\"The first line must be plain text of the form `Review: <title>`, with no tag or bracket before it.\",\n\"Name one good thing about the diff on a line that starts with `What works well: `.\",\n\"Close your assessment with a separate line that reads `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.\",\n\"Estimate the work needed on a line `Effort: S`, `Effort: M` or `Effort: L`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 0,
+     "b": 2,
+     "relation": "contradictory",
+     "reason": "Rule A1 requires the first line to start with a severity tag in square brackets (e.g., [blocker]), while Rule B3 requires the first line to be plain text starting with 'Review:'. These cannot coexist in the same output without violating the format of either rule."
+    },
+    {
+     "a": 1,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A2 proposes a fix in a specific format, while Rule B1 asks a clarifying question. Both require output in the first few lines, but A2 is a proposal and B1 is a question. They can coexist only if the question is placed before the proposal and the output is structured to first ask a clarifying que"
+    },
+    {
+     "a": 3,
+     "b": 4,
+     "relation": "duplicate",
+     "reason": "Both rules require a final verdict: A4 states 'Verdict: approve', 'request changes', or 'comment', and B5 ends with the same verdict. They are asking for the same outcome in the same format."
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A1\",\n    \"b\": \"B3\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A1 requires the first line to start with a severity tag in square brackets (e.g., [blocker]), while Rule B3 requires the first line to be plain text starting with 'Review:'. These cannot coexist in the same output without violating the format of either rule.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A2 proposes a fix in a specific format, while Rule B1 asks a clarifying question. Both require output in the first few lines, but A2 is a proposal and B1 is a question. They can coexist only if the question is placed before the proposal and the output is structured to first ask a clarifying question and then propose a fix, which requires specific ordering.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B4\",\n    \"relation\": \"independent\",\n    \"reason\": \"A3 specifies a location in code format, while B4 praises a good aspect of the diff. These are distinct and do not interfere with each other.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B5\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require a final verdict: A4 states 'Verdict: approve', 'request changes', or 'comment', and B5 ends with the same verdict. They are asking for the same outcome in the same format.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B2\",\n    \"relation\": \"independent\",\n    \"reason\": \"A5 requires statements without questions, while B2 classifies a comment. These are different types of content and do not conflict.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B6\",\n    \"relation\": \"independent\",\n    \"reason\": \"A6 gives confidence level, B6 estimates effort. These are distinct metrics and do not interfere.\"\n  }\n]"
+  }
+ },
+ "testcase": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Write the steps as a numbered list (`1.`, `2.`, ...) with at most five steps.",
+     "The first line must be the test ID and the title as `<ID>: <title>`, for example `TC-0412: Lockout after five failed logins`.",
+     "State the pass criterion on a line that starts with `Expected result: `.",
+     "Tag the kind of test on a line `Type: functional`, `Type: regression`, `Type: smoke` or `Type: negative`.",
+     "Give the priority on a line `Priority: P1`, `Priority: P2` or `Priority: P3`.",
+     "Describe the starting state on a line that begins with `Preconditions: `."
+    ],
+    "path": "fallback",
+    "raw": "[\n  \"Write the steps as a numbered list (1., 2., ...) with at most five steps.\",\n  \"The first line must be the test ID and the title as <ID>: <title>, for example TC-0412: Lockout after five failed logins.\",\n  \"State the pass criterion on a line that starts with Expected result:.\",\n  \"Tag the kind of test on a line Type: functional, Type: regression, Type: smoke or Type: negative.\",\n  \"Give the priority on a line Priority: P1, Priority: P2 or Priority: P3.\",\n  \"Describe the starting state on a line that begins with Preconditions:.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Say how to restore the system afterwards on a line that starts with `Cleanup: `.",
+     "List the data the tester needs on a line that starts with `Test data: `.",
+     "Link the feature under test on a line `Covers: <feature>`.",
+     "Write the outcome that counts as a pass on its own line beginning with `Expected result: `.",
+     "The first line must be `Test case: <title>`. The test ID does not belong in the first line."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Say how to restore the system afterwards on a line that starts with `Cleanup: `.\",\n  \"List the data the tester needs on a line that starts with `Test data: `.\",\n  \"Link the feature under test on a line `Covers: <feature>`.\",\n  \"Write the outcome that counts as a pass on its own line beginning with `Expected result: `.\",\n  \"Include at least three numbered steps that are explicit checks, each starting with the word `Verify`, for example `3. Verify that the error appears`.\",\n  \"The first line must be `Test case: <title>`. The test ID does not belong in the first line.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 3,
+     "relation": "duplicate",
+     "reason": "Both rules specify the expected result as a pass criterion, and they are phrased identically in content and intent, just with different labels (A3 uses 'Expected result:' in the context of a test case, B4 uses 'Expected result:' for the outcome). This indicates they are asking for the same informati"
+    },
+    {
+     "a": 3,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "A4 specifies the test type (functional, regression, etc.) as a tag, while B3 links to a feature under test. These are different attributes and not directly conflicting, but they must coexist in the output. However, the placement and structure of the output (with A requiring a specific format startin"
+    },
+    {
+     "a": 4,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "A5 specifies priority (P1/P2/P3), while B3 links to a feature. These are distinct attributes, but both must be included in the output. The arrangement of the output (with A requiring a fixed structure) means that B3 must be placed in a way that doesn't interfere with the required order or format of "
+    },
+    {
+     "a": 5,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "A6 specifies preconditions, while B2 specifies test data. These are different elements, but both must be included in the test case. The output structure of A requires a specific order and format, so B2's test data must be inserted in a way that doesn't break the flow or formatting of A. Thus, they a"
+    },
+    {
+     "a": 0,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "A1 requires a numbered list of at most five steps, while B1 requires a cleanup instruction. These are different types of content: one is a step-by-step procedure, the other is a post-test action. However, A1's step list is meant to be the core test steps, and B1's cleanup is not part of the test ste"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B4\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules specify the expected result as a pass criterion, and they are phrased identically in content and intent, just with different labels (A3 uses 'Expected result:' in the context of a test case, B4 uses 'Expected result:' for the outcome). This indicates they are asking for the same information in the same format.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A4 specifies the test type (functional, regression, etc.) as a tag, while B3 links to a feature under test. These are different attributes and not directly conflicting, but they must coexist in the output. However, the placement and structure of the output (with A requiring a specific format starting with test ID and title) makes it necessary to interleave B3's feature link in a way that doesn't disrupt the required format of A. Thus, they are entangled due to structural constraints.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A5 specifies priority (P1/P2/P3), while B3 links to a feature. These are distinct attributes, but both must be included in the output. The arrangement of the output (with A requiring a fixed structure) means that B3 must be placed in a way that doesn't interfere with the required order or format of A. Hence, they are entangled due to placement constraints.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A6 specifies preconditions, while B2 specifies test data. These are different elements, but both must be included in the test case. The output structure of A requires a specific order and format, so B2's test data must be inserted in a way that doesn't break the flow or formatting of A. Thus, they are entangled due to structural dependencies.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"A1 requires a numbered list of at most five steps, while B1 requires a cleanup instruction. These are different types of content: one is a step-by-step procedure, the other is a post-test action. However, A1's step list is meant to be the core test steps, and B1's cleanup is not part of the test steps. If the cleanup is included in the step list (e.g., as step 5), it would violate the purpose of the steps. But if it's placed outside, it breaks A1's requirement of a numbered list. Thus, including cleanup in the step list would contradict A1's structure, and placing it separately would violate the requirement of a single numbered list. Hence, they are contradictory in practice when trying to satisfy both rules simultaneously in a standard format.\"\n  }\n]"
+  }
+ },
+ "standup": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.",
+     "List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.",
+     "The first line must be `Standup <YYYY-MM-DD> | <full name>`, for example `Standup 2026-03-10 | Nora Lindqvist`.",
+     "Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you.",
+     "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.",
+     "The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.\",\n  \"List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.\",\n  \"The first line must be `Standup <YYYY-MM-DD> | <full name>`, for example `Standup 2026-03-10 | Nora Lindqvist`.\",\n  \"Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you.\",\n  \"List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.\",\n  \"The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "The first line must be `Daily update from <full name>`, for example `Daily update from Nora Lindqvist`.",
+     "Summarize the workload on a line `Items: <n> done, <n> planned`.",
+     "Give the expected finish date of the current task on a line `ETA: <YYYY-MM-DD>`.",
+     "Put blockers on their own line beginning with `Blocked: `. If there are none, the line is `Blocked: none`.",
+     "Collect all ticket IDs on one line `Tickets: <ID>, <ID>`, separated by a comma and a space.",
+     "Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The first line must be `Daily update from <full name>`, for example `Daily update from Nora Lindqvist`.\",\n  \"Summarize the workload on a line `Items: <n> done, <n> planned`.\",\n  \"Give the expected finish date of the current task on a line `ETA: <YYYY-MM-DD>`.\",\n  \"Put blockers on their own line beginning with `Blocked: `. If there are none, the line is `Blocked: none`.\",\n  \"Collect all ticket IDs on one line `Tickets: <ID>, <ID>`, separated by a comma and a space.\",\n  \"Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "Rule A3 requires the first line to be 'Standup <YYYY-MM-DD> | <full name>' while Rule B1 requires 'Daily update from <full name>'. These are different formats and cannot coexist in the same output without violating one rule. The first line of the combined output would have to satisfy both, which is "
+    },
+    {
+     "a": 0,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "Both rules involve assessing workload status, but A1 evaluates sprint goal safety ('On track: yes/no') and B2 reports done vs planned items. While related, they are not identical. To satisfy both, the sprint goal status must be included in the output, and the 'Items: done, planned' line must be plac"
+    },
+    {
+     "a": 1,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "Both rules list planned work, but A2 requires bullets under 'Next:' and B2 requires a summary line 'Items: n done, n planned'. The planned work must be reported in both formats, which requires merging or rephrasing. The placement of planned work in A's structure (under 'Next:') and B's summary (in '"
+    },
+    {
+     "a": 4,
+     "b": 1,
+     "relation": "entangled",
+     "reason": "Both rules list finished work, with A5 requiring bullets under 'Done:' and B2 requiring a summary of done items. The finished work must be reported in both bullet form and numerically. This requires combining the two formats, which can only be done if the bullet list is included in the output and th"
+    },
+    {
+     "a": 3,
+     "b": 3,
+     "relation": "entangled",
+     "reason": "Both rules report blockers with a 'Blocked:' line. A4 requires 'Blocked: <text>' or 'Blocked: none', and B4 requires the same. They can coexist in the same output, but only if the blocker line appears once and is formatted correctly. However, the placement of this line in the overall structure must "
+    },
+    {
+     "a": 5,
+     "b": 5,
+     "relation": "contradictory",
+     "reason": "Rule A6 requires the very last line to be '#standup #<team>', while Rule B6 requires a line 'Need help from: <person or team>'. These cannot both be true in the same output because the final line would have to be both a hashtag line and a 'Need help from' line. This is impossible without violating o"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A3 requires the first line to be 'Standup <YYYY-MM-DD> | <full name>' while Rule B1 requires 'Daily update from <full name>'. These are different formats and cannot coexist in the same output without violating one rule. The first line of the combined output would have to satisfy both, which is impossible.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules involve assessing workload status, but A1 evaluates sprint goal safety ('On track: yes/no') and B2 reports done vs planned items. While related, they are not identical. To satisfy both, the sprint goal status must be included in the output, and the 'Items: done, planned' line must be placed appropriately. However, the placement of these elements depends on the structure of the combined output, which must follow A's format and include B's summary. This requires careful arrangement to avoid breaking A's structure, making it entangled.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules list planned work, but A2 requires bullets under 'Next:' and B2 requires a summary line 'Items: n done, n planned'. The planned work must be reported in both formats, which requires merging or rephrasing. The placement of planned work in A's structure (under 'Next:') and B's summary (in 'Items:') creates a conflict in formatting unless the planned work is both listed as bullets and summarized numerically, which requires a specific arrangement to satisfy both rules without breaking either.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B2\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules list finished work, with A5 requiring bullets under 'Done:' and B2 requiring a summary of done items. The finished work must be reported in both bullet form and numerically. This requires combining the two formats, which can only be done if the bullet list is included in the output and the count is derived from it. This interaction depends on the order and structure of the output, making it entangled.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B4\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules report blockers with a 'Blocked:' line. A4 requires 'Blocked: <text>' or 'Blocked: none', and B4 requires the same. They can coexist in the same output, but only if the blocker line appears once and is formatted correctly. However, the placement of this line in the overall structure must follow A's format (e.g., after 'Next:' or 'Done:') and not disrupt the flow. This requires a specific ordering, making it entangled.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B6\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A6 requires the very last line to be '#standup #<team>', while Rule B6 requires a line 'Need help from: <person or team>'. These cannot both be true in the same output because the final line would have to be both a hashtag line and a 'Need help from' line. This is impossible without violating one rule.\"\n  }\n]"
+  }
+ },
+ "bugreport": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`.",
+     "Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`.",
+     "The first line must be plain text of the form `Title: <one-line summary>`.",
+     "Contrast the outcome in two lines that start with `Expected: ` and `Actual: `.",
+     "Give the app version and the platform on one line that starts with `Environment: `.",
+     "Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`.\",\n  \"Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`.\",\n  \"The first line must be plain text of the form `Title: <one-line summary>`.\",\n  \"Contrast the outcome in two lines that start with `Expected: ` and `Actual: `.\",\n  \"Give the app version and the platform on one line that starts with `Environment: `.\",\n  \"Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "The first line must be a level-2 Markdown heading of the form `## Bug: <summary>`.",
+     "Name the person who found the bug on a line `Reported by: <full name>`.",
+     "Say whether this worked before on a line `Regression: yes`, `Regression: no` or `Regression: unknown`.",
+     "Describe what should happen and what happens instead on two separate lines, `Expected: ...` and `Actual: ...`.",
+     "Offer a way around the bug on a line that starts with `Workaround: `, and write `Workaround: none` if there is none.",
+     "Quote the exact error message inside backticks so that developers can search for it."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The first line must be a level-2 Markdown heading of the form `## Bug: <summary>`.\",\n  \"Name the person who found the bug on a line `Reported by: <full name>`.\",\n  \"Say whether this worked before on a line `Regression: yes`, `Regression: no` or `Regression: unknown`.\",\n  \"Describe what should happen and what happens instead on two separate lines, `Expected: ...` and `Actual: ...`.\",\n  \"Offer a way around the bug on a line that starts with `Workaround: `, and write `Workaround: none` if there is none.\",\n  \"Quote the exact error message inside backticks so that developers can search for it.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 0,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "Rule A1 prohibits code formatting and allows backticks only on a final line starting with `Error text:`, while Rule B1 requires a level-2 Markdown heading which inherently uses Markdown formatting (e.g., `##`), creating a conflict in formatting style and structure that cannot be resolved without vio"
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A3 requires the first line to be plain text with a title format (`Title: ...`), while Rule B1 requires a Markdown heading (`## Bug: ...`). These can coexist only if the output is structured with the heading as the first element, which would break A3's requirement for plain text. Thus, satisfyin"
+    },
+    {
+     "a": 3,
+     "b": 3,
+     "relation": "duplicate",
+     "reason": "Both rules require contrasting expected and actual behavior in two lines starting with `Expected: ` and `Actual: `; they describe the same content in the same format."
+    },
+    {
+     "a": 4,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A5 requires environment details (`Environment: ...`) on a single line, while Rule B1 requires a Markdown heading. These can coexist only if the environment is included in the heading or as a separate line, but A5 specifies a fixed format and placement, and B1's heading format would interfere wi"
+    },
+    {
+     "a": 5,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "Rule A6 requires a severity rating (`Severity: S1`\u2013`S4`) on a line, while Rule B1 requires a Markdown heading. These can only coexist if the severity is included in the heading or as a separate line, but A6 specifies a specific line format and placement, and B1's heading format would disrupt that un"
+    },
+    {
+     "a": 1,
+     "b": 2,
+     "relation": "entangled",
+     "reason": "Rule A2 requires a reproducibility statement (`Reproducibility: always/sometimes/once`), and Rule B3 requires a regression status (`Regression: yes/no/unknown`). Both are factual statements about behavior frequency, but they are different attributes and must be placed in different lines. They can co"
+    },
+    {
+     "a": 0,
+     "b": 5,
+     "relation": "contradictory",
+     "reason": "Rule A1 restricts backticks to a final line starting with `Error text:`, while Rule B6 requires the exact error message to be quoted in backticks. This creates a conflict: if the error is quoted in the middle of the output, it violates A1; if placed only at the end, it must start with `Error text:`,"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A1\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A1 prohibits code formatting and allows backticks only on a final line starting with `Error text:`, while Rule B1 requires a level-2 Markdown heading which inherently uses Markdown formatting (e.g., `##`), creating a conflict in formatting style and structure that cannot be resolved without violating one rule.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A3 requires the first line to be plain text with a title format (`Title: ...`), while Rule B1 requires a Markdown heading (`## Bug: ...`). These can coexist only if the output is structured with the heading as the first element, which would break A3's requirement for plain text. Thus, satisfying both requires a specific ordering and format that contradicts the plain text requirement of A3 unless the heading is treated as a variant of A3's title, which is not allowed under A1's formatting rules.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B4\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require contrasting expected and actual behavior in two lines starting with `Expected: ` and `Actual: `; they describe the same content in the same format.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A5 requires environment details (`Environment: ...`) on a single line, while Rule B1 requires a Markdown heading. These can coexist only if the environment is included in the heading or as a separate line, but A5 specifies a fixed format and placement, and B1's heading format would interfere with that unless the environment is embedded in a way that violates A1 or A5's structure.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A6 requires a severity rating (`Severity: S1`\u2013`S4`) on a line, while Rule B1 requires a Markdown heading. These can only coexist if the severity is included in the heading or as a separate line, but A6 specifies a specific line format and placement, and B1's heading format would disrupt that unless the severity is embedded in a way that violates A1 or A6's formatting rules.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B3\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A2 requires a reproducibility statement (`Reproducibility: always/sometimes/once`), and Rule B3 requires a regression status (`Regression: yes/no/unknown`). Both are factual statements about behavior frequency, but they are different attributes and must be placed in different lines. They can coexist only if the output is structured with both statements in a specific order, which would require a layout that may conflict with the formatting constraints of A1 or B1.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B6\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A1 restricts backticks to a final line starting with `Error text:`, while Rule B6 requires the exact error message to be quoted in backticks. This creates a conflict: if the error is quoted in the middle of the output, it violates A1; if placed only at the end, it must start with `Error text:`, which is not the same as a general error quote. Thus, no single output satisfies both rules without violating formatting constraints.\"\n  }\n]"
+  }
+ },
+ "dockerfile": {
+  "extract": {
+   "A": {
+    "rules": [
+     "The first line of the file must be the parser directive `# syntax=docker/dockerfile:1`.",
+     "Declare `STOPSIGNAL SIGTERM` so that the container shuts down gracefully.",
+     "Declare a `HEALTHCHECK` instruction that probes the service.",
+     "Run the service as a non-root user given by numeric ID, with an instruction such as `USER 10001`.",
+     "Declare the build argument `ARG APP_VERSION=dev` so that the pipeline can stamp the image.",
+     "Set the working directory with `WORKDIR /opt/service`. No other working directory may be used anywhere in the file."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The first line of the file must be the parser directive `# syntax=docker/dockerfile:1`.\",\n  \"Declare `STOPSIGNAL SIGTERM` so that the container shuts down gracefully.\",\n  \"Declare a `HEALTHCHECK` instruction that probes the service.\",\n  \"Run the service as a non-root user given by numeric ID, with an instruction such as `USER 10001`.\",\n  \"Declare the build argument `ARG APP_VERSION=dev` so that the pipeline can stamp the image.\",\n  \"Set the working directory with `WORKDIR /opt/service`. No other working directory may be used anywhere in the file.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Make the container stop cleanly by adding the instruction `STOPSIGNAL SIGTERM`.",
+     "Use `WORKDIR /srv/app` as the working directory. The file must not set any other working directory.",
+     "Explain each `RUN` instruction with a comment line directly above it that starts with `# step: `.",
+     "Describe the image with a `LABEL` instruction that sets `org.opencontainers.image.description`.",
+     "Put a header comment `# Owner: <team>` at the top of the file.",
+     "Fix the container time zone with `ENV TZ=UTC`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Make the container stop cleanly by adding the instruction `STOPSIGNAL SIGTERM`.\",\n  \"Use `WORKDIR /srv/app` as the working directory. The file must not set any other working directory.\",\n  \"Explain each `RUN` instruction with a comment line directly above it that starts with `# step: `.\",\n  \"Describe the image with a `LABEL` instruction that sets `org.opencontainers.image.description`.\",\n  \"Put a header comment `# Owner: <team>` at the top of the file.\",\n  \"Fix the container time zone with `ENV TZ=UTC`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 1,
+     "b": 0,
+     "relation": "duplicate",
+     "reason": "Both rules require the addition of STOPSIGNAL SIGTERM to ensure the container shuts down gracefully."
+    },
+    {
+     "a": 5,
+     "b": 1,
+     "relation": "contradictory",
+     "reason": "Skill A requires WORKDIR /opt/service, while Skill B requires WORKDIR /srv/app. These are different paths and cannot coexist in the same Dockerfile."
+    },
+    {
+     "a": 4,
+     "b": 3,
+     "relation": "entangled",
+     "reason": "Skill A requires an ARG APP_VERSION=dev for version stamping, while Skill B requires a LABEL for image description. Both can be satisfied, but the placement and structure must be carefully ordered to avoid conflicts with other instructions, especially since the LABEL must be placed appropriately in "
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "duplicate",
+     "reason": "Both rules require a STOPSIGNAL SIGTERM instruction for clean shutdown, though A3 specifies a HEALTHCHECK which is not required by B1."
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A2\",\n    \"b\": \"B1\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require the addition of STOPSIGNAL SIGTERM to ensure the container shuts down gracefully.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B2\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Skill A requires WORKDIR /opt/service, while Skill B requires WORKDIR /srv/app. These are different paths and cannot coexist in the same Dockerfile.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B4\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Skill A requires an ARG APP_VERSION=dev for version stamping, while Skill B requires a LABEL for image description. Both can be satisfied, but the placement and structure must be carefully ordered to avoid conflicts with other instructions, especially since the LABEL must be placed appropriately in the file and the ARG must be used in the build context. The order and positioning of these instructions depend on the overall Dockerfile structure and may require specific placement to not interfere with other directives.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require a STOPSIGNAL SIGTERM instruction for clean shutdown, though A3 specifies a HEALTHCHECK which is not required by B1.\"\n  }\n]"
+  }
+ },
+ "apidoc": {
+  "extract": {
+   "A": {
+    "rules": [
+     "State the required permission on a line `Auth: <scope>`.",
+     "Say whether repeating the call is safe on a line `Idempotent: yes` or `Idempotent: no`.",
+     "Show one example call on a line that starts with `$ curl `.",
+     "The first line must be a level-3 Markdown heading with the method and path in backticks, for example ### `GET /v1/invoices/{id}`.",
+     "Keep the whole entry to at most 90 words.",
+     "State the API version that introduced the endpoint on a line `Since: v<version>`, for example `Since: v1.4`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"State the required permission on a line `Auth: <scope>`.\",\n  \"Say whether repeating the call is safe on a line `Idempotent: yes` or `Idempotent: no`.\",\n  \"Show one example call on a line that starts with `$ curl `.\",\n  \"The first line must be a level-3 Markdown heading with the method and path in backticks, for example ### `GET /v1/invoices/{id}`.\",\n  \"Keep the whole entry to at most 90 words.\",\n  \"State the API version that introduced the endpoint on a line `Since: v<version>`, for example `Since: v1.4`.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "The first line must be the method and path alone in plain text with no Markdown, for example `GET /v1/invoices/{id}`.",
+     "Mark the maturity on a line `Stability: stable`, `Stability: beta` or `Stability: deprecated`.",
+     "Name the media type of the response on a line such as `Content-Type: application/json`.",
+     "List the parameters in a Markdown table whose header row is `| Name | In | Type | Description |`.",
+     "Include an example request written as a shell line beginning with `$ curl `.",
+     "Document the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The first line must be the method and path alone in plain text with no Markdown, for example `GET /v1/invoices/{id}`.\",\n  \"Mark the maturity on a line `Stability: stable`, `Stability: beta` or `Stability: deprecated`.\",\n  \"Name the media type of the response on a line such as `Content-Type: application/json`.\",\n  \"List the parameters in a Markdown table whose header row is `| Name | In | Type | Description |`.\",\n  \"Include an example request written as a shell line beginning with `$ curl `.\",\n  \"Document the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 3,
+     "b": 0,
+     "relation": "contradictory",
+     "reason": "Rule A4 requires a level-3 Markdown heading with the method and path in backticks, while Rule B1 requires plain text method and path with no Markdown. These cannot coexist in the same output without violating formatting requirements."
+    },
+    {
+     "a": 2,
+     "b": 4,
+     "relation": "duplicate",
+     "reason": "Both rules require an example curl call starting with $ curl. They ask for the same content, just in different contexts and formats."
+    },
+    {
+     "a": 4,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "Rule A5 limits the whole entry to 90 words, while Rule B6 requires a list of response statuses. These can coexist only if the response status bullets are included within the 90-word limit, requiring careful placement and brevity."
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A4\",\n    \"b\": \"B1\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"Rule A4 requires a level-3 Markdown heading with the method and path in backticks, while Rule B1 requires plain text method and path with no Markdown. These cannot coexist in the same output without violating formatting requirements.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B5\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require an example curl call starting with $ curl. They ask for the same content, just in different contexts and formats.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Rule A5 limits the whole entry to 90 words, while Rule B6 requires a list of response statuses. These can coexist only if the response status bullets are included within the 90-word limit, requiring careful placement and brevity.\"\n  }\n]"
+  }
+ },
+ "alert": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Link the runbook on a line `Runbook: <url>`.",
+     "The whole message must fit on a pager screen: at most 400 characters, counting spaces and line breaks.",
+     "The first line must be `[<SEVERITY>] <service>: <summary>` with the severity in capitals, one of `[CRITICAL]`, `[WARNING]`, `[INFO]`.",
+     "Say how long the condition has held on a line `For: <n>m`, in whole minutes.",
+     "Name the environment on a line `Env: <name>`.",
+     "Give the measurement on a line `Value: <current> (threshold <limit>)`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Link the runbook on a line `Runbook: <url>`.\",\n  \"The whole message must fit on a pager screen: at most 400 characters, counting spaces and line breaks.\",\n  \"The first line must be `[<SEVERITY>] <service>: <summary>` with the severity in capitals, one of `[CRITICAL]`, `[WARNING]`, `[INFO]`.\",\n  \"Say how long the condition has held on a line `For: <n>m`, in whole minutes.\",\n  \"Name the environment on a line `Env: <name>`.\",\n  \"Give the measurement on a line `Value: <current> (threshold <limit>)`.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "The first line must be `Alert <ID> firing on <service>`, for example `Alert ALR-7731 firing on checkout-api`.",
+     "Describe what customers notice on a line that begins with `User impact: `.",
+     "Give the runbook address on its own line in the form `Runbook: <url>`.",
+     "Explain how to acknowledge with the line `Ack: reply ack <alert ID>`, for example `Ack: reply ack ALR-7731`.",
+     "List at least three likely causes as bullets that start with `- ` under a line that reads exactly `Likely causes:`.",
+     "Tell the responder where to start on a line that begins with `First action: `."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"The first line must be `Alert <ID> firing on <service>`, for example `Alert ALR-7731 firing on checkout-api`.\",\n  \"Describe what customers notice on a line that begins with `User impact: `.\",\n  \"Give the runbook address on its own line in the form `Runbook: <url>`.\",\n  \"Explain how to acknowledge with the line `Ack: reply ack <alert ID>`, for example `Ack: reply ack ALR-7731`.\",\n  \"List at least three likely causes as bullets that start with `- ` under a line that reads exactly `Likely causes:`.\",\n  \"Tell the responder where to start on a line that begins with `First action: `.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 0,
+     "b": 2,
+     "relation": "duplicate",
+     "reason": "Both rules require the runbook URL to be included in the output, with A1 specifying it on a line 'Runbook: <url>' and B3 specifying it on its own line 'Runbook: <url>'. The content is identical and serves the same purpose."
+    },
+    {
+     "a": 2,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "A3 requires the first line to be '[SEVERITY] <service>: <summary>', while B1 requires 'Alert <ID> firing on <service>'. These are structurally different and would conflict in the first line if both are strictly followed. However, they can coexist if the output is arranged in a specific order (e.g., "
+    },
+    {
+     "a": 3,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "A4 specifies a duration in minutes ('For: <n>m') as a separate line, while B1 starts with an alert ID and service. These are different pieces of information and could be combined in a structured output, but placing A4 first would break B1's format. However, both can coexist if the order is carefully"
+    },
+    {
+     "a": 4,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "A5 requires 'Env: <name>' as a line, while B1 starts with 'Alert <ID> firing on <service>'. The environment is not directly part of B1's structure, but could be added after. However, inserting 'Env: <name>' in the first line or early would disrupt B1's required format. Thus, they can coexist only if"
+    },
+    {
+     "a": 5,
+     "b": 0,
+     "relation": "entangled",
+     "reason": "A6 requires 'Value: <current> (threshold <limit>)' as a line, while B1 starts with a different format. This measurement data could be included after B1, but inserting it early would break B1's structure. Thus, both can be satisfied only if the measurement is placed in a specific order, making them e"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A1\",\n    \"b\": \"B3\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require the runbook URL to be included in the output, with A1 specifying it on a line 'Runbook: <url>' and B3 specifying it on its own line 'Runbook: <url>'. The content is identical and serves the same purpose.\"\n  },\n  {\n    \"a\": \"A3\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A3 requires the first line to be '[SEVERITY] <service>: <summary>', while B1 requires 'Alert <ID> firing on <service>'. These are structurally different and would conflict in the first line if both are strictly followed. However, they can coexist if the output is arranged in a specific order (e.g., B1 first, then A3), which would satisfy both rules only through a specific layout, making them entangled.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A4 specifies a duration in minutes ('For: <n>m') as a separate line, while B1 starts with an alert ID and service. These are different pieces of information and could be combined in a structured output, but placing A4 first would break B1's format. However, both can coexist if the order is carefully managed, making them entangled.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A5 requires 'Env: <name>' as a line, while B1 starts with 'Alert <ID> firing on <service>'. The environment is not directly part of B1's structure, but could be added after. However, inserting 'Env: <name>' in the first line or early would disrupt B1's required format. Thus, they can coexist only if the environment is placed in a specific location, making them entangled.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B1\",\n    \"relation\": \"entangled\",\n    \"reason\": \"A6 requires 'Value: <current> (threshold <limit>)' as a line, while B1 starts with a different format. This measurement data could be included after B1, but inserting it early would break B1's structure. Thus, both can be satisfied only if the measurement is placed in a specific order, making them entangled.\"\n  }\n]"
+  }
+ },
+ "userstory": {
+  "extract": {
+   "A": {
+    "rules": [
+     "Say what the story does not cover on a line that starts with `Out of scope: `.",
+     "The line directly below the title must be `Epic: <epic name>`.",
+     "The first line must be `Story <ticket ID>: <title>`, for example `Story SHOP-88: Save cart for later`.",
+     "Write the acceptance criteria as a checklist of at least two unchecked boxes, each of the form `- [ ] <criterion>`.",
+     "Rate the business value on a line `Value: high`, `Value: medium` or `Value: low`.",
+     "List blocking tickets on a line that starts with `Depends on: `, and write `Depends on: none` when there are none."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Say what the story does not cover on a line that starts with `Out of scope: `.\",\n  \"The line directly below the title must be `Epic: <epic name>`.\",\n  \"The first line must be `Story <ticket ID>: <title>`, for example `Story SHOP-88: Save cart for later`.\",\n  \"Write the acceptance criteria as a checklist of at least two unchecked boxes, each of the form `- [ ] <criterion>`.\",\n  \"Rate the business value on a line `Value: high`, `Value: medium` or `Value: low`.\",\n  \"List blocking tickets on a line that starts with `Depends on: `, and write `Depends on: none` when there are none.\"\n]"
+   },
+   "B": {
+    "rules": [
+     "Name who the story is for on a line `Persona: <persona>`.",
+     "Put the estimate at the top, right under the title, as `Story points: <n>`.",
+     "Say how success will be measured on a line that starts with `Metric: `.",
+     "Add one test scenario as three lines that start with `Given `, `When ` and `Then `.",
+     "List at least two acceptance criteria as open checkboxes, one per line, written `- [ ] ...`.",
+     "The first line must be a level-1 Markdown heading that holds only the title, for example `# Save cart for later`."
+    ],
+    "path": "llm",
+    "raw": "[\n  \"Name who the story is for on a line `Persona: <persona>`.\",\n  \"Put the estimate at the top, right under the title, as `Story points: <n>`.\",\n  \"Say how success will be measured on a line that starts with `Metric: `.\",\n  \"Add one test scenario as three lines that start with `Given `, `When ` and `Then `.\",\n  \"List at least two acceptance criteria as open checkboxes, one per line, written `- [ ] ...`.\",\n  \"The first line must be a level-1 Markdown heading that holds only the title, for example `# Save cart for later`.\"\n]"
+   }
+  },
+  "relate": {
+   "relations": [
+    {
+     "a": 2,
+     "b": 5,
+     "relation": "entangled",
+     "reason": "Both rules require the first line to be the story title, but A3 specifies it must be in the format 'Story <ticket ID>: <title>' while B6 requires a level-1 Markdown heading with only the title. These are incompatible in structure unless the title is formatted in a way that satisfies both (e.g., a Ma"
+    },
+    {
+     "a": 3,
+     "b": 4,
+     "relation": "duplicate",
+     "reason": "Both rules require acceptance criteria as a checklist of at least two unchecked boxes in the form of '- [ ] <criterion>'. They are asking for the same content in the same format, just with different labels and placement."
+    },
+    {
+     "a": 4,
+     "b": 2,
+     "relation": "contradictory",
+     "reason": "A5 requires a value rating ('Value: high', 'medium', or 'low') as a standalone line, while B3 requires a metric for success. These are different types of information and cannot be combined into a single line without ambiguity or loss of meaning. There is no way to satisfy both rules without conflict"
+    }
+   ],
+   "raw": "[\n  {\n    \"a\": \"A3\",\n    \"b\": \"B6\",\n    \"relation\": \"entangled\",\n    \"reason\": \"Both rules require the first line to be the story title, but A3 specifies it must be in the format 'Story <ticket ID>: <title>' while B6 requires a level-1 Markdown heading with only the title. These are incompatible in structure unless the title is formatted in a way that satisfies both (e.g., a Markdown heading with the title, but without the ticket ID), which would break A3's format requirement. Thus, the output must be arranged in a specific way to satisfy both, making them entangled.\"\n  },\n  {\n    \"a\": \"A4\",\n    \"b\": \"B5\",\n    \"relation\": \"duplicate\",\n    \"reason\": \"Both rules require acceptance criteria as a checklist of at least two unchecked boxes in the form of '- [ ] <criterion>'. They are asking for the same content in the same format, just with different labels and placement.\"\n  },\n  {\n    \"a\": \"A5\",\n    \"b\": \"B3\",\n    \"relation\": \"contradictory\",\n    \"reason\": \"A5 requires a value rating ('Value: high', 'medium', or 'low') as a standalone line, while B3 requires a metric for success. These are different types of information and cannot be combined into a single line without ambiguity or loss of meaning. There is no way to satisfy both rules without conflicting or ambiguous output.\"\n  },\n  {\n    \"a\": \"A6\",\n    \"b\": \"B1\",\n    \"relation\": \"independent\",\n    \"reason\": \"A6 lists blocking tickets; B1 names a persona. These are unrelated concepts and do not interact in any structural or content way.\"\n  },\n  {\n    \"a\": \"A1\",\n    \"b\": \"B1\",\n    \"relation\": \"independent\",\n    \"reason\": \"A1 specifies out-of-scope items; B1 specifies the persona. These are distinct and unrelated elements of a story.\"\n  },\n  {\n    \"a\": \"A2\",\n    \"b\": \"B3\",\n    \"relation\": \"independent\",\n    \"reason\": \"A2 requires an 'Epic: <name>' line; B3 requires a 'Metric: <value>' line. These are different types of metadata and do not conflict or interact.\"\n  }\n]"
+  }
+ }
+}

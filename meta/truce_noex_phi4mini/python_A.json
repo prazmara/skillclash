@@ -1,0 +1,96 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+   "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+   "Annotate every parameter and the return value with type hints.",
+   "Reject invalid input by raising `ValueError`.",
+   "Include at least one usage example with a `>>>` prompt in the docstring.",
+   "Reply with one Python code block and nothing outside it."
+  ],
+  "B": [
+   "Start the module with `from __future__ import annotations`.",
+   "Show a doctest-style example that uses `>>>`.",
+   "State the time complexity as `Complexity: O(...)`.",
+   "Export the function by defining `__all__`.",
+   "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+   "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both require a specific function naming convention, but they are different conventions."
+  },
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both require a specific docstring style, but they are different styles."
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Both require type hints, but they are not the same type of hints (Google style vs. NumPy style)."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both require handling invalid input, but the way to do it is not specified in the rules."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both require an example usage, but the format of the example is different (Google style vs. NumPy style)."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both require a docstring, but the style of the docstring is different (Google style vs. NumPy style)."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   1
+  ]
+ ],
+ "reconciled": [
+  "To satisfy both the `python-google-style` and `python-numpy-style` rules, name your function with a verb prefix like `get_`, `compute_`, etc., and start your module with `from __future__ import annotations`. Ensure the function name and module start statement are correctly placed in your code.",
+  "Write the docstring in Google style with `Args:` and `Returns:` sections, and underlined `Parameters` header by dashes for NumPy style.",
+  "Annotate every parameter and the return value with type hints (python-google-style) and state the time complexity as `Complexity: O(...)` (python-numpy-style).",
+  "To satisfy both rules, define a function that raises a `ValueError` for invalid input and includes an `__all__` list with the function's name. For example: ```python __all__ = ['my_function'] def my_function(x): if not isinstance(x, (int, float)): raise ValueError(\"Invalid input: x must be an int or float\") # Function implementation here ```",
+  "Include a docstring with a `>>>` prompt and a doctest-style example using `>>>` in the same output. For example: ```python def add(a, b): \"\"\" Adds two numbers together. >>> add(2, 3) 5 \"\"\" return a + b ```"
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "fallback"
+ }
+}

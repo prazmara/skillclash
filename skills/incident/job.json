@@ -1,0 +1,6 @@
+{
+ "artifact": "incident report",
+ "example_request": "Write the incident report: the checkout API returned 500 errors for 42 minutes on 2026-02-11, from 09:14 to 09:56 UTC, because the TLS certificate on the payments gateway expired. Incident ID INC-2291, severity 2. Detected by the synthetic checkout probe.",
+ "A": "incident-brief",
+ "B": "postmortem-lite"
+}

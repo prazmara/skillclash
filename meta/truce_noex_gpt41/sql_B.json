@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "openai/gpt-4.1",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Always exclude soft-deleted rows with the filter `deleted_at IS NULL`.",
+   "Write all SQL keywords in UPPERCASE (`SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `ORDER BY`).",
+   "Give every aggregate an alias that ends in `_cnt`, `_sum` or `_avg`.",
+   "The first line must be a comment that states the purpose: `-- Purpose: <one sentence>`.",
+   "Wrap every monetary or averaged aggregate in `ROUND(..., 2)`.",
+   "Always end the query with a `LIMIT` clause."
+  ],
+  "B": [
+   "Cap the result size: every query needs a `limit` clause.",
+   "Stage the source rows in a CTE named `base` (`with base as (...)`) and select from it.",
+   "Filter date ranges with the half-open pattern `>=` start and `<` end. Never use `between` or `<=` for dates.",
+   "Qualify source tables with the `analytics.` schema.",
+   "Put a header comment `-- Owner: <team>` at the top of the query.",
+   "Write all SQL keywords in lowercase (`select`, `from`, `where`, `join`, `group by`, `order by`)."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "A2 requires all SQL keywords in UPPERCASE, while B6 requires all SQL keywords in lowercase. Both cannot be satisfied in a single query."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A4 requires the first line to be a purpose comment, while B5 requires the first line to be an owner comment. Both can be satisfied if the comments are ordered correctly, but following either rule in isolation would break the other."
+  },
+  {
+   "a": 5,
+   "b": 0,
+   "relation": "duplicate",
+   "reason": "Both rules require that every query ends with a LIMIT clause to cap the result size."
+  }
+ ],
+ "dropped_from_secondary": [
+  1,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   3
+  ]
+ ],
+ "reconciled": [
+  "The first two lines of the query must be comments: the first line is `-- Purpose: <one sentence>`, and the second line is `-- Owner: <team>`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

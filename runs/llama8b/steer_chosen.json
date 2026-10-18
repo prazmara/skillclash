@@ -1,0 +1,42 @@
+{
+ "skill/both_score": {
+  "kind": "skill",
+  "layer": 11,
+  "c": 0.4
+ },
+ "order/both_score": {
+  "kind": "order",
+  "layer": 16,
+  "c": 0.6
+ },
+ "skill/flip": {
+  "kind": "skill",
+  "layer": 11,
+  "c": 0.4
+ },
+ "order/flip": {
+  "kind": "order",
+  "layer": 16,
+  "c": 0.6
+ },
+ "rand@skill/both_score": {
+  "kind": "rand",
+  "layer": 11,
+  "c": 0.4
+ },
+ "rand@order/both_score": {
+  "kind": "rand",
+  "layer": 16,
+  "c": 0.6
+ },
+ "rand@skill/flip": {
+  "kind": "rand",
+  "layer": 11,
+  "c": 0.4
+ },
+ "rand@order/flip": {
+  "kind": "rand",
+  "layer": 16,
+  "c": 0.6
+ }
+}

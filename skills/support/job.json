@@ -1,0 +1,6 @@
+{
+ "artifact": "support reply",
+ "example_request": "Write the support reply to Maria Lopez (ticket 48213): her invoice export fails with a timeout. Engineering deployed a fix today; she should clear her browser cache and retry. Help article: https://help.example.com/invoice-export. Agent: Jordan.",
+ "A": "support-formal",
+ "B": "support-friendly"
+}

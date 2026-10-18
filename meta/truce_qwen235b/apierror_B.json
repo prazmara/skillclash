@@ -1,0 +1,32 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include a human-readable sentence in the field `message`.",
+   "Include a boolean field `retryable`.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a field `docs` with an `https://` link to the error documentation."
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Explain the error for humans in the `message` field."
+  ]
+ },
+ "relations": [],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [],
+ "reconciled": [],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

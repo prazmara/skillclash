@@ -1,0 +1,88 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+   "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+   "Annotate every parameter and the return value with type hints.",
+   "Reject invalid input by raising `ValueError`.",
+   "Include at least one usage example with a `>>>` prompt in the docstring.",
+   "Reply with one Python code block and nothing outside it."
+  ],
+  "B": [
+   "Start the module with `from __future__ import annotations`.",
+   "Show a doctest-style example that uses `>>>`.",
+   "State the time complexity as `Complexity: O(...)`.",
+   "Export the function by defining `__all__`.",
+   "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+   "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules concern function naming conventions, but they are different: A1 specifies a list of prefixes for function names, while B6 does not specify any prefixes. To satisfy both rules, the function name should start with a prefix from A1 and follow the format of B6."
+  },
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules concern docstring format, but they are different: A2 specifies Google style with `Args:` and `Returns:` sections, while B6 specifies NumPy style with an underlined `Parameters` header. To satisfy both rules, the docstring should be in NumPy style but include `Args:` and `Returns:` section"
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "duplicate",
+   "reason": "Both rules concern type hints."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules concern function exporting, but they are different: A4 does not explicitly mention function exporting, but it implies that the function should be defined in a module that can be loaded as a skill. B4 explicitly states that the function should be exported by defining `__all__`. To satisfy "
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules concern usage examples, but they are different: A5 specifies that the example should be included in the docstring, while B2 specifies that the example should be shown in a doctest-style format. To satisfy both rules, the usage example should be included in the docstring and formatted in a"
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules concern code examples, but they are different: A6 specifies that the output should be a single Python code block, while B2 specifies that the example should be shown in a doctest-style format. To satisfy both rules, the example should be formatted in a doctest-style format but enclosed wi"
+  }
+ ],
+ "dropped_from_secondary": [
+  0
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   5
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   1
+  ]
+ ],
+ "reconciled": [
+  "Write the function name with a verb prefix (e.g., `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_`, or `to_`) and document it in NumPy style, using a `Parameters` header underlined by dashes, as follows: ``` def get_data(parameters: dict): \"\"\" Description of the function. Parameters ---------- parameters : dict Description of the parameters. Returns ------- result : Any Description of the result. \"\"\" ```",
+  "Write functions with the following structure: ```python def function_name(valid_input): # Function body __all__ = ['function_name'] ``` In case of invalid input, raise `ValueError`: ```python def function_name(valid_input): if not isinstance(valid_input, (list, dict, str, int, float)): raise ValueError(\"Invalid input type. Expected one of: list, dict, str, int, float.\") # Function body __all__ = ['function_name'] ```",
+  "Write a docstring that includes an example of usage with a `>>>` prompt, followed by a doctest-style example using `>>>`, separated by a blank line. For instance: ``` \"\"\" Usage: my_function(arg1, arg2) Tests: >>> result = my_function(1, 2) >>> assert result == 3 \"\"\" ```"
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

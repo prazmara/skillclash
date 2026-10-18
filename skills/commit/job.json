@@ -1,0 +1,6 @@
+{
+ "artifact": "commit message",
+ "example_request": "Write the commit message: add retry with backoff to the payment webhook handler. Ticket PAY-311. Author: Lena Ortiz. Component: webhooks.",
+ "A": "conventional-commits",
+ "B": "ticket-first-commits"
+}

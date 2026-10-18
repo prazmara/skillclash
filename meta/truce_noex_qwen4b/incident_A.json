@@ -1,0 +1,78 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Describe user impact on a line that starts with `Impact: `.",
+   "Use at most five bullet points in the whole report.",
+   "Write every time as 24-hour `HH:MM UTC`, for example `09:14 UTC`.",
+   "State the length of the incident on a line `Duration: <n> min`.",
+   "Give the current state on a line `Status: resolved`, `Status: monitoring` or `Status: investigating`.",
+   "The first line must be `SEV<n>: <title>`, for example `SEV2: Checkout API returned 500 errors`."
+  ],
+  "B": [
+   "Write impersonally. Never use the words `we`, `our`, `us` or `I`.",
+   "The first line must be `Incident <ID> - <title>`, for example `Incident INC-2291 - Checkout API returned 500 errors`.",
+   "Say how the problem was noticed on a line that starts with `Detection: `.",
+   "Report how long the incident lasted as `Duration: <n> min` on its own line.",
+   "End with a line `Action items:` followed by at least three bullets, each naming an owner as `(owner: <team>)`.",
+   "Name the cause on a line that starts with `Root cause: `."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "Rule A3 requires a time in 24-hour format (e.g., `09:14 UTC`) to be written in the report, while Rule B1 requires a title-based line starting with `Incident <ID> - <title>` and does not specify any time format. However, the presence of a time in A3 would conflict with B1's impersonal, title-only fir"
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require reporting the duration of the incident in minutes as `Duration: <n> min`. This is the same information requested in both skills, with identical formatting, making it a duplicate."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both rules require a status line, but A5 specifies the status as `resolved`, `monitoring`, or `investigating`, while B5 requires action items at the end. A5's status must appear in the output, and B5's action items must follow. If A5's status is placed at the end (as in B5), it would break A5's rule"
+  },
+  {
+   "a": 0,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "A1 requires a user impact description starting with `Impact: `, while B6 requires a root cause starting with `Root cause: `. Both are descriptive and must appear in the output, but they differ in content and placement. If both are included, their order and positioning must be carefully managed to av"
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A2 limits the total number of bullet points to five, while B5 requires at least three action items. If the action items are included in the bullet list, they must not exceed the five-bullet limit. However, B5 requires at least three, and A2 caps at five, so the total bullet count must be between thr"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   4
+  ],
+  [
+   0,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Give the current state on a line `Status: resolved`, `Status: monitoring` or `Incident: investigating`, and end with a line `Action items:` followed by at least three bullets, each naming an owner as `(owner: <team>)`.",
+  "Impact: Describe user impact on a line that starts with `Impact: `. Root cause: Name the cause on a line that starts with `Root cause: `."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

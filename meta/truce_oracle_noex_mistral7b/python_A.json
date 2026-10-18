@@ -1,0 +1,55 @@
+{
+ "method": "structured",
+ "mode": "oracle",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+   "Annotate every parameter and the return value with type hints.",
+   "Reject invalid input by raising `ValueError`.",
+   "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+   "Include at least one usage example with a `>>>` prompt in the docstring.",
+   "Reply with one Python code block and nothing outside it."
+  ],
+  "B": [
+   "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`.",
+   "Start the module with `from __future__ import annotations`.",
+   "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+   "Export the function by defining `__all__`.",
+   "Show a doctest-style example that uses `>>>`.",
+   "State the time complexity as `Complexity: O(...)`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "contradictory"
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "duplicate"
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Write a single Python code block, enclosed in triple quotes (``` ... ```). Include the time complexity at the beginning of the code block, prefixed with `Complexity: O(...)`, followed by a newline. Use the appropriate style from the `python-google-style` and `python-numpy-style` for the rest of the code. Example: ``` Complexity: O(n) def my_function(input_list): # Your code here pass ```"
+ ],
+ "extract_path": null
+}

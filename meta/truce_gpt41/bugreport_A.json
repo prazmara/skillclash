@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "openai/gpt-4.1",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`.",
+   "Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`.",
+   "The first line must be plain text of the form `Title: <one-line summary>`.",
+   "Contrast the outcome in two lines that start with `Expected: ` and `Actual: `.",
+   "Give the app version and the platform on one line that starts with `Environment: `.",
+   "Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`."
+  ],
+  "B": [
+   "The first line must be a level-2 Markdown heading of the form `## Bug: <summary>`.",
+   "Name the person who found the bug on a line `Reported by: <full name>`.",
+   "Say whether this worked before on a line `Regression: yes`, `Regression: no` or `Regression: unknown`.",
+   "Describe what should happen and what happens instead on two separate lines, `Expected: ...` and `Actual: ...`.",
+   "Offer a way around the bug on a line that starts with `Workaround: `, and write `Workaround: none` if there is none.",
+   "Quote the exact error message inside backticks so that developers can search for it."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "A3 requires the first line to be plain text starting with 'Title:', while B1 requires the first line to be a level-2 Markdown heading starting with '## Bug:'. Both cannot be satisfied simultaneously as the first line."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require stating the expected and actual outcomes, each on their own lines with the same prefixes."
+  },
+  {
+   "a": 0,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "A1 restricts code formatting (backticks) to only a final line starting with 'Error text:', while B6 requires quoting the error message in backticks for developer search. Both can be satisfied only if the error message is placed on the final line and formatted as required by A1."
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Keep the description free of code formatting and reserve backticks for a final line that starts with `Error text:`, where you must quote the exact error message inside backticks so developers can search for it."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

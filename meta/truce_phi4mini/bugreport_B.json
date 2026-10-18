@@ -1,0 +1,69 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Keep the description free of code formatting. Backticks may appear only on a final line that starts with `Error text:`.",
+   "Say how often it happens on a line `Reproducibility: always`, `Reproducibility: sometimes` or `Reproducibility: once`.",
+   "The first line must be plain text of the form `Title: <one-line summary>`.",
+   "Contrast the outcome in two lines that start with `Expected: ` and `Actual: `.",
+   "Give the app version and the platform on one line that starts with `Environment: `.",
+   "Rate the severity on a line `Severity: S1`, `Severity: S2`, `Severity: S3` or `Severity: S4`."
+  ],
+  "B": [
+   "Bug: CSV export is empty when the date filter spans more than 90 days",
+   "Reported by: Ivo Marek",
+   "Regression: unknown",
+   "On the Reports page, exporting with a date filter longer than 90 days downloads an empty file. The console shows `TypeError: rows is undefined`",
+   "Expected: the file contains one row per report entry.",
+   "Actual: the downloaded file is empty.",
+   "Workaround: export two shorter date ranges and merge the files."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules A3 and B1 provide a title or summary, but B1 is more specific to the bug's context."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules A4 and B4 describe the expected and actual outcomes, but B4 provides additional context about the console error."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules A6 and B6 rate the severity of the bug, but B6 provides a specific workaround."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   0,
+   2
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "To satisfy both rules, ensure the CSV export begins with a line formatted as `Title: <one-line summary>` followed by the data, and if the date filter spans more than 90 days, include all relevant data without the export being empty.",
+  "To satisfy both rules, ensure that the output does not include any lines starting with `Expected: ` or `Actual: `, and that the date filter on the Reports page is set to 90 days or less to avoid the `TypeError: rows is undefined` error.",
+  "To satisfy both rules, the output must include a line stating \"Severity: S1\" or \"Severity: S2\" or \"Severity: S3\" or \"Severity: S4\" and must also indicate that the downloaded file is empty."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

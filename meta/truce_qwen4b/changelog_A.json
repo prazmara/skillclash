@@ -1,0 +1,72 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Group changes under at least two of the headings `### Added`, `### Changed`, `### Fixed`.",
+   "Flag incompatible changes with the exact marker `BREAKING:`.",
+   "Reference issues in parentheses as `(#<number>)`.",
+   "Bullets describe the change only. No bullet may contain an @handle.",
+   "The first line must be the version heading `## [<version>] - <YYYY-MM-DD>`, for example `## [2.3.0] - 2026-03-02`.",
+   "Bullets are fragments: no bullet may end with a period."
+  ],
+  "B": [
+   "The first line must be the title `# Release <version> (<Month D, YYYY>)`, for example `# Release 2.3.0 (March 2, 2026)`.",
+   "Open with a one-sentence summary on a line that starts with `Highlights: `.",
+   "Credit every contributor by @handle.",
+   "Mark incompatible changes with `BREAKING:` exactly.",
+   "Tell users what to do on a line that starts with `Upgrade: `.",
+   "Put the name of each new feature in bold with `**`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require incompatible changes to be marked with 'BREAKING:' exactly."
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Skill A requires issue references in parentheses like (#<number>), while Skill B requires contributor credits with @handle. These are different elements and must be placed in different contexts; combining them without clear separation or conflict would require a specific arrangement where both are i"
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "Skill A requires the version heading to be `## [<version>] - <YYYY-MM-DD>`, while Skill B requires `# Release <version> (<Month D, YYYY>)`. These are fundamentally different formats and cannot coexist in the same document without violating one rule or the other."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Skill A requires bullet fragments without periods, while Skill B requires new features to be in bold with **. These are formatting constraints that must be satisfied simultaneously, but only if the feature descriptions are properly formatted and placed within the bullet or feature list, requiring a "
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   2,
+   2
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Reference issues in parentheses as `(#<number>)` and credit every contributor by @handle.",
+  "Each bullet must be a fragment and never end with a period, and every new feature name must be in bold with `**`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

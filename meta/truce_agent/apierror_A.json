@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "A",
+  "rules": {
+    "A": [
+      "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+      "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+      "Include a human-readable sentence in the field `message`.",
+      "Include a boolean field `retryable`.",
+      "Include the HTTP status as an integer in the field `status`.",
+      "Include a field `docs` with an `https://` link to the error documentation."
+    ],
+    "B": [
+      "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+      "Include a field `severity` with the value `low`, `medium` or `high`.",
+      "Include a field `details` that holds a non-empty list of specifics.",
+      "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+      "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+      "Explain the error for humans in the `message` field."
+    ]
+  },
+  "relations": [
+    {
+      "a": 1,
+      "b": 4,
+      "relation": "contradictory",
+      "reason": "The code field cannot be named `error_code` with no camelCase keys and also `errorCode` with no snake_case keys in one object."
+    },
+    {
+      "a": 2,
+      "b": 5,
+      "relation": "duplicate",
+      "reason": "Both ask for a human-readable explanation of the error in the `message` field."
+    },
+    {
+      "a": 0,
+      "b": 3,
+      "relation": "entangled",
+      "reason": "The `Hint:` text can exist together with a reply that is exactly one JSON object only if the hint is placed inside the object as a field value, not after the object as in the example of B."
+    }
+  ],
+  "reconciled": [
+    "Add a developer hint that starts with `Hint:` and says how to fix the request, and put it inside the JSON object as the string value of a field `hint`, for example `\"hint\": \"Hint: wait 60 seconds before retrying\"`. The reply must be exactly one JSON object and nothing else, so that it parses as JSON, so never write the hint or any other text before or after the object."
+  ]
+}

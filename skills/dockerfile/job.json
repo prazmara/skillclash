@@ -1,0 +1,6 @@
+{
+ "artifact": "Dockerfile",
+ "example_request": "Write the Dockerfile for a Python 3.12 FastAPI service that listens on port 8000, installs dependencies from requirements.txt and starts with `uvicorn app.main:app`. Owning team: platform-api.",
+ "A": "dockerfile-hardened",
+ "B": "dockerfile-catalog"
+}

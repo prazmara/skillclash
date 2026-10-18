@@ -1,0 +1,53 @@
+---
+name: support-formal+support-friendly
+description: Merged skill that replaces `support-formal` and `support-friendly`. Use for any support reply.
+---
+
+# Merged skill: support-formal + support-friendly
+
+This skill replaces `support-formal` and `support-friendly`. It keeps every rule of both skills that can hold at the same time. Follow every rule below.
+
+## Rules kept unchanged from `support-formal`
+
+- Open with `Dear <full name>,` on the first line.
+- Cite the case as `Ticket #<number>`.
+- Do not use contractions such as `don't`, `we'll` or `you're`.
+- Give the next steps as a numbered list with at least two steps (`1.`, `2.`).
+- Sign with the agent's name followed by a line that ends with `Support Team`.
+
+## Rules kept unchanged from `support-friendly`
+
+- Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.
+- Invite a response with the exact phrase `reply to this email`.
+- Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.
+
+## Reconciled rules (each one satisfies a rule of both skills at once)
+
+- To satisfy both rules, include the relevant help-center article URL in the body text, and place any additional links on a final line that starts with "Links:".
+
+## Example
+
+Request: Write the support reply to Maria Lopez (ticket 48213): her invoice export fails with a timeout. Engineering deployed a fix today; she should clear her browser cache and retry. Help article: https://help.example.com/invoice-export. Agent: Jordan.
+
+Output:
+
+```
+Dear Maria Lopez,
+
+Good news: our engineering team has deployed a fix for the invoice export issue today, and you should now be able to export your invoices successfully.
+
+To resolve the timeout issue, please try the following steps:
+
+1. Clear your browser cache to ensure you have the latest version of the page.
+2. Retry the invoice export process.
+
+If you continue to experience issues, please reply to this email and we will assist you further within 2 business days.
+
+Ticket #48213.
+
+Links: https://help.example.com/invoice-export
+
+Sincerely,
+Jordan
+Support Team
+```

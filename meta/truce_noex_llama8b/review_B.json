@@ -1,0 +1,94 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "meta-llama/Llama-3.1-8B-Instruct",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "The first line must start with a severity tag in square brackets, one of `[blocker]`, `[major]`, `[minor]`, `[nit]`, followed by a short title.",
+   "Propose the change on a line that starts with `Proposed fix: `.",
+   "Give the place in the code on its own line as `Location: <file>:<line>`.",
+   "Give the outcome on a line `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "State every finding as a statement. A question mark may appear only on a final line that starts with `Open question:`.",
+   "Say how sure you are on a line `Confidence: high`, `Confidence: medium` or `Confidence: low`."
+  ],
+  "B": [
+   "Ask the author at least one clarifying question, written as a full sentence that ends with a question mark.",
+   "Classify the comment on a line `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability` or `Category: testing`.",
+   "The first line must be plain text of the form `Review: <title>`, with no tag or bracket before it.",
+   "Name one good thing about the diff on a line that starts with `What works well: `.",
+   "Close your assessment with a separate line that reads `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "Estimate the work needed on a line `Effort: S`, `Effort: M` or `Effort: L`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "contradictory",
+   "reason": "Skill A requires a severity tag in square brackets, while Skill B requires plain text without any tags or brackets."
+  },
+  {
+   "a": 1,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Skill A requires the proposed fix to be on a line that starts with 'Proposed fix: ', while Skill B requires a good thing about the diff to be on a line that starts with 'What works well: '. These lines cannot be the same."
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Skill A requires the location to be on its own line, while Skill B requires at least one clarifying question. These cannot be on the same line."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both skills require a verdict, but the format is different."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Skill A requires every finding to be a statement, while Skill B requires a category. These cannot be on the same line."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Skill A requires confidence to be on its own line, while Skill B requires effort to be on its own line. These cannot be on the same line."
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   3,
+   1
+  ],
+  [
+   0,
+   2
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Name one good thing about the diff on a line that starts with `What works well: ` and propose the change on a line that starts with `Proposed fix: `, by placing the proposed change immediately after the line that starts with `What works well: ` and starting the proposed change on a new line.",
+  "Write the author's response to the clarifying question on the same line as the question, followed by `Location: <file>:<line>` on a new line.",
+  "Classify the comment on a line as one of the following categories: `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability`, or `Category: testing`. State every finding as a statement, and if there are multiple findings, end with a line that starts with `Open question:`.",
+  "Estimate the work needed on a line as `Effort: S` if the task is straightforward and requires minimal effort, `Effort: M` if the task is moderately complex and requires some effort, or `Effort: L` if the task is complex and requires significant effort. Express your confidence in the assessment as `Confidence: high` if you are very sure, `Confidence: medium` if you are somewhat sure, or `Confidence: low` if you are not very sure."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

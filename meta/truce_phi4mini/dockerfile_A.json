@@ -1,0 +1,32 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "syntax=docker/dockerfile:1",
+   "STOPSIGNAL SIGTERM",
+   "HEALTHCHECK",
+   "USER 10001",
+   "ARG APP_VERSION=dev",
+   "WORKDIR /opt/service"
+  ],
+  "B": [
+   "Make the container stop cleanly by adding the instruction `STOPSIGNAL SIGTERM`",
+   "Use `WORKDIR /srv/app` as the working directory. The file must not set any other working directory.",
+   "Explain each `RUN` instruction with a comment line directly above it that starts with `# step: `.",
+   "Describe the image with a `LABEL` instruction that sets `org.opencontainers.image.description`.",
+   "Put a header comment `# Owner: <team>` at the top of the file.",
+   "Fix the container time zone with `ENV TZ=UTC`"
+  ]
+ },
+ "relations": [],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [],
+ "reconciled": [],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

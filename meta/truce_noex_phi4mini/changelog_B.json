@@ -1,0 +1,57 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Group changes under at least two of the headings `### Added`, `### Changed`, `### Fixed`",
+   "Flag incompatible changes with the exact marker `BREAKING:`",
+   "Reference issues in parentheses as `(#<number>)`",
+   "Bullets describe the change only. No bullet may contain an @handle.",
+   "The first line must be the version heading `## [<version>] - <YYYY-MM-DD>`",
+   "Bullets are fragments: no bullet may end with a period."
+  ],
+  "B": [
+   "Release 2.3.0 (March 2, 2026)",
+   "Highlights: reports can now be exported to CSV.",
+   "**CSV export** for reports, thanks to @dana.",
+   "Fixed a timezone bug in scheduled reports, thanks to @lee.",
+   "BREAKING: the /v1/export endpoint was removed.",
+   "Upgrade: replace calls to /v1/export with /v2/export before upgrading."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules require referencing issues, but B4 does not specify the format (parentheses) required by A3."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require a specific format for the first line, but B6 does not specify the exact format (version heading) required by A6."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   3,
+   2
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "\"Include a fixed timezone bug announcement in the release notes, mentioning @lee, and reference any related issues in parentheses as `(#<number>)`.\"",
+  "Replace calls to /v1/export with /v2/export and ensure that no bullet point in the changelog ends with a period."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

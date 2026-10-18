@@ -1,0 +1,85 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`.",
+   "Nothing may come before the type.",
+   "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+   "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+   "The very last line of the message must be the sign-off `Signed-off-by: <author name>`.",
+   "Explain the motivation in a body line that starts with `Why: `.",
+   "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks."
+  ],
+  "B": [
+   "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `.",
+   "Nothing may come before the bracket.",
+   "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+   "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+   "Say how to revert in a line that starts with `Rollback: `.",
+   "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`.",
+   "Name the affected component in a line `Component: <name>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules state that nothing may come before the type or the ticket ID, respectively. To satisfy both rules, the subject line should start with a square bracket ([PAY-311]) followed by a colon and a lowercase type prefix (feat:, fix:, etc.)."
+  },
+  {
+   "a": 2,
+   "b": 2,
+   "relation": "duplicate",
+   "reason": "Both rules ask for recording the test status as 'Tested: yes' or 'Tested: no'."
+  },
+  {
+   "a": 3,
+   "b": 2,
+   "relation": "duplicate",
+   "reason": "Both rules ask for recording the test status as 'Tested: yes' or 'Tested: no'."
+  },
+  {
+   "a": 5,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules ask for describing the change, but in different formats. To satisfy both rules, the body can be a bulleted list with at least two bullets that start with `- ` followed by a line that starts with `Why: `."
+  },
+  {
+   "a": 6,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules ask for adding a line that contains the ticket ID. To satisfy both rules, the trailer block should contain the line `Refs: <TICKET-ID>` followed by the line `BREAKING CHANGE: none`."
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   1,
+   1
+  ],
+  [
+   3,
+   5
+  ],
+  [
+   5,
+   6
+  ]
+ ],
+ "reconciled": [
+  "Write the output in the following format: `[type]: <commit message>`, ensuring that the square bracket and the type come first, followed by a colon and a space, and the commit message starts on the next line, indented.",
+  "Write the commit message with the following structure: ``` - Description of change 1 - Description of change 2 Why: Motivation for the changes ``` Ensure that each change is preceded by `- ` and the motivation starts with `Why: `.",
+  "Write the commit message with the following structure: 1. Start with a succinct summary in the imperative mood. 2. Add a blank line. 3. If there are breaking changes, begin a new line with `BREAKING CHANGE:` followed by `none` if no breaking changes occurred. 4. Add another blank line. 5. End with a line starting with `Refs:` followed by a space and the ticket ID."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

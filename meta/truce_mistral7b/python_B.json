@@ -1,0 +1,88 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+   "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+   "Annotate every parameter and the return value with type hints.",
+   "Reject invalid input by raising `ValueError`.",
+   "Include at least one usage example with a `>>>` prompt in the docstring.",
+   "Reply with one Python code block and nothing outside it."
+  ],
+  "B": [
+   "Start the module with `from __future__ import annotations`.",
+   "Show a doctest-style example that uses `>>>`.",
+   "State the time complexity as `Complexity: O(...)`.",
+   "Export the function by defining `__all__`.",
+   "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+   "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules concern function naming conventions, but they are different: A1 specifies a list of prefixes for function names, while B6 does not specify any prefixes. To satisfy both rules, the function name should start with a prefix from A1 and follow the format of B6."
+  },
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules concern docstring format, but they are different: A2 specifies Google style with `Args:` and `Returns:` sections, while B6 specifies NumPy style with an underlined `Parameters` header. To satisfy both rules, the docstring should be in NumPy style but include `Args:` and `Returns:` section"
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "duplicate",
+   "reason": "Both rules concern type hints."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules concern function exporting, but they are different: A4 does not explicitly mention function exporting, but it implies that the function should be defined in a module that can be loaded as a skill. B4 explicitly states that the function should be exported by defining `__all__`. To satisfy "
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules concern usage examples, but they are different: A5 specifies that the example should be included in the docstring, while B2 specifies that the example should be shown in a doctest-style format. To satisfy both rules, the usage example should be included in the docstring and formatted in a"
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules concern code examples, but they are different: A6 specifies that the output should be a single Python code block, while B2 specifies that the example should be shown in a doctest-style format. To satisfy both rules, the example should be formatted in a doctest-style format but enclosed wi"
+  }
+ ],
+ "dropped_from_secondary": [
+  2
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   0
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   1,
+   4
+  ]
+ ],
+ "reconciled": [
+  "Write the function name in the Google style format with a verb prefix, followed by an underscore, and then the action or purpose of the function. Underline the `Parameters` section in the docstring with dashes, and avoid using `Args:`. For example: ```python def get_array_sum(arr: np.ndarray) -> float: \"\"\" Computes the sum of the elements in the given array. Parameters ---------- arr : np.ndarray The input array. Returns ------- float The sum of the elements in the input array. \"\"\" ... ```",
+  "Write functions with the following structure: ```python def function_name(input): \"\"\"Function description.\"\"\" if not isinstance(input, valid_input_type): raise ValueError(\"Invalid input: {}\".format(input)) # Function body __all__ = ['function_name'] ```",
+  "Write a doctest-style example using `>>>` within the docstring, adhering to the Google Python Style Guide, by including at least one usage example with a `>>>` prompt in the docstring, as follows: ``` \"\"\" Example using numpy-style: >>> import numpy as np >>> array = np.array([1, 2, 3]) >>> print(array) [1 2 3] \"\"\" ```"
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

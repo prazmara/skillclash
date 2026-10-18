@@ -1,0 +1,88 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include a human-readable sentence in the field `message`.",
+   "Include a boolean field `retryable`.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a field `docs` with an `https://` link to the error documentation."
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Explain the error for humans in the `message` field."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both require a JSON object, but A1 specifies a single JSON object while B1 specifies a timestamp field within the JSON object."
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "A2 requires a snake_case key 'error_code', while B5 requires a camelCase key 'errorCode'."
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both require a human-readable message, but A3 specifies a sentence while B6 specifies an explanation."
+  },
+  {
+   "a": 3,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both require a boolean field, but A4 specifies 'retryable' while B2 specifies 'severity'."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both require an integer HTTP status, but A5 specifies 'status' while B5 specifies 'errorCode'."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both require a link to documentation, but A6 specifies 'docs' while B6 specifies an explanation."
+  }
+ ],
+ "dropped_from_secondary": [
+  4
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   2,
+   5
+  ],
+  [
+   3,
+   1
+  ]
+ ],
+ "reconciled": [
+  "To satisfy both rules, create a JSON object with a `timestamp` field set to a UTC time in the form `2026-03-02T10:15:00Z`, and ensure the JSON object is valid and contains no additional fields or text.",
+  "\"Include a human-readable sentence in the field `message` that both explains the error for humans and can be used for internal error tracking.\"",
+  "To satisfy both rules, include a boolean field `retryable` and a field `severity` with a value of `low`, `medium`, or `high` in the output. Ensure that the `retryable` field is set to `true` if the `severity` is `low` or `medium`, and set to `false` if the `severity` is `high`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "fallback"
+ }
+}

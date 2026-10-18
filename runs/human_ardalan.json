@@ -1,0 +1,34 @@
+{
+ "rater": "ardalan",
+ "jobs": 16,
+ "planted_pairs": 48,
+ "rated_pairs": 44,
+ "planted_pairs_found": 44,
+ "same_label": 40,
+ "extra_pairs": 0,
+ "by_relation": {
+  "con": {
+   "planted": 16,
+   "found": 16,
+   "same_label": 16
+  },
+  "sh": {
+   "planted": 16,
+   "found": 16,
+   "same_label": 16
+  },
+  "ent": {
+   "planted": 16,
+   "found": 12,
+   "same_label": 8
+  }
+ },
+ "confusion": {
+  "con -> con": 16,
+  "ent -> con": 4,
+  "ent -> ent": 8,
+  "ent -> not listed": 4,
+  "sh -> sh": 16
+ },
+ "extra": []
+}

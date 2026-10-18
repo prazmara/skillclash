@@ -1,0 +1,35 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Dear Maria Lopez,",
+   "Ticket #48213.",
+   "Please follow these steps:",
+   "1. Clear your browser cache.",
+   "2. Run the invoice export again.",
+   "Kind regards,",
+   "Acme Support Team"
+  ],
+  "B": [
+   "Good news:",
+   "Quick update:",
+   "reply to this email",
+   "within <n> hours",
+   "within <n> business days",
+   "https://help.example.com/...",
+   "Hi <first name>!",
+   "Support Team"
+  ]
+ },
+ "relations": [],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [],
+ "reconciled": [],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

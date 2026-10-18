@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "B",
+  "rules": {
+    "A": [
+      "Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.",
+      "List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.",
+      "The first line must be `Standup <YYYY-MM-DD> | <full name>`, for example `Standup 2026-03-10 | Nora Lindqvist`.",
+      "Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you.",
+      "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.",
+      "The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`."
+    ],
+    "B": [
+      "The first line must be `Daily update from <full name>`, for example `Daily update from Nora Lindqvist`.",
+      "Summarize the workload on a line `Items: <n> done, <n> planned`.",
+      "Give the expected finish date of the current task on a line `ETA: <YYYY-MM-DD>`.",
+      "Put blockers on their own line beginning with `Blocked: `. If there are none, the line is `Blocked: none`.",
+      "Collect all ticket IDs on one line `Tickets: <ID>, <ID>`, separated by a comma and a space.",
+      "Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 2,
+      "b": 0,
+      "relation": "contradictory",
+      "reason": "The first line cannot be both `Standup <YYYY-MM-DD> | <full name>` and `Daily update from <full name>`."
+    },
+    {
+      "a": 3,
+      "b": 3,
+      "relation": "duplicate",
+      "reason": "Both require blockers on a line that starts with `Blocked: `, written as `Blocked: none` when there are none."
+    },
+    {
+      "a": 5,
+      "b": 5,
+      "relation": "entangled",
+      "reason": "The update can finish with the `Need help from:` line while the very last line is the hashtag line only if `Need help from:` is the last line of content, directly above the hashtag line."
+    }
+  ],
+  "reconciled": [
+    "Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`, placed directly above the hashtag line as the last line of content. The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`, and nothing may come after it."
+  ]
+}

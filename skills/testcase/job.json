@@ -1,0 +1,6 @@
+{
+ "artifact": "test case specification",
+ "example_request": "Write the test case specification: verify that a user is locked out after five failed login attempts. Test ID TC-0412. Feature: login. Priority: P1.",
+ "A": "testcase-compact",
+ "B": "testcase-traceable"
+}

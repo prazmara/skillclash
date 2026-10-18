@@ -1,0 +1,6 @@
+{
+ "artifact": "changelog entry",
+ "example_request": "Write the changelog entry for version 2.3.0, released on 2026-03-02. Added CSV export for reports (issue #412, by @dana). Fixed a timezone bug in scheduled reports (issue #398, by @lee). Breaking: the /v1/export endpoint was removed.",
+ "A": "keep-a-changelog",
+ "B": "release-announcement"
+}

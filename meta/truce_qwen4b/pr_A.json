@@ -1,0 +1,72 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Under Testing, list at least two checklist items written as `- [ ]` or `- [x]`.",
+   "Include a section with the exact heading `## Testing`.",
+   "Give the tracker ticket on its own line as `Ticket: <ID>`.",
+   "Include a section with the exact heading `## Summary`.",
+   "The first line must be a level-1 Markdown heading with the title, starting with `# `.",
+   "Keep the whole description to at most 120 words."
+  ],
+  "B": [
+   "List labels on a line `Labels: ` followed by lowercase labels separated by a comma and a space.",
+   "Put the ticket on a separate line in the form `Ticket: <ID>`.",
+   "Name the reviewers on a line `Reviewers: @handle`.",
+   "The first line must be plain text of the form `PR: <title>`. Do not use a Markdown heading for the title.",
+   "Include a section with the exact heading `## Rollback`.",
+   "Include a `## Risks` section with at least two bullet points that start with `- `."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both rules require the ticket to be listed on a separate line in the format 'Ticket: <ID>'."
+  },
+  {
+   "a": 3,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Both rules involve a section or line about reviewers, but A4 is a summary section while B3 specifies a reviewer line. The placement of reviewer information must be carefully arranged to satisfy both without conflicting with the structure of the summary or the required headings."
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A2 requires a '## Testing' section, while B5 requires a '## Rollback' section. Both are required headings, but their placement in the document must be coordinated to avoid structural conflicts or missing sections in the final output."
+  },
+  {
+   "a": 4,
+   "b": 3,
+   "relation": "contradictory",
+   "reason": "A5 requires a level-1 Markdown heading with the title, while B4 requires plain text 'PR: <title>' as the first line. These conflict in formatting and structure."
+  }
+ ],
+ "dropped_from_secondary": [
+  1,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   3,
+   2
+  ],
+  [
+   1,
+   4
+  ]
+ ],
+ "reconciled": [
+  "Include a section with the exact heading `## Summary`, and name the reviewers on a line `Reviewers: @handle`.",
+  "Include a section with the exact heading `## Testing` and another section with the exact heading `## Rollback`."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

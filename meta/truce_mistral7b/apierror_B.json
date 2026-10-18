@@ -1,0 +1,45 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else",
+   "Name the machine-readable code field `error_code` (snake_case)",
+   "Include a human-readable sentence in the field `message`",
+   "Include a boolean field `retryable`",
+   "Include the HTTP status as an integer in the field `status`",
+   "Include a field `docs` with an `https://` link to the error documentation"
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`",
+   "Include a field `severity` with the value `low`, `medium` or `high`",
+   "Include a field `details` that holds a non-empty list of specifics",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request",
+   "Explain the error for humans in the `message` field"
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both rules require a human-readable sentence in the `message` field, but the output order matters: Skill A places it at the top level, while Skill B places it as a property of another object."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   4,
+   2
+  ]
+ ],
+ "reconciled": [
+  "Write an output that follows this format: `\"The provided request encountered an internal error. (Error Code: [API_ERROR_CODE]) Please contact our support team for assistance. (Message: [HUMAN_READABLE_SENTENCE])\"`, where `[API_ERROR_CODE]` is a unique error code for the internal error, and `[HUMAN_READABLE_SENTENCE]` is a human-readable explanation of the error. This format ensures that both rules from `api-errors-public` and `api-errors-internal` are satisfied."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

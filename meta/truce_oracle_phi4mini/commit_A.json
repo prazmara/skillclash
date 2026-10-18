@@ -1,0 +1,55 @@
+{
+ "method": "structured",
+ "mode": "oracle",
+ "compiler": "microsoft/Phi-4-mini-instruct",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.",
+   "Explain the motivation in a body line that starts with `Why: `.",
+   "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+   "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.",
+   "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+   "The very last line of the message must be the sign-off `Signed-off-by: <author name>`."
+  ],
+  "B": [
+   "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `. Nothing may come before the bracket.",
+   "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+   "Name the affected component in a line `Component: <name>`.",
+   "Say how to revert in a line that starts with `Rollback: `.",
+   "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+   "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "contradictory"
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "duplicate"
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   5
+  ]
+ ],
+ "reconciled": [
+  "To satisfy both rules, end your commit message with the sign-off `Signed-off-by: <author name>` followed by a trailer block containing `Refs: <TICKET-ID>`. The combined rule should look like this: ``` Signed-off-by: <author name> --- Refs: <TICKET-ID> ``` Ensure that the sign-off is the very last line before the trailer block."
+ ],
+ "extract_path": null
+}

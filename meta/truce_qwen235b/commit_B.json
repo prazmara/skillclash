@@ -1,0 +1,60 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Add a line that starts with `BREAKING CHANGE: ` and says `none` when nothing breaks.",
+   "Add a body line `Risk: low`, `Risk: medium` or `Risk: high`.",
+   "Start the subject line with a lowercase type prefix and a colon, one of `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`. Nothing may come before the type.",
+   "State whether the change was tested with a line `Tested: yes` or `Tested: no`.",
+   "The very last line of the message must be the sign-off `Signed-off-by: <author name>`.",
+   "Explain the motivation in a body line that starts with `Why: `."
+  ],
+  "B": [
+   "Start the subject line with the ticket ID in square brackets, for example `[PAY-311] `. Nothing may come before the bracket.",
+   "Record test status as `Tested: yes` or `Tested: no` on its own line.",
+   "Describe the change in the body as a bulleted list with at least two bullets that start with `- `.",
+   "Say how to revert in a line that starts with `Rollback: `.",
+   "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "A3 requires the subject line to start with a lowercase type prefix like 'feat:', while B1 requires it to start with a ticket ID in square brackets like '[PAY-311]'. No single subject line can start with both."
+  },
+  {
+   "a": 3,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both A4 and B2 require recording the test status with a line 'Tested: yes' or 'Tested: no'."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A5 requires the last line to be a 'Signed-off-by' line, while B5 requires the last lines to include a trailer block with 'Refs: <TICKET-ID>'. To satisfy both, the 'Signed-off-by' line must appear before the 'Refs' line in the trailer block, making the order critical."
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   4
+  ]
+ ],
+ "reconciled": [
+  "Finish the message with a trailer block that contains the line `Refs: <TICKET-ID>`, followed immediately by the sign-off `Signed-off-by: <author name>` on the very last line. Both the trailer and sign-off must appear in that order, with no intervening content."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

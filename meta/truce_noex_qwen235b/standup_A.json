@@ -1,0 +1,67 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.",
+   "List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.",
+   "The first line must be `Standup <YYYY-MM-DD> | <full name>`",
+   "Report blockers on a line that starts with `Blocked: `",
+   "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.",
+   "The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase"
+  ],
+  "B": [
+   "The first line must be `Daily update from <full name>`, for example `Daily update from Nora Lindqvist`.",
+   "Summarize the workload on a line `Items: <n> done, <n> planned`.",
+   "Give the expected finish date of the current task on a line `ETA: <YYYY-MM-DD>`.",
+   "Put blockers on their own line beginning with `Blocked: `. If there are none, the line is `Blocked: none`.",
+   "Collect all ticket IDs on one line `Tickets: <ID>, <ID>`, separated by a comma and a space.",
+   "Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "Both rules specify the first line of the output, but require different formats: 'Standup <YYYY-MM-DD> | <full name>' vs 'Daily update from <full name>'. These cannot both appear on the first line without conflict."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules require reporting blockers on a line starting with 'Blocked: '. The format and purpose are identical, making them redundant."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Rule A5 requires listing finished work as bullet points under 'Done:', while B2 requires a summary count of done items. To satisfy both, the count in B2 must match the number of bullets in A5, requiring coordination between structured summary and detailed list."
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Rule A2 requires listing planned work as bullets under 'Next:', while B2 requires a count of planned items in 'Items: <n> done, <n> planned'. The number of bullets in A2 must match the count in B2, requiring alignment between list and summary."
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  3
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   1
+  ]
+ ],
+ "reconciled": [
+  "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`. Then, on the next line, summarize the workload with `Items: <n> done, <n> planned`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "qwen/qwen3-235b-a22b-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+   "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+   "Annotate every parameter and the return value with type hints.",
+   "Reject invalid input by raising `ValueError`.",
+   "Include at least one usage example with a `>>>` prompt in the docstring.",
+   "Reply with one Python code block and nothing outside it."
+  ],
+  "B": [
+   "Start the module with `from __future__ import annotations`.",
+   "Show a doctest-style example that uses `>>>`.",
+   "State the time complexity as `Complexity: O(...)`.",
+   "Export the function by defining `__all__`.",
+   "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+   "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "Skill A requires Google style docstrings with 'Args:' and 'Returns:' sections without underlined headers, while Skill B requires NumPy style docstrings with an underlined 'Parameters' header and forbids 'Args:'. These two formats are mutually exclusive in structure and syntax."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "duplicate",
+   "reason": "Both rules require a doctest-style example using '>>>'. They ask for the same thing, just worded differently."
+  },
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules affect the module's top-level structure: A1 governs function naming, B1 requires a future import at the top. They can coexist, but the import must come before any function definition, so ordering matters. Following A1 without considering B1 might lead to placing the function first, breaki"
+  },
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "B1 requires 'from __future__ import annotations' which affects how type hints (required by A3) are handled. The import must precede any type annotations, so satisfying A3's type hints depends on B1's import being present and correctly ordered."
+  },
+  {
+   "a": 5,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "A6 requires only a code block with no extra text, while B4 requires defining __all__. Both can be satisfied, but __all__ must be included inside the code block and not treated as extra output, so placement within the block must be correct to not violate A6's constraint on output format."
+  }
+ ],
+ "dropped_from_secondary": [
+  1,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   3,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Start the module with `from __future__ import annotations`. Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+  "__all__ = [] # Export the function by defining `__all__` as per skill `python-numpy-style`; reply with one Python code block and nothing outside it as per skill `python-google-style`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

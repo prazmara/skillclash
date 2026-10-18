@@ -1,0 +1,86 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "/content/hf/hub/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Say what the story does not cover on a line that starts with `Out of scope: `.",
+   "The line directly below the title must be `Epic: <epic name>`.",
+   "The first line must be `Story <ticket ID>: <title>`, for example `Story SHOP-88: Save cart for later`.",
+   "Write the acceptance criteria as a checklist of at least two unchecked boxes, each of the form `- [ ] <criterion>`.",
+   "Rate the business value on a line `Value: high`, `Value: medium` or `Value: low`.",
+   "List blocking tickets on a line that starts with `Depends on: `, and write `Depends on: none` when there are none."
+  ],
+  "B": [
+   "Name who the story is for on a line `Persona: <persona>`",
+   "Put the estimate at the top, right under the title, as `Story points: <n>`",
+   "Say how success will be measured on a line that starts with `Metric: `",
+   "Add one test scenario as three lines that start with `Given `, `When ` and `Then `",
+   "List at least two acceptance criteria as open checkboxes, one per line, written `- [ ] ...`",
+   "The first line must be a level-1 Markdown heading that holds only the title"
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Both rules require the first lines, but B1 requires a heading for the title, while A1 requires a specific format for the title."
+  },
+  {
+   "a": 1,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require the first line, but A2 requires a specific format for the line, while B6 requires no line if there are no blocking tickets."
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require the first line, but A3 requires a specific format for the line, while B6 requires no line if there are no blocking tickets."
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "Both rules require acceptance criteria, but they have different formats."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require the first line, but A5 requires a specific format for the line, while B6 requires no line if there are no blocking tickets."
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require the first line, but A6 requires a specific format for the line, while B6 requires no line if there are no blocking tickets."
+  }
+ ],
+ "dropped_from_secondary": [],
+ "entangled_pairs": [
+  [
+   0,
+   0
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   4,
+   3
+  ]
+ ],
+ "reconciled": [
+  "Write: `Persona: <persona>\\nOut of scope: <list of topics not covered in the story>`",
+  "Write the output in the following format: ``` # Title Epic: <epic name> ``` Ensure that the title is a level-1 Markdown heading and the epic name follows directly below it, on the next line.",
+  "Write the acceptance criteria as a checklist of at least two unchecked boxes, each of the form `- [ ]`, where the first criterion is for the `story-sprint-ready` skill and the second criterion is for the `story-portfolio` skill. Each criterion should be written on a separate line, as follows: ``` - [ ] <criterion for story-sprint-ready> - [ ] <criterion for story-portfolio> ```"
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

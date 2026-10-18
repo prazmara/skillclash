@@ -1,0 +1,89 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "meta-llama/Llama-3.1-8B-Instruct",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include a human-readable sentence in the field `message`.",
+   "Include a boolean field `retryable`.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a field `docs` with an `https://` link to the error documentation."
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Explain the error for humans in the `message` field."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Rule A1 requires a single JSON object, while rule B3 requires a list of specifics. To satisfy both rules, the list of specifics must be a single JSON object."
+  },
+  {
+   "a": 0,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "Rule A1 requires a field named 'error_code' in snake_case, while rule B5 requires a field named 'errorCode' in camelCase."
+  },
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "Rule A2 requires a field named 'error_code' in snake_case, while rule B5 requires a field named 'errorCode' in camelCase."
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Rule A3 requires a human-readable sentence in the'message' field, while rule B6 requires an explanation of the error for humans in the'message' field. To satisfy both rules, the'message' field must contain both a human-readable sentence and an explanation of the error."
+  },
+  {
+   "a": 4,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Rule A5 requires an HTTP status as an integer in the'status' field, while rule B1 requires a UTC time in the 'timestamp' field. To satisfy both rules, the output must be arranged in a specific way, with the'status' field before the 'timestamp' field."
+  },
+  {
+   "a": 5,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "Rule A6 requires a field 'docs' with an 'https://' link to the error documentation, while rule B3 requires a field 'details' that holds a non-empty list of specifics. To satisfy both rules, the 'docs' field must be placed inside the 'details' field or the 'details' field must be placed inside the 'd"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  1
+ ],
+ "entangled_pairs": [
+  [
+   5,
+   2
+  ],
+  [
+   0,
+   4
+  ],
+  [
+   2,
+   5
+  ]
+ ],
+ "reconciled": [
+  "The combined rule is: \"Include a human-readable sentence in the field `message` and ensure it explains the error for humans.\"",
+  "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z` and a field `status` with an integer value, where the integer value is the HTTP status code.",
+  "Include a field `details` that holds a non-empty list of specifics, and a field `docs` with an `https://` link to the error documentation. Ensure that `details` is not empty and `docs` is a valid URL."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

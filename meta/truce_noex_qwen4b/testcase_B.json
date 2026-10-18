@@ -1,0 +1,77 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Write the steps as a numbered list (`1.`, `2.`, ...) with at most five steps.",
+   "The first line must be the test ID and the title as `<ID>: <title>`, for example `TC-0412: Lockout after five failed logins`.",
+   "State the pass criterion on a line that starts with `Expected result: `.",
+   "Tag the kind of test on a line `Type: functional`, `Type: regression`, `Type: smoke` or `Type: negative`.",
+   "Give the priority on a line `Priority: P1`, `Priority: P2` or `Priority: P3`.",
+   "Describe the starting state on a line that begins with `Preconditions: `."
+  ],
+  "B": [
+   "Say how to restore the system afterwards on a line that starts with `Cleanup: `.",
+   "List the data the tester needs on a line that starts with `Test data: `.",
+   "Link the feature under test on a line `Covers: <feature>`.",
+   "Write the outcome that counts as a pass on its own line beginning with `Expected result: `.",
+   "The first line must be `Test case: <title>`. The test ID does not belong in the first line."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 3,
+   "relation": "duplicate",
+   "reason": "Both rules specify the expected result as a pass criterion, and they are phrased identically in content and intent, just with different labels (A3 uses 'Expected result:' in the context of a test case, B4 uses 'Expected result:' for the outcome). This indicates they are asking for the same informati"
+  },
+  {
+   "a": 3,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "A4 specifies the test type (functional, regression, etc.) as a tag, while B3 links to a feature under test. These are different attributes and not directly conflicting, but they must coexist in the output. However, the placement and structure of the output (with A requiring a specific format startin"
+  },
+  {
+   "a": 4,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "A5 specifies priority (P1/P2/P3), while B3 links to a feature. These are distinct attributes, but both must be included in the output. The arrangement of the output (with A requiring a fixed structure) means that B3 must be placed in a way that doesn't interfere with the required order or format of "
+  },
+  {
+   "a": 5,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A6 specifies preconditions, while B2 specifies test data. These are different elements, but both must be included in the test case. The output structure of A requires a specific order and format, so B2's test data must be inserted in a way that doesn't break the flow or formatting of A. Thus, they a"
+  },
+  {
+   "a": 0,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "A1 requires a numbered list of at most five steps, while B1 requires a cleanup instruction. These are different types of content: one is a step-by-step procedure, the other is a post-test action. However, A1's step list is meant to be the core test steps, and B1's cleanup is not part of the test ste"
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  2
+ ],
+ "entangled_pairs": [
+  [
+   2,
+   3
+  ],
+  [
+   1,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Link the feature under test on a line `Covers: <feature>`. Tag the kind of test on a line `Type: functional`, `Type: regression`, `Type: smoke`, or `Type: negative`.",
+  "Test data: [list the data the tester needs] Preconditions: [describe the starting state]"
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

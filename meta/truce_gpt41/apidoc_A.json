@@ -1,0 +1,91 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "openai/gpt-4.1",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "State the required permission on a line `Auth: <scope>`.",
+   "Say whether repeating the call is safe on a line `Idempotent: yes` or `Idempotent: no`.",
+   "Show one example call on a line that starts with `$ curl `.",
+   "The first line must be a level-3 Markdown heading with the method and path in backticks, for example ### `GET /v1/invoices/{id}`.",
+   "Keep the whole entry to at most 90 words.",
+   "State the API version that introduced the endpoint on a line `Since: v<version>`, for example `Since: v1.4`."
+  ],
+  "B": [
+   "The first line must be the method and path alone in plain text with no Markdown, for example `GET /v1/invoices/{id}`.",
+   "Mark the maturity on a line `Stability: stable`, `Stability: beta` or `Stability: deprecated`.",
+   "Name the media type of the response on a line such as `Content-Type: application/json`.",
+   "List the parameters in a Markdown table whose header row is `| Name | In | Type | Description |`.",
+   "Include an example request written as a shell line beginning with `$ curl `.",
+   "Document the response statuses under a line `Responses:` with at least three bullets of the form `- <status code>: <meaning>`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 3,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "A4 requires the first line to be a level-3 Markdown heading with method and path in backticks, while B1 requires the first line to be plain text with method and path and no Markdown. Both cannot be satisfied simultaneously for the first line."
+  },
+  {
+   "a": 2,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both A3 and B5 require an example curl call to be shown."
+  },
+  {
+   "a": 4,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "A5 limits the entire entry to 90 words, while B4 requires a Markdown table listing parameters, which could easily exceed the word limit. The table must be concise to fit within the constraint."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "A5's 90-word limit may conflict with B6's requirement to document at least three response statuses, so the response section must be brief to fit within the word count."
+  },
+  {
+   "a": 4,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "A5's word limit may restrict the amount of detail or number of parameters that can be listed in the table required by B4."
+  },
+  {
+   "a": 4,
+   "b": 4,
+   "relation": "entangled",
+   "reason": "A5's word limit may restrict the length or detail of the example curl call required by B5."
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "A5's word limit may restrict the inclusion of the stability line required by B2 along with all other required content."
+  },
+  {
+   "a": 4,
+   "b": 2,
+   "relation": "entangled",
+   "reason": "A5's word limit may restrict the inclusion of the content-type line required by B3 along with all other required content."
+  }
+ ],
+ "dropped_from_secondary": [
+  0,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   4,
+   3
+  ]
+ ],
+ "reconciled": [
+  "Keep the whole entry to at most 90 words, and list the parameters in a Markdown table whose header row is `| Name | In | Type | Description |`. Arrange your content carefully so both requirements are satisfied in the same output."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

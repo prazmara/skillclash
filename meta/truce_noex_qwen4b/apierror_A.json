@@ -1,0 +1,54 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "The reply must be exactly one JSON object and nothing else, so that it parses as JSON.",
+   "Name the machine-readable code field `error_code` (snake_case). Never use camelCase keys.",
+   "Include a human-readable sentence in the field `message`.",
+   "Include a boolean field `retryable`.",
+   "Include the HTTP status as an integer in the field `status`.",
+   "Include a field `docs` with an `https://` link to the error documentation."
+  ],
+  "B": [
+   "Include a field `timestamp` with a UTC time in the form `2026-03-02T10:15:00Z`.",
+   "Include a field `severity` with the value `low`, `medium` or `high`.",
+   "Include a field `details` that holds a non-empty list of specifics.",
+   "Add a developer hint that starts with `Hint:` and says how to fix the request.",
+   "Name the machine-readable code field `errorCode` (camelCase). Never use snake_case keys.",
+   "Explain the error for humans in the `message` field."
+  ]
+ },
+ "relations": [
+  {
+   "a": 1,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "Rule A2 requires the field to be named `error_code` in snake_case, while Rule B5 requires the field to be named `errorCode` in camelCase. These are different names and cases, making it impossible to satisfy both rules in a single output."
+  },
+  {
+   "a": 2,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "Both rules require a human-readable message, but A3 specifies it must be a sentence in the `message` field with a specific format, while B6 requires a human-explained error in the `message` field. They can coexist if the message content is shared, but the placement and structure must be carefully al"
+  }
+ ],
+ "dropped_from_secondary": [
+  4
+ ],
+ "entangled_pairs": [
+  [
+   2,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Include a human-readable sentence in the field `message` for the rule from skill `api-errors-internal`: Explain the error for humans in the `message` field for the rule from skill `api-errors-public`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

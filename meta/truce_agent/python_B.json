@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "B",
+  "rules": {
+    "A": [
+      "Name the function with a verb prefix: `get_`, `compute_`, `build_`, `parse_`, `validate_`, `find_`, `count_`, `format_` or `to_`.",
+      "Write the docstring in Google style with `Args:` and `Returns:` sections. Never use underlined section headers.",
+      "Annotate every parameter and the return value with type hints.",
+      "Reject invalid input by raising `ValueError`.",
+      "Include at least one usage example with a `>>>` prompt in the docstring.",
+      "Reply with one Python code block and nothing outside it."
+    ],
+    "B": [
+      "Start the module with `from __future__ import annotations`.",
+      "Show a doctest-style example that uses `>>>`.",
+      "State the time complexity as `Complexity: O(...)`.",
+      "Export the function by defining `__all__`.",
+      "Mark each non-obvious step with a comment that starts with `# NOTE:`.",
+      "Write the docstring in NumPy style, with a `Parameters` header underlined by dashes. Never use `Args:`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 1,
+      "b": 5,
+      "relation": "contradictory",
+      "reason": "The docstring cannot be Google style with `Args:` and no underlined headers and also NumPy style with an underlined `Parameters` header and no `Args:`."
+    },
+    {
+      "a": 4,
+      "b": 1,
+      "relation": "duplicate",
+      "reason": "Both require a usage example with a `>>>` prompt in the docstring."
+    },
+    {
+      "a": 5,
+      "b": 2,
+      "relation": "entangled",
+      "reason": "The line `Complexity: O(...)` can be stated while the reply is one code block with nothing outside it only if the complexity is written inside the code block, not after it as in the example of B."
+    }
+  ],
+  "reconciled": [
+    "State the time complexity as `Complexity: O(...)` on its own line inside the docstring of the function, for example `Complexity: O(n log n)`. Reply with one Python code block and nothing outside it, so never write the complexity or any other text before or after the code block."
+  ]
+}

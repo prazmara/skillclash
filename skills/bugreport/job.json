@@ -1,0 +1,6 @@
+{
+ "artifact": "bug report",
+ "example_request": "Write the bug report: the CSV export on the Reports page produces an empty file when the date filter spans more than 90 days. App version 3.8.1, Chrome 122 on Windows 11. Console shows `TypeError: rows is undefined`. Reporter: Ivo Marek.",
+ "A": "bug-triage-form",
+ "B": "bug-dev-handoff"
+}

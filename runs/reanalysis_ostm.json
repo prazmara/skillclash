@@ -1,0 +1,221 @@
+{
+ "A+B": {
+  "both skills used / exclusive": {
+   "mean": -8.687229437229435,
+   "lo": -13.151997655122655,
+   "hi": -4.528300865800866,
+   "pairs": 110,
+   "runs": 131,
+   "completion_delta": 6.6115702479338845
+  },
+  "both skills used / shared": {
+   "mean": 0.4667658730158729,
+   "lo": -5.7528645833333325,
+   "hi": 6.447420634920634,
+   "pairs": 80,
+   "runs": 92,
+   "completion_delta": 3.4482758620689653
+  },
+  "both skills used / all": {
+   "mean": -4.162239275875639,
+   "lo": -7.588416633871178,
+   "hi": -0.8823297914207007,
+   "pairs": 121,
+   "runs": 144,
+   "completion_delta": 7.518796992481203
+  },
+  "only A used / exclusive": {
+   "mean": -2.854688695883664,
+   "lo": -5.765042136700941,
+   "hi": -0.015075413463780017,
+   "pairs": 159,
+   "runs": 266,
+   "completion_delta": -1.2605042016806722
+  },
+  "only A used / shared": {
+   "mean": -0.5849500293944739,
+   "lo": -4.892022072577629,
+   "hi": 3.703022286355618,
+   "pairs": 99,
+   "runs": 166,
+   "completion_delta": 2.0
+  },
+  "only A used / all": {
+   "mean": -2.373587061087061,
+   "lo": -4.815749571608946,
+   "hi": -0.06174937620250152,
+   "pairs": 176,
+   "runs": 296,
+   "completion_delta": 0.0
+  },
+  "only B used / exclusive": {
+   "mean": -21.381528417818735,
+   "lo": -27.66556259600615,
+   "hi": -15.311243919610858,
+   "pairs": 62,
+   "runs": 84,
+   "completion_delta": -2.6315789473684212
+  },
+  "only B used / shared": {
+   "mean": 3.840727174060507,
+   "lo": -4.825142450142449,
+   "hi": 12.307794057794055,
+   "pairs": 39,
+   "runs": 54,
+   "completion_delta": 2.0833333333333335
+  },
+  "only B used / all": {
+   "mean": -15.923852957435045,
+   "lo": -21.600534036168366,
+   "hi": -10.332775606096504,
+   "pairs": 67,
+   "runs": 91,
+   "completion_delta": 0.0
+  },
+  "neither used / exclusive": {
+   "mean": -11.86292790208453,
+   "lo": -17.036730254350733,
+   "hi": -6.950856999426277,
+   "pairs": 83,
+   "runs": 100,
+   "completion_delta": -9.473684210526315
+  },
+  "neither used / shared": {
+   "mean": -17.864298724954462,
+   "lo": -27.24043715846994,
+   "hi": -9.29872495446266,
+   "pairs": 61,
+   "runs": 74,
+   "completion_delta": -4.3478260869565215
+  },
+  "neither used / all": {
+   "mean": -13.824303530936184,
+   "lo": -18.789798955296405,
+   "hi": -9.081045513443476,
+   "pairs": 98,
+   "runs": 117,
+   "completion_delta": -7.2727272727272725
+  }
+ },
+ "A+B and swapped": {
+  "both skills used / exclusive": {
+   "mean": -8.080081569664904,
+   "lo": -11.681700332524983,
+   "hi": -4.6788986717372145,
+   "pairs": 144,
+   "runs": 258,
+   "completion_delta": 7.112970711297071
+  },
+  "both skills used / shared": {
+   "mean": -0.5330558149185602,
+   "lo": -5.653487784002491,
+   "hi": 4.454799512397549,
+   "pairs": 102,
+   "runs": 191,
+   "completion_delta": 6.666666666666667
+  },
+  "both skills used / all": {
+   "mean": -4.587938617846594,
+   "lo": -7.5086866418346485,
+   "hi": -1.7818910880644012,
+   "pairs": 163,
+   "runs": 291,
+   "completion_delta": 8.148148148148149
+  },
+  "only A used / exclusive": {
+   "mean": -2.474202868281816,
+   "lo": -5.086846021303259,
+   "hi": 0.13385660331384017,
+   "pairs": 190,
+   "runs": 563,
+   "completion_delta": 0.0
+  },
+  "only A used / shared": {
+   "mean": 0.023421443875989212,
+   "lo": -3.1743544754908397,
+   "hi": 3.0362226157680694,
+   "pairs": 121,
+   "runs": 353,
+   "completion_delta": 1.8867924528301887
+  },
+  "only A used / all": {
+   "mean": -1.785011967750063,
+   "lo": -3.885435405643739,
+   "hi": 0.14899533887629132,
+   "pairs": 210,
+   "runs": 625,
+   "completion_delta": 1.0714285714285714
+  },
+  "only B used / exclusive": {
+   "mean": -21.048637218045112,
+   "lo": -26.143429102269565,
+   "hi": -16.01032398705096,
+   "pairs": 76,
+   "runs": 137,
+   "completion_delta": -1.639344262295082
+  },
+  "only B used / shared": {
+   "mean": 2.3947310405643747,
+   "lo": -5.894868827160494,
+   "hi": 10.277963789682538,
+   "pairs": 48,
+   "runs": 86,
+   "completion_delta": 0.0
+  },
+  "only B used / all": {
+   "mean": -16.307983288166213,
+   "lo": -21.172052643889533,
+   "hi": -11.7257178345593,
+   "pairs": 82,
+   "runs": 146,
+   "completion_delta": 0.0
+  },
+  "neither used / exclusive": {
+   "mean": -14.865014311735624,
+   "lo": -19.388123156821926,
+   "hi": -10.569457997224392,
+   "pairs": 122,
+   "runs": 207,
+   "completion_delta": -8.080808080808081
+  },
+  "neither used / shared": {
+   "mean": -14.105788232294257,
+   "lo": -22.071631765155864,
+   "hi": -6.2598927455855184,
+   "pairs": 83,
+   "runs": 145,
+   "completion_delta": -3.5714285714285716
+  },
+  "neither used / all": {
+   "mean": -15.378316394503448,
+   "lo": -19.528320200982073,
+   "hi": -11.448940847322143,
+   "pairs": 139,
+   "runs": 237,
+   "completion_delta": -6.6371681415929205
+  }
+ },
+ "use_pattern_in_A+B": {
+  "haiku": {
+   "both skills used": 0.02564102564102564,
+   "only A used": 0.25961538461538464,
+   "only B used": 0.15064102564102563,
+   "neither used": 0.5641025641025641,
+   "runs": 312
+  },
+  "sonnet": {
+   "both skills used": 0.08333333333333333,
+   "only A used": 0.3717948717948718,
+   "only B used": 0.125,
+   "neither used": 0.4198717948717949,
+   "runs": 312
+  },
+  "opus": {
+   "both skills used": 0.36774193548387096,
+   "only A used": 0.3903225806451613,
+   "only B used": 0.08709677419354839,
+   "neither used": 0.15483870967741936,
+   "runs": 310
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "The first line must start with a severity tag in square brackets, one of `[blocker]`, `[major]`, `[minor]`, `[nit]`, followed by a short title.",
+   "Propose the change on a line that starts with `Proposed fix: `.",
+   "Give the place in the code on its own line as `Location: <file>:<line>`.",
+   "Give the outcome on a line `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "State every finding as a statement. A question mark may appear only on a final line that starts with `Open question:`.",
+   "Say how sure you are on a line `Confidence: high`, `Confidence: medium` or `Confidence: low`."
+  ],
+  "B": [
+   "Ask the author at least one clarifying question, written as a full sentence that ends with a question mark.",
+   "Classify the comment on a line `Category: correctness`, `Category: security`, `Category: performance`, `Category: readability` or `Category: testing`.",
+   "The first line must be plain text of the form `Review: <title>`, with no tag or bracket before it.",
+   "Name one good thing about the diff on a line that starts with `What works well: `.",
+   "Close your assessment with a separate line that reads `Verdict: approve`, `Verdict: request changes` or `Verdict: comment`.",
+   "Estimate the work needed on a line `Effort: S`, `Effort: M` or `Effort: L`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 0,
+   "b": 2,
+   "relation": "contradictory",
+   "reason": "Rule A1 requires the first line to start with a severity tag in square brackets (e.g., [blocker]), while Rule B3 requires the first line to be plain text starting with 'Review:'. These cannot coexist in the same output without violating the format of either rule."
+  },
+  {
+   "a": 1,
+   "b": 0,
+   "relation": "entangled",
+   "reason": "Rule A2 proposes a fix in a specific format, while Rule B1 asks a clarifying question. Both require output in the first few lines, but A2 is a proposal and B1 is a question. They can coexist only if the question is placed before the proposal and the output is structured to first ask a clarifying que"
+  },
+  {
+   "a": 3,
+   "b": 4,
+   "relation": "duplicate",
+   "reason": "Both rules require a final verdict: A4 states 'Verdict: approve', 'request changes', or 'comment', and B5 ends with the same verdict. They are asking for the same outcome in the same format."
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  4
+ ],
+ "entangled_pairs": [
+  [
+   1,
+   0
+  ]
+ ],
+ "reconciled": [
+  "Proposed fix: [insert proposed fix here] Ask the author at least one clarifying question, written as a full sentence that ends with a question mark."
+ ],
+ "extract_path": {
+  "A": "fallback",
+  "B": "llm"
+ }
+}

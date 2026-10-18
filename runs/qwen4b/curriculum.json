@@ -1,0 +1,2050 @@
+{
+ "commit": {
+  "candidates": [
+   {
+    "request": "Write the commit message: implement user authentication with OAuth2. Ticket AUTH-456. Author: Marcus Kim. Component: auth.",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the commit message: update the dashboard to show real-time metrics. Ticket DASH-203. Author: Sofia Patel. Component: dashboard.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the commit message: fix data loss during bulk imports. Ticket DATA-789. Author: David Chen. Component: imports.",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the commit message: refactor payment processing logic for better performance. Ticket PAY-112. Author: Elena Rodriguez. Component: payments.",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the commit message: add support for dark mode in the UI. Ticket UI-301. Author: James Wilson. Component: ui.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the commit message: fix timeout issues in the file upload endpoint. Ticket FILE-674. Author: Amara Thompson. Component: uploads.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the commit message: enhance error logging to capture stack traces. Ticket LOG-555. Author: Noah Davis. Component: logging.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the commit message: improve mobile layout responsiveness. Ticket MOBILE-888. Author: Chloe Lee. Component: mobile.",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the commit message: implement rate limiting for API endpoints. Ticket API-222. Author: Raj Patel. Component: api.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the commit message: add validation to prevent duplicate user registrations. Ticket REG-444. Author: Maria Garcia. Component: users.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the commit message: optimize database queries for user profiles. Ticket DB-909. Author: Liam Brooks. Component: database.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the commit message: switch from localStorage to IndexedDB for offline storage. Ticket STORE-101. Author: Aisha Clark. Component: storage.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the commit message: fix incorrect redirect after login. Ticket ROUTE-333. Author: Tom Harris. Component: routing.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the commit message: introduce automated deployment pipeline. Ticket DEPLOY-550. Author: Natalie Young. Component: ci-cd.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the commit message: improve notification delivery reliability. Ticket NOTIF-777. Author: William Reed. Component: notifications.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the commit message: add accessibility compliance to form inputs. Ticket ACCESS-220. Author: Hannah Foster. Component: accessibility.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "Write the commit message: update the dashboard to show real-time metrics. Ticket DASH-203. Author: Sofia Patel. Component: dashboard.",
+   "Write the commit message: add support for dark mode in the UI. Ticket UI-301. Author: James Wilson. Component: ui.",
+   "Write the commit message: introduce automated deployment pipeline. Ticket DEPLOY-550. Author: Natalie Young. Component: ci-cd.",
+   "Write the commit message: enhance error logging to capture stack traces. Ticket LOG-555. Author: Noah Davis. Component: logging.",
+   "Write the commit message: add validation to prevent duplicate user registrations. Ticket REG-444. Author: Maria Garcia. Component: users.",
+   "Write the commit message: switch from localStorage to IndexedDB for offline storage. Ticket STORE-101. Author: Aisha Clark. Component: storage.",
+   "Write the commit message: fix data loss during bulk imports. Ticket DATA-789. Author: David Chen. Component: imports.",
+   "Write the commit message: refactor payment processing logic for better performance. Ticket PAY-112. Author: Elena Rodriguez. Component: payments.",
+   "Write the commit message: implement user authentication with OAuth2. Ticket AUTH-456. Author: Marcus Kim. Component: auth.",
+   "Write the commit message: improve mobile layout responsiveness. Ticket MOBILE-888. Author: Chloe Lee. Component: mobile.",
+   "Write the commit message: fix timeout issues in the file upload endpoint. Ticket FILE-674. Author: Amara Thompson. Component: uploads.",
+   "Write the commit message: optimize database queries for user profiles. Ticket DB-909. Author: Liam Brooks. Component: database."
+  ],
+  "random": [
+   "Write the commit message: implement user authentication with OAuth2. Ticket AUTH-456. Author: Marcus Kim. Component: auth.",
+   "Write the commit message: update the dashboard to show real-time metrics. Ticket DASH-203. Author: Sofia Patel. Component: dashboard.",
+   "Write the commit message: fix data loss during bulk imports. Ticket DATA-789. Author: David Chen. Component: imports.",
+   "Write the commit message: refactor payment processing logic for better performance. Ticket PAY-112. Author: Elena Rodriguez. Component: payments.",
+   "Write the commit message: add support for dark mode in the UI. Ticket UI-301. Author: James Wilson. Component: ui.",
+   "Write the commit message: fix timeout issues in the file upload endpoint. Ticket FILE-674. Author: Amara Thompson. Component: uploads.",
+   "Write the commit message: enhance error logging to capture stack traces. Ticket LOG-555. Author: Noah Davis. Component: logging.",
+   "Write the commit message: improve mobile layout responsiveness. Ticket MOBILE-888. Author: Chloe Lee. Component: mobile.",
+   "Write the commit message: implement rate limiting for API endpoints. Ticket API-222. Author: Raj Patel. Component: api.",
+   "Write the commit message: add validation to prevent duplicate user registrations. Ticket REG-444. Author: Maria Garcia. Component: users.",
+   "Write the commit message: optimize database queries for user profiles. Ticket DB-909. Author: Liam Brooks. Component: database.",
+   "Write the commit message: switch from localStorage to IndexedDB for offline storage. Ticket STORE-101. Author: Aisha Clark. Component: storage."
+  ]
+ },
+ "pr": {
+  "candidates": [
+   {
+    "request": "Write the pull request description: implement real-time notifications for order status updates. Ticket ORD-314. Reviewer: @lina. Labels: frontend, realtime",
+    "U": 0.3333333333333333,
+    "clash": 0.19999999999999996,
+    "S": 0.4333333333333333
+   },
+   {
+    "request": "Write the pull request description: refactor payment processing to use a new service layer. Ticket PAY-402. Reviewer: @mike. Labels: backend, performance",
+    "U": 0.0,
+    "clash": 0.30000000000000004,
+    "S": 0.15000000000000002
+   },
+   {
+    "request": "Write the pull request description: add multi-factor authentication to the admin portal. Ticket SEC-118. Reviewer: @jess. Labels: security, auth",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the pull request description: update user profile form to support avatar uploads. Ticket USER-220. Reviewer: @tara. Labels: frontend, ui",
+    "U": 0.25,
+    "clash": 0.19999999999999996,
+    "S": 0.35
+   },
+   {
+    "request": "Write the pull request description: introduce caching for product search results. Ticket CACHE-501. Reviewer: @dan. Labels: backend, performance",
+    "U": 0.041666666666666664,
+    "clash": 0.32499999999999996,
+    "S": 0.20416666666666664
+   },
+   {
+    "request": "Write the pull request description: enable dark mode with persistent user preference. Ticket UX-809. Reviewer: @sara. Labels: frontend, accessibility",
+    "U": 0.16666666666666666,
+    "clash": 0.09999999999999998,
+    "S": 0.21666666666666665
+   },
+   {
+    "request": "Write the pull request description: migrate legacy user data to the new database schema. Ticket DB-603. Reviewer: @rob. Labels: migration, backend",
+    "U": 0.125,
+    "clash": 0.32499999999999996,
+    "S": 0.2875
+   },
+   {
+    "request": "Write the pull request description: add geolocation to user activity logs. Ticket LOC-712. Reviewer: @nina. Labels: analytics, security",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the pull request description: fix timeout issues in mobile app navigation. Ticket MOB-105. Reviewer: @chris. Labels: mobile, performance",
+    "U": 0.0,
+    "clash": 0.30000000000000004,
+    "S": 0.15000000000000002
+   },
+   {
+    "request": "Write the pull request description: implement a new webhook for subscription events. Ticket SUB-233. Reviewer: @aya. Labels: api, backend",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the pull request description: improve error messaging for failed API calls. Ticket API-440. Reviewer: @marc. Labels: frontend, user-experience",
+    "U": 0.125,
+    "clash": 0.17500000000000004,
+    "S": 0.21250000000000002
+   },
+   {
+    "request": "Write the pull request description: add audit trail for API key creations. Ticket KEY-901. Reviewer: @eve. Labels: security, audit",
+    "U": 0.041666666666666664,
+    "clash": 0.375,
+    "S": 0.22916666666666666
+   },
+   {
+    "request": "Write the pull request description: enable automated backups for production databases. Ticket BACKUP-308. Reviewer: @jose. Labels: operations, reliability",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the pull request description: support multiple language packs in the dashboard. Ticket LANG-611. Reviewer: @lucy. Labels: i18n, ui",
+    "U": 0.08333333333333333,
+    "clash": 0.15000000000000002,
+    "S": 0.15833333333333333
+   },
+   {
+    "request": "Write the pull request description: adjust billing cycle end dates for recurring subscriptions. Ticket BILL-204. Reviewer: @ben. Labels: billing, backend",
+    "U": 0.25,
+    "clash": 0.25,
+    "S": 0.375
+   },
+   {
+    "request": "Write the pull request description: add user consent tracking for data collection. Ticket PRIV-550. Reviewer: @kate. Labels: compliance, security",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   }
+  ],
+  "frontier": [
+   "Write the pull request description: implement real-time notifications for order status updates. Ticket ORD-314. Reviewer: @lina. Labels: frontend, realtime",
+   "Write the pull request description: adjust billing cycle end dates for recurring subscriptions. Ticket BILL-204. Reviewer: @ben. Labels: billing, backend",
+   "Write the pull request description: update user profile form to support avatar uploads. Ticket USER-220. Reviewer: @tara. Labels: frontend, ui",
+   "Write the pull request description: migrate legacy user data to the new database schema. Ticket DB-603. Reviewer: @rob. Labels: migration, backend",
+   "Write the pull request description: add user consent tracking for data collection. Ticket PRIV-550. Reviewer: @kate. Labels: compliance, security",
+   "Write the pull request description: implement a new webhook for subscription events. Ticket SUB-233. Reviewer: @aya. Labels: api, backend",
+   "Write the pull request description: add multi-factor authentication to the admin portal. Ticket SEC-118. Reviewer: @jess. Labels: security, auth",
+   "Write the pull request description: enable automated backups for production databases. Ticket BACKUP-308. Reviewer: @jose. Labels: operations, reliability",
+   "Write the pull request description: enable dark mode with persistent user preference. Ticket UX-809. Reviewer: @sara. Labels: frontend, accessibility",
+   "Write the pull request description: improve error messaging for failed API calls. Ticket API-440. Reviewer: @marc. Labels: frontend, user-experience",
+   "Write the pull request description: add geolocation to user activity logs. Ticket LOC-712. Reviewer: @nina. Labels: analytics, security",
+   "Write the pull request description: introduce caching for product search results. Ticket CACHE-501. Reviewer: @dan. Labels: backend, performance"
+  ],
+  "random": [
+   "Write the pull request description: implement real-time notifications for order status updates. Ticket ORD-314. Reviewer: @lina. Labels: frontend, realtime",
+   "Write the pull request description: refactor payment processing to use a new service layer. Ticket PAY-402. Reviewer: @mike. Labels: backend, performance",
+   "Write the pull request description: add multi-factor authentication to the admin portal. Ticket SEC-118. Reviewer: @jess. Labels: security, auth",
+   "Write the pull request description: update user profile form to support avatar uploads. Ticket USER-220. Reviewer: @tara. Labels: frontend, ui",
+   "Write the pull request description: introduce caching for product search results. Ticket CACHE-501. Reviewer: @dan. Labels: backend, performance",
+   "Write the pull request description: enable dark mode with persistent user preference. Ticket UX-809. Reviewer: @sara. Labels: frontend, accessibility",
+   "Write the pull request description: migrate legacy user data to the new database schema. Ticket DB-603. Reviewer: @rob. Labels: migration, backend",
+   "Write the pull request description: add geolocation to user activity logs. Ticket LOC-712. Reviewer: @nina. Labels: analytics, security",
+   "Write the pull request description: fix timeout issues in mobile app navigation. Ticket MOB-105. Reviewer: @chris. Labels: mobile, performance",
+   "Write the pull request description: implement a new webhook for subscription events. Ticket SUB-233. Reviewer: @aya. Labels: api, backend",
+   "Write the pull request description: improve error messaging for failed API calls. Ticket API-440. Reviewer: @marc. Labels: frontend, user-experience",
+   "Write the pull request description: add audit trail for API key creations. Ticket KEY-901. Reviewer: @eve. Labels: security, audit"
+  ]
+ },
+ "sql": {
+  "candidates": [
+   {
+    "request": "Write the SQL query: total order count by region for purchases made in Q3 2025, top 15 regions. Table purchases(id, region, product_id, created_at, deleted_at). Owning team: retail-analytics.",
+    "U": 0.041666666666666664,
+    "clash": 0.275,
+    "S": 0.17916666666666667
+   },
+   {
+    "request": "Write the SQL query: average order value by channel for sessions in November 2024, top 10 channels. Table sessions(id, channel, order_value, created_at, deleted_at). Owning team: marketing-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: total product revenue by category for events in March 2025, top 25 categories. Table events(id, category, revenue, created_at, deleted_at). Owning team: product-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: number of unique users per device type for logins in June 2024, top 12 device types. Table user_logs(id, device_type, user_id, created_at, deleted_at). Owning team: user-experience-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: daily active users by platform for activity in February 2025, top 8 platforms. Table platform_activity(id, platform, user_id, created_at, deleted_at). Owning team: engagement-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: total subscription fees by tier for renewals in April 2025, top 10 tiers. Table subscriptions(id, tier, fee, created_at, deleted_at). Owning team: billing-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: average session duration by app version for sessions in September 2024, top 14 versions. Table app_sessions(id, app_version, duration, created_at, deleted_at). Owning team: mobile-analytics.",
+    "U": 0.0,
+    "clash": 0.09999999999999998,
+    "S": 0.04999999999999999
+   },
+   {
+    "request": "Write the SQL query: total order quantity by product line for orders in October 2024, top 18 product lines. Table order_items(id, product_line, quantity, created_at, deleted_at). Owning team: supply-chain-analytics.",
+    "U": 0.08333333333333333,
+    "clash": 0.25,
+    "S": 0.20833333333333331
+   },
+   {
+    "request": "Write the SQL query: number of failed login attempts per IP address for events in July 2025, top 20 IPs. Table auth_events(id, ip_address, event_type, created_at, deleted_at). Owning team: security-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: average order processing time by fulfillment center for orders in January 2025, top 13 centers. Table fulfillment_orders(id, fulfillment_center, processing_time, created_at, deleted_at). Owning team: operations-analytics.",
+    "U": 0.16666666666666666,
+    "clash": 0.19999999999999996,
+    "S": 0.2666666666666666
+   },
+   {
+    "request": "Write the SQL query: total refund amount by reason for returns in December 2024, top 16 reasons. Table refunds(id, reason, amount, created_at, deleted_at). Owning team: finance-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: daily active content views by category for views in May 2025, top 11 categories. Table content_views(id, category, view_count, created_at, deleted_at). Owning team: content-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: total user engagement score by feature for interactions in August 2024, top 15 features. Table feature_interactions(id, feature, engagement_score, created_at, deleted_at). Owning team: product-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: average time to first response by support team for tickets in Q1 2025, top 10 teams. Table support_tickets(id, team, response_time, created_at, deleted_at). Owning team: customer-support-analytics.",
+    "U": 0.08333333333333333,
+    "clash": 0.25,
+    "S": 0.20833333333333331
+   },
+   {
+    "request": "Write the SQL query: total discount applied by promotion type for sales in Q4 2024, top 12 promotion types. Table sales_promotions(id, promotion_type, discount_amount, created_at, deleted_at). Owning team: marketing-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   },
+   {
+    "request": "Write the SQL query: number of completed onboarding steps by user segment for activities in June 2025, top 14 segments. Table onboarding_steps(id, user_segment, step_completed, created_at, deleted_at). Owning team: growth-analytics.",
+    "U": 0.0,
+    "clash": 0.19999999999999996,
+    "S": 0.09999999999999998
+   }
+  ],
+  "frontier": [
+   "Write the SQL query: average order processing time by fulfillment center for orders in January 2025, top 13 centers. Table fulfillment_orders(id, fulfillment_center, processing_time, created_at, deleted_at). Owning team: operations-analytics.",
+   "Write the SQL query: total order quantity by product line for orders in October 2024, top 18 product lines. Table order_items(id, product_line, quantity, created_at, deleted_at). Owning team: supply-chain-analytics.",
+   "Write the SQL query: average time to first response by support team for tickets in Q1 2025, top 10 teams. Table support_tickets(id, team, response_time, created_at, deleted_at). Owning team: customer-support-analytics.",
+   "Write the SQL query: total order count by region for purchases made in Q3 2025, top 15 regions. Table purchases(id, region, product_id, created_at, deleted_at). Owning team: retail-analytics.",
+   "Write the SQL query: number of unique users per device type for logins in June 2024, top 12 device types. Table user_logs(id, device_type, user_id, created_at, deleted_at). Owning team: user-experience-analytics.",
+   "Write the SQL query: number of failed login attempts per IP address for events in July 2025, top 20 IPs. Table auth_events(id, ip_address, event_type, created_at, deleted_at). Owning team: security-analytics.",
+   "Write the SQL query: number of completed onboarding steps by user segment for activities in June 2025, top 14 segments. Table onboarding_steps(id, user_segment, step_completed, created_at, deleted_at). Owning team: growth-analytics.",
+   "Write the SQL query: daily active users by platform for activity in February 2025, top 8 platforms. Table platform_activity(id, platform, user_id, created_at, deleted_at). Owning team: engagement-analytics.",
+   "Write the SQL query: total discount applied by promotion type for sales in Q4 2024, top 12 promotion types. Table sales_promotions(id, promotion_type, discount_amount, created_at, deleted_at). Owning team: marketing-analytics.",
+   "Write the SQL query: average order value by channel for sessions in November 2024, top 10 channels. Table sessions(id, channel, order_value, created_at, deleted_at). Owning team: marketing-analytics.",
+   "Write the SQL query: total refund amount by reason for returns in December 2024, top 16 reasons. Table refunds(id, reason, amount, created_at, deleted_at). Owning team: finance-analytics.",
+   "Write the SQL query: total subscription fees by tier for renewals in April 2025, top 10 tiers. Table subscriptions(id, tier, fee, created_at, deleted_at). Owning team: billing-analytics."
+  ],
+  "random": [
+   "Write the SQL query: total order count by region for purchases made in Q3 2025, top 15 regions. Table purchases(id, region, product_id, created_at, deleted_at). Owning team: retail-analytics.",
+   "Write the SQL query: average order value by channel for sessions in November 2024, top 10 channels. Table sessions(id, channel, order_value, created_at, deleted_at). Owning team: marketing-analytics.",
+   "Write the SQL query: total product revenue by category for events in March 2025, top 25 categories. Table events(id, category, revenue, created_at, deleted_at). Owning team: product-analytics.",
+   "Write the SQL query: number of unique users per device type for logins in June 2024, top 12 device types. Table user_logs(id, device_type, user_id, created_at, deleted_at). Owning team: user-experience-analytics.",
+   "Write the SQL query: daily active users by platform for activity in February 2025, top 8 platforms. Table platform_activity(id, platform, user_id, created_at, deleted_at). Owning team: engagement-analytics.",
+   "Write the SQL query: total subscription fees by tier for renewals in April 2025, top 10 tiers. Table subscriptions(id, tier, fee, created_at, deleted_at). Owning team: billing-analytics.",
+   "Write the SQL query: average session duration by app version for sessions in September 2024, top 14 versions. Table app_sessions(id, app_version, duration, created_at, deleted_at). Owning team: mobile-analytics.",
+   "Write the SQL query: total order quantity by product line for orders in October 2024, top 18 product lines. Table order_items(id, product_line, quantity, created_at, deleted_at). Owning team: supply-chain-analytics.",
+   "Write the SQL query: number of failed login attempts per IP address for events in July 2025, top 20 IPs. Table auth_events(id, ip_address, event_type, created_at, deleted_at). Owning team: security-analytics.",
+   "Write the SQL query: average order processing time by fulfillment center for orders in January 2025, top 13 centers. Table fulfillment_orders(id, fulfillment_center, processing_time, created_at, deleted_at). Owning team: operations-analytics.",
+   "Write the SQL query: total refund amount by reason for returns in December 2024, top 16 reasons. Table refunds(id, reason, amount, created_at, deleted_at). Owning team: finance-analytics.",
+   "Write the SQL query: daily active content views by category for views in May 2025, top 11 categories. Table content_views(id, category, view_count, created_at, deleted_at). Owning team: content-analytics."
+  ]
+ },
+ "incident": {
+  "candidates": [
+   {
+    "request": "Write the incident report: the user authentication service became unresponsive for 38 minutes on 2026-03-05, from 11:22 to 12:00 UTC, because a critical database connection pool was exhausted. Incident ID INC-3012, severity 3. Detected by the login latency dashboard.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: order fulfillment notifications stopped delivering for 26 minutes on 2026-03-08, from 14:33 to 14:59 UTC, because the notification queue overflowed and triggered a backpressure event. Incident ID INC-3015, severity 4. Detected by the operations alerting system.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the mobile app crashed on iOS devices for 19 minutes on 2026-03-10, from 07:45 to 08:04 UTC, because a third-party SDK update introduced a memory leak. Incident ID INC-3020, severity 2. Detected by user crash reporting from AppCenter.",
+    "U": 0.3333333333333333,
+    "clash": 0.19999999999999996,
+    "S": 0.4333333333333333
+   },
+   {
+    "request": "Write the incident report: the pricing calculator returned incorrect values for 54 minutes on 2026-03-12, from 16:18 to 17:12 UTC, because a configuration file was misapplied during a deploy. Incident ID INC-3025, severity 3. Detected by automated validation checks in staging.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: payment processing failed for 41 minutes on 2026-03-14, from 09:51 to 10:32 UTC, because a financial institution\u2019s API was temporarily down due to a regional outage. Incident ID INC-3030, severity 4. Detected by the payment gateway health monitor.",
+    "U": 0.625,
+    "clash": 0.275,
+    "S": 0.7625
+   },
+   {
+    "request": "Write the incident report: the search functionality returned no results for 32 minutes on 2026-03-16, from 13:01 to 13:33 UTC, because the search index was corrupted during a maintenance window. Incident ID INC-3035, severity 2. Detected by search performance metrics in the dashboard.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the user profile update endpoint timed out for 28 minutes on 2026-03-18, from 10:15 to 10:43 UTC, because the backend service was overwhelmed by a spike in requests. Incident ID INC-3040, severity 3. Detected by API latency thresholds in Datadog.",
+    "U": 0.5,
+    "clash": 0.30000000000000004,
+    "S": 0.65
+   },
+   {
+    "request": "Write the incident report: the email delivery service dropped 12% of messages for 17 minutes on 2026-03-20, from 15:38 to 15:55 UTC, because the mail server\u2019s queue limit was breached. Incident ID INC-3045, severity 1. Detected by message delivery audit logs.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the product catalog became inaccessible for 35 minutes on 2026-03-22, from 08:20 to 08:55 UTC, because a caching layer failed to respond to fetch requests. Incident ID INC-3050, severity 3. Detected by cache hit rate drop in the observability platform.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the order confirmation emails stopped being sent for 45 minutes on 2026-03-24, from 12:10 to 12:55 UTC, because the email service\u2019s API key was revoked by a misconfigured firewall. Incident ID INC-3055, severity 4. Detected by email service status checks.",
+    "U": 0.625,
+    "clash": 0.275,
+    "S": 0.7625
+   },
+   {
+    "request": "Write the incident report: the checkout flow froze during payment for 22 minutes on 2026-03-26, from 17:49 to 18:11 UTC, because a third-party payment processor\u2019s timeout was too short. Incident ID INC-3060, severity 2. Detected by user session tracking.",
+    "U": 0.625,
+    "clash": 0.32499999999999996,
+    "S": 0.7875
+   },
+   {
+    "request": "Write the incident report: the user onboarding flow failed for 18 minutes on 2026-03-28, from 09:03 to 09:21 UTC, because a new compliance rule blocked all user data submissions. Incident ID INC-3065, severity 1. Detected by onboarding completion rate drop.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the analytics dashboard showed incorrect data for 60 minutes on 2026-03-30, from 11:12 to 12:12 UTC, because the data ingestion pipeline paused due to a disk full event. Incident ID INC-3070, severity 4. Detected by data ingestion lag alerts.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the API gateway started returning 429 errors for 31 minutes on 2026-04-01, from 14:25 to 14:56 UTC, because a misconfigured rate limit rule caused excessive throttling. Incident ID INC-3075, severity 3. Detected by rate limit violation logs.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the subscription renewal process failed for 25 minutes on 2026-04-03, from 06:30 to 06:55 UTC, because a missing webhook token caused validation to fail. Incident ID INC-3080, severity 2. Detected by renewal failure events in the billing system.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   },
+   {
+    "request": "Write the incident report: the payment refund system timed out for 48 minutes on 2026-04-05, from 13:40 to 14:28 UTC, because the refund processor\u2019s database connection was dropped due to network instability. Incident ID INC-3085, severity 4. Detected by transaction timeout events in the audit trail.",
+    "U": 0.6666666666666666,
+    "clash": 0.30000000000000004,
+    "S": 0.8166666666666667
+   }
+  ],
+  "frontier": [
+   "Write the incident report: the user authentication service became unresponsive for 38 minutes on 2026-03-05, from 11:22 to 12:00 UTC, because a critical database connection pool was exhausted. Incident ID INC-3012, severity 3. Detected by the login latency dashboard.",
+   "Write the incident report: order fulfillment notifications stopped delivering for 26 minutes on 2026-03-08, from 14:33 to 14:59 UTC, because the notification queue overflowed and triggered a backpressure event. Incident ID INC-3015, severity 4. Detected by the operations alerting system.",
+   "Write the incident report: the API gateway started returning 429 errors for 31 minutes on 2026-04-01, from 14:25 to 14:56 UTC, because a misconfigured rate limit rule caused excessive throttling. Incident ID INC-3075, severity 3. Detected by rate limit violation logs.",
+   "Write the incident report: the payment refund system timed out for 48 minutes on 2026-04-05, from 13:40 to 14:28 UTC, because the refund processor\u2019s database connection was dropped due to network instability. Incident ID INC-3085, severity 4. Detected by transaction timeout events in the audit trail.",
+   "Write the incident report: the user onboarding flow failed for 18 minutes on 2026-03-28, from 09:03 to 09:21 UTC, because a new compliance rule blocked all user data submissions. Incident ID INC-3065, severity 1. Detected by onboarding completion rate drop.",
+   "Write the incident report: the search functionality returned no results for 32 minutes on 2026-03-16, from 13:01 to 13:33 UTC, because the search index was corrupted during a maintenance window. Incident ID INC-3035, severity 2. Detected by search performance metrics in the dashboard.",
+   "Write the incident report: the subscription renewal process failed for 25 minutes on 2026-04-03, from 06:30 to 06:55 UTC, because a missing webhook token caused validation to fail. Incident ID INC-3080, severity 2. Detected by renewal failure events in the billing system.",
+   "Write the incident report: the email delivery service dropped 12% of messages for 17 minutes on 2026-03-20, from 15:38 to 15:55 UTC, because the mail server\u2019s queue limit was breached. Incident ID INC-3045, severity 1. Detected by message delivery audit logs.",
+   "Write the incident report: the product catalog became inaccessible for 35 minutes on 2026-03-22, from 08:20 to 08:55 UTC, because a caching layer failed to respond to fetch requests. Incident ID INC-3050, severity 3. Detected by cache hit rate drop in the observability platform.",
+   "Write the incident report: the analytics dashboard showed incorrect data for 60 minutes on 2026-03-30, from 11:12 to 12:12 UTC, because the data ingestion pipeline paused due to a disk full event. Incident ID INC-3070, severity 4. Detected by data ingestion lag alerts.",
+   "Write the incident report: the pricing calculator returned incorrect values for 54 minutes on 2026-03-12, from 16:18 to 17:12 UTC, because a configuration file was misapplied during a deploy. Incident ID INC-3025, severity 3. Detected by automated validation checks in staging.",
+   "Write the incident report: the checkout flow froze during payment for 22 minutes on 2026-03-26, from 17:49 to 18:11 UTC, because a third-party payment processor\u2019s timeout was too short. Incident ID INC-3060, severity 2. Detected by user session tracking."
+  ],
+  "random": [
+   "Write the incident report: the user authentication service became unresponsive for 38 minutes on 2026-03-05, from 11:22 to 12:00 UTC, because a critical database connection pool was exhausted. Incident ID INC-3012, severity 3. Detected by the login latency dashboard.",
+   "Write the incident report: order fulfillment notifications stopped delivering for 26 minutes on 2026-03-08, from 14:33 to 14:59 UTC, because the notification queue overflowed and triggered a backpressure event. Incident ID INC-3015, severity 4. Detected by the operations alerting system.",
+   "Write the incident report: the mobile app crashed on iOS devices for 19 minutes on 2026-03-10, from 07:45 to 08:04 UTC, because a third-party SDK update introduced a memory leak. Incident ID INC-3020, severity 2. Detected by user crash reporting from AppCenter.",
+   "Write the incident report: the pricing calculator returned incorrect values for 54 minutes on 2026-03-12, from 16:18 to 17:12 UTC, because a configuration file was misapplied during a deploy. Incident ID INC-3025, severity 3. Detected by automated validation checks in staging.",
+   "Write the incident report: payment processing failed for 41 minutes on 2026-03-14, from 09:51 to 10:32 UTC, because a financial institution\u2019s API was temporarily down due to a regional outage. Incident ID INC-3030, severity 4. Detected by the payment gateway health monitor.",
+   "Write the incident report: the search functionality returned no results for 32 minutes on 2026-03-16, from 13:01 to 13:33 UTC, because the search index was corrupted during a maintenance window. Incident ID INC-3035, severity 2. Detected by search performance metrics in the dashboard.",
+   "Write the incident report: the user profile update endpoint timed out for 28 minutes on 2026-03-18, from 10:15 to 10:43 UTC, because the backend service was overwhelmed by a spike in requests. Incident ID INC-3040, severity 3. Detected by API latency thresholds in Datadog.",
+   "Write the incident report: the email delivery service dropped 12% of messages for 17 minutes on 2026-03-20, from 15:38 to 15:55 UTC, because the mail server\u2019s queue limit was breached. Incident ID INC-3045, severity 1. Detected by message delivery audit logs.",
+   "Write the incident report: the product catalog became inaccessible for 35 minutes on 2026-03-22, from 08:20 to 08:55 UTC, because a caching layer failed to respond to fetch requests. Incident ID INC-3050, severity 3. Detected by cache hit rate drop in the observability platform.",
+   "Write the incident report: the order confirmation emails stopped being sent for 45 minutes on 2026-03-24, from 12:10 to 12:55 UTC, because the email service\u2019s API key was revoked by a misconfigured firewall. Incident ID INC-3055, severity 4. Detected by email service status checks.",
+   "Write the incident report: the checkout flow froze during payment for 22 minutes on 2026-03-26, from 17:49 to 18:11 UTC, because a third-party payment processor\u2019s timeout was too short. Incident ID INC-3060, severity 2. Detected by user session tracking.",
+   "Write the incident report: the user onboarding flow failed for 18 minutes on 2026-03-28, from 09:03 to 09:21 UTC, because a new compliance rule blocked all user data submissions. Incident ID INC-3065, severity 1. Detected by onboarding completion rate drop."
+  ]
+ },
+ "python": {
+  "candidates": [
+   {
+    "request": "Write a Python function that checks if a string is a valid email address.",
+    "U": 0.08333333333333333,
+    "clash": 0.44999999999999996,
+    "S": 0.3083333333333333
+   },
+   {
+    "request": "Write a Python function that converts a temperature from Celsius to Fahrenheit.",
+    "U": 0.08333333333333333,
+    "clash": 0.55,
+    "S": 0.35833333333333334
+   },
+   {
+    "request": "Write a Python function that finds the first occurrence of a substring in a string.",
+    "U": 0.0,
+    "clash": 0.5,
+    "S": 0.25
+   },
+   {
+    "request": "Write a Python function that computes the area of a circle given its radius.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write a Python function that validates a password based on length and character types.",
+    "U": 0.041666666666666664,
+    "clash": 0.475,
+    "S": 0.2791666666666667
+   },
+   {
+    "request": "Write a Python function that determines if a year is a leap year.",
+    "U": 0.08333333333333333,
+    "clash": 0.55,
+    "S": 0.35833333333333334
+   },
+   {
+    "request": "Write a Python function that calculates the factorial of a non-negative integer.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write a Python function that rounds a floating-point number to a specified number of decimal places.",
+    "U": 0.0,
+    "clash": 0.5,
+    "S": 0.25
+   },
+   {
+    "request": "Write a Python function that checks if a number is a perfect square.",
+    "U": 0.08333333333333333,
+    "clash": 0.55,
+    "S": 0.35833333333333334
+   },
+   {
+    "request": "Write a Python function that generates a random integer within a given range.",
+    "U": 0.08333333333333333,
+    "clash": 0.44999999999999996,
+    "S": 0.3083333333333333
+   },
+   {
+    "request": "Write a Python function that computes the Euclidean distance between two points.",
+    "U": 0.0,
+    "clash": 0.5,
+    "S": 0.25
+   },
+   {
+    "request": "Write a Python function that counts the number of vowels in a string.",
+    "U": 0.0,
+    "clash": 0.5,
+    "S": 0.25
+   },
+   {
+    "request": "Write a Python function that formats a date in ISO 8601 string format.",
+    "U": 0.3333333333333333,
+    "clash": 0.30000000000000004,
+    "S": 0.48333333333333334
+   },
+   {
+    "request": "Write a Python function that extracts the domain name from an email address.",
+    "U": 0.0,
+    "clash": 0.5,
+    "S": 0.25
+   },
+   {
+    "request": "Write a Python function that checks if a list is sorted in ascending order.",
+    "U": 0.0,
+    "clash": 0.6,
+    "S": 0.3
+   },
+   {
+    "request": "Write a Python function that converts a dictionary to a JSON-compatible string.",
+    "U": 0.0,
+    "clash": 0.5,
+    "S": 0.25
+   }
+  ],
+  "frontier": [
+   "Write a Python function that formats a date in ISO 8601 string format.",
+   "Write a Python function that converts a temperature from Celsius to Fahrenheit.",
+   "Write a Python function that checks if a number is a perfect square.",
+   "Write a Python function that generates a random integer within a given range.",
+   "Write a Python function that validates a password based on length and character types.",
+   "Write a Python function that computes the Euclidean distance between two points.",
+   "Write a Python function that determines if a year is a leap year.",
+   "Write a Python function that rounds a floating-point number to a specified number of decimal places.",
+   "Write a Python function that extracts the domain name from an email address.",
+   "Write a Python function that finds the first occurrence of a substring in a string.",
+   "Write a Python function that checks if a list is sorted in ascending order.",
+   "Write a Python function that checks if a string is a valid email address."
+  ],
+  "random": [
+   "Write a Python function that checks if a string is a valid email address.",
+   "Write a Python function that converts a temperature from Celsius to Fahrenheit.",
+   "Write a Python function that finds the first occurrence of a substring in a string.",
+   "Write a Python function that computes the area of a circle given its radius.",
+   "Write a Python function that validates a password based on length and character types.",
+   "Write a Python function that determines if a year is a leap year.",
+   "Write a Python function that calculates the factorial of a non-negative integer.",
+   "Write a Python function that rounds a floating-point number to a specified number of decimal places.",
+   "Write a Python function that checks if a number is a perfect square.",
+   "Write a Python function that generates a random integer within a given range.",
+   "Write a Python function that computes the Euclidean distance between two points.",
+   "Write a Python function that counts the number of vowels in a string."
+  ]
+ },
+ "support": {
+  "candidates": [
+   {
+    "request": "Write the support reply to David Kim (ticket 32157): his login keeps redirecting to the onboarding page after authentication. The issue is resolved by updating the session token in the backend; users should clear their cookies and log in again. Help article: https://help.example.com/session-token-update. Agent: Taylor.",
+    "U": 0.7916666666666666,
+    "clash": 0.42500000000000004,
+    "S": 1.0041666666666667
+   },
+   {
+    "request": "Write the support reply to Elena Rodriguez (ticket 55029): she can't view her recent activity feed in the dashboard. The feed is now loading correctly after a configuration patch; refresh the page and ensure JavaScript is enabled. Help article: https://help.example.com/activity-feed-configuration. Agent: Morgan.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to James Chen (ticket 18943): the report generation takes over 10 minutes to complete. A performance optimization has been implemented; re-run the report with a smaller data subset. Help article: https://help.example.com/report-performance-tips. Agent: Casey.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to Sofia Patel (ticket 67310): her subscription plan shows as inactive despite payment confirmation. The plan status has been corrected; verify the subscription details in the billing section. Help article: https://help.example.com/subscription-status-verification. Agent: Noah.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to Marcus Thompson (ticket 24681): the mobile app crashes when opening the settings menu. A critical bug has been patched; uninstall and reinstall the app to apply the fix. Help article: https://help.example.com/mobile-app-crash-fix. Agent: Aria.",
+    "U": 0.75,
+    "clash": 0.4,
+    "S": 0.95
+   },
+   {
+    "request": "Write the support reply to Naomi Kim (ticket 41205): she receives an error when trying to sync her calendar. The sync endpoint has been restored; refresh the calendar and ensure the timezone is set correctly. Help article: https://help.example.com/calendar-sync-setup. Agent: Riley.",
+    "U": 0.7083333333333334,
+    "clash": 0.375,
+    "S": 0.8958333333333334
+   },
+   {
+    "request": "Write the support reply to Lucas Adams (ticket 90134): the email notifications are not being delivered. The delivery queue has been rebuilt; check your inbox settings and retry sending a test notification. Help article: https://help.example.com/email-delivery-issues. Agent: Diego.",
+    "U": 0.7083333333333334,
+    "clash": 0.375,
+    "S": 0.8958333333333334
+   },
+   {
+    "request": "Write the support reply to Hannah White (ticket 73502): her data export fails with a '403 forbidden' error. The access rights have been adjusted; re-authorize the export permissions through the security dashboard. Help article: https://help.example.com/data-export-permissions. Agent: Sam.",
+    "U": 0.75,
+    "clash": 0.44999999999999996,
+    "S": 0.975
+   },
+   {
+    "request": "Write the support reply to Thomas Lee (ticket 33289): the search function returns irrelevant results. A new indexing algorithm has been deployed; run a full re-index and clear the search cache. Help article: https://help.example.com/search-indexing-update. Agent: Leia.",
+    "U": 0.7083333333333334,
+    "clash": 0.42500000000000004,
+    "S": 0.9208333333333334
+   },
+   {
+    "request": "Write the support reply to Fatima Alvarado (ticket 88044): the invoice preview shows outdated amounts. The financial data has been synchronized; refresh the preview and check the date range. Help article: https://help.example.com/invoice-preview-updates. Agent: Cole.",
+    "U": 0.75,
+    "clash": 0.44999999999999996,
+    "S": 0.975
+   },
+   {
+    "request": "Write the support reply to Peter Foster (ticket 11207): he can't access his admin panel after password reset. The session lockout has been cleared; log in with your credentials and confirm your email. Help article: https://help.example.com/admin-panel-access. Agent: Luna.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to Chloe Martinez (ticket 50916): her team's access to shared documents is blocked. The access group has been updated; re-assign permissions through the collaboration workspace. Help article: https://help.example.com/document-sharing-permissions. Agent: Eden.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to Robert Kim (ticket 22145): the payment gateway shows failed transactions despite successful processing. The gateway logs have been reconciled; retry the transaction and verify the payment method. Help article: https://help.example.com/payment-gateway-errors. Agent: Finn.",
+    "U": 0.7083333333333334,
+    "clash": 0.375,
+    "S": 0.8958333333333334
+   },
+   {
+    "request": "Write the support reply to Isabella Gomez (ticket 66803): the dashboard refreshes slowly. A database query optimization has been applied; clear browser cache and reload the page. Help article: https://help.example.com/dashboard-performance. Agent: Zara.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to Nathan Wright (ticket 44091): his profile photo is not displaying after upload. The image processing pipeline has been fixed; re-upload the photo using the new format. Help article: https://help.example.com/profile-photo-upload. Agent: Kenji.",
+    "U": 0.6666666666666666,
+    "clash": 0.4,
+    "S": 0.8666666666666667
+   },
+   {
+    "request": "Write the support reply to Amelia Carter (ticket 99201): the chatbot responds with outdated responses. A model refresh has been completed; restart the chat session and ask a new question. Help article: https://help.example.com/chatbot-response-update. Agent: Tessa.",
+    "U": 0.5,
+    "clash": 0.4,
+    "S": 0.7
+   }
+  ],
+  "frontier": [
+   "Write the support reply to David Kim (ticket 32157): his login keeps redirecting to the onboarding page after authentication. The issue is resolved by updating the session token in the backend; users should clear their cookies and log in again. Help article: https://help.example.com/session-token-update. Agent: Taylor.",
+   "Write the support reply to Hannah White (ticket 73502): her data export fails with a '403 forbidden' error. The access rights have been adjusted; re-authorize the export permissions through the security dashboard. Help article: https://help.example.com/data-export-permissions. Agent: Sam.",
+   "Write the support reply to Fatima Alvarado (ticket 88044): the invoice preview shows outdated amounts. The financial data has been synchronized; refresh the preview and check the date range. Help article: https://help.example.com/invoice-preview-updates. Agent: Cole.",
+   "Write the support reply to Marcus Thompson (ticket 24681): the mobile app crashes when opening the settings menu. A critical bug has been patched; uninstall and reinstall the app to apply the fix. Help article: https://help.example.com/mobile-app-crash-fix. Agent: Aria.",
+   "Write the support reply to Thomas Lee (ticket 33289): the search function returns irrelevant results. A new indexing algorithm has been deployed; run a full re-index and clear the search cache. Help article: https://help.example.com/search-indexing-update. Agent: Leia.",
+   "Write the support reply to Robert Kim (ticket 22145): the payment gateway shows failed transactions despite successful processing. The gateway logs have been reconciled; retry the transaction and verify the payment method. Help article: https://help.example.com/payment-gateway-errors. Agent: Finn.",
+   "Write the support reply to Naomi Kim (ticket 41205): she receives an error when trying to sync her calendar. The sync endpoint has been restored; refresh the calendar and ensure the timezone is set correctly. Help article: https://help.example.com/calendar-sync-setup. Agent: Riley.",
+   "Write the support reply to Lucas Adams (ticket 90134): the email notifications are not being delivered. The delivery queue has been rebuilt; check your inbox settings and retry sending a test notification. Help article: https://help.example.com/email-delivery-issues. Agent: Diego.",
+   "Write the support reply to Peter Foster (ticket 11207): he can't access his admin panel after password reset. The session lockout has been cleared; log in with your credentials and confirm your email. Help article: https://help.example.com/admin-panel-access. Agent: Luna.",
+   "Write the support reply to Nathan Wright (ticket 44091): his profile photo is not displaying after upload. The image processing pipeline has been fixed; re-upload the photo using the new format. Help article: https://help.example.com/profile-photo-upload. Agent: Kenji.",
+   "Write the support reply to James Chen (ticket 18943): the report generation takes over 10 minutes to complete. A performance optimization has been implemented; re-run the report with a smaller data subset. Help article: https://help.example.com/report-performance-tips. Agent: Casey.",
+   "Write the support reply to Sofia Patel (ticket 67310): her subscription plan shows as inactive despite payment confirmation. The plan status has been corrected; verify the subscription details in the billing section. Help article: https://help.example.com/subscription-status-verification. Agent: Noah."
+  ],
+  "random": [
+   "Write the support reply to David Kim (ticket 32157): his login keeps redirecting to the onboarding page after authentication. The issue is resolved by updating the session token in the backend; users should clear their cookies and log in again. Help article: https://help.example.com/session-token-update. Agent: Taylor.",
+   "Write the support reply to Elena Rodriguez (ticket 55029): she can't view her recent activity feed in the dashboard. The feed is now loading correctly after a configuration patch; refresh the page and ensure JavaScript is enabled. Help article: https://help.example.com/activity-feed-configuration. Agent: Morgan.",
+   "Write the support reply to James Chen (ticket 18943): the report generation takes over 10 minutes to complete. A performance optimization has been implemented; re-run the report with a smaller data subset. Help article: https://help.example.com/report-performance-tips. Agent: Casey.",
+   "Write the support reply to Sofia Patel (ticket 67310): her subscription plan shows as inactive despite payment confirmation. The plan status has been corrected; verify the subscription details in the billing section. Help article: https://help.example.com/subscription-status-verification. Agent: Noah.",
+   "Write the support reply to Marcus Thompson (ticket 24681): the mobile app crashes when opening the settings menu. A critical bug has been patched; uninstall and reinstall the app to apply the fix. Help article: https://help.example.com/mobile-app-crash-fix. Agent: Aria.",
+   "Write the support reply to Naomi Kim (ticket 41205): she receives an error when trying to sync her calendar. The sync endpoint has been restored; refresh the calendar and ensure the timezone is set correctly. Help article: https://help.example.com/calendar-sync-setup. Agent: Riley.",
+   "Write the support reply to Lucas Adams (ticket 90134): the email notifications are not being delivered. The delivery queue has been rebuilt; check your inbox settings and retry sending a test notification. Help article: https://help.example.com/email-delivery-issues. Agent: Diego.",
+   "Write the support reply to Hannah White (ticket 73502): her data export fails with a '403 forbidden' error. The access rights have been adjusted; re-authorize the export permissions through the security dashboard. Help article: https://help.example.com/data-export-permissions. Agent: Sam.",
+   "Write the support reply to Thomas Lee (ticket 33289): the search function returns irrelevant results. A new indexing algorithm has been deployed; run a full re-index and clear the search cache. Help article: https://help.example.com/search-indexing-update. Agent: Leia.",
+   "Write the support reply to Fatima Alvarado (ticket 88044): the invoice preview shows outdated amounts. The financial data has been synchronized; refresh the preview and check the date range. Help article: https://help.example.com/invoice-preview-updates. Agent: Cole.",
+   "Write the support reply to Peter Foster (ticket 11207): he can't access his admin panel after password reset. The session lockout has been cleared; log in with your credentials and confirm your email. Help article: https://help.example.com/admin-panel-access. Agent: Luna.",
+   "Write the support reply to Chloe Martinez (ticket 50916): her team's access to shared documents is blocked. The access group has been updated; re-assign permissions through the collaboration workspace. Help article: https://help.example.com/document-sharing-permissions. Agent: Eden."
+  ]
+ },
+ "changelog": {
+  "candidates": [
+   {
+    "request": "Write the changelog entry for version 3.1.2, released on 2026-04-15. Added dark mode to the dashboard interface (issue #501, by @michael). Improved mobile responsiveness (issue #487, by @sara). BREAKING: deprecated the legacy login flow, requiring users to use OAuth2 instead.",
+    "U": 0.16666666666666666,
+    "clash": 0.5,
+    "S": 0.41666666666666663
+   },
+   {
+    "request": "Write the changelog entry for version 1.8.5, released on 2026-02-28. Added support for multiple language locales (issue #322, by @lina). Fixed a memory leak during long-running sync operations (issue #299, by @david). BREAKING: removed the legacy API key authentication method.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 4.0.1, released on 2026-05-03. Added real-time collaboration in document editing (issue #604, by @james). Enhanced error handling in payment processing (issue #556, by @kate). BREAKING: the /api/v1/payments endpoint is no longer available.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 2.7.3, released on 2026-03-18. Added customizable notification preferences (issue #443, by @emma). Fixed a crash when opening large files in the editor (issue #419, by @tony). BREAKING: the old file versioning system is deprecated and will be removed in v3.0.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 5.2.0, released on 2026-04-22. Added keyboard shortcuts for navigation (issue #711, by @robert). Improved performance of search queries (issue #678, by @nina). BREAKING: the /user/profile endpoint has been replaced with a new /me endpoint.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 3.4.1, released on 2026-01-30. Added audit logging for admin actions (issue #233, by @chloe). Fixed a data sync failure in offline mode (issue #301, by @ravi). BREAKING: the /v1/data/export endpoint is now private and requires API key permissions.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 6.0.0, released on 2026-05-10. Added support for webhooks in integrations (issue #802, by @alex). Implemented automatic backup scheduling (issue #766, by @lucia). BREAKING: the old webhook delivery mechanism is no longer supported.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 1.9.4, released on 2026-04-05. Added accessibility features for screen readers (issue #520, by @mohammed). Fixed a bug in form validation (issue #468, by @jess). BREAKING: the /auth/token endpoint has been retired.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 4.5.2, released on 2026-03-25. Added team-based project sharing (issue #655, by @daniel). Fixed a mismatch in user roles during role updates (issue #588, by @sophia). BREAKING: the /team/members endpoint is now read-only.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 2.9.7, released on 2026-02-12. Added support for custom data fields (issue #389, by @nathan). Improved loading speed for dashboard pages (issue #405, by @amanda). BREAKING: the /v1/fields endpoint is no longer functional.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 5.1.3, released on 2026-05-08. Added drag-and-drop file upload (issue #744, by @ryan). Fixed an incorrect status display in task lists (issue #692, by @zoe). BREAKING: the old task status API will be removed in future versions.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 3.2.1, released on 2026-04-11. Added offline mode for data syncing (issue #455, by @carol). Fixed a bug in user session timeout (issue #433, by @kai). BREAKING: the /session/end endpoint is deprecated and will be removed.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 4.3.0, released on 2026-03-29. Added performance analytics dashboard (issue #612, by @julia). Improved error reporting visibility (issue #577, by @tomas). BREAKING: the /logs endpoint has been replaced with a new /analytics/logs endpoint.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 1.7.6, released on 2026-01-25. Added file version history (issue #344, by @mario). Fixed a bug in email subscription settings (issue #367, by @lily). BREAKING: the /subscription/unsubscribe endpoint is now disabled.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 6.1.1, released on 2026-05-14. Added support for external calendar sync (issue #821, by @paul). Improved data privacy settings (issue #790, by @kira). BREAKING: the legacy calendar feed will no longer be available.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the changelog entry for version 2.6.4, released on 2026-02-07. Added real-time collaboration in comments (issue #477, by @diana). Fixed a bug in comment editing (issue #422, by @mike). BREAKING: the /comments/delete endpoint is now restricted to admins only.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "Write the changelog entry for version 3.1.2, released on 2026-04-15. Added dark mode to the dashboard interface (issue #501, by @michael). Improved mobile responsiveness (issue #487, by @sara). BREAKING: deprecated the legacy login flow, requiring users to use OAuth2 instead.",
+   "Write the changelog entry for version 6.0.0, released on 2026-05-10. Added support for webhooks in integrations (issue #802, by @alex). Implemented automatic backup scheduling (issue #766, by @lucia). BREAKING: the old webhook delivery mechanism is no longer supported.",
+   "Write the changelog entry for version 1.8.5, released on 2026-02-28. Added support for multiple language locales (issue #322, by @lina). Fixed a memory leak during long-running sync operations (issue #299, by @david). BREAKING: removed the legacy API key authentication method.",
+   "Write the changelog entry for version 5.2.0, released on 2026-04-22. Added keyboard shortcuts for navigation (issue #711, by @robert). Improved performance of search queries (issue #678, by @nina). BREAKING: the /user/profile endpoint has been replaced with a new /me endpoint.",
+   "Write the changelog entry for version 2.7.3, released on 2026-03-18. Added customizable notification preferences (issue #443, by @emma). Fixed a crash when opening large files in the editor (issue #419, by @tony). BREAKING: the old file versioning system is deprecated and will be removed in v3.0.",
+   "Write the changelog entry for version 2.6.4, released on 2026-02-07. Added real-time collaboration in comments (issue #477, by @diana). Fixed a bug in comment editing (issue #422, by @mike). BREAKING: the /comments/delete endpoint is now restricted to admins only.",
+   "Write the changelog entry for version 2.9.7, released on 2026-02-12. Added support for custom data fields (issue #389, by @nathan). Improved loading speed for dashboard pages (issue #405, by @amanda). BREAKING: the /v1/fields endpoint is no longer functional.",
+   "Write the changelog entry for version 3.4.1, released on 2026-01-30. Added audit logging for admin actions (issue #233, by @chloe). Fixed a data sync failure in offline mode (issue #301, by @ravi). BREAKING: the /v1/data/export endpoint is now private and requires API key permissions.",
+   "Write the changelog entry for version 1.9.4, released on 2026-04-05. Added accessibility features for screen readers (issue #520, by @mohammed). Fixed a bug in form validation (issue #468, by @jess). BREAKING: the /auth/token endpoint has been retired.",
+   "Write the changelog entry for version 6.1.1, released on 2026-05-14. Added support for external calendar sync (issue #821, by @paul). Improved data privacy settings (issue #790, by @kira). BREAKING: the legacy calendar feed will no longer be available.",
+   "Write the changelog entry for version 5.1.3, released on 2026-05-08. Added drag-and-drop file upload (issue #744, by @ryan). Fixed an incorrect status display in task lists (issue #692, by @zoe). BREAKING: the old task status API will be removed in future versions.",
+   "Write the changelog entry for version 4.0.1, released on 2026-05-03. Added real-time collaboration in document editing (issue #604, by @james). Enhanced error handling in payment processing (issue #556, by @kate). BREAKING: the /api/v1/payments endpoint is no longer available."
+  ],
+  "random": [
+   "Write the changelog entry for version 3.1.2, released on 2026-04-15. Added dark mode to the dashboard interface (issue #501, by @michael). Improved mobile responsiveness (issue #487, by @sara). BREAKING: deprecated the legacy login flow, requiring users to use OAuth2 instead.",
+   "Write the changelog entry for version 1.8.5, released on 2026-02-28. Added support for multiple language locales (issue #322, by @lina). Fixed a memory leak during long-running sync operations (issue #299, by @david). BREAKING: removed the legacy API key authentication method.",
+   "Write the changelog entry for version 4.0.1, released on 2026-05-03. Added real-time collaboration in document editing (issue #604, by @james). Enhanced error handling in payment processing (issue #556, by @kate). BREAKING: the /api/v1/payments endpoint is no longer available.",
+   "Write the changelog entry for version 2.7.3, released on 2026-03-18. Added customizable notification preferences (issue #443, by @emma). Fixed a crash when opening large files in the editor (issue #419, by @tony). BREAKING: the old file versioning system is deprecated and will be removed in v3.0.",
+   "Write the changelog entry for version 5.2.0, released on 2026-04-22. Added keyboard shortcuts for navigation (issue #711, by @robert). Improved performance of search queries (issue #678, by @nina). BREAKING: the /user/profile endpoint has been replaced with a new /me endpoint.",
+   "Write the changelog entry for version 3.4.1, released on 2026-01-30. Added audit logging for admin actions (issue #233, by @chloe). Fixed a data sync failure in offline mode (issue #301, by @ravi). BREAKING: the /v1/data/export endpoint is now private and requires API key permissions.",
+   "Write the changelog entry for version 6.0.0, released on 2026-05-10. Added support for webhooks in integrations (issue #802, by @alex). Implemented automatic backup scheduling (issue #766, by @lucia). BREAKING: the old webhook delivery mechanism is no longer supported.",
+   "Write the changelog entry for version 1.9.4, released on 2026-04-05. Added accessibility features for screen readers (issue #520, by @mohammed). Fixed a bug in form validation (issue #468, by @jess). BREAKING: the /auth/token endpoint has been retired.",
+   "Write the changelog entry for version 4.5.2, released on 2026-03-25. Added team-based project sharing (issue #655, by @daniel). Fixed a mismatch in user roles during role updates (issue #588, by @sophia). BREAKING: the /team/members endpoint is now read-only.",
+   "Write the changelog entry for version 2.9.7, released on 2026-02-12. Added support for custom data fields (issue #389, by @nathan). Improved loading speed for dashboard pages (issue #405, by @amanda). BREAKING: the /v1/fields endpoint is no longer functional.",
+   "Write the changelog entry for version 5.1.3, released on 2026-05-08. Added drag-and-drop file upload (issue #744, by @ryan). Fixed an incorrect status display in task lists (issue #692, by @zoe). BREAKING: the old task status API will be removed in future versions.",
+   "Write the changelog entry for version 3.2.1, released on 2026-04-11. Added offline mode for data syncing (issue #455, by @carol). Fixed a bug in user session timeout (issue #433, by @kai). BREAKING: the /session/end endpoint is deprecated and will be removed."
+  ]
+ },
+ "apierror": {
+  "candidates": [
+   {
+    "request": "Write the JSON error response body for a request that received invalid JSON input on POST /v1/users/create.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that failed due to missing required field 'email' on POST /v1/auth/register.",
+    "U": 0.16666666666666666,
+    "clash": 0.4,
+    "S": 0.3666666666666667
+   },
+   {
+    "request": "Write the JSON error response body for a request that attempted to access a non-existent resource at GET /v1/products/999999.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that was denied due to insufficient user permissions on GET /v1/admin/logs.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that exceeded the 500MB file size limit on POST /v1/uploads/large-file.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that failed because the API key has expired on GET /v1/analytics/reports.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that encountered a database timeout during processing on POST /v1/orders/process.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the JSON error response body for a request that contains a duplicate entry in the request body on POST /v1/transactions/batch.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that was rejected due to an unsupported content type (e.g., application/xml) on POST /v1/payments/process.",
+    "U": 0.16666666666666666,
+    "clash": 0.4,
+    "S": 0.3666666666666667
+   },
+   {
+    "request": "Write the JSON error response body for a request that failed validation on the 'amount' field being negative on POST /v1/budgets/spend.",
+    "U": 0.5,
+    "clash": 0.4,
+    "S": 0.7
+   },
+   {
+    "request": "Write the JSON error response body for a request that was blocked by a firewall rule targeting IP 192.168.1.100 on GET /v1/secure/data.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the JSON error response body for a request that failed because the provided token was malformed on POST /v1/verify/session.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that could not be processed due to an internal service outage on POST /v1/notifications/send.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the JSON error response body for a request that tried to update a resource that has been deleted on PATCH /v1/orders/12345.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that exceeded the 10-second request timeout on POST /v1/search/long-query.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the JSON error response body for a request that violated the 'max_concurrent_requests' limit of 10 on POST /v1/processing/queue.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   }
+  ],
+  "frontier": [
+   "Write the JSON error response body for a request that received invalid JSON input on POST /v1/users/create.",
+   "Write the JSON error response body for a request that attempted to access a non-existent resource at GET /v1/products/999999.",
+   "Write the JSON error response body for a request that was denied due to insufficient user permissions on GET /v1/admin/logs.",
+   "Write the JSON error response body for a request that tried to update a resource that has been deleted on PATCH /v1/orders/12345.",
+   "Write the JSON error response body for a request that failed because the API key has expired on GET /v1/analytics/reports.",
+   "Write the JSON error response body for a request that failed because the provided token was malformed on POST /v1/verify/session.",
+   "Write the JSON error response body for a request that exceeded the 500MB file size limit on POST /v1/uploads/large-file.",
+   "Write the JSON error response body for a request that exceeded the 10-second request timeout on POST /v1/search/long-query.",
+   "Write the JSON error response body for a request that violated the 'max_concurrent_requests' limit of 10 on POST /v1/processing/queue.",
+   "Write the JSON error response body for a request that contains a duplicate entry in the request body on POST /v1/transactions/batch.",
+   "Write the JSON error response body for a request that failed validation on the 'amount' field being negative on POST /v1/budgets/spend.",
+   "Write the JSON error response body for a request that was rejected due to an unsupported content type (e.g., application/xml) on POST /v1/payments/process."
+  ],
+  "random": [
+   "Write the JSON error response body for a request that received invalid JSON input on POST /v1/users/create.",
+   "Write the JSON error response body for a request that failed due to missing required field 'email' on POST /v1/auth/register.",
+   "Write the JSON error response body for a request that attempted to access a non-existent resource at GET /v1/products/999999.",
+   "Write the JSON error response body for a request that was denied due to insufficient user permissions on GET /v1/admin/logs.",
+   "Write the JSON error response body for a request that exceeded the 500MB file size limit on POST /v1/uploads/large-file.",
+   "Write the JSON error response body for a request that failed because the API key has expired on GET /v1/analytics/reports.",
+   "Write the JSON error response body for a request that encountered a database timeout during processing on POST /v1/orders/process.",
+   "Write the JSON error response body for a request that contains a duplicate entry in the request body on POST /v1/transactions/batch.",
+   "Write the JSON error response body for a request that was rejected due to an unsupported content type (e.g., application/xml) on POST /v1/payments/process.",
+   "Write the JSON error response body for a request that failed validation on the 'amount' field being negative on POST /v1/budgets/spend.",
+   "Write the JSON error response body for a request that was blocked by a firewall rule targeting IP 192.168.1.100 on GET /v1/secure/data.",
+   "Write the JSON error response body for a request that failed because the provided token was malformed on POST /v1/verify/session."
+  ]
+ },
+ "review": {
+  "candidates": [
+   {
+    "request": "The diff adds a new logging statement that prints the full request body in every HTTP call, including sensitive data. File: api/handler.py, line 102.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff changes the database query to fetch all user records without filtering by active status, potentially exposing inactive users. File: models/user.py, line 76.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff replaces a synchronous function with an async one but doesn't update the calling code to await it, causing a runtime error. File: services/email.py, line 45.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff introduces a new configuration option that defaults to a high timeout value, which could cause long delays during user login. File: config/app.py, line 23.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff modifies the error handler to log stack traces to a file without a rotation policy, risking disk overflow. File: errors/manager.py, line 67.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff removes a rate limiting check in the API endpoint but does not add any new safeguards for abuse. File: routes/auth.py, line 91.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff uses a global variable to store session data instead of passing it through function parameters, making it harder to test. File: utils/session.py, line 33.",
+    "U": 0.75,
+    "clash": 0.35,
+    "S": 0.925
+   },
+   {
+    "request": "The diff changes the validation rule to accept empty strings for email fields, which violates business logic. File: validators/email.py, line 55.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff adds a new endpoint that does not return proper HTTP status codes, leading to inconsistent client behavior. File: routes/users.py, line 120.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff refactors a complex loop into a map operation but doesn\u2019t provide a clear explanation of why it improves performance. File: processor/data.py, line 88.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff introduces a new dependency that is not documented in the README, making it hard for new developers to understand. File: components/analytics.py, line 40.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "The diff deletes a critical error boundary in the UI component, which could lead to a crash when user input is invalid. File: components/form.js, line 66.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "The diff uses a hardcoded value for the API endpoint instead of pulling it from environment variables, reducing portability. File: services/api.py, line 39.",
+    "U": 0.08333333333333333,
+    "clash": 0.44999999999999996,
+    "S": 0.3083333333333333
+   },
+   {
+    "request": "The diff adds a new function that modifies state in a way that is not visible in the UI, causing confusion for users. File: state/manager.py, line 101.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "The diff merges two separate functions into one without clearly defining the new behavior, increasing the risk of side effects. File: utils/transform.py, line 74.",
+    "U": 0.4166666666666667,
+    "clash": 0.4,
+    "S": 0.6166666666666667
+   },
+   {
+    "request": "The diff enables debugging mode by default in production, which could expose internal state to unauthorized users. File: config/debug.py, line 15.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "The diff introduces a new dependency that is not documented in the README, making it hard for new developers to understand. File: components/analytics.py, line 40.",
+   "The diff adds a new function that modifies state in a way that is not visible in the UI, causing confusion for users. File: state/manager.py, line 101.",
+   "The diff uses a global variable to store session data instead of passing it through function parameters, making it harder to test. File: utils/session.py, line 33.",
+   "The diff merges two separate functions into one without clearly defining the new behavior, increasing the risk of side effects. File: utils/transform.py, line 74.",
+   "The diff uses a hardcoded value for the API endpoint instead of pulling it from environment variables, reducing portability. File: services/api.py, line 39.",
+   "The diff changes the database query to fetch all user records without filtering by active status, potentially exposing inactive users. File: models/user.py, line 76.",
+   "The diff changes the validation rule to accept empty strings for email fields, which violates business logic. File: validators/email.py, line 55.",
+   "The diff replaces a synchronous function with an async one but doesn't update the calling code to await it, causing a runtime error. File: services/email.py, line 45.",
+   "The diff enables debugging mode by default in production, which could expose internal state to unauthorized users. File: config/debug.py, line 15.",
+   "The diff modifies the error handler to log stack traces to a file without a rotation policy, risking disk overflow. File: errors/manager.py, line 67.",
+   "The diff deletes a critical error boundary in the UI component, which could lead to a crash when user input is invalid. File: components/form.js, line 66.",
+   "The diff refactors a complex loop into a map operation but doesn\u2019t provide a clear explanation of why it improves performance. File: processor/data.py, line 88."
+  ],
+  "random": [
+   "The diff adds a new logging statement that prints the full request body in every HTTP call, including sensitive data. File: api/handler.py, line 102.",
+   "The diff changes the database query to fetch all user records without filtering by active status, potentially exposing inactive users. File: models/user.py, line 76.",
+   "The diff replaces a synchronous function with an async one but doesn't update the calling code to await it, causing a runtime error. File: services/email.py, line 45.",
+   "The diff introduces a new configuration option that defaults to a high timeout value, which could cause long delays during user login. File: config/app.py, line 23.",
+   "The diff modifies the error handler to log stack traces to a file without a rotation policy, risking disk overflow. File: errors/manager.py, line 67.",
+   "The diff removes a rate limiting check in the API endpoint but does not add any new safeguards for abuse. File: routes/auth.py, line 91.",
+   "The diff uses a global variable to store session data instead of passing it through function parameters, making it harder to test. File: utils/session.py, line 33.",
+   "The diff changes the validation rule to accept empty strings for email fields, which violates business logic. File: validators/email.py, line 55.",
+   "The diff adds a new endpoint that does not return proper HTTP status codes, leading to inconsistent client behavior. File: routes/users.py, line 120.",
+   "The diff refactors a complex loop into a map operation but doesn\u2019t provide a clear explanation of why it improves performance. File: processor/data.py, line 88.",
+   "The diff introduces a new dependency that is not documented in the README, making it hard for new developers to understand. File: components/analytics.py, line 40.",
+   "The diff deletes a critical error boundary in the UI component, which could lead to a crash when user input is invalid. File: components/form.js, line 66."
+  ]
+ },
+ "testcase": {
+  "candidates": [
+   {
+    "request": "Write the test case specification: verify that a user receives a notification when a payment is declined. Test ID TC-0521. Feature: checkout. Priority: P1.",
+    "U": 0.16666666666666666,
+    "clash": 0.4,
+    "S": 0.3666666666666667
+   },
+   {
+    "request": "Write the test case specification: confirm that a product is correctly priced after applying a discount code. Test ID TC-0634. Feature: cart. Priority: P2.",
+    "U": 0.4166666666666667,
+    "clash": 0.19999999999999996,
+    "S": 0.5166666666666666
+   },
+   {
+    "request": "Write the test case specification: ensure that users cannot create an account with a duplicate email. Test ID TC-0718. Feature: registration. Priority: P1.",
+    "U": 0.625,
+    "clash": 0.32499999999999996,
+    "S": 0.7875
+   },
+   {
+    "request": "Write the test case specification: validate that a user\u2019s profile photo is displayed correctly after upload. Test ID TC-0845. Feature: user profile. Priority: P3.",
+    "U": 0.4166666666666667,
+    "clash": 0.4,
+    "S": 0.6166666666666667
+   },
+   {
+    "request": "Write the test case specification: verify that search results are filtered by category when a user selects it. Test ID TC-0922. Feature: search. Priority: P1.",
+    "U": 0.5833333333333334,
+    "clash": 0.35,
+    "S": 0.7583333333333333
+   },
+   {
+    "request": "Write the test case specification: confirm that an admin can revoke a user\u2019s access rights. Test ID TC-1011. Feature: permissions. Priority: P2.",
+    "U": 0.25,
+    "clash": 0.44999999999999996,
+    "S": 0.475
+   },
+   {
+    "request": "Write the test case specification: check that a user is redirected to a login page after clicking a link from a non-authenticated page. Test ID TC-1156. Feature: navigation. Priority: P3.",
+    "U": 0.3333333333333333,
+    "clash": 0.19999999999999996,
+    "S": 0.4333333333333333
+   },
+   {
+    "request": "Write the test case specification: ensure that a user can submit a support ticket with a file attachment. Test ID TC-1233. Feature: support. Priority: P1.",
+    "U": 0.25,
+    "clash": 0.35,
+    "S": 0.425
+   },
+   {
+    "request": "Write the test case specification: verify that a user sees a 'Continue without payment' option in the checkout flow. Test ID TC-1378. Feature: checkout. Priority: P2.",
+    "U": 0.5416666666666666,
+    "clash": 0.375,
+    "S": 0.7291666666666666
+   },
+   {
+    "request": "Write the test case specification: confirm that the app displays a loading spinner during API calls. Test ID TC-1492. Feature: data loading. Priority: P1.",
+    "U": 0.3333333333333333,
+    "clash": 0.30000000000000004,
+    "S": 0.48333333333333334
+   },
+   {
+    "request": "Write the test case specification: validate that a user cannot bypass two-factor authentication. Test ID TC-1567. Feature: authentication. Priority: P1.",
+    "U": 0.375,
+    "clash": 0.22499999999999998,
+    "S": 0.4875
+   },
+   {
+    "request": "Write the test case specification: ensure that email preferences are saved and reflected in the next session. Test ID TC-1688. Feature: user settings. Priority: P3.",
+    "U": 0.5,
+    "clash": 0.4,
+    "S": 0.7
+   },
+   {
+    "request": "Write the test case specification: verify that a user is prevented from accessing a restricted page without proper role assignment. Test ID TC-1744. Feature: role-based access. Priority: P2.",
+    "U": 0.2916666666666667,
+    "clash": 0.22499999999999998,
+    "S": 0.4041666666666667
+   },
+   {
+    "request": "Write the test case specification: confirm that a user receives a password reset link via email after clicking 'Forgot Password'. Test ID TC-1822. Feature: authentication. Priority: P1.",
+    "U": 0.2916666666666667,
+    "clash": 0.375,
+    "S": 0.4791666666666667
+   },
+   {
+    "request": "Write the test case specification: ensure that a user\u2019s order history is updated after a successful purchase. Test ID TC-1901. Feature: order management. Priority: P2.",
+    "U": 0.125,
+    "clash": 0.375,
+    "S": 0.3125
+   },
+   {
+    "request": "Write the test case specification: validate that a mobile app renders the same content as the web version on a standard device. Test ID TC-2055. Feature: cross-platform compatibility. Priority: P3",
+    "U": 0.375,
+    "clash": 0.22499999999999998,
+    "S": 0.4875
+   }
+  ],
+  "frontier": [
+   "Write the test case specification: ensure that users cannot create an account with a duplicate email. Test ID TC-0718. Feature: registration. Priority: P1.",
+   "Write the test case specification: verify that search results are filtered by category when a user selects it. Test ID TC-0922. Feature: search. Priority: P1.",
+   "Write the test case specification: verify that a user sees a 'Continue without payment' option in the checkout flow. Test ID TC-1378. Feature: checkout. Priority: P2.",
+   "Write the test case specification: ensure that email preferences are saved and reflected in the next session. Test ID TC-1688. Feature: user settings. Priority: P3.",
+   "Write the test case specification: validate that a user\u2019s profile photo is displayed correctly after upload. Test ID TC-0845. Feature: user profile. Priority: P3.",
+   "Write the test case specification: validate that a mobile app renders the same content as the web version on a standard device. Test ID TC-2055. Feature: cross-platform compatibility. Priority: P3",
+   "Write the test case specification: confirm that the app displays a loading spinner during API calls. Test ID TC-1492. Feature: data loading. Priority: P1.",
+   "Write the test case specification: confirm that a product is correctly priced after applying a discount code. Test ID TC-0634. Feature: cart. Priority: P2.",
+   "Write the test case specification: confirm that a user receives a password reset link via email after clicking 'Forgot Password'. Test ID TC-1822. Feature: authentication. Priority: P1.",
+   "Write the test case specification: confirm that an admin can revoke a user\u2019s access rights. Test ID TC-1011. Feature: permissions. Priority: P2.",
+   "Write the test case specification: validate that a user cannot bypass two-factor authentication. Test ID TC-1567. Feature: authentication. Priority: P1.",
+   "Write the test case specification: check that a user is redirected to a login page after clicking a link from a non-authenticated page. Test ID TC-1156. Feature: navigation. Priority: P3."
+  ],
+  "random": [
+   "Write the test case specification: verify that a user receives a notification when a payment is declined. Test ID TC-0521. Feature: checkout. Priority: P1.",
+   "Write the test case specification: confirm that a product is correctly priced after applying a discount code. Test ID TC-0634. Feature: cart. Priority: P2.",
+   "Write the test case specification: ensure that users cannot create an account with a duplicate email. Test ID TC-0718. Feature: registration. Priority: P1.",
+   "Write the test case specification: validate that a user\u2019s profile photo is displayed correctly after upload. Test ID TC-0845. Feature: user profile. Priority: P3.",
+   "Write the test case specification: verify that search results are filtered by category when a user selects it. Test ID TC-0922. Feature: search. Priority: P1.",
+   "Write the test case specification: confirm that an admin can revoke a user\u2019s access rights. Test ID TC-1011. Feature: permissions. Priority: P2.",
+   "Write the test case specification: check that a user is redirected to a login page after clicking a link from a non-authenticated page. Test ID TC-1156. Feature: navigation. Priority: P3.",
+   "Write the test case specification: ensure that a user can submit a support ticket with a file attachment. Test ID TC-1233. Feature: support. Priority: P1.",
+   "Write the test case specification: verify that a user sees a 'Continue without payment' option in the checkout flow. Test ID TC-1378. Feature: checkout. Priority: P2.",
+   "Write the test case specification: confirm that the app displays a loading spinner during API calls. Test ID TC-1492. Feature: data loading. Priority: P1.",
+   "Write the test case specification: validate that a user cannot bypass two-factor authentication. Test ID TC-1567. Feature: authentication. Priority: P1.",
+   "Write the test case specification: ensure that email preferences are saved and reflected in the next session. Test ID TC-1688. Feature: user settings. Priority: P3."
+  ]
+ },
+ "standup": {
+  "candidates": [
+   {
+    "request": "Write the standup update for Eli Moreno, 2026-03-11, team Shipping. Yesterday: resolved the order tracking timeout issue (SHI-204). Today: implementing real-time shipment updates (SHI-210), expected done 2026-03-14. Blocker: API rate limits from the third-party carrier service.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Maya Patel, 2026-03-11, team Customer Support. Yesterday: improved the ticket routing logic (CS-301). Today: onboarding new support agents (CS-305), expected done 2026-03-13. Blocker: missing training materials from HR team.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for David Kim, 2026-03-11, team Analytics. Yesterday: deployed the new user funnel visualization (ANA-112). Today: working on dashboard performance optimization (ANA-115), expected done 2026-03-15. Blocker: slow response from the frontend team on data structure changes.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Sofia Reyes, 2026-03-11, team Security. Yesterday: patched the authentication endpoint vulnerability (SEC-409). Today: reviewing access logs for the admin portal (SEC-412), expected done 2026-03-12. Blocker: lack of access to logs from the cloud firewall.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Jordan Lee, 2026-03-11, team Finance. Yesterday: finalized the expense report reconciliation (FIN-603). Today: setting up automated monthly audits (FIN-607), expected done 2026-03-16. Blocker: waiting for approval from the compliance officer.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Leila Hassan, 2026-03-11, team DevOps. Yesterday: automated deployment scripts for staging (DEV-701). Today: improving CI pipeline reliability (DEV-708), expected done 2026-03-14. Blocker: intermittent network failures during pipeline triggers.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Thomas Wu, 2026-03-11, team UX. Yesterday: completed user flow redesign for checkout (UX-802). Today: prototyping mobile view for returns (UX-806), expected done 2026-03-13. Blocker: design system updates not yet available from the product team.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Amara Okoro, 2026-03-11, team Marketing. Yesterday: launched the new email campaign (MAR-201). Today: analyzing open rates and CTR (MAR-205), expected done 2026-03-15. Blocker: no access to analytics dashboard from the third-party provider.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Carlos Mendez, 2026-03-11, team Payments. Yesterday: fixed the recurring payment failure bug (PAY-520). Today: integrating fraud detection rules (PAY-525), expected done 2026-03-17. Blocker: fraud model not ready from the risk team.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Nina Chen, 2026-03-11, team Frontend. Yesterday: refactored the search component (FRN-309). Today: adding dark mode toggle (FRN-313), expected done 2026-03-12. Blocker: CSS variables not yet updated across the design system.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Paul Briggs, 2026-03-11, team QA. Yesterday: completed test coverage for checkout flow (QA-411). Today: running end-to-end regression tests (QA-416), expected done 2026-03-14. Blocker: test environment has intermittent connectivity issues.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Fatima Al-Farsi, 2026-03-11, team Backend. Yesterday: optimized database query performance (BK-605). Today: setting up monitoring for slow queries (BK-609), expected done 2026-03-13. Blocker: no access to query logs from the DBA team.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Ryan Carter, 2026-03-11, team Product. Yesterday: finalized feature roadmap for Q2 (PROD-901). Today: drafting user research plan (PROD-906), expected done 2026-03-15. Blocker: delayed feedback from customer interviews.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Chloe Thompson, 2026-03-11, team Mobile. Yesterday: implemented push notifications (MOB-103). Today: testing battery usage on older devices (MOB-108), expected done 2026-03-16. Blocker: device access restricted due to company policy.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Ivan Petrov, 2026-03-11, team Compliance. Yesterday: reviewed data retention policy (CMP-702). Today: preparing audit documentation (CMP-707), expected done 2026-03-18. Blocker: missing internal policy version from legal department.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the standup update for Zara Williams, 2026-03-11, team Infrastructure. Yesterday: migrated backup system to cloud (INF-504). Today: scaling storage for new user base (INF-509), expected done 2026-03-15. Blocker: cloud provider rate limits on data transfer.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   }
+  ],
+  "frontier": [
+   "Write the standup update for Eli Moreno, 2026-03-11, team Shipping. Yesterday: resolved the order tracking timeout issue (SHI-204). Today: implementing real-time shipment updates (SHI-210), expected done 2026-03-14. Blocker: API rate limits from the third-party carrier service.",
+   "Write the standup update for Chloe Thompson, 2026-03-11, team Mobile. Yesterday: implemented push notifications (MOB-103). Today: testing battery usage on older devices (MOB-108), expected done 2026-03-16. Blocker: device access restricted due to company policy.",
+   "Write the standup update for Nina Chen, 2026-03-11, team Frontend. Yesterday: refactored the search component (FRN-309). Today: adding dark mode toggle (FRN-313), expected done 2026-03-12. Blocker: CSS variables not yet updated across the design system.",
+   "Write the standup update for David Kim, 2026-03-11, team Analytics. Yesterday: deployed the new user funnel visualization (ANA-112). Today: working on dashboard performance optimization (ANA-115), expected done 2026-03-15. Blocker: slow response from the frontend team on data structure changes.",
+   "Write the standup update for Leila Hassan, 2026-03-11, team DevOps. Yesterday: automated deployment scripts for staging (DEV-701). Today: improving CI pipeline reliability (DEV-708), expected done 2026-03-14. Blocker: intermittent network failures during pipeline triggers.",
+   "Write the standup update for Carlos Mendez, 2026-03-11, team Payments. Yesterday: fixed the recurring payment failure bug (PAY-520). Today: integrating fraud detection rules (PAY-525), expected done 2026-03-17. Blocker: fraud model not ready from the risk team.",
+   "Write the standup update for Jordan Lee, 2026-03-11, team Finance. Yesterday: finalized the expense report reconciliation (FIN-603). Today: setting up automated monthly audits (FIN-607), expected done 2026-03-16. Blocker: waiting for approval from the compliance officer.",
+   "Write the standup update for Sofia Reyes, 2026-03-11, team Security. Yesterday: patched the authentication endpoint vulnerability (SEC-409). Today: reviewing access logs for the admin portal (SEC-412), expected done 2026-03-12. Blocker: lack of access to logs from the cloud firewall.",
+   "Write the standup update for Maya Patel, 2026-03-11, team Customer Support. Yesterday: improved the ticket routing logic (CS-301). Today: onboarding new support agents (CS-305), expected done 2026-03-13. Blocker: missing training materials from HR team.",
+   "Write the standup update for Paul Briggs, 2026-03-11, team QA. Yesterday: completed test coverage for checkout flow (QA-411). Today: running end-to-end regression tests (QA-416), expected done 2026-03-14. Blocker: test environment has intermittent connectivity issues.",
+   "Write the standup update for Ivan Petrov, 2026-03-11, team Compliance. Yesterday: reviewed data retention policy (CMP-702). Today: preparing audit documentation (CMP-707), expected done 2026-03-18. Blocker: missing internal policy version from legal department.",
+   "Write the standup update for Ryan Carter, 2026-03-11, team Product. Yesterday: finalized feature roadmap for Q2 (PROD-901). Today: drafting user research plan (PROD-906), expected done 2026-03-15. Blocker: delayed feedback from customer interviews."
+  ],
+  "random": [
+   "Write the standup update for Eli Moreno, 2026-03-11, team Shipping. Yesterday: resolved the order tracking timeout issue (SHI-204). Today: implementing real-time shipment updates (SHI-210), expected done 2026-03-14. Blocker: API rate limits from the third-party carrier service.",
+   "Write the standup update for Maya Patel, 2026-03-11, team Customer Support. Yesterday: improved the ticket routing logic (CS-301). Today: onboarding new support agents (CS-305), expected done 2026-03-13. Blocker: missing training materials from HR team.",
+   "Write the standup update for David Kim, 2026-03-11, team Analytics. Yesterday: deployed the new user funnel visualization (ANA-112). Today: working on dashboard performance optimization (ANA-115), expected done 2026-03-15. Blocker: slow response from the frontend team on data structure changes.",
+   "Write the standup update for Sofia Reyes, 2026-03-11, team Security. Yesterday: patched the authentication endpoint vulnerability (SEC-409). Today: reviewing access logs for the admin portal (SEC-412), expected done 2026-03-12. Blocker: lack of access to logs from the cloud firewall.",
+   "Write the standup update for Jordan Lee, 2026-03-11, team Finance. Yesterday: finalized the expense report reconciliation (FIN-603). Today: setting up automated monthly audits (FIN-607), expected done 2026-03-16. Blocker: waiting for approval from the compliance officer.",
+   "Write the standup update for Leila Hassan, 2026-03-11, team DevOps. Yesterday: automated deployment scripts for staging (DEV-701). Today: improving CI pipeline reliability (DEV-708), expected done 2026-03-14. Blocker: intermittent network failures during pipeline triggers.",
+   "Write the standup update for Thomas Wu, 2026-03-11, team UX. Yesterday: completed user flow redesign for checkout (UX-802). Today: prototyping mobile view for returns (UX-806), expected done 2026-03-13. Blocker: design system updates not yet available from the product team.",
+   "Write the standup update for Amara Okoro, 2026-03-11, team Marketing. Yesterday: launched the new email campaign (MAR-201). Today: analyzing open rates and CTR (MAR-205), expected done 2026-03-15. Blocker: no access to analytics dashboard from the third-party provider.",
+   "Write the standup update for Carlos Mendez, 2026-03-11, team Payments. Yesterday: fixed the recurring payment failure bug (PAY-520). Today: integrating fraud detection rules (PAY-525), expected done 2026-03-17. Blocker: fraud model not ready from the risk team.",
+   "Write the standup update for Nina Chen, 2026-03-11, team Frontend. Yesterday: refactored the search component (FRN-309). Today: adding dark mode toggle (FRN-313), expected done 2026-03-12. Blocker: CSS variables not yet updated across the design system.",
+   "Write the standup update for Paul Briggs, 2026-03-11, team QA. Yesterday: completed test coverage for checkout flow (QA-411). Today: running end-to-end regression tests (QA-416), expected done 2026-03-14. Blocker: test environment has intermittent connectivity issues.",
+   "Write the standup update for Fatima Al-Farsi, 2026-03-11, team Backend. Yesterday: optimized database query performance (BK-605). Today: setting up monitoring for slow queries (BK-609), expected done 2026-03-13. Blocker: no access to query logs from the DBA team."
+  ]
+ },
+ "bugreport": {
+  "candidates": [
+   {
+    "request": "Write the bug report: the login screen freezes and becomes unresponsive when entering a password with special characters like @ or $. App version 4.2.3, Safari 15.6 on macOS Ventura. Console shows `Uncaught TypeError: Cannot read property 'length' of null`. Reporter: Maya Thompson.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the user profile edit form crashes when saving a profile with an avatar uploaded from a public URL. App version 5.1.0, Firefox 118 on Windows 10. Console shows `Error: Cannot assign to read only property 'value' of object`. Reporter: James Reed.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: after clicking 'Save' on a new task, the app crashes with a blank screen and no error message visible. App version 3.9.2, Edge 119 on Windows 11. Console shows `ReferenceError: document is not defined`. Reporter: Sophia Lee.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the search bar fails to filter results when the query contains multiple spaces or punctuation like '!' or '. '. App version 4.1.1, Chrome 120 on macOS Monterey. Console shows `TypeError: Cannot read property 'indexOf' of undefined`. Reporter: Nathan Patel.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the payment gateway fails to process transactions when the card number has a leading zero. App version 5.0.4, Chrome 121 on Android 14. Console shows `SyntaxError: Unexpected token '0' in JSON at position 0`. Reporter: Emma Carter.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the dashboard chart renders incorrectly when a user has no data for the selected time period. App version 4.3.0, Firefox 117 on Ubuntu 22.04. Console shows `Error: Cannot convert undefined or null to object`. Reporter: David Kim.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: clicking on a notification in the sidebar causes the app to crash with a black screen. App version 3.7.5, Safari 15.4 on iOS 16. Reporter: Olivia Brown.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the auto-save feature fails to save changes when a user types more than 1000 characters in a comment field. App version 4.4.1, Chrome 123 on Windows 10. Console shows `RangeError: Maximum call stack size exceeded`. Reporter: Michael Singh.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the user role dropdown fails to load when accessed on mobile devices with a screen width under 360px. App version 5.2.0, Chrome 124 on Android 13. Console shows `TypeError: Cannot read property 'options' of null`. Reporter: Chloe Wilson.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the export PDF function generates a corrupted file with missing fonts when formatting a report with large text blocks. App version 4.0.8, Edge 118 on Windows 11. Console shows `Error: Font not found: Arial-Bold`. Reporter: Robert Garcia.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the app crashes immediately upon opening when the user has an inactive session and logs in via a shared device. App version 3.8.5, Firefox 116 on Linux Mint. Console shows `Unhandled Rejection: NetworkError`. Reporter: Isabella Martinez.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the 'Delete' button on the settings page does not respond and throws a JavaScript error when clicked. App version 5.1.2, Chrome 122 on macOS Big Sur. Console shows `Error: Cannot delete non-existent object`. Reporter: Daniel Evans.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: when adding a new team member with an email containing a hyphen in the middle, the invite fails silently and no confirmation is shown. App version 4.3.4, Safari 15.5 on iOS 15. Console shows `Error: Invalid email format`. Reporter: Anna Rodriguez.",
+    "U": 0.4166666666666667,
+    "clash": 0.4,
+    "S": 0.6166666666666667
+   },
+   {
+    "request": "Write the bug report: the calendar view shifts incorrectly when switching between months in a multi-year range. App version 3.9.1, Chrome 121 on Windows 10. Console shows `RangeError: Invalid date`. Reporter: Kevin Chang.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: the file upload dialog blocks all further interactions when the user tries to upload a file larger than 5MB. App version 4.5.0, Firefox 119 on Ubuntu 20.04. Console shows `Error: File too large, max size is 5MB`. Reporter: Priya Singh.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the bug report: after selecting a date range in the analytics tab, the graph fails to render and displays a blank canvas. App version 5.0.3, Chrome 123 on Windows 11. Console shows `TypeError: Cannot read property 'length' of null`. Reporter: Thomas Young",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "Write the bug report: when adding a new team member with an email containing a hyphen in the middle, the invite fails silently and no confirmation is shown. App version 4.3.4, Safari 15.5 on iOS 15. Console shows `Error: Invalid email format`. Reporter: Anna Rodriguez.",
+   "Write the bug report: the search bar fails to filter results when the query contains multiple spaces or punctuation like '!' or '. '. App version 4.1.1, Chrome 120 on macOS Monterey. Console shows `TypeError: Cannot read property 'indexOf' of undefined`. Reporter: Nathan Patel.",
+   "Write the bug report: the export PDF function generates a corrupted file with missing fonts when formatting a report with large text blocks. App version 4.0.8, Edge 118 on Windows 11. Console shows `Error: Font not found: Arial-Bold`. Reporter: Robert Garcia.",
+   "Write the bug report: the 'Delete' button on the settings page does not respond and throws a JavaScript error when clicked. App version 5.1.2, Chrome 122 on macOS Big Sur. Console shows `Error: Cannot delete non-existent object`. Reporter: Daniel Evans.",
+   "Write the bug report: the calendar view shifts incorrectly when switching between months in a multi-year range. App version 3.9.1, Chrome 121 on Windows 10. Console shows `RangeError: Invalid date`. Reporter: Kevin Chang.",
+   "Write the bug report: the dashboard chart renders incorrectly when a user has no data for the selected time period. App version 4.3.0, Firefox 117 on Ubuntu 22.04. Console shows `Error: Cannot convert undefined or null to object`. Reporter: David Kim.",
+   "Write the bug report: the payment gateway fails to process transactions when the card number has a leading zero. App version 5.0.4, Chrome 121 on Android 14. Console shows `SyntaxError: Unexpected token '0' in JSON at position 0`. Reporter: Emma Carter.",
+   "Write the bug report: the app crashes immediately upon opening when the user has an inactive session and logs in via a shared device. App version 3.8.5, Firefox 116 on Linux Mint. Console shows `Unhandled Rejection: NetworkError`. Reporter: Isabella Martinez.",
+   "Write the bug report: the user profile edit form crashes when saving a profile with an avatar uploaded from a public URL. App version 5.1.0, Firefox 118 on Windows 10. Console shows `Error: Cannot assign to read only property 'value' of object`. Reporter: James Reed.",
+   "Write the bug report: after clicking 'Save' on a new task, the app crashes with a blank screen and no error message visible. App version 3.9.2, Edge 119 on Windows 11. Console shows `ReferenceError: document is not defined`. Reporter: Sophia Lee.",
+   "Write the bug report: after selecting a date range in the analytics tab, the graph fails to render and displays a blank canvas. App version 5.0.3, Chrome 123 on Windows 11. Console shows `TypeError: Cannot read property 'length' of null`. Reporter: Thomas Young",
+   "Write the bug report: the auto-save feature fails to save changes when a user types more than 1000 characters in a comment field. App version 4.4.1, Chrome 123 on Windows 10. Console shows `RangeError: Maximum call stack size exceeded`. Reporter: Michael Singh."
+  ],
+  "random": [
+   "Write the bug report: the login screen freezes and becomes unresponsive when entering a password with special characters like @ or $. App version 4.2.3, Safari 15.6 on macOS Ventura. Console shows `Uncaught TypeError: Cannot read property 'length' of null`. Reporter: Maya Thompson.",
+   "Write the bug report: the user profile edit form crashes when saving a profile with an avatar uploaded from a public URL. App version 5.1.0, Firefox 118 on Windows 10. Console shows `Error: Cannot assign to read only property 'value' of object`. Reporter: James Reed.",
+   "Write the bug report: after clicking 'Save' on a new task, the app crashes with a blank screen and no error message visible. App version 3.9.2, Edge 119 on Windows 11. Console shows `ReferenceError: document is not defined`. Reporter: Sophia Lee.",
+   "Write the bug report: the search bar fails to filter results when the query contains multiple spaces or punctuation like '!' or '. '. App version 4.1.1, Chrome 120 on macOS Monterey. Console shows `TypeError: Cannot read property 'indexOf' of undefined`. Reporter: Nathan Patel.",
+   "Write the bug report: the payment gateway fails to process transactions when the card number has a leading zero. App version 5.0.4, Chrome 121 on Android 14. Console shows `SyntaxError: Unexpected token '0' in JSON at position 0`. Reporter: Emma Carter.",
+   "Write the bug report: the dashboard chart renders incorrectly when a user has no data for the selected time period. App version 4.3.0, Firefox 117 on Ubuntu 22.04. Console shows `Error: Cannot convert undefined or null to object`. Reporter: David Kim.",
+   "Write the bug report: clicking on a notification in the sidebar causes the app to crash with a black screen. App version 3.7.5, Safari 15.4 on iOS 16. Reporter: Olivia Brown.",
+   "Write the bug report: the auto-save feature fails to save changes when a user types more than 1000 characters in a comment field. App version 4.4.1, Chrome 123 on Windows 10. Console shows `RangeError: Maximum call stack size exceeded`. Reporter: Michael Singh.",
+   "Write the bug report: the user role dropdown fails to load when accessed on mobile devices with a screen width under 360px. App version 5.2.0, Chrome 124 on Android 13. Console shows `TypeError: Cannot read property 'options' of null`. Reporter: Chloe Wilson.",
+   "Write the bug report: the export PDF function generates a corrupted file with missing fonts when formatting a report with large text blocks. App version 4.0.8, Edge 118 on Windows 11. Console shows `Error: Font not found: Arial-Bold`. Reporter: Robert Garcia.",
+   "Write the bug report: the app crashes immediately upon opening when the user has an inactive session and logs in via a shared device. App version 3.8.5, Firefox 116 on Linux Mint. Console shows `Unhandled Rejection: NetworkError`. Reporter: Isabella Martinez.",
+   "Write the bug report: the 'Delete' button on the settings page does not respond and throws a JavaScript error when clicked. App version 5.1.2, Chrome 122 on macOS Big Sur. Console shows `Error: Cannot delete non-existent object`. Reporter: Daniel Evans."
+  ]
+ },
+ "dockerfile": {
+  "candidates": [
+   {
+    "request": "Write the Dockerfile for a Node.js 18 Express service that listens on port 3000, installs dependencies from package.json using npm and starts with `node server.js`. Owning team: platform-frontend.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Go 1.21 web service that listens on port 8080, builds the binary with go build and starts with `./bin/app`. Owning team: platform-backend.",
+    "U": 0.7916666666666666,
+    "clash": 0.42500000000000004,
+    "S": 1.0041666666666667
+   },
+   {
+    "request": "Write the Dockerfile for a Ruby 3.2 Rails application that listens on port 3001, installs gems from Gemfile using bundle install and starts with `rails server -p 3001`. Owning team: platform-e-commerce.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Java 17 Spring Boot app that listens on port 8081, compiles the project with mvn clean package and starts with `java -jar target/app.jar`. Owning team: platform-identity.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Rust 1.72 service that listens on port 5000, builds the binary with cargo build and starts with `target/release/app`. Owning team: platform-data.",
+    "U": 0.7083333333333334,
+    "clash": 0.375,
+    "S": 0.8958333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a PHP 8.2 Laravel service that listens on port 8001, installs dependencies from composer.json using composer install and starts with `php artisan serve --host=0.0.0.0 --port=8001`. Owning team: platform-operations.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Python 3.11 Django service that listens on port 8002, installs dependencies from requirements.txt and starts with `python manage.py runserver 0.0.0.0:8002`. Owning team: platform-analytics.",
+    "U": 0.041666666666666664,
+    "clash": 0.32499999999999996,
+    "S": 0.20416666666666664
+   },
+   {
+    "request": "Write the Dockerfile for a Node.js 16 NestJS service that listens on port 3002, installs dependencies from package.json using yarn and starts with `yarn start`. Owning team: platform-api-gateway.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Scala 2.13 Akka service that listens on port 9000, compiles with sbt compile and starts with `sbt run`. Owning team: platform-messaging.",
+    "U": 0.7916666666666666,
+    "clash": 0.375,
+    "S": 0.9791666666666666
+   },
+   {
+    "request": "Write the Dockerfile for a Kotlin 1.9 Spring service that listens on port 8082, builds with gradle build and starts with `./build/libs/app.jar`. Owning team: platform-logging.",
+    "U": 0.75,
+    "clash": 0.4,
+    "S": 0.95
+   },
+   {
+    "request": "Write the Dockerfile for a Python 3.10 FastAPI service that listens on port 8083, installs dependencies from requirements.txt and starts with `uvicorn main:app --host 0.0.0.0 --port 8083`. Owning team: platform-payments.",
+    "U": 0.041666666666666664,
+    "clash": 0.275,
+    "S": 0.17916666666666667
+   },
+   {
+    "request": "Write the Dockerfile for a Java 11 Micronaut service that listens on port 8084, compiles with gradle build and starts with `java -jar build/libs/micronaut-app.jar`. Owning team: platform-authorization.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Python 3.13 Flask service that listens on port 5001, installs dependencies from requirements.txt and starts with `python app.py`. Owning team: platform-customer-facing.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the Dockerfile for a Go 1.22 service that listens on port 8005, builds with go build and starts with `./app`. Owning team: platform-devops.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Ruby 3.1 Puma service that listens on port 3003, installs gems from Gemfile and starts with `bundle exec puma -C config/puma.rb`. Owning team: platform-legacy.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the Dockerfile for a Node.js 20 React service that listens on port 3004, installs dependencies with npm and starts with `npm run start`. Owning team: platform-ui",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   }
+  ],
+  "frontier": [
+   "Write the Dockerfile for a Node.js 18 Express service that listens on port 3000, installs dependencies from package.json using npm and starts with `node server.js`. Owning team: platform-frontend.",
+   "Write the Dockerfile for a Java 17 Spring Boot app that listens on port 8081, compiles the project with mvn clean package and starts with `java -jar target/app.jar`. Owning team: platform-identity.",
+   "Write the Dockerfile for a Ruby 3.1 Puma service that listens on port 3003, installs gems from Gemfile and starts with `bundle exec puma -C config/puma.rb`. Owning team: platform-legacy.",
+   "Write the Dockerfile for a Go 1.22 service that listens on port 8005, builds with go build and starts with `./app`. Owning team: platform-devops.",
+   "Write the Dockerfile for a PHP 8.2 Laravel service that listens on port 8001, installs dependencies from composer.json using composer install and starts with `php artisan serve --host=0.0.0.0 --port=8001`. Owning team: platform-operations.",
+   "Write the Dockerfile for a Ruby 3.2 Rails application that listens on port 3001, installs gems from Gemfile using bundle install and starts with `rails server -p 3001`. Owning team: platform-e-commerce.",
+   "Write the Dockerfile for a Java 11 Micronaut service that listens on port 8084, compiles with gradle build and starts with `java -jar build/libs/micronaut-app.jar`. Owning team: platform-authorization.",
+   "Write the Dockerfile for a Scala 2.13 Akka service that listens on port 9000, compiles with sbt compile and starts with `sbt run`. Owning team: platform-messaging.",
+   "Write the Dockerfile for a Node.js 20 React service that listens on port 3004, installs dependencies with npm and starts with `npm run start`. Owning team: platform-ui",
+   "Write the Dockerfile for a Node.js 16 NestJS service that listens on port 3002, installs dependencies from package.json using yarn and starts with `yarn start`. Owning team: platform-api-gateway.",
+   "Write the Dockerfile for a Go 1.21 web service that listens on port 8080, builds the binary with go build and starts with `./bin/app`. Owning team: platform-backend.",
+   "Write the Dockerfile for a Kotlin 1.9 Spring service that listens on port 8082, builds with gradle build and starts with `./build/libs/app.jar`. Owning team: platform-logging."
+  ],
+  "random": [
+   "Write the Dockerfile for a Node.js 18 Express service that listens on port 3000, installs dependencies from package.json using npm and starts with `node server.js`. Owning team: platform-frontend.",
+   "Write the Dockerfile for a Go 1.21 web service that listens on port 8080, builds the binary with go build and starts with `./bin/app`. Owning team: platform-backend.",
+   "Write the Dockerfile for a Ruby 3.2 Rails application that listens on port 3001, installs gems from Gemfile using bundle install and starts with `rails server -p 3001`. Owning team: platform-e-commerce.",
+   "Write the Dockerfile for a Java 17 Spring Boot app that listens on port 8081, compiles the project with mvn clean package and starts with `java -jar target/app.jar`. Owning team: platform-identity.",
+   "Write the Dockerfile for a Rust 1.72 service that listens on port 5000, builds the binary with cargo build and starts with `target/release/app`. Owning team: platform-data.",
+   "Write the Dockerfile for a PHP 8.2 Laravel service that listens on port 8001, installs dependencies from composer.json using composer install and starts with `php artisan serve --host=0.0.0.0 --port=8001`. Owning team: platform-operations.",
+   "Write the Dockerfile for a Python 3.11 Django service that listens on port 8002, installs dependencies from requirements.txt and starts with `python manage.py runserver 0.0.0.0:8002`. Owning team: platform-analytics.",
+   "Write the Dockerfile for a Node.js 16 NestJS service that listens on port 3002, installs dependencies from package.json using yarn and starts with `yarn start`. Owning team: platform-api-gateway.",
+   "Write the Dockerfile for a Scala 2.13 Akka service that listens on port 9000, compiles with sbt compile and starts with `sbt run`. Owning team: platform-messaging.",
+   "Write the Dockerfile for a Kotlin 1.9 Spring service that listens on port 8082, builds with gradle build and starts with `./build/libs/app.jar`. Owning team: platform-logging.",
+   "Write the Dockerfile for a Python 3.10 FastAPI service that listens on port 8083, installs dependencies from requirements.txt and starts with `uvicorn main:app --host 0.0.0.0 --port 8083`. Owning team: platform-payments.",
+   "Write the Dockerfile for a Java 11 Micronaut service that listens on port 8084, compiles with gradle build and starts with `java -jar build/libs/micronaut-app.jar`. Owning team: platform-authorization."
+  ]
+ },
+ "apidoc": {
+  "candidates": [
+   {
+    "request": "Write the documentation entry for the endpoint POST /v2/users: creates a new user. Requires the scope users:write. Body parameter email (string), name (string). Returns 201 on success, 400 if email is invalid, 409 if email already exists. Available since API version v2.1.",
+    "U": 0.25,
+    "clash": 0.4,
+    "S": 0.45
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/transactions: returns a list of recent transactions. Requires the scope transactions:read. Query parameter limit (integer), offset (integer). Returns 200 with transaction list, 403 if scope missing, 500 if server error. Available since API version v1.3.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the documentation entry for the endpoint PUT /v2/clients/{id}: updates a client's details. Requires the scope clients:write. Path parameter id (string), body parameter phone (string). Returns 200 on update, 404 if client not found, 400 if phone format is invalid. Available since API version v2.3.",
+    "U": 0.125,
+    "clash": 0.375,
+    "S": 0.3125
+   },
+   {
+    "request": "Write the documentation entry for the endpoint DELETE /v1/orders/{id}: deletes an order. Requires the scope orders:delete. Path parameter id (string). Returns 204 on success, 403 if scope missing, 404 if order not found. Available since API version v1.2.",
+    "U": 0.08333333333333333,
+    "clash": 0.35,
+    "S": 0.2583333333333333
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/products/{sku}: retrieves product details by SKU. Requires the scope products:read. Path parameter sku (string). Returns 200 with product data, 403 if scope missing, 404 if product not found. Available since API version v1.5.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the documentation entry for the endpoint POST /v2/webhooks: registers a webhook endpoint. Requires the scope webhooks:write. Body parameter url (string), event (string). Returns 201 on registration, 400 if URL is malformed, 429 if limit exceeded. Available since API version v2.0.",
+    "U": 0.041666666666666664,
+    "clash": 0.4,
+    "S": 0.24166666666666667
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/analytics/monthly: returns monthly revenue data. Requires the scope analytics:read. Query parameter start_date (string), end_date (string). Returns 200 with JSON data, 400 if dates are invalid, 403 if scope missing. Available since API version v1.7.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the documentation entry for the endpoint PATCH /v2/notifications/{id}: updates a notification status. Requires the scope notifications:write. Path parameter id (string), body parameter read (boolean). Returns 200 on update, 404 if notification not found, 400 if read is not boolean. Available since API version v2.2.",
+    "U": 0.16666666666666666,
+    "clash": 0.35,
+    "S": 0.3416666666666667
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/teams/{team_id}/members: lists team members. Requires the scope teams:read. Path parameter team_id (string). Returns 200 with member list, 403 if scope missing, 404 if team not found. Available since API version v1.6.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the documentation entry for the endpoint POST /v2/billing/invoice: creates a new invoice. Requires the scope billing:write. Body parameter amount (number), currency (string). Returns 201 with invoice details, 400 if amount invalid, 409 if invoice already exists. Available since API version v2.4.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/clients/{id}/contracts: returns client contracts. Requires the scope clients:read. Path parameter id (string). Returns 200 with contract list, 403 if scope missing, 404 if client not found. Available since API version v1.8.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the documentation entry for the endpoint PUT /v1/settings/timezone: updates the timezone setting. Requires the scope settings:write. Body parameter timezone (string). Returns 200 on success, 400 if timezone is invalid, 403 if scope missing. Available since API version v1.9.",
+    "U": 0.125,
+    "clash": 0.35,
+    "S": 0.3
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v2/reports/sales: retrieves sales report data. Requires the scope reports:read. Query parameter period (string), region (string). Returns 200 with report data, 403 if scope missing, 400 if period invalid. Available since API version v2.5.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the documentation entry for the endpoint POST /v2/notifications: sends a notification. Requires the scope notifications:send. Body parameter title (string), message (string), recipient (string). Returns 202 on submission, 400 if fields missing, 429 if rate limit exceeded. Available since API version v2.6.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/audit/logs: returns recent audit logs. Requires the scope audit:read. Query parameter since (string), limit (integer). Returns 200 with log entries, 403 if scope missing, 500 if internal error. Available since API version v1.4.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the documentation entry for the endpoint GET /v1/transactions: retrieves a list of recent transactions. Requires the scope transactions:read. Query parameter limit (integer), offset (integer). Returns 200 with paginated results, 403 if scope is missing, 500 if internal error occurs. Available since API version 1.3.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "Write the documentation entry for the endpoint GET /v1/transactions: returns a list of recent transactions. Requires the scope transactions:read. Query parameter limit (integer), offset (integer). Returns 200 with transaction list, 403 if scope missing, 500 if server error. Available since API version v1.3.",
+   "Write the documentation entry for the endpoint GET /v1/products/{sku}: retrieves product details by SKU. Requires the scope products:read. Path parameter sku (string). Returns 200 with product data, 403 if scope missing, 404 if product not found. Available since API version v1.5.",
+   "Write the documentation entry for the endpoint GET /v1/analytics/monthly: returns monthly revenue data. Requires the scope analytics:read. Query parameter start_date (string), end_date (string). Returns 200 with JSON data, 400 if dates are invalid, 403 if scope missing. Available since API version v1.7.",
+   "Write the documentation entry for the endpoint GET /v1/teams/{team_id}/members: lists team members. Requires the scope teams:read. Path parameter team_id (string). Returns 200 with member list, 403 if scope missing, 404 if team not found. Available since API version v1.6.",
+   "Write the documentation entry for the endpoint GET /v1/audit/logs: returns recent audit logs. Requires the scope audit:read. Query parameter since (string), limit (integer). Returns 200 with log entries, 403 if scope missing, 500 if internal error. Available since API version v1.4.",
+   "Write the documentation entry for the endpoint GET /v1/clients/{id}/contracts: returns client contracts. Requires the scope clients:read. Path parameter id (string). Returns 200 with contract list, 403 if scope missing, 404 if client not found. Available since API version v1.8.",
+   "Write the documentation entry for the endpoint POST /v2/users: creates a new user. Requires the scope users:write. Body parameter email (string), name (string). Returns 201 on success, 400 if email is invalid, 409 if email already exists. Available since API version v2.1.",
+   "Write the documentation entry for the endpoint PATCH /v2/notifications/{id}: updates a notification status. Requires the scope notifications:write. Path parameter id (string), body parameter read (boolean). Returns 200 on update, 404 if notification not found, 400 if read is not boolean. Available since API version v2.2.",
+   "Write the documentation entry for the endpoint PUT /v1/settings/timezone: updates the timezone setting. Requires the scope settings:write. Body parameter timezone (string). Returns 200 on success, 400 if timezone is invalid, 403 if scope missing. Available since API version v1.9.",
+   "Write the documentation entry for the endpoint PUT /v2/clients/{id}: updates a client's details. Requires the scope clients:write. Path parameter id (string), body parameter phone (string). Returns 200 on update, 404 if client not found, 400 if phone format is invalid. Available since API version v2.3.",
+   "Write the documentation entry for the endpoint POST /v2/webhooks: registers a webhook endpoint. Requires the scope webhooks:write. Body parameter url (string), event (string). Returns 201 on registration, 400 if URL is malformed, 429 if limit exceeded. Available since API version v2.0.",
+   "Write the documentation entry for the endpoint DELETE /v1/orders/{id}: deletes an order. Requires the scope orders:delete. Path parameter id (string). Returns 204 on success, 403 if scope missing, 404 if order not found. Available since API version v1.2."
+  ],
+  "random": [
+   "Write the documentation entry for the endpoint POST /v2/users: creates a new user. Requires the scope users:write. Body parameter email (string), name (string). Returns 201 on success, 400 if email is invalid, 409 if email already exists. Available since API version v2.1.",
+   "Write the documentation entry for the endpoint GET /v1/transactions: returns a list of recent transactions. Requires the scope transactions:read. Query parameter limit (integer), offset (integer). Returns 200 with transaction list, 403 if scope missing, 500 if server error. Available since API version v1.3.",
+   "Write the documentation entry for the endpoint PUT /v2/clients/{id}: updates a client's details. Requires the scope clients:write. Path parameter id (string), body parameter phone (string). Returns 200 on update, 404 if client not found, 400 if phone format is invalid. Available since API version v2.3.",
+   "Write the documentation entry for the endpoint DELETE /v1/orders/{id}: deletes an order. Requires the scope orders:delete. Path parameter id (string). Returns 204 on success, 403 if scope missing, 404 if order not found. Available since API version v1.2.",
+   "Write the documentation entry for the endpoint GET /v1/products/{sku}: retrieves product details by SKU. Requires the scope products:read. Path parameter sku (string). Returns 200 with product data, 403 if scope missing, 404 if product not found. Available since API version v1.5.",
+   "Write the documentation entry for the endpoint POST /v2/webhooks: registers a webhook endpoint. Requires the scope webhooks:write. Body parameter url (string), event (string). Returns 201 on registration, 400 if URL is malformed, 429 if limit exceeded. Available since API version v2.0.",
+   "Write the documentation entry for the endpoint GET /v1/analytics/monthly: returns monthly revenue data. Requires the scope analytics:read. Query parameter start_date (string), end_date (string). Returns 200 with JSON data, 400 if dates are invalid, 403 if scope missing. Available since API version v1.7.",
+   "Write the documentation entry for the endpoint PATCH /v2/notifications/{id}: updates a notification status. Requires the scope notifications:write. Path parameter id (string), body parameter read (boolean). Returns 200 on update, 404 if notification not found, 400 if read is not boolean. Available since API version v2.2.",
+   "Write the documentation entry for the endpoint GET /v1/teams/{team_id}/members: lists team members. Requires the scope teams:read. Path parameter team_id (string). Returns 200 with member list, 403 if scope missing, 404 if team not found. Available since API version v1.6.",
+   "Write the documentation entry for the endpoint POST /v2/billing/invoice: creates a new invoice. Requires the scope billing:write. Body parameter amount (number), currency (string). Returns 201 with invoice details, 400 if amount invalid, 409 if invoice already exists. Available since API version v2.4.",
+   "Write the documentation entry for the endpoint GET /v1/clients/{id}/contracts: returns client contracts. Requires the scope clients:read. Path parameter id (string). Returns 200 with contract list, 403 if scope missing, 404 if client not found. Available since API version v1.8.",
+   "Write the documentation entry for the endpoint PUT /v1/settings/timezone: updates the timezone setting. Requires the scope settings:write. Body parameter timezone (string). Returns 200 on success, 400 if timezone is invalid, 403 if scope missing. Available since API version v1.9."
+  ]
+ },
+ "alert": {
+  "candidates": [
+   {
+    "request": "Write the alert notification: error rate in the user-auth service in staging-us is 12%, above the 2% threshold, for 15 minutes. Severity: critical. Alert ID ALR-8022. Runbook: https://runbooks.example.com/user-auth-errors.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the alert notification: CPU usage of the order-processor service in prod-uk is 95%, above the 80% threshold, for 8 minutes. Severity: warning. Alert ID ALR-7845. Runbook: https://runbooks.example.com/order-processor-cpu.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: response time of the search-api in prod-eu is 4.7s, above the 2.0s threshold, for 22 minutes. Severity: critical. Alert ID ALR-7911. Runbook: https://runbooks.example.com/search-api-latency.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: request volume for the cart-service in staging-apac is 18k requests per second, above the 10k threshold, for 10 minutes. Severity: info. Alert ID ALR-7633. Runbook: https://runbooks.example.com/cart-service-volume.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: memory usage in the payment-gateway service in prod-us is 92%, above the 75% threshold, for 18 minutes. Severity: warning. Alert ID ALR-8104. Runbook: https://runbooks.example.com/payment-gateway-memory.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: 5xx error rate in the profile-api in prod-eu is 8%, above the 1% threshold, for 30 minutes. Severity: critical. Alert ID ALR-7520. Runbook: https://runbooks.example.com/profile-api-errors.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the alert notification: database connection latency for the inventory-service in staging-us is 3.2s, above the 1.5s threshold, for 12 minutes. Severity: warning. Alert ID ALR-8201. Runbook: https://runbooks.example.com/inventory-db-latency.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: disk I/O wait time in the cache-server service in prod-apac is 6.1ms, above the 2.0ms threshold, for 25 minutes. Severity: critical. Alert ID ALR-7988. Runbook: https://runbooks.example.com/cache-server-iops.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: bounce rate in the onboarding-flow service in staging-eu is 23%, above the 5% threshold, for 14 minutes. Severity: info. Alert ID ALR-7719. Runbook: https://runbooks.example.com/onboarding-bounce-rate.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: error rate in the notification-service in prod-us is 5.4%, above the 1% threshold, for 9 minutes. Severity: warning. Alert ID ALR-8055. Runbook: https://runbooks.example.com/notification-service-errors.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: transaction duration for the refund-api in prod-eu is 12s, above the 5s threshold, for 28 minutes. Severity: critical. Alert ID ALR-7890. Runbook: https://runbooks.example.com/refund-api-duration.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: request queue depth in the order-queue service in staging-apac is 1400, above the 500 threshold, for 16 minutes. Severity: critical. Alert ID ALR-8150. Runbook: https://runbooks.example.com/order-queue-depth.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: response time of the user-profile service in prod-uk is 7.3s, above the 3.0s threshold, for 21 minutes. Severity: warning. Alert ID ALR-7688. Runbook: https://runbooks.example.com/user-profile-latency.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: API call rate to the third-party shipping service in prod-eu is 15k requests per second, above the 10k threshold, for 11 minutes. Severity: info. Alert ID ALR-7933. Runbook: https://runbooks.example.com/shipping-api-rate.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the alert notification: cache miss rate in the session-service in staging-us is 41%, above the 10% threshold, for 20 minutes. Severity: critical. Alert ID ALR-8089. Runbook: https://runbooks.example.com/session-cache-misses.",
+    "U": 0.8333333333333334,
+    "clash": 0.4,
+    "S": 1.0333333333333334
+   },
+   {
+    "request": "Write the alert notification: session timeout duration in the auth-service in prod-apac is 180s, above the 60s threshold, for 13 minutes. Severity: warning. Alert ID ALR-7744. Runbook: https://runbooks.example.com/auth-session-timeout.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "Write the alert notification: error rate in the user-auth service in staging-us is 12%, above the 2% threshold, for 15 minutes. Severity: critical. Alert ID ALR-8022. Runbook: https://runbooks.example.com/user-auth-errors.",
+   "Write the alert notification: 5xx error rate in the profile-api in prod-eu is 8%, above the 1% threshold, for 30 minutes. Severity: critical. Alert ID ALR-7520. Runbook: https://runbooks.example.com/profile-api-errors.",
+   "Write the alert notification: cache miss rate in the session-service in staging-us is 41%, above the 10% threshold, for 20 minutes. Severity: critical. Alert ID ALR-8089. Runbook: https://runbooks.example.com/session-cache-misses.",
+   "Write the alert notification: response time of the user-profile service in prod-uk is 7.3s, above the 3.0s threshold, for 21 minutes. Severity: warning. Alert ID ALR-7688. Runbook: https://runbooks.example.com/user-profile-latency.",
+   "Write the alert notification: disk I/O wait time in the cache-server service in prod-apac is 6.1ms, above the 2.0ms threshold, for 25 minutes. Severity: critical. Alert ID ALR-7988. Runbook: https://runbooks.example.com/cache-server-iops.",
+   "Write the alert notification: memory usage in the payment-gateway service in prod-us is 92%, above the 75% threshold, for 18 minutes. Severity: warning. Alert ID ALR-8104. Runbook: https://runbooks.example.com/payment-gateway-memory.",
+   "Write the alert notification: API call rate to the third-party shipping service in prod-eu is 15k requests per second, above the 10k threshold, for 11 minutes. Severity: info. Alert ID ALR-7933. Runbook: https://runbooks.example.com/shipping-api-rate.",
+   "Write the alert notification: database connection latency for the inventory-service in staging-us is 3.2s, above the 1.5s threshold, for 12 minutes. Severity: warning. Alert ID ALR-8201. Runbook: https://runbooks.example.com/inventory-db-latency.",
+   "Write the alert notification: bounce rate in the onboarding-flow service in staging-eu is 23%, above the 5% threshold, for 14 minutes. Severity: info. Alert ID ALR-7719. Runbook: https://runbooks.example.com/onboarding-bounce-rate.",
+   "Write the alert notification: request queue depth in the order-queue service in staging-apac is 1400, above the 500 threshold, for 16 minutes. Severity: critical. Alert ID ALR-8150. Runbook: https://runbooks.example.com/order-queue-depth.",
+   "Write the alert notification: session timeout duration in the auth-service in prod-apac is 180s, above the 60s threshold, for 13 minutes. Severity: warning. Alert ID ALR-7744. Runbook: https://runbooks.example.com/auth-session-timeout.",
+   "Write the alert notification: request volume for the cart-service in staging-apac is 18k requests per second, above the 10k threshold, for 10 minutes. Severity: info. Alert ID ALR-7633. Runbook: https://runbooks.example.com/cart-service-volume."
+  ],
+  "random": [
+   "Write the alert notification: error rate in the user-auth service in staging-us is 12%, above the 2% threshold, for 15 minutes. Severity: critical. Alert ID ALR-8022. Runbook: https://runbooks.example.com/user-auth-errors.",
+   "Write the alert notification: CPU usage of the order-processor service in prod-uk is 95%, above the 80% threshold, for 8 minutes. Severity: warning. Alert ID ALR-7845. Runbook: https://runbooks.example.com/order-processor-cpu.",
+   "Write the alert notification: response time of the search-api in prod-eu is 4.7s, above the 2.0s threshold, for 22 minutes. Severity: critical. Alert ID ALR-7911. Runbook: https://runbooks.example.com/search-api-latency.",
+   "Write the alert notification: request volume for the cart-service in staging-apac is 18k requests per second, above the 10k threshold, for 10 minutes. Severity: info. Alert ID ALR-7633. Runbook: https://runbooks.example.com/cart-service-volume.",
+   "Write the alert notification: memory usage in the payment-gateway service in prod-us is 92%, above the 75% threshold, for 18 minutes. Severity: warning. Alert ID ALR-8104. Runbook: https://runbooks.example.com/payment-gateway-memory.",
+   "Write the alert notification: 5xx error rate in the profile-api in prod-eu is 8%, above the 1% threshold, for 30 minutes. Severity: critical. Alert ID ALR-7520. Runbook: https://runbooks.example.com/profile-api-errors.",
+   "Write the alert notification: database connection latency for the inventory-service in staging-us is 3.2s, above the 1.5s threshold, for 12 minutes. Severity: warning. Alert ID ALR-8201. Runbook: https://runbooks.example.com/inventory-db-latency.",
+   "Write the alert notification: disk I/O wait time in the cache-server service in prod-apac is 6.1ms, above the 2.0ms threshold, for 25 minutes. Severity: critical. Alert ID ALR-7988. Runbook: https://runbooks.example.com/cache-server-iops.",
+   "Write the alert notification: bounce rate in the onboarding-flow service in staging-eu is 23%, above the 5% threshold, for 14 minutes. Severity: info. Alert ID ALR-7719. Runbook: https://runbooks.example.com/onboarding-bounce-rate.",
+   "Write the alert notification: error rate in the notification-service in prod-us is 5.4%, above the 1% threshold, for 9 minutes. Severity: warning. Alert ID ALR-8055. Runbook: https://runbooks.example.com/notification-service-errors.",
+   "Write the alert notification: transaction duration for the refund-api in prod-eu is 12s, above the 5s threshold, for 28 minutes. Severity: critical. Alert ID ALR-7890. Runbook: https://runbooks.example.com/refund-api-duration.",
+   "Write the alert notification: request queue depth in the order-queue service in staging-apac is 1400, above the 500 threshold, for 16 minutes. Severity: critical. Alert ID ALR-8150. Runbook: https://runbooks.example.com/order-queue-depth."
+  ]
+ },
+ "userstory": {
+  "candidates": [
+   {
+    "request": "Write the user story: new users want to receive personalized product recommendations after their first purchase. Ticket RECOM-45. Epic: Personalization. Persona: first-time buyer. Estimate: 8 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: customers want to view their order history in a timeline format. Ticket ORD-12. Epic: Order Management. Persona: frequent buyer. Estimate: 6 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: returning users want to set a favorite product category. Ticket FAV-33. Epic: User Preferences. Persona: engaged shopper. Estimate: 4 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: users want to print a receipt without logging in. Ticket PRN-77. Epic: Checkout. Persona: guest shopper. Estimate: 3 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: shoppers want to receive a discount code via email after completing a purchase. Ticket DISC-22. Epic: Loyalty Program. Persona: repeat customer. Estimate: 7 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: users want to edit their shipping address before finalizing checkout. Ticket ADDR-55. Epic: Checkout. Persona: delivery-conscious buyer. Estimate: 5 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: customers want to track their order by zip code instead of order number. Ticket TRACK-91. Epic: Order Tracking. Persona: busy parent. Estimate: 9 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: users want to save multiple items to a wish list with tags. Ticket WISH-18. Epic: Product Discovery. Persona: young adult. Estimate: 6 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: guests want to save their cart for later with a temporary link. Ticket CART-66. Epic: Checkout. Persona: first-time visitor. Estimate: 5 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: users want to see product availability in real time across locations. Ticket AVAIL-39. Epic: Inventory. Persona: local shopper. Estimate: 10 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: customers want to share their order status with friends via social media. Ticket SHARE-21. Epic: Social Features. Persona: social shopper. Estimate: 8 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: returning users want to auto-fill their billing details on future orders. Ticket BILL-44. Epic: Checkout. Persona: frequent purchaser. Estimate: 4 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: users want to cancel a pending order before payment. Ticket CANCEL-88. Epic: Order Management. Persona: cautious buyer. Estimate: 3 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: shoppers want to filter products by environmental impact. Ticket ECO-11. Epic: Sustainable Products. Persona: eco-conscious consumer. Estimate: 7 points.",
+    "U": 0.16666666666666666,
+    "clash": 0.35,
+    "S": 0.3416666666666667
+   },
+   {
+    "request": "Write the user story: users want to receive push notifications for flash sales. Ticket FLASH-50. Epic: Promotions. Persona: price-sensitive shopper. Estimate: 6 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   },
+   {
+    "request": "Write the user story: customers want to view their return policy directly on product pages. Ticket POL-23. Epic: Returns. Persona: cautious buyer. Estimate: 5 points.",
+    "U": 0.0,
+    "clash": 0.4,
+    "S": 0.2
+   }
+  ],
+  "frontier": [
+   "Write the user story: shoppers want to filter products by environmental impact. Ticket ECO-11. Epic: Sustainable Products. Persona: eco-conscious consumer. Estimate: 7 points.",
+   "Write the user story: new users want to receive personalized product recommendations after their first purchase. Ticket RECOM-45. Epic: Personalization. Persona: first-time buyer. Estimate: 8 points.",
+   "Write the user story: users want to print a receipt without logging in. Ticket PRN-77. Epic: Checkout. Persona: guest shopper. Estimate: 3 points.",
+   "Write the user story: customers want to track their order by zip code instead of order number. Ticket TRACK-91. Epic: Order Tracking. Persona: busy parent. Estimate: 9 points.",
+   "Write the user story: shoppers want to receive a discount code via email after completing a purchase. Ticket DISC-22. Epic: Loyalty Program. Persona: repeat customer. Estimate: 7 points.",
+   "Write the user story: returning users want to auto-fill their billing details on future orders. Ticket BILL-44. Epic: Checkout. Persona: frequent purchaser. Estimate: 4 points.",
+   "Write the user story: guests want to save their cart for later with a temporary link. Ticket CART-66. Epic: Checkout. Persona: first-time visitor. Estimate: 5 points.",
+   "Write the user story: users want to save multiple items to a wish list with tags. Ticket WISH-18. Epic: Product Discovery. Persona: young adult. Estimate: 6 points.",
+   "Write the user story: customers want to view their return policy directly on product pages. Ticket POL-23. Epic: Returns. Persona: cautious buyer. Estimate: 5 points.",
+   "Write the user story: users want to receive push notifications for flash sales. Ticket FLASH-50. Epic: Promotions. Persona: price-sensitive shopper. Estimate: 6 points.",
+   "Write the user story: users want to edit their shipping address before finalizing checkout. Ticket ADDR-55. Epic: Checkout. Persona: delivery-conscious buyer. Estimate: 5 points.",
+   "Write the user story: customers want to share their order status with friends via social media. Ticket SHARE-21. Epic: Social Features. Persona: social shopper. Estimate: 8 points."
+  ],
+  "random": [
+   "Write the user story: new users want to receive personalized product recommendations after their first purchase. Ticket RECOM-45. Epic: Personalization. Persona: first-time buyer. Estimate: 8 points.",
+   "Write the user story: customers want to view their order history in a timeline format. Ticket ORD-12. Epic: Order Management. Persona: frequent buyer. Estimate: 6 points.",
+   "Write the user story: returning users want to set a favorite product category. Ticket FAV-33. Epic: User Preferences. Persona: engaged shopper. Estimate: 4 points.",
+   "Write the user story: users want to print a receipt without logging in. Ticket PRN-77. Epic: Checkout. Persona: guest shopper. Estimate: 3 points.",
+   "Write the user story: shoppers want to receive a discount code via email after completing a purchase. Ticket DISC-22. Epic: Loyalty Program. Persona: repeat customer. Estimate: 7 points.",
+   "Write the user story: users want to edit their shipping address before finalizing checkout. Ticket ADDR-55. Epic: Checkout. Persona: delivery-conscious buyer. Estimate: 5 points.",
+   "Write the user story: customers want to track their order by zip code instead of order number. Ticket TRACK-91. Epic: Order Tracking. Persona: busy parent. Estimate: 9 points.",
+   "Write the user story: users want to save multiple items to a wish list with tags. Ticket WISH-18. Epic: Product Discovery. Persona: young adult. Estimate: 6 points.",
+   "Write the user story: guests want to save their cart for later with a temporary link. Ticket CART-66. Epic: Checkout. Persona: first-time visitor. Estimate: 5 points.",
+   "Write the user story: users want to see product availability in real time across locations. Ticket AVAIL-39. Epic: Inventory. Persona: local shopper. Estimate: 10 points.",
+   "Write the user story: customers want to share their order status with friends via social media. Ticket SHARE-21. Epic: Social Features. Persona: social shopper. Estimate: 8 points.",
+   "Write the user story: returning users want to auto-fill their billing details on future orders. Ticket BILL-44. Epic: Checkout. Persona: frequent purchaser. Estimate: 4 points."
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "Qwen/Qwen3-4B-Instruct-2507",
+ "primary": "B",
+ "rules": {
+  "A": [
+   "Say whether the sprint goal is safe on a line `On track: yes` or `On track: no`.",
+   "List planned work as bullets that start with `- ` under a line that reads exactly `Next:`.",
+   "The first line must be `Standup <YYYY-MM-DD> | <full name>`, for example `Standup 2026-03-10 | Nora Lindqvist`.",
+   "Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you.",
+   "List finished work as bullets that start with `- ` under a line that reads exactly `Done:`.",
+   "The very last line must be the hashtag line `#standup #<team>` with the team name in lowercase, for example `#standup #payments`."
+  ],
+  "B": [
+   "The first line must be `Daily update from <full name>`, for example `Daily update from Nora Lindqvist`.",
+   "Summarize the workload on a line `Items: <n> done, <n> planned`.",
+   "Give the expected finish date of the current task on a line `ETA: <YYYY-MM-DD>`.",
+   "Put blockers on their own line beginning with `Blocked: `. If there are none, the line is `Blocked: none`.",
+   "Collect all ticket IDs on one line `Tickets: <ID>, <ID>`, separated by a comma and a space.",
+   "Finish the update with a line `Need help from: <person or team>`, or `Need help from: nobody`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 0,
+   "relation": "contradictory",
+   "reason": "Rule A3 requires the first line to be 'Standup <YYYY-MM-DD> | <full name>' while Rule B1 requires 'Daily update from <full name>'. These are different formats and cannot coexist in the same output without violating one rule. The first line of the combined output would have to satisfy both, which is "
+  },
+  {
+   "a": 0,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules involve assessing workload status, but A1 evaluates sprint goal safety ('On track: yes/no') and B2 reports done vs planned items. While related, they are not identical. To satisfy both, the sprint goal status must be included in the output, and the 'Items: done, planned' line must be plac"
+  },
+  {
+   "a": 1,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules list planned work, but A2 requires bullets under 'Next:' and B2 requires a summary line 'Items: n done, n planned'. The planned work must be reported in both formats, which requires merging or rephrasing. The placement of planned work in A's structure (under 'Next:') and B's summary (in '"
+  },
+  {
+   "a": 4,
+   "b": 1,
+   "relation": "entangled",
+   "reason": "Both rules list finished work, with A5 requiring bullets under 'Done:' and B2 requiring a summary of done items. The finished work must be reported in both bullet form and numerically. This requires combining the two formats, which can only be done if the bullet list is included in the output and th"
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "Both rules report blockers with a 'Blocked:' line. A4 requires 'Blocked: <text>' or 'Blocked: none', and B4 requires the same. They can coexist in the same output, but only if the blocker line appears once and is formatted correctly. However, the placement of this line in the overall structure must "
+  },
+  {
+   "a": 5,
+   "b": 5,
+   "relation": "contradictory",
+   "reason": "Rule A6 requires the very last line to be '#standup #<team>', while Rule B6 requires a line 'Need help from: <person or team>'. These cannot both be true in the same output because the final line would have to be both a hashtag line and a 'Need help from' line. This is impossible without violating o"
+  }
+ ],
+ "dropped_from_secondary": [
+  2,
+  5
+ ],
+ "entangled_pairs": [
+  [
+   1,
+   0
+  ],
+  [
+   3,
+   3
+  ]
+ ],
+ "reconciled": [
+  "Items: <n> done, <n> planned. On track: yes.",
+  "Report blockers on a line that starts with `Blocked: `, and write `Blocked: none` when nothing blocks you."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}

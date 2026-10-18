@@ -1,0 +1,6 @@
+{
+ "artifact": "code review comment",
+ "example_request": "Write the code review comment: the diff wraps the S3 upload in a retry loop that retries on every exception, including authentication errors. File: src/uploader.py, line 88.",
+ "A": "review-triage",
+ "B": "review-mentoring"
+}

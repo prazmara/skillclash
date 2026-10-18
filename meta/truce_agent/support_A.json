@@ -1,0 +1,47 @@
+{
+  "method": "structured",
+  "mode": "agent",
+  "compiler": "claude-opus-5-5",
+  "primary": "A",
+  "rules": {
+    "A": [
+      "Give the next steps as a numbered list with at least two steps (`1.`, `2.`).",
+      "Cite the case as `Ticket #<number>`.",
+      "Open with `Dear <full name>,` on the first line.",
+      "Never place a URL inside the body text. Links may appear only on a final line that starts with `Links:`.",
+      "Sign with the agent's name followed by a line that ends with `Support Team`.",
+      "Do not use contractions such as `don't`, `we'll` or `you're`."
+    ],
+    "B": [
+      "Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.",
+      "Invite a response with the exact phrase `reply to this email`.",
+      "Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.",
+      "Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL.",
+      "Open with `Hi <first name>!` on the first line.",
+      "Close with the agent's first name and then a line ending in `Support Team`."
+    ]
+  },
+  "relations": [
+    {
+      "a": 2,
+      "b": 4,
+      "relation": "contradictory",
+      "reason": "The first line cannot open with `Dear <full name>,` and also with `Hi <first name>!`."
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "relation": "duplicate",
+      "reason": "Both require the sign-off to be the agent's name followed by a line that ends with `Support Team`."
+    },
+    {
+      "a": 3,
+      "b": 3,
+      "relation": "entangled",
+      "reason": "The help-center URL can be included while no URL appears in the body only if the URL is placed on a final line that starts with `Links:`, not inside a sentence as in the example of B."
+    }
+  ],
+  "reconciled": [
+    "Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL only on a final line that starts with `Links:` and comes after the signature, for example `Links: https://help.example.com/invoice-export`. Never place a URL inside the body text, and refer to the article there in words only."
+  ]
+}

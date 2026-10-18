@@ -1,0 +1,65 @@
+{
+ "method": "structured",
+ "mode": "llm",
+ "compiler": "openai/gpt-4.1",
+ "primary": "A",
+ "rules": {
+  "A": [
+   "Give the next steps as a numbered list with at least two steps (`1.`, `2.`).",
+   "Cite the case as `Ticket #<number>`.",
+   "Open with `Dear <full name>,` on the first line.",
+   "Never place a URL inside the body text. Links may appear only on a final line that starts with `Links:`.",
+   "Sign with the agent's name followed by a line that ends with `Support Team`.",
+   "Do not use contractions such as `don't`, `we'll` or `you're`."
+  ],
+  "B": [
+   "Lead the main message with a sentence that starts with `Good news:` or `Quick update:`.",
+   "Invite a response with the exact phrase `reply to this email`.",
+   "Set expectations with a time frame written as `within <n> hours` or `within <n> business days`.",
+   "Point the customer to the relevant help-center article by including its `https://help.example.com/...` URL.",
+   "Open with `Hi <first name>!` on the first line.",
+   "Close with the agent's first name and then a line ending in `Support Team`."
+  ]
+ },
+ "relations": [
+  {
+   "a": 2,
+   "b": 4,
+   "relation": "contradictory",
+   "reason": "A3 requires opening with 'Dear <full name>,' while B5 requires opening with 'Hi <first name>!'. Both cannot be satisfied in a single opening line."
+  },
+  {
+   "a": 3,
+   "b": 3,
+   "relation": "entangled",
+   "reason": "A4 prohibits URLs in the body text and only allows them on a final 'Links:' line, while B4 requires including a help-center article URL. The URL can only be included if it is placed on the final 'Links:' line, not in the main body."
+  },
+  {
+   "a": 4,
+   "b": 5,
+   "relation": "entangled",
+   "reason": "A5 requires signing with the agent's full name and a line ending with 'Support Team', while B6 requires closing with the agent's first name and then a line ending with 'Support Team'. Both can be satisfied only if the signature includes both the first name and full name in the correct order."
+  }
+ ],
+ "dropped_from_secondary": [
+  4
+ ],
+ "entangled_pairs": [
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   5
+  ]
+ ],
+ "reconciled": [
+  "Refer the customer to the relevant help-center article, but do not place a URL inside the body text. Include the `https://help.example.com/...` link only on a final line that starts with `Links:`.",
+  "Sign with the agent's first name, then the agent's full name, each on its own line, followed by a line that ends with `Support Team`."
+ ],
+ "extract_path": {
+  "A": "llm",
+  "B": "llm"
+ }
+}
