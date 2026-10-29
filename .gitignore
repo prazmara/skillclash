@@ -6,3 +6,4 @@ runs/*/steer_acts.npz
 *.log
 *.out
 *.blg
+hf/data/

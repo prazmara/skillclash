@@ -2,6 +2,8 @@
 
 Code, benchmark, and results for the paper *One Skill Takes Over: Clashing Agent Skills and a One-File Fix*.
 
+[Paper (arXiv:2610.25064)](https://arxiv.org/abs/2610.25064) · [Dataset on Hugging Face](https://huggingface.co/datasets/prazmara/skillclash)
+
 When two Agent Skills for the same job are loaded together, the model follows one of them completely and drops the other,
 including rules that conflict with nothing ("takeover"). The worked examples inside the skills drive it. One merged skill
 file that ends with an example that follows both skills fixes it.
@@ -34,6 +36,19 @@ Last five columns: share of the achievable rules followed (%). Every number is c
 | `meta/<variant>/<job>_<P>.md` | Merged skills and code-made variants; `P` is the skill that wins a true contradiction |
 | `runs/<model>/` | Outputs and scores for every condition (`*.jsonl`), `analysis.json`, `tables.txt` |
 | `human_validation/` | The rule-pair sheet and a blank form for the human check (answer key not included) |
+| `clashbench/export_hf.py`, `hf/` | Builds the Hugging Face dataset (`hf/data/*.parquet`) from the files above; `hf/README.md` is its dataset card |
+
+## Hugging Face dataset
+
+The benchmark, the merged skills and all scored outputs are also on the Hub as five tables
+(`requests`, `jobs`, `rules`, `merged_skills`, `outputs`):
+
+```python
+from datasets import load_dataset
+requests = load_dataset("prazmara/skillclash", "requests", split="test")
+```
+
+Scoring a new output still needs `spec.score` from this repository (the checkers are code); see the dataset card.
 
 ## Reproduce
 
@@ -64,3 +79,18 @@ requests per job. Runs made by co-authors were replayed with this code and gave 
 ## Not included
 
 Model caches and activation files (about 0.5 GB), logs, the human-check answer key, and working notes.
+
+## License
+
+Code: MIT (`LICENSE`). Data (`skills/`, `meta/`, `runs/`, `human_validation/`, the Hugging Face dataset): CC BY 4.0 (`LICENSE-DATA`).
+
+## Citation
+
+```bibtex
+@article{razmara2026skillclash,
+  title   = {One Skill Takes Over: Clashing Agent Skills and a One-File Fix},
+  author  = {Razmara, Parsa and Azizi, Seyedarmin and Aryashad, Ardalan},
+  journal = {arXiv preprint arXiv:2610.25064},
+  year    = {2026}
+}
+```
